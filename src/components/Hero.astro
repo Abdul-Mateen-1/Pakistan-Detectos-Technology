@@ -1,0 +1,102 @@
+---
+/**
+ * Hero Component
+ * Main hero section with headline, description, CTAs, trust indicators,
+ * and the showroom image with authorized distributor badge overlay.
+ */
+import Container from './Container.astro';
+import Button from './Button.astro';
+import TrustIndicators from './TrustIndicators.astro';
+import AuthorizedBadge from './AuthorizedBadge.astro';
+import heroImage from '../assets/hero_picture.png';
+---
+
+<section
+  id="hero"
+  class="relative min-h-screen flex items-center pt-[72px] overflow-hidden"
+  aria-label="Hero section"
+>
+  <Container class="relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-center py-12 lg:py-16">
+      <!-- Left Content -->
+      <div class="flex flex-col gap-6">
+        <div class="max-w-lg flex flex-col gap-6">
+          <!-- Subheading Label -->
+          <div class="flex items-center gap-4 animate-fade-in">
+            <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+            <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
+              Professional Detection Equipment
+            </span>
+          </div>
+
+          <!-- Main Heading -->
+          <h1 class="font-display text-5xl sm:text-6xl lg:text-[3.75rem] xl:text-[4.25rem] font-bold leading-[1.05] tracking-tight animate-slide-up">
+            Detect What<br />Others Miss.
+          </h1>
+
+          <!-- Description -->
+          <p class="text-sm sm:text-base text-text-secondary leading-relaxed max-w-sm animate-slide-up" style="animation-delay: 0.1s;">
+            Pakistan's premier source for professional gold detectors,
+            underground imaging systems, and industrial detection
+            equipment — trusted by prospectors and mining
+            companies worldwide.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-4 animate-slide-up" style="animation-delay: 0.2s;">
+            <Button variant="primary" size="lg" href="/products">
+              Explore Products
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </Button>
+
+            <Button variant="outline" size="lg" href="/contact">
+              Contact Sales
+            </Button>
+          </div>
+        </div>
+
+        <!-- Trust Indicators (outside max-w constraint) -->
+        <div class="pt-4 animate-slide-up" style="animation-delay: 0.3s;">
+          <TrustIndicators />
+        </div>
+      </div>
+
+      <!-- Right Content: Hero Image -->
+      <div class="relative flex justify-center lg:justify-end animate-fade-in lg:w-[420px] xl:w-[480px] shrink-0" style="animation-delay: 0.2s;">
+        <!-- Image Container -->
+        <div class="relative w-full">
+          <!-- Gold corner accent (top-right) -->
+          <div class="absolute -top-3 -right-3 w-16 h-16 border-t-2 border-r-2 border-primary z-10 pointer-events-none" aria-hidden="true"></div>
+          <img
+            src={heroImage.src}
+            alt="Gold Detector Price showroom displaying premium detection equipment including Minelab, Nokta, Garrett, and OKM detectors alongside certification documents"
+            width="600"
+            height="500"
+            class="w-full h-auto rounded-lg object-cover shadow-card aspect-[6/5]"
+            loading="eager"
+            fetchpriority="high"
+          />
+
+          <!-- Authorized Distributor Badge -->
+          <div class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10">
+            <AuthorizedBadge />
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

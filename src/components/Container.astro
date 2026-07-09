@@ -1,0 +1,14 @@
+---
+/**
+ * Container Component
+ * Provides consistent max-width and horizontal padding across all sections.
+ * Supports optional HTML element override via the `as` prop.
+ */
+
+
+const { as: Tag = 'div', class: className = '' } = Astro.props;
+---
+
+<Tag class:list={['mx-auto w-full max-w-[var(--container-max)] px-6 sm:px-8 lg:px-[var(--spacing-container)]', className]}>
+  <slot />
+</Tag>

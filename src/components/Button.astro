@@ -1,0 +1,46 @@
+---
+/**
+ * Button Component
+ * Reusable button with multiple variants (primary, outline) and sizes.
+ * Supports both <button> and <a> elements via the `href` prop.
+ */
+
+const {
+  variant = "primary",
+  size = "md",
+  href,
+  class: className = "",
+  ariaLabel,
+  type = "button",
+} = Astro.props;
+
+const baseStyles =
+  "inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300 ease-out cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+
+const variantStyles = {
+  primary:
+    "bg-primary text-dark hover:bg-primary-hover active:scale-[0.98] rounded-md",
+  outline:
+    "bg-transparent text-text-primary border border-dark-border hover:border-primary hover:text-primary active:scale-[0.98] rounded-md",
+};
+
+const sizeStyles = {
+  sm: "px-4 py-2 text-sm",
+  md: "px-6 py-3 text-sm",
+  lg: "px-8 py-3.5 text-base",
+};
+
+const styles = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+---
+
+{
+  href ? (
+    <a href={href} class={styles} aria-label={ariaLabel}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={styles} aria-label={ariaLabel}>
+      <slot />
+    </button>
+  )
+}

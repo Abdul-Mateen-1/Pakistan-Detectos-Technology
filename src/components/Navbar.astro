@@ -1,0 +1,335 @@
+---
+/**
+ * Navbar Component
+ * Main site navigation with logo, nav links, search, locale, and CTA.
+ * Implements sticky positioning with scroll-aware background transition.
+ * Mobile menu uses Astro island pattern for minimal JS.
+ */
+import Container from "./Container.astro";
+import Button from "./Button.astro";
+import logoImage from "../assets/logo_updated.png";
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Products", href: "/products", hasDropdown: true },
+  { label: "Brands", href: "/brands" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
+];
+
+/** Determine current page for active nav state */
+const currentPath = Astro.url.pathname;
+
+/**
+ * Check if a nav link matches the current page.
+ * Exact match for home ("/"), prefix match for other sections.
+ */
+function isActive(href: string): boolean {
+  if (href === "/") return currentPath === "/";
+  return currentPath.startsWith(href);
+}
+---
+
+<header
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-[var(--z-navbar)]
+  transition-all duration-300
+  backdrop-blur-xl
+  border-b border-white/5
+  bg-[rgba(15,15,16,0.72)]
+  shadow-[0_1px_0_rgba(255,255,255,0.04)_inset,0_8px_30px_rgba(0,0,0,0.28)]"
+  role="banner"
+>
+  <Container>
+    <nav
+      class="flex items-center justify-between h-[72px]"
+      aria-label="Main navigation"
+    >
+      <!-- Logo -->
+      <a
+        href="/"
+        class="flex items-center gap-2 shrink-0 transition-opacity duration-200 hover:opacity-80"
+        aria-label="Gold Detector Price - Home"
+      >
+        <img
+          src={logoImage.src}
+          alt="Gold Detector Price Logo"
+          width="120"
+          height="40"
+          class="h-9 w-auto object-contain"
+          loading="eager"
+        />
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul class="hidden lg:flex items-center gap-8" role="list">
+        {
+          navLinks.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <li>
+                <a
+                  href={link.href}
+                  class:list={[
+                    "nav-link relative flex items-center gap-1 text-sm font-medium pb-1 transition-colors duration-[280ms] ease-out",
+                    active
+                      ? "text-text-primary"
+                      : "text-text-secondary hover:text-text-primary",
+                  ]}
+                  {...(active ? { "aria-current": "page" as const } : {})}
+                >
+                  {link.label}
+                  {link.hasDropdown && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="mt-0.5"
+                      aria-hidden="true"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  )}
+                  {/* Underline indicator */}
+                  <span
+                    class:list={[
+                      "nav-indicator absolute bottom-0 left-0 w-full h-[2px] rounded-full bg-primary",
+                      "transition-transform duration-[280ms] ease-out origin-center",
+                      active ? "scale-x-100" : "scale-x-0",
+                    ]}
+                    aria-hidden="true"
+                  />
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+
+      <!-- Right Section: Search, Locale, CTA -->
+      <div class="flex items-center gap-5">
+        <!-- Search Button -->
+        <button
+          type="button"
+          class="hidden lg:flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors duration-200 cursor-pointer"
+          aria-label="Search products"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Locale Selector -->
+        <button
+          type="button"
+          class="hidden lg:flex items-center gap-1.5 text-sm text-text-secondary hover:text-text-primary transition-colors duration-200 cursor-pointer"
+          aria-label="Change language and region"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path
+              d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+            ></path>
+          </svg>
+          <span>EN / PK</span>
+        </button>
+
+        <!-- CTA Button -->
+        <Button
+          variant="primary"
+          size="sm"
+          href="/contact"
+          class="hidden lg:inline-flex"
+        >
+          Get Quote
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </Button>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-toggle"
+          type="button"
+          class="flex lg:hidden items-center justify-center w-10 h-10 text-text-secondary hover:text-text-primary transition-colors duration-200 cursor-pointer"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg
+            id="menu-icon-open"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg
+            id="menu-icon-close"
+            class="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </Container>
+
+  <!-- Mobile Menu Panel -->
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden bg-dark-surface border-t border-dark-border"
+    role="dialog"
+    aria-label="Mobile navigation"
+  >
+    <Container>
+      <ul class="flex flex-col gap-1 py-4" role="list">
+        {
+          navLinks.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <li>
+                <a
+                  href={link.href}
+                  class:list={[
+                    "flex items-center justify-between py-3 px-2 text-base rounded-md transition-colors duration-200",
+                    active
+                      ? "text-text-primary bg-dark-card border-l-2 border-primary"
+                      : "text-text-secondary hover:text-text-primary hover:bg-dark-card",
+                  ]}
+                  {...(active ? { "aria-current": "page" as const } : {})}
+                >
+                  {link.label}
+                  {link.hasDropdown && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  )}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+      <div class="flex flex-col gap-3 pb-4 pt-2 border-t border-dark-border">
+        <Button variant="primary" size="md" href="/contact" class="w-full">
+          Get Quote
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </Button>
+      </div>
+    </Container>
+  </div>
+</header>
+
+<style>
+  /* Desktop nav underline hover animation */
+  .nav-link:hover .nav-indicator {
+    transform: scaleX(1);
+  }
+</style>
+
+<script>
+  // Mobile menu toggle - minimal JS for interactivity
+  const toggle = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("menu-icon-open");
+  const iconClose = document.getElementById("menu-icon-close");
+
+  if (toggle && menu && iconOpen && iconClose) {
+    toggle.addEventListener("click", () => {
+      const isOpen = !menu.classList.contains("hidden");
+      menu.classList.toggle("hidden");
+      iconOpen.classList.toggle("hidden");
+      iconClose.classList.toggle("hidden");
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+    });
+  }
+</script>
