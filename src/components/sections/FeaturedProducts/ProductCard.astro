@@ -1,0 +1,110 @@
+---
+/**
+ * ProductCard Component
+ * Renders a single product card with image, brand badge, description, and price.
+ * Receives product data via props — never hardcodes product information.
+ */
+
+interface Props {
+  name: string;
+  brand: string;
+  price: number | null;
+  description: string;
+  image: ImageMetadata;
+  slug: string;
+  featured: boolean;
+  index: number;
+}
+
+const { name, brand, price, description, image, slug, featured, index } =
+  Astro.props;
+
+const formattedPrice = price ? price.toLocaleString("en-PK") : null;
+---
+
+<article
+  class="product-card group flex flex-col h-full bg-dark-card rounded-xl border border-dark-border shadow-card-light overflow-hidden transition-all duration-[280ms] ease-out hover:-translate-y-1.5 hover:shadow-card-light-hover hover:border-primary"
+  data-reveal="up"
+  style={`transition-delay: ${index * 100}ms;`}
+>
+  <!-- Image Container -->
+  <div class="relative p-6 pb-4">
+    <!-- Brand Badge -->
+    <span
+      class="absolute top-4 left-4 z-10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-dark-card rounded-full"
+    >
+      {brand}
+    </span>
+
+    {/* Featured Badge */}
+    {
+      featured && (
+        <span class="absolute top-4 right-4 z-10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-dark bg-primary rounded-full">
+          Featured
+        </span>
+      )
+    }
+
+    <!-- Product Image -->
+    <div class="aspect-[4/3] flex items-center justify-center rounded-lg bg-dark-surface">
+      <img
+        src={image.src}
+        alt={`${name} by ${brand} — professional gold and metal detector`}
+        width="400"
+        height="300"
+        class="w-full h-full object-contain transition-transform duration-[280ms] ease-out group-hover:scale-[1.03]"
+        loading="lazy"
+      />
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="flex flex-col flex-1 px-6 pb-6 pt-3">
+    <h3 class="text-lg font-semibold text-text-primary leading-snug">{name}</h3>
+    <p class="mt-1.5 text-sm text-text-secondary leading-relaxed">{description}</p>
+
+    <!-- Price Row -->
+    <div class="mt-auto pt-4 flex items-end justify-between gap-4">
+      {
+        formattedPrice ? (
+          <div class="flex items-baseline gap-1.5">
+            <span class="text-[10px] font-semibold uppercase tracking-wider text-text-muted">
+              PKR
+            </span>
+            <span class="text-xl font-bold text-primary">{formattedPrice}</span>
+          </div>
+        ) : (
+          <a
+            href="/contact"
+            class="text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-200"
+          >
+            Request Quote
+          </a>
+        )
+      }
+
+      <a
+        href={`/products/${slug}`}
+        class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary-hover transition-colors duration-200 group-hover:underline"
+      >
+        View Details
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="transition-transform duration-[280ms] ease-out group-hover:translate-x-0.5"
+          aria-hidden="true"
+        >
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,88 @@
+---
+/**
+ * Hero Component
+ * Main hero section with headline, description, CTAs, trust indicators,
+ * and the showroom image with authorized distributor badge overlay.
+ */
+import Container from '../../ui/Container.astro';
+import Button from '../../ui/Button.astro';
+import TrustIndicators from '../TrustIndicators/TrustIndicators.astro';
+import AuthorizedBadge from '../../ui/AuthorizedBadge.astro';
+import heroImage from '../../../assets/hero_picture.png';
+---
+
+<section
+  id="hero"
+  class="relative min-h-screen flex items-center pt-[72px] overflow-hidden"
+  aria-label="Hero section"
+>
+  <!-- Full-bleed Background Image -->
+  <img
+    src={heroImage.src}
+    alt="Gold Detector Price showroom displaying premium detection equipment"
+    width="1920"
+    height="1080"
+    class="absolute inset-0 w-full h-full object-cover"
+    loading="eager"
+    fetchpriority="high"
+  />
+
+  <!-- Dark Gradient Overlay for text readability -->
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/80 to-dark/40 pointer-events-none"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-dark/50 pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Gold corner accent (top-right) -->
+  <div class="absolute top-[88px] right-6 lg:right-12 w-20 h-20 border-t-2 border-r-2 border-primary/40 pointer-events-none z-10" aria-hidden="true"></div>
+
+  <!-- Text Content -->
+  <Container class="relative z-10">
+    <div class="py-16 lg:py-24 max-w-2xl">
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center gap-4 animate-fade-in">
+          <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+          <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
+            Professional Detection Equipment
+          </span>
+        </div>
+
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-[3.75rem] xl:text-[4.25rem] font-bold leading-[1.05] tracking-tight animate-slide-up">
+          Detect What<br />Others Miss.
+        </h1>
+
+        <p class="text-sm sm:text-base text-text-secondary leading-relaxed max-w-md animate-slide-up" style="animation-delay: 0.1s;">
+          Pakistan's premier source for professional gold detectors,
+          underground imaging systems, and industrial detection
+          equipment — trusted by prospectors and mining companies worldwide.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 animate-slide-up" style="animation-delay: 0.2s;">
+          <Button variant="primary" size="lg" href="/products">
+            Explore Products
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </Button>
+          <Button variant="outline" size="lg" href="/contact">
+            Contact Sales
+          </Button>
+        </div>
+
+        <div class="pt-4 animate-slide-up" style="animation-delay: 0.3s;">
+          <TrustIndicators />
+        </div>
+      </div>
+    </div>
+  </Container>
+
+  <!-- Authorized Distributor Badge (bottom-right) -->
+  <div class="absolute bottom-8 right-6 lg:right-12 z-10 animate-fade-in" style="animation-delay: 0.4s;">
+    <AuthorizedBadge />
+  </div>
+</section>

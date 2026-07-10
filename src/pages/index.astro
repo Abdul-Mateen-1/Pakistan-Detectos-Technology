@@ -4,13 +4,16 @@
  * Entry point of the website. Assembles the Navbar and Hero section.
  */
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
+import Navbar from '../components/layout/Navbar.astro';
+import Hero from '../components/sections/Hero/Hero.astro';
+import FeaturedProductsSection from '../components/sections/FeaturedProducts/FeaturedProductsSection.astro';
 ---
 
 <Layout title="Home">
   <Navbar />
   <main>
     <Hero />
+    <FeaturedProductsSection />
   </main>
 </Layout>
+

@@ -3,20 +3,25 @@
 
 @theme {
   /* ===== Colors ===== */
-  --color-primary: #c8a55a;
-  --color-primary-hover: #b8953a;
-  --color-primary-light: #d4b76e;
+  --color-primary: #C89B3C;
+  --color-primary-hover: #D4A948;
+  --color-primary-light: #E0BD64;
 
-  --color-dark: #0a0a0a;
-  --color-dark-surface: #111111;
-  --color-dark-card: #1a1a1a;
-  --color-dark-border: #2a2a2a;
+  --color-dark: #0F0F10;
+  --color-dark-surface: #141415;
+  --color-dark-card: #1A1A1C;
+  --color-dark-border: #2A2A2D;
 
   --color-dark-shiny: #252324;
 
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #9ca3af;
-  --color-text-muted: #6b7280;
+  /* Light tokens repurposed for dark-theme section surfaces */
+  --color-light: #0F0F10;
+  --color-light-surface: #1A1A1C;
+  --color-light-border: #2A2A2D;
+
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #A1A1AA;
+  --color-text-muted: #71717A;
 
   /* ===== Typography ===== */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -33,8 +38,10 @@
   --radius-xl: 16px;
 
   /* ===== Shadows ===== */
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 20px rgba(200, 165, 90, 0.15);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-card-light: 0 2px 16px rgba(0, 0, 0, 0.3);
+  --shadow-card-light-hover: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(200, 155, 60, 0.08);
+  --shadow-glow: 0 0 24px rgba(200, 155, 60, 0.2);
 
   /* ===== Z-index ===== */
   --z-navbar: 50;
