@@ -1,0 +1,73 @@
+---
+/**
+ * BrandCard Component
+ * Renders a single brand card with logo, model count, and explore CTA.
+ * Receives brand data via props — never hardcodes brand information.
+ */
+
+interface Props {
+  name: string;
+  logo: string;
+  models: number;
+  slug: string;
+  index: number;
+}
+
+const { name, logo, models, slug, index } = Astro.props;
+---
+
+<article
+  class="brand-card group flex-shrink-0 w-[280px] sm:w-[300px] flex flex-col items-center bg-dark-card rounded-xl border border-dark-border shadow-card-light overflow-hidden transition-all duration-[280ms] ease-out hover:-translate-y-1.5 hover:shadow-card-light-hover hover:border-primary"
+  data-reveal="up"
+  style={`transition-delay: ${index * 100}ms;`}
+>
+  <!-- Logo Container -->
+  <div class="w-full flex items-center justify-center px-8 py-10 sm:py-12">
+    <div class="h-14 sm:h-16 flex items-center justify-center">
+      <img
+        src={logo}
+        alt={`${name} — official brand partner`}
+        class="max-h-full max-w-[180px] object-contain brightness-0 invert opacity-80 transition-all duration-[280ms] ease-out group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0"
+        loading="lazy"
+      />
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="w-full h-px bg-gradient-to-r from-transparent via-dark-border to-transparent" aria-hidden="true"></div>
+
+  <!-- Content -->
+  <div class="flex flex-col items-center gap-4 px-6 py-6 w-full">
+    <h3 class="text-lg font-semibold text-text-primary tracking-wide">{name}</h3>
+
+    <!-- Model Count Badge -->
+    <div class="flex items-center gap-2">
+      <span class="text-2xl font-bold text-primary">{models}</span>
+      <span class="text-xs font-medium uppercase tracking-wider text-text-muted">Models Available</span>
+    </div>
+
+    <!-- Explore CTA -->
+    <a
+      href={`/brands/${slug}`}
+      class="mt-2 inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-hover transition-colors duration-200 group-hover:underline"
+    >
+      Explore Collection
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="transition-transform duration-[280ms] ease-out group-hover:translate-x-1"
+        aria-hidden="true"
+      >
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div>
+</article>
