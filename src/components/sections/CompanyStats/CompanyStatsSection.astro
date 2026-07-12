@@ -1,19 +1,11 @@
 ---
 /**
  * CompanyStatsSection Component
- * Horizontal row of 5 animated counters. Numbers count up on scroll
- * using requestAnimationFrame. Dark background, gold numbers,
- * thin vertical dividers between stats.
+ * Animated counters. Reads from src/data/stats.json.
  */
 import Container from "../../ui/Container.astro";
 
-const stats = [
-  { value: 10, suffix: "+", label: "Years in Business" },
-  { value: 500, suffix: "+", label: "Products Sold" },
-  { value: 8, suffix: "", label: "Premium Brands" },
-  { value: 50, suffix: "+", label: "Cities Served" },
-  { value: 98, suffix: "%", label: "Satisfaction Rate" },
-];
+import stats from "../../../data/stats.json";
 ---
 
 <section
@@ -23,7 +15,6 @@ const stats = [
 >
   <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent pointer-events-none" aria-hidden="true"></div>
 
-  <!-- Subtle topographic texture -->
   <div class="absolute inset-0 opacity-[0.03] pointer-events-none" aria-hidden="true"
     style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M30 5C15 5 5 15 5 30s10 25 25 25 25-10 25-25S45 5 30 5zm0 10c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z&quot; fill=&quot;%23C5A044&quot; fill-opacity=&quot;0.3&quot; fill-rule=&quot;evenodd&quot;/%3E%3C/svg%3E');"
   ></div>
@@ -82,7 +73,6 @@ const stats = [
 </section>
 
 <script>
-  // Counter animation using requestAnimationFrame
   function animateCounter(el: HTMLElement) {
     const target = parseInt(el.dataset.target || "0");
     const suffix = el.dataset.suffix || "";
@@ -92,14 +82,10 @@ const stats = [
     function update(now: number) {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease-out curve
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = Math.round(eased * target);
       el.textContent = `${current}${suffix}`;
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      }
+      if (progress < 1) requestAnimationFrame(update);
     }
 
     requestAnimationFrame(update);
@@ -123,7 +109,6 @@ const stats = [
     counterObserver.observe(statsSection);
   }
 
-  // Scroll reveal
   const statsRevealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {

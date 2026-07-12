@@ -1,46 +1,17 @@
 ---
 /**
  * LatestArticlesSection Component
- * SEO-focused expert content section. Featured article large on left,
- * 4 smaller articles in 2×2 grid on right. Pakistan-specific topics.
+ * Reads from src/data/articles.json.
+ * First article with featured: true becomes the large card.
+ * Remaining articles fill the 2×2 grid.
  */
 import Container from "../../ui/Container.astro";
 import Button from "../../ui/Button.astro";
 
-const featuredArticle = {
-  title: "How to Choose the Right Gold Detector for Pakistani Terrain",
-  description: "A comprehensive guide covering frequency, soil mineralization, and terrain-specific considerations.",
-  category: "Buying Guide",
-  readTime: "8 min read",
-  slug: "choose-right-gold-detector-pakistani-terrain",
-};
+import allArticles from "../../../data/articles.json";
 
-const articles = [
-  {
-    title: "3D Ground Scanning Explained: When to Use Imaging Systems",
-    category: "Technology",
-    readTime: "5 min read",
-    slug: "3d-ground-scanning-explained",
-  },
-  {
-    title: "Water Detection in Balochistan: Equipment and Techniques",
-    category: "Field Tips",
-    readTime: "6 min read",
-    slug: "water-detection-balochistan",
-  },
-  {
-    title: "Garrett vs. Nokta: Which Brand is Right for You?",
-    category: "Comparison",
-    readTime: "7 min read",
-    slug: "garrett-vs-nokta-comparison",
-  },
-  {
-    title: "Gold Prospecting in Northern Pakistan: A Beginner's Guide",
-    category: "Mining",
-    readTime: "10 min read",
-    slug: "gold-prospecting-northern-pakistan",
-  },
-];
+const featuredArticle = allArticles.find((a) => a.featured)!;
+const articles = allArticles.filter((a) => !a.featured);
 ---
 
 <section
@@ -85,9 +56,17 @@ const articles = [
         class="group flex flex-col rounded-xl border border-dark-border bg-dark-card overflow-hidden transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_16px_rgba(197,160,68,0.08)]"
         data-reveal="up"
       >
-        <!-- Image Placeholder -->
-        <div class="aspect-[16/9] bg-dark-surface flex items-center justify-center">
-          <span class="text-sm text-text-muted">Article Hero Image</span>
+        <div class="aspect-[16/9] bg-dark-surface flex items-center justify-center overflow-hidden">
+          {featuredArticle.image ? (
+            <img
+              src={featuredArticle.image}
+              alt={featuredArticle.title}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          ) : (
+            <span class="text-sm text-text-muted">Article Hero Image</span>
+          )}
         </div>
 
         <div class="p-6 lg:p-8 flex flex-col flex-1">

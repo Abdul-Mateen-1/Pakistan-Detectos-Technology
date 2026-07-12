@@ -2,14 +2,14 @@
 /**
  * ProductCard Component
  * Light-section product card with spec tags, brand badge, and hover effects.
- * Image scales 1.05× on hover, border shifts to gold.
+ * Image is a string path (from public/ folder), not ImageMetadata.
  */
 interface Props {
   name: string;
   brand: string;
   price: number | null;
   description: string;
-  image: ImageMetadata;
+  image: string;
   slug: string;
   badge: string | null;
   specs: string[];
@@ -42,7 +42,7 @@ const formattedPrice = price ? price.toLocaleString("en-PK") : null;
     <!-- Product Image -->
     <div class="aspect-[4/3] flex items-center justify-center rounded-lg bg-light-surface">
       <img
-        src={image.src}
+        src={image}
         alt={`${name} by ${brand} — professional detection equipment`}
         width="400"
         height="300"

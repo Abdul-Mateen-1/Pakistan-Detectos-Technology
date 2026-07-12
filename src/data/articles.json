@@ -1,0 +1,47 @@
+[
+  {
+    "title": "How to Choose the Right Gold Detector for Pakistani Terrain",
+    "description": "A comprehensive guide covering frequency, soil mineralization, and terrain-specific considerations.",
+    "category": "Buying Guide",
+    "readTime": "8 min read",
+    "slug": "choose-right-gold-detector-pakistani-terrain",
+    "image": "/images/articles/gold-detector-guide.jpg",
+    "featured": true
+  },
+  {
+    "title": "3D Ground Scanning Explained: When to Use Imaging Systems",
+    "description": "Understanding when 3D imaging provides value over traditional detection methods.",
+    "category": "Technology",
+    "readTime": "5 min read",
+    "slug": "3d-ground-scanning-explained",
+    "image": null,
+    "featured": false
+  },
+  {
+    "title": "Water Detection in Balochistan: Equipment and Techniques",
+    "description": "Field-tested approaches to groundwater detection in arid Pakistani terrain.",
+    "category": "Field Tips",
+    "readTime": "6 min read",
+    "slug": "water-detection-balochistan",
+    "image": null,
+    "featured": false
+  },
+  {
+    "title": "Garrett vs. Nokta: Which Brand is Right for You?",
+    "description": "A head-to-head comparison of two leading detection equipment manufacturers.",
+    "category": "Comparison",
+    "readTime": "7 min read",
+    "slug": "garrett-vs-nokta-comparison",
+    "image": null,
+    "featured": false
+  },
+  {
+    "title": "Gold Prospecting in Northern Pakistan: A Beginner's Guide",
+    "description": "Everything you need to know to start prospecting in Gilgit-Baltistan and KPK.",
+    "category": "Mining",
+    "readTime": "10 min read",
+    "slug": "gold-prospecting-northern-pakistan",
+    "image": null,
+    "featured": false
+  }
+]

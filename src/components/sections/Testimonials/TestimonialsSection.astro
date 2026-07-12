@@ -1,34 +1,12 @@
 ---
 /**
  * TestimonialsSection Component
- * Light background with authentic testimonials from real businesses.
- * Initials-based avatars, specific product mentions, real cities.
+ * Light background with authentic testimonials.
+ * Reads from src/data/testimonials.json.
  */
 import Container from "../../ui/Container.astro";
 
-const testimonials = [
-  {
-    quote: "The OKM eXp 6000 has transformed our geological survey operations. Pakistan Detectors provided excellent training for our entire team.",
-    name: "Ahmad Khan",
-    initials: "AK",
-    title: "Director, Geological Survey Division",
-    location: "Peshawar",
-  },
-  {
-    quote: "We purchased 12 Garrett units for our construction sites. The after-sales support and warranty coverage has been outstanding.",
-    name: "Muhammad Bilal",
-    initials: "MB",
-    title: "Operations Manager, Frontier Construction",
-    location: "Islamabad",
-  },
-  {
-    quote: "PDT helped us select the right Minelab equipment for our gold prospecting operations in Gilgit-Baltistan. Their technical knowledge saved us weeks of trial and error.",
-    name: "Farhan Ali",
-    initials: "FA",
-    title: "Lead Geologist, Northern Minerals",
-    location: "Gilgit",
-  },
-];
+import testimonials from "../../../data/testimonials.json";
 ---
 
 <section
@@ -56,17 +34,11 @@ const testimonials = [
           data-reveal="up"
           style={`transition-delay: ${index * 100}ms;`}
         >
-          <!-- Quote Mark -->
           <div class="text-primary text-4xl font-display leading-none mb-3" aria-hidden="true">"</div>
-
-          <!-- Quote Text -->
           <p class="text-sm sm:text-base text-text-dark-secondary leading-relaxed flex-1">
             {t.quote}
           </p>
-
-          <!-- Author -->
           <div class="flex items-center gap-3 mt-6 pt-5 border-t border-light-border">
-            <!-- Initials Avatar -->
             <div class="w-10 h-10 rounded-full bg-dark-card flex items-center justify-center shrink-0">
               <span class="text-xs font-bold text-primary">{t.initials}</span>
             </div>

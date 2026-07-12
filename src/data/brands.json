@@ -1,0 +1,120 @@
+[
+  {
+    "id": "garrett",
+    "name": "Garrett",
+    "logo": "/images/brands/garrett-logo.svg",
+    "models": 10,
+    "slug": "garrett",
+    "showcase": {
+      "tagline": "American-made detectors trusted by security and prospecting professionals worldwide.",
+      "description": "Since 1964, Garrett has been the gold standard in metal detection technology. From security screening at major events to professional gold prospecting, Garrett equipment is built to perform in the most demanding conditions.",
+      "stats": [
+        {
+          "value": "60+",
+          "label": "Countries"
+        },
+        {
+          "value": "50+",
+          "label": "Years"
+        },
+        {
+          "value": "PI",
+          "label": "Technology"
+        }
+      ],
+      "image": "/images/brands/garrett-lineup.jpg"
+    }
+  },
+  {
+    "id": "nokta",
+    "name": "Nokta",
+    "logo": "/images/brands/nokta-logo.svg",
+    "models": 12,
+    "slug": "nokta",
+    "showcase": null
+  },
+  {
+    "id": "minelab",
+    "name": "Minelab",
+    "logo": "/images/brands/minelab-logo.svg",
+    "models": 15,
+    "slug": "minelab",
+    "showcase": {
+      "tagline": "Australia's premier detection technology company, pioneering multi-frequency innovation.",
+      "description": "Minelab detectors are the choice of professional gold prospectors, military organizations, and humanitarian demining programs. Their patented multi-frequency technology adapts to any terrain and mineralization level.",
+      "stats": [
+        {
+          "value": "100+",
+          "label": "Countries"
+        },
+        {
+          "value": "Multi",
+          "label": "Frequency"
+        },
+        {
+          "value": "IP68",
+          "label": "Waterproof"
+        }
+      ],
+      "image": "/images/brands/minelab-lineup.jpg"
+    }
+  },
+  {
+    "id": "okm",
+    "name": "OKM",
+    "logo": "/images/brands/okm-logo.svg",
+    "models": 8,
+    "slug": "okm",
+    "showcase": {
+      "tagline": "World leader in 3D ground scanners and geophysical instruments.",
+      "description": "Trusted by mining companies and geological survey teams in over 80 countries. OKM's advanced 3D imaging technology provides real-time visualization of underground structures, cavities, and mineral deposits.",
+      "stats": [
+        {
+          "value": "80+",
+          "label": "Countries"
+        },
+        {
+          "value": "25m",
+          "label": "Max Depth"
+        },
+        {
+          "value": "3D",
+          "label": "Live Imaging"
+        }
+      ],
+      "image": "/images/brands/okm-lineup.jpg"
+    }
+  },
+  {
+    "id": "fisher",
+    "name": "Fisher",
+    "logo": "/images/brands/fisher-logo.svg",
+    "models": 6,
+    "slug": "fisher",
+    "showcase": null
+  },
+  {
+    "id": "teknetics",
+    "name": "Teknetics",
+    "logo": "/images/brands/teknetics-logo.svg",
+    "models": 5,
+    "slug": "teknetics",
+    "showcase": null
+  },
+  {
+    "id": "xp",
+    "name": "XP",
+    "logo": "/images/brands/xp-logo.svg",
+    "models": 7,
+    "slug": "xp",
+    "showcase": null
+  },
+  {
+    "id": "goldxtra",
+    "name": "GoldXtra",
+    "logo": "/images/brands/goldxtra-logo.png",
+    "models": 8,
+    "slug": "goldxtra",
+    "showcase": null
+  }
+]

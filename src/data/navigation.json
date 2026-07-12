@@ -1,0 +1,35 @@
+{
+  "main": [
+    { "label": "Home", "href": "/", "hasDropdown": false },
+    { "label": "Products", "href": "/products", "hasDropdown": true },
+    { "label": "Brands", "href": "/brands", "hasDropdown": false },
+    { "label": "About", "href": "/about", "hasDropdown": false },
+    { "label": "Blog", "href": "/blog", "hasDropdown": false },
+    { "label": "Contact", "href": "/contact", "hasDropdown": false }
+  ],
+  "footer": {
+    "products": [
+      { "label": "Gold Detectors", "href": "/categories/gold-detectors" },
+      { "label": "Metal Detectors", "href": "/categories/metal-detectors" },
+      { "label": "Imaging Systems", "href": "/categories/underground-imaging" },
+      { "label": "Long Range", "href": "/categories/long-range-locators" },
+      { "label": "Water Detectors", "href": "/categories/water-detectors" },
+      { "label": "Accessories", "href": "/categories/accessories" }
+    ],
+    "brands": [
+      { "label": "Garrett", "href": "/brands/garrett" },
+      { "label": "Nokta", "href": "/brands/nokta" },
+      { "label": "Minelab", "href": "/brands/minelab" },
+      { "label": "OKM", "href": "/brands/okm" },
+      { "label": "Fisher", "href": "/brands/fisher" },
+      { "label": "XP", "href": "/brands/xp" }
+    ],
+    "company": [
+      { "label": "About Us", "href": "/about" },
+      { "label": "Our Team", "href": "/about#team" },
+      { "label": "Blog", "href": "/blog" },
+      { "label": "Careers", "href": "/careers" },
+      { "label": "Contact", "href": "/contact" }
+    ]
+  }
+}

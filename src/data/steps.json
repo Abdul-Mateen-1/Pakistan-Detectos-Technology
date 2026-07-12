@@ -1,0 +1,22 @@
+[
+  {
+    "number": 1,
+    "title": "Browse & Research",
+    "description": "Explore products, compare specifications, read buying guides."
+  },
+  {
+    "number": 2,
+    "title": "Talk to an Expert",
+    "description": "WhatsApp or call our specialists for personalized advice."
+  },
+  {
+    "number": 3,
+    "title": "Place Your Order",
+    "description": "Secure ordering with multiple payment options available."
+  },
+  {
+    "number": 4,
+    "title": "Delivery & Training",
+    "description": "Nationwide delivery plus training on your new equipment."
+  }
+]

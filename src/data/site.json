@@ -1,0 +1,20 @@
+{
+  "name": "Pakistan Detectors Technology",
+  "shortName": "PDT",
+  "tagline": "Professional Detection Equipment",
+  "description": "Pakistan's premier authorized distributor of professional detection equipment. Serving prospectors, mining companies, and government organizations since 2015.",
+  "foundedYear": 2015,
+  "contact": {
+    "phone": "+92-XXX-XXXXXXX",
+    "email": "info@pdt.pk",
+    "whatsapp": "https://wa.me/92XXXXXXXXXX",
+    "address": "Islamabad, Pakistan",
+    "hours": "Mon–Sat, 9 AM – 6 PM"
+  },
+  "social": {
+    "facebook": "#",
+    "youtube": "#",
+    "instagram": "#"
+  },
+  "authorizedBrands": ["Garrett", "Nokta", "Minelab", "OKM"]
+}

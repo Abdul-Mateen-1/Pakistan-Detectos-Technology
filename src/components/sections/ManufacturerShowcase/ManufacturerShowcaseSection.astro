@@ -1,50 +1,15 @@
 ---
 /**
  * ManufacturerShowcaseSection Component
- * Two-column editorial layout with tab navigation for 3 flagship brands.
- * Each tab: description, 3 key stats, CTA, product lineup image.
+ * Two-column editorial layout with tab navigation.
+ * Reads from src/data/brands.json — filters brands that have showcase data.
  */
 import Container from "../../ui/Container.astro";
 import Button from "../../ui/Button.astro";
 
-const brands = [
-  {
-    id: "garrett",
-    name: "Garrett",
-    tagline: "American-made detectors trusted by security and prospecting professionals worldwide.",
-    description: "Since 1964, Garrett has been the gold standard in metal detection technology. From security screening at major events to professional gold prospecting, Garrett equipment is built to perform in the most demanding conditions.",
-    stats: [
-      { value: "60+", label: "Countries" },
-      { value: "50+", label: "Years" },
-      { value: "PI", label: "Technology" },
-    ],
-    slug: "garrett",
-  },
-  {
-    id: "okm",
-    name: "OKM",
-    tagline: "World leader in 3D ground scanners and geophysical instruments.",
-    description: "Trusted by mining companies and geological survey teams in over 80 countries. OKM's advanced 3D imaging technology provides real-time visualization of underground structures, cavities, and mineral deposits.",
-    stats: [
-      { value: "80+", label: "Countries" },
-      { value: "25m", label: "Max Depth" },
-      { value: "3D", label: "Live Imaging" },
-    ],
-    slug: "okm",
-  },
-  {
-    id: "minelab",
-    name: "Minelab",
-    tagline: "Australia's premier detection technology company, pioneering multi-frequency innovation.",
-    description: "Minelab detectors are the choice of professional gold prospectors, military organizations, and humanitarian demining programs. Their patented multi-frequency technology adapts to any terrain and mineralization level.",
-    stats: [
-      { value: "100+", label: "Countries" },
-      { value: "Multi", label: "Frequency" },
-      { value: "IP68", label: "Waterproof" },
-    ],
-    slug: "minelab",
-  },
-];
+import allBrands from "../../../data/brands.json";
+
+const brands = allBrands.filter((b) => b.showcase !== null);
 ---
 
 <section
@@ -103,14 +68,14 @@ const brands = [
             <h2 id="manufacturer-heading" class="font-display text-3xl sm:text-4xl leading-tight text-text-primary">
               {brand.name}
             </h2>
-            <p class="mt-2 text-base text-primary font-medium">{brand.tagline}</p>
+            <p class="mt-2 text-base text-primary font-medium">{brand.showcase!.tagline}</p>
             <p class="mt-4 text-sm sm:text-base text-text-secondary leading-relaxed">
-              {brand.description}
+              {brand.showcase!.description}
             </p>
 
             <!-- Stats -->
             <div class="flex items-center gap-8 mt-8">
-              {brand.stats.map((stat) => (
+              {brand.showcase!.stats.map((stat) => (
                 <div class="flex flex-col">
                   <span class="text-2xl sm:text-3xl font-bold text-primary">{stat.value}</span>
                   <span class="text-xs font-medium uppercase tracking-wider text-text-muted mt-1">{stat.label}</span>
@@ -129,9 +94,18 @@ const brands = [
             </div>
           </div>
 
-          <!-- Image Placeholder Column -->
-          <div class="aspect-[4/3] rounded-xl bg-dark-card border border-dark-border flex items-center justify-center">
-            <span class="text-sm text-text-muted">Product Lineup Image</span>
+          <!-- Image Column -->
+          <div class="aspect-[4/3] rounded-xl bg-dark-card border border-dark-border flex items-center justify-center overflow-hidden">
+            {brand.showcase!.image ? (
+              <img
+                src={brand.showcase!.image}
+                alt={`${brand.name} product lineup`}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            ) : (
+              <span class="text-sm text-text-muted">Product Lineup Image</span>
+            )}
           </div>
         </div>
       ))}
@@ -147,7 +121,6 @@ const brands = [
     tab.addEventListener("click", () => {
       const brandId = (tab as HTMLElement).dataset.brand;
 
-      // Update tabs
       tabs.forEach((t) => {
         const isActive = (t as HTMLElement).dataset.brand === brandId;
         t.setAttribute("aria-selected", String(isActive));
@@ -159,7 +132,6 @@ const brands = [
         t.classList.toggle("border-dark-border", !isActive);
       });
 
-      // Update panels with crossfade
       panels.forEach((panel) => {
         const el = panel as HTMLElement;
         if (el.dataset.brand === brandId) {
@@ -175,7 +147,6 @@ const brands = [
     });
   });
 
-  // Scroll reveal
   const mfgObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {

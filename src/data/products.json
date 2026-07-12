@@ -1,0 +1,41 @@
+[
+  {
+    "id": "nokta-gold-kruzer",
+    "name": "Nokta Gold Kruzer",
+    "brand": "Nokta",
+    "price": 295000,
+    "description": "61 kHz frequency for gold prospecting at its sharpest.",
+    "image": "/images/products/nokta-gold-kruzer.png",
+    "slug": "nokta-gold-kruzer",
+    "badge": "Bestseller",
+    "specs": ["Waterproof", "61 kHz"],
+    "featured": true,
+    "category": "gold-detectors"
+  },
+  {
+    "id": "okm-exp-6000",
+    "name": "OKM eXp 6000",
+    "brand": "OKM",
+    "price": null,
+    "description": "Professional 3D ground scanner with live imaging.",
+    "image": "/images/products/okm-exp-6000.png",
+    "slug": "okm-exp-6000",
+    "badge": null,
+    "specs": ["3D Imaging", "25m Depth"],
+    "featured": true,
+    "category": "underground-imaging"
+  },
+  {
+    "id": "garrett-atx",
+    "name": "Garrett ATX",
+    "brand": "Garrett",
+    "price": 450000,
+    "description": "Military-grade pulse induction for extreme conditions.",
+    "image": "/images/products/garrett-atx.png",
+    "slug": "garrett-atx",
+    "badge": null,
+    "specs": ["PI Tech", "Military"],
+    "featured": true,
+    "category": "metal-detectors"
+  }
+]

@@ -1,53 +1,17 @@
 ---
 /**
  * FeaturedProductsSection Component
- * Light-background section with 3 curated product cards.
- * Shows spec tags, bestseller badges, and professional pricing.
+ * Light-background section with curated product cards.
+ * Reads from src/data/products.json — filters by featured: true.
  */
 import Container from "../../ui/Container.astro";
 import Button from "../../ui/Button.astro";
 import FeaturedProductsHeader from "./FeaturedProductsHeader.astro";
 import ProductCard from "./ProductCard.astro";
 
-import noktaGoldKruzerImg from "../../../assets/Nokta-Gold-Racer-4.png";
-import noktaImpactProImg from "../../../assets/Nokta_Impace_Pro.png";
-import fisherF75Img from "../../../assets/Fisher_F75.png";
+import allProducts from "../../../data/products.json";
 
-const products = [
-  {
-    id: 1,
-    name: "Nokta Gold Kruzer",
-    brand: "Nokta",
-    price: 295000,
-    description: "61 kHz frequency for gold prospecting at its sharpest.",
-    image: noktaGoldKruzerImg,
-    slug: "nokta-gold-kruzer",
-    badge: "Bestseller",
-    specs: ["Waterproof", "61 kHz"],
-  },
-  {
-    id: 2,
-    name: "OKM eXp 6000",
-    brand: "OKM",
-    price: null,
-    description: "Professional 3D ground scanner with live imaging.",
-    image: noktaImpactProImg,
-    slug: "okm-exp-6000",
-    badge: null,
-    specs: ["3D Imaging", "25m Depth"],
-  },
-  {
-    id: 3,
-    name: "Garrett ATX",
-    brand: "Garrett",
-    price: 450000,
-    description: "Military-grade pulse induction for extreme conditions.",
-    image: fisherF75Img,
-    slug: "garrett-atx",
-    badge: null,
-    specs: ["PI Tech", "Military"],
-  },
-];
+const products = allProducts.filter((p) => p.featured);
 ---
 
 <section
@@ -70,7 +34,7 @@ const products = [
       </div>
     </div>
 
-    <!-- Product Cards - Horizontal scroll on mobile, 3-col grid on desktop -->
+    <!-- Product Cards - 3-col grid on desktop -->
     <div class="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
       {products.map((product, index) => (
         <ProductCard

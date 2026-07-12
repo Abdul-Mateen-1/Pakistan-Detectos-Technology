@@ -1,34 +1,11 @@
 ---
 /**
  * HowItWorksSection Component
- * Horizontal 4-step timeline connected by gold gradient line.
- * Numbers in gold-bordered circles. Vertical on mobile.
- * Connecting line animates on scroll (draws left to right).
+ * Horizontal 4-step timeline. Reads from src/data/steps.json.
  */
 import Container from "../../ui/Container.astro";
 
-const steps = [
-  {
-    number: 1,
-    title: "Browse & Research",
-    description: "Explore products, compare specifications, read buying guides.",
-  },
-  {
-    number: 2,
-    title: "Talk to an Expert",
-    description: "WhatsApp or call our specialists for personalized advice.",
-  },
-  {
-    number: 3,
-    title: "Place Your Order",
-    description: "Secure ordering with multiple payment options available.",
-  },
-  {
-    number: 4,
-    title: "Delivery & Training",
-    description: "Nationwide delivery plus training on your new equipment.",
-  },
-];
+import steps from "../../../data/steps.json";
 ---
 
 <section
@@ -39,7 +16,6 @@ const steps = [
   <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent pointer-events-none" aria-hidden="true"></div>
 
   <Container>
-    <!-- Header -->
     <div class="text-center mb-14 lg:mb-20">
       <h2
         id="how-heading"
@@ -52,7 +28,6 @@ const steps = [
 
     <!-- Desktop: Horizontal Timeline -->
     <div class="hidden lg:block relative">
-      <!-- Connecting Line (animated) -->
       <div class="absolute top-[28px] left-[10%] right-[10%] h-[2px] bg-dark-border" aria-hidden="true">
         <div id="timeline-line" class="h-full bg-gradient-to-r from-primary via-primary-light to-primary w-0 transition-all duration-[1500ms] ease-out"></div>
       </div>
@@ -60,11 +35,9 @@ const steps = [
       <div class="grid grid-cols-4 gap-8 relative z-10">
         {steps.map((step, index) => (
           <div class="flex flex-col items-center text-center" data-reveal="up" style={`transition-delay: ${index * 100}ms;`}>
-            <!-- Number Circle -->
             <div class="w-14 h-14 rounded-full border-2 border-primary bg-dark flex items-center justify-center mb-6">
               <span class="text-lg font-bold text-primary">{step.number}</span>
             </div>
-
             <h3 class="text-base font-semibold text-text-primary">{step.title}</h3>
             <p class="mt-2 text-sm text-text-muted leading-relaxed max-w-[200px]">{step.description}</p>
           </div>
@@ -74,7 +47,6 @@ const steps = [
 
     <!-- Mobile: Vertical Timeline -->
     <div class="lg:hidden relative pl-10">
-      <!-- Vertical Line -->
       <div class="absolute left-[18px] top-0 bottom-0 w-[2px] bg-dark-border" aria-hidden="true">
         <div id="timeline-line-mobile" class="w-full bg-gradient-to-b from-primary via-primary-light to-primary h-0 transition-all duration-[1500ms] ease-out"></div>
       </div>
@@ -82,11 +54,9 @@ const steps = [
       <div class="flex flex-col gap-10">
         {steps.map((step, index) => (
           <div class="relative flex items-start gap-5" data-reveal="up" style={`transition-delay: ${index * 100}ms;`}>
-            <!-- Number Circle -->
             <div class="absolute -left-10 w-10 h-10 rounded-full border-2 border-primary bg-dark flex items-center justify-center shrink-0">
               <span class="text-sm font-bold text-primary">{step.number}</span>
             </div>
-
             <div>
               <h3 class="text-base font-semibold text-text-primary">{step.title}</h3>
               <p class="mt-1 text-sm text-text-muted leading-relaxed">{step.description}</p>
@@ -99,7 +69,6 @@ const steps = [
 </section>
 
 <script>
-  // Animate connecting line on scroll
   const howSection = document.getElementById("how-it-works");
   const timelineLine = document.getElementById("timeline-line");
   const timelineLineMobile = document.getElementById("timeline-line-mobile");
@@ -120,7 +89,6 @@ const steps = [
     lineObserver.observe(howSection);
   }
 
-  // Scroll reveal for steps
   const howObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
