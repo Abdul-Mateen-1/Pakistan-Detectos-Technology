@@ -1,0 +1,154 @@
+---
+/**
+ * LatestArticlesSection Component
+ * SEO-focused expert content section. Featured article large on left,
+ * 4 smaller articles in 2×2 grid on right. Pakistan-specific topics.
+ */
+import Container from "../../ui/Container.astro";
+import Button from "../../ui/Button.astro";
+
+const featuredArticle = {
+  title: "How to Choose the Right Gold Detector for Pakistani Terrain",
+  description: "A comprehensive guide covering frequency, soil mineralization, and terrain-specific considerations.",
+  category: "Buying Guide",
+  readTime: "8 min read",
+  slug: "choose-right-gold-detector-pakistani-terrain",
+};
+
+const articles = [
+  {
+    title: "3D Ground Scanning Explained: When to Use Imaging Systems",
+    category: "Technology",
+    readTime: "5 min read",
+    slug: "3d-ground-scanning-explained",
+  },
+  {
+    title: "Water Detection in Balochistan: Equipment and Techniques",
+    category: "Field Tips",
+    readTime: "6 min read",
+    slug: "water-detection-balochistan",
+  },
+  {
+    title: "Garrett vs. Nokta: Which Brand is Right for You?",
+    category: "Comparison",
+    readTime: "7 min read",
+    slug: "garrett-vs-nokta-comparison",
+  },
+  {
+    title: "Gold Prospecting in Northern Pakistan: A Beginner's Guide",
+    category: "Mining",
+    readTime: "10 min read",
+    slug: "gold-prospecting-northern-pakistan",
+  },
+];
+---
+
+<section
+  id="latest-articles"
+  class="relative bg-dark py-[var(--spacing-section)]"
+  aria-labelledby="articles-heading"
+>
+  <Container>
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12 lg:mb-16">
+      <div>
+        <div class="flex items-center gap-4" data-reveal="up">
+          <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+          <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
+            Expert Insights
+          </span>
+        </div>
+        <h2
+          id="articles-heading"
+          class="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-text-primary"
+          data-reveal="up"
+        >
+          Expert Insights & Guides
+        </h2>
+      </div>
+      <div class="hidden sm:block" data-reveal="up">
+        <Button variant="outline" size="md" href="/blog">
+          View All Articles
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </Button>
+      </div>
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+      <!-- Featured Article (Large) -->
+      <a
+        href={`/blog/${featuredArticle.slug}`}
+        class="group flex flex-col rounded-xl border border-dark-border bg-dark-card overflow-hidden transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_16px_rgba(197,160,68,0.08)]"
+        data-reveal="up"
+      >
+        <!-- Image Placeholder -->
+        <div class="aspect-[16/9] bg-dark-surface flex items-center justify-center">
+          <span class="text-sm text-text-muted">Article Hero Image</span>
+        </div>
+
+        <div class="p-6 lg:p-8 flex flex-col flex-1">
+          <span class="text-[10px] font-semibold uppercase tracking-wider text-primary">
+            {featuredArticle.category}
+          </span>
+          <h3 class="mt-2 font-display text-xl sm:text-2xl text-text-primary leading-tight group-hover:text-primary transition-colors duration-200">
+            {featuredArticle.title}
+          </h3>
+          <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+            {featuredArticle.description}
+          </p>
+          <span class="mt-auto pt-4 text-xs text-text-muted">{featuredArticle.readTime}</span>
+        </div>
+      </a>
+
+      <!-- 2×2 Grid of Smaller Articles -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+        {articles.map((article, index) => (
+          <a
+            href={`/blog/${article.slug}`}
+            class="group flex flex-col rounded-xl border border-dark-border bg-dark-card p-5 lg:p-6 transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_16px_rgba(197,160,68,0.08)]"
+            data-reveal="up"
+            style={`transition-delay: ${(index + 1) * 80}ms;`}
+          >
+            <span class="text-[10px] font-semibold uppercase tracking-wider text-primary">
+              {article.category}
+            </span>
+            <h3 class="mt-2 text-sm sm:text-base font-semibold text-text-primary leading-snug group-hover:text-primary transition-colors duration-200">
+              {article.title}
+            </h3>
+            <span class="mt-auto pt-3 text-xs text-text-muted">{article.readTime}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Mobile: View All -->
+    <div class="mt-8 sm:hidden flex justify-center" data-reveal="up">
+      <Button variant="outline" size="lg" href="/blog" class="w-full">
+        View All Articles
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </Button>
+    </div>
+  </Container>
+</section>
+
+<script>
+  const articlesObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          articlesObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+  document.querySelectorAll("#latest-articles [data-reveal]").forEach((el) => articlesObserver.observe(el));
+</script>

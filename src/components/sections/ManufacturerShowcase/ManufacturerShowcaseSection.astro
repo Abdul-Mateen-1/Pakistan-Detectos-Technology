@@ -1,0 +1,191 @@
+---
+/**
+ * ManufacturerShowcaseSection Component
+ * Two-column editorial layout with tab navigation for 3 flagship brands.
+ * Each tab: description, 3 key stats, CTA, product lineup image.
+ */
+import Container from "../../ui/Container.astro";
+import Button from "../../ui/Button.astro";
+
+const brands = [
+  {
+    id: "garrett",
+    name: "Garrett",
+    tagline: "American-made detectors trusted by security and prospecting professionals worldwide.",
+    description: "Since 1964, Garrett has been the gold standard in metal detection technology. From security screening at major events to professional gold prospecting, Garrett equipment is built to perform in the most demanding conditions.",
+    stats: [
+      { value: "60+", label: "Countries" },
+      { value: "50+", label: "Years" },
+      { value: "PI", label: "Technology" },
+    ],
+    slug: "garrett",
+  },
+  {
+    id: "okm",
+    name: "OKM",
+    tagline: "World leader in 3D ground scanners and geophysical instruments.",
+    description: "Trusted by mining companies and geological survey teams in over 80 countries. OKM's advanced 3D imaging technology provides real-time visualization of underground structures, cavities, and mineral deposits.",
+    stats: [
+      { value: "80+", label: "Countries" },
+      { value: "25m", label: "Max Depth" },
+      { value: "3D", label: "Live Imaging" },
+    ],
+    slug: "okm",
+  },
+  {
+    id: "minelab",
+    name: "Minelab",
+    tagline: "Australia's premier detection technology company, pioneering multi-frequency innovation.",
+    description: "Minelab detectors are the choice of professional gold prospectors, military organizations, and humanitarian demining programs. Their patented multi-frequency technology adapts to any terrain and mineralization level.",
+    stats: [
+      { value: "100+", label: "Countries" },
+      { value: "Multi", label: "Frequency" },
+      { value: "IP68", label: "Waterproof" },
+    ],
+    slug: "minelab",
+  },
+];
+---
+
+<section
+  id="manufacturer-showcase"
+  class="relative bg-dark py-[var(--spacing-section)]"
+  aria-labelledby="manufacturer-heading"
+>
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent pointer-events-none" aria-hidden="true"></div>
+
+  <Container>
+    <!-- Header -->
+    <div class="flex items-center gap-4 mb-4" data-reveal="up">
+      <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+      <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
+        Featured Manufacturer
+      </span>
+    </div>
+
+    <!-- Brand Content Area -->
+    <div class="mt-8" data-reveal="up">
+      <!-- Tab Navigation -->
+      <div class="flex items-center gap-2 mb-10 overflow-x-auto scrollbar-hide" role="tablist" aria-label="Brand selector">
+        {brands.map((brand, i) => (
+          <button
+            role="tab"
+            id={`tab-${brand.id}`}
+            aria-selected={i === 0 ? "true" : "false"}
+            aria-controls={`panel-${brand.id}`}
+            class:list={[
+              "brand-tab px-5 py-2.5 text-sm font-medium rounded-full border transition-all duration-200 whitespace-nowrap cursor-pointer",
+              i === 0
+                ? "bg-primary text-dark border-primary"
+                : "bg-transparent text-text-secondary border-dark-border hover:border-primary hover:text-primary",
+            ]}
+            data-brand={brand.id}
+          >
+            {brand.name}
+          </button>
+        ))}
+      </div>
+
+      <!-- Tab Panels -->
+      {brands.map((brand, i) => (
+        <div
+          role="tabpanel"
+          id={`panel-${brand.id}`}
+          aria-labelledby={`tab-${brand.id}`}
+          class:list={[
+            "brand-panel grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center transition-opacity duration-200",
+            i === 0 ? "" : "hidden",
+          ]}
+          data-brand={brand.id}
+        >
+          <!-- Text Column -->
+          <div>
+            <h2 id="manufacturer-heading" class="font-display text-3xl sm:text-4xl leading-tight text-text-primary">
+              {brand.name}
+            </h2>
+            <p class="mt-2 text-base text-primary font-medium">{brand.tagline}</p>
+            <p class="mt-4 text-sm sm:text-base text-text-secondary leading-relaxed">
+              {brand.description}
+            </p>
+
+            <!-- Stats -->
+            <div class="flex items-center gap-8 mt-8">
+              {brand.stats.map((stat) => (
+                <div class="flex flex-col">
+                  <span class="text-2xl sm:text-3xl font-bold text-primary">{stat.value}</span>
+                  <span class="text-xs font-medium uppercase tracking-wider text-text-muted mt-1">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+
+            <div class="mt-8">
+              <Button variant="primary" size="md" href={`/brands/${brand.slug}`}>
+                View {brand.name} Collection
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </Button>
+            </div>
+          </div>
+
+          <!-- Image Placeholder Column -->
+          <div class="aspect-[4/3] rounded-xl bg-dark-card border border-dark-border flex items-center justify-center">
+            <span class="text-sm text-text-muted">Product Lineup Image</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<script>
+  const tabs = document.querySelectorAll(".brand-tab");
+  const panels = document.querySelectorAll(".brand-panel");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const brandId = (tab as HTMLElement).dataset.brand;
+
+      // Update tabs
+      tabs.forEach((t) => {
+        const isActive = (t as HTMLElement).dataset.brand === brandId;
+        t.setAttribute("aria-selected", String(isActive));
+        t.classList.toggle("bg-primary", isActive);
+        t.classList.toggle("text-dark", isActive);
+        t.classList.toggle("border-primary", isActive);
+        t.classList.toggle("bg-transparent", !isActive);
+        t.classList.toggle("text-text-secondary", !isActive);
+        t.classList.toggle("border-dark-border", !isActive);
+      });
+
+      // Update panels with crossfade
+      panels.forEach((panel) => {
+        const el = panel as HTMLElement;
+        if (el.dataset.brand === brandId) {
+          el.classList.remove("hidden");
+          el.style.opacity = "0";
+          requestAnimationFrame(() => {
+            el.style.opacity = "1";
+          });
+        } else {
+          el.classList.add("hidden");
+        }
+      });
+    });
+  });
+
+  // Scroll reveal
+  const mfgObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          mfgObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+  document.querySelectorAll("#manufacturer-showcase [data-reveal]").forEach((el) => mfgObserver.observe(el));
+</script>

@@ -1,0 +1,129 @@
+---
+/**
+ * WhyChooseUsSection Component
+ * Light background (#F8F6F1) section with 4 trust cards.
+ * Dark icon containers with gold icons. Staggered reveal animation.
+ */
+import Container from "../../ui/Container.astro";
+
+const trustCards = [
+  {
+    icon: "check",
+    title: "Official Distributor",
+    description: "Authorized dealer for all major brands. Every product is genuine and certified.",
+  },
+  {
+    icon: "shield",
+    title: "Warranty Coverage",
+    description: "Manufacturer warranty honored in Pakistan. Local service and support.",
+  },
+  {
+    icon: "truck",
+    title: "Nationwide Delivery",
+    description: "Deliver to all major cities and remote mining locations across Pakistan.",
+  },
+  {
+    icon: "support",
+    title: "Training & Support",
+    description: "Product training, installation, and ongoing technical support included.",
+  },
+];
+---
+
+<section
+  id="why-choose-us"
+  class="relative bg-light py-[var(--spacing-section)]"
+  aria-labelledby="why-heading"
+>
+  <Container>
+    <!-- Header -->
+    <div class="text-center mb-12 lg:mb-16">
+      <div class="flex items-center gap-4 justify-center" data-reveal="up">
+        <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+        <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
+          Why Choose Us
+        </span>
+        <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+      </div>
+
+      <h2
+        id="why-heading"
+        class="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-text-dark"
+        data-reveal="up"
+      >
+        Pakistan's Trusted Detection Partner
+      </h2>
+    </div>
+
+    <!-- Trust Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      {trustCards.map((card, index) => (
+        <div
+          class="trust-card flex flex-col items-center text-center p-6 lg:p-8 rounded-xl"
+          data-reveal="up"
+          style={`transition-delay: ${index * 100}ms;`}
+        >
+          <!-- Icon Container -->
+          <div
+            class="trust-icon flex items-center justify-center w-14 h-14 rounded-xl bg-dark-card text-primary mb-5"
+            aria-hidden="true"
+          >
+            {card.icon === "check" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            )}
+            {card.icon === "shield" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            )}
+            {card.icon === "truck" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg>
+            )}
+            {card.icon === "support" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+              </svg>
+            )}
+          </div>
+
+          <h3 class="text-base font-semibold text-text-dark">{card.title}</h3>
+          <p class="mt-2 text-sm text-text-dark-muted leading-relaxed">{card.description}</p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<style>
+  .trust-icon {
+    transform: scale(0.8);
+    transition: transform 400ms ease-out;
+  }
+  :global(.trust-card.revealed) .trust-icon {
+    transform: scale(1);
+  }
+</style>
+
+<script>
+  const whyObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          whyObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+  document.querySelectorAll("#why-choose-us [data-reveal]").forEach((el) => whyObserver.observe(el));
+</script>

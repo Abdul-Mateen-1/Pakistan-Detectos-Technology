@@ -1,88 +1,203 @@
 ---
 /**
- * Hero Component
- * Main hero section with headline, description, CTAs, trust indicators,
- * and the showroom image with authorized distributor badge overlay.
+ * Hero Section — Refined
+ * Two-column layout: text content left, hero product image right.
+ * Staggered entrance animations, authorized distributor badge
+ * integrated below the product image. Responsive: image on top for mobile.
  */
 import Container from '../../ui/Container.astro';
 import Button from '../../ui/Button.astro';
 import TrustIndicators from '../TrustIndicators/TrustIndicators.astro';
 import AuthorizedBadge from '../../ui/AuthorizedBadge.astro';
-import heroImage from '../../../assets/hero_picture.png';
+import heroProduct from '../../../assets/hero_picture.png';
 ---
 
 <section
   id="hero"
-  class="relative min-h-screen flex items-center pt-[72px] overflow-hidden"
+  class="relative min-h-screen flex items-center pt-[72px] overflow-hidden bg-dark"
   aria-label="Hero section"
 >
-  <!-- Full-bleed Background Image -->
-  <img
-    src={heroImage.src}
-    alt="Gold Detector Price showroom displaying premium detection equipment"
-    width="1920"
-    height="1080"
-    class="absolute inset-0 w-full h-full object-cover"
-    loading="eager"
-    fetchpriority="high"
-  />
-
-  <!-- Dark Gradient Overlay for text readability -->
+  <!-- Subtle radial gold glow background -->
   <div
-    class="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/80 to-dark/40 pointer-events-none"
-    aria-hidden="true"
-  ></div>
-  <div
-    class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-dark/50 pointer-events-none"
+    class="absolute top-1/2 right-[20%] -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none"
     aria-hidden="true"
   ></div>
 
-  <!-- Gold corner accent (top-right) -->
-  <div class="absolute top-[88px] right-6 lg:right-12 w-20 h-20 border-t-2 border-r-2 border-primary/40 pointer-events-none z-10" aria-hidden="true"></div>
+  <!-- Gold corner accent -->
+  <div
+    class="absolute top-[88px] right-6 lg:right-12 w-20 h-20 border-t-2 border-r-2 border-primary/30 pointer-events-none z-10"
+    aria-hidden="true"
+  ></div>
 
-  <!-- Text Content -->
   <Container class="relative z-10">
-    <div class="py-16 lg:py-24 max-w-2xl">
-      <div class="flex flex-col gap-6">
-        <div class="flex items-center gap-4 animate-fade-in">
-          <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
-          <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
-            Professional Detection Equipment
-          </span>
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-12 lg:py-20">
+
+      <!-- Mobile: Product Image on Top -->
+      <div class="lg:hidden w-full flex justify-center hero-image-container">
+        <div class="relative max-w-sm w-full">
+          <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(197,160,68,0.12)_0%,transparent_70%)] pointer-events-none"
+            aria-hidden="true"
+          ></div>
+          <img
+            src={heroProduct.src}
+            alt="Professional gold detector — flagship detection equipment"
+            width="500"
+            height="500"
+            class="w-full h-auto object-contain hero-product-img"
+            loading="eager"
+            fetchpriority="high"
+          />
         </div>
+      </div>
 
-        <h1 class="font-display text-5xl sm:text-6xl lg:text-[3.75rem] xl:text-[4.25rem] font-bold leading-[1.05] tracking-tight animate-slide-up">
-          Detect What<br />Others Miss.
-        </h1>
+      <!-- Left Column: Text Content -->
+      <div class="flex-1 max-w-2xl lg:max-w-xl">
+        <div class="flex flex-col gap-6">
+          <!-- Eyebrow -->
+          <div class="flex items-center gap-4 hero-eyebrow">
+            <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+            <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
+              Professional Detection Equipment
+            </span>
+          </div>
 
-        <p class="text-sm sm:text-base text-text-secondary leading-relaxed max-w-md animate-slide-up" style="animation-delay: 0.1s;">
-          Pakistan's premier source for professional gold detectors,
-          underground imaging systems, and industrial detection
-          equipment — trusted by prospectors and mining companies worldwide.
-        </p>
+          <!-- Headline -->
+          <h1 class="font-display text-[2rem] sm:text-5xl lg:text-[3.75rem] xl:text-[4.25rem] font-normal leading-[1.05] tracking-tight hero-headline">
+            Detect What<br />Others Miss.
+          </h1>
 
-        <div class="flex flex-wrap items-center gap-4 animate-slide-up" style="animation-delay: 0.2s;">
-          <Button variant="primary" size="lg" href="/products">
-            Explore Products
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </Button>
-          <Button variant="outline" size="lg" href="/contact">
-            Contact Sales
-          </Button>
+          <!-- Body Copy -->
+          <p class="text-sm sm:text-base text-text-secondary leading-relaxed max-w-md hero-body">
+            Pakistan's premier source for professional gold detectors,
+            underground imaging systems, and industrial detection
+            equipment — trusted by prospectors and mining companies worldwide.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 hero-ctas">
+            <Button variant="primary" size="lg" href="/products">
+              Explore Products
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </Button>
+            <Button variant="outline" size="lg" href="/contact">
+              Contact Sales
+            </Button>
+          </div>
+
+          <!-- Trust Indicators -->
+          <div class="pt-4 hero-trust">
+            <TrustIndicators />
+          </div>
         </div>
+      </div>
 
-        <div class="pt-4 animate-slide-up" style="animation-delay: 0.3s;">
-          <TrustIndicators />
+      <!-- Right Column: Product Image (Desktop) -->
+      <div class="hidden lg:flex flex-1 justify-center items-center hero-image-container">
+        <div class="relative">
+          <!-- Radial gold glow behind product -->
+          <div
+            class="absolute inset-[-20%] bg-[radial-gradient(ellipse_at_center,rgba(197,160,68,0.1)_0%,transparent_70%)] pointer-events-none"
+            aria-hidden="true"
+          ></div>
+          <img
+            src={heroProduct.src}
+            alt="Professional gold detector — flagship detection equipment"
+            width="560"
+            height="560"
+            class="w-full max-w-lg h-auto object-contain relative z-10 hero-product-img"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <!-- Authorized Badge below image -->
+          <div class="mt-6 flex justify-center relative z-10">
+            <AuthorizedBadge />
+          </div>
         </div>
+      </div>
+
+      <!-- Mobile: Authorized Badge below trust indicators -->
+      <div class="lg:hidden w-full flex justify-center hero-badge-mobile">
+        <AuthorizedBadge />
       </div>
     </div>
   </Container>
-
-  <!-- Authorized Distributor Badge (bottom-right) -->
-  <div class="absolute bottom-8 right-6 lg:right-12 z-10 animate-fade-in" style="animation-delay: 0.4s;">
-    <AuthorizedBadge />
-  </div>
 </section>
+
+<style>
+  /* Staggered entrance animations */
+  .hero-eyebrow {
+    opacity: 0;
+    animation: hero-fade-up 300ms ease-out forwards;
+  }
+
+  .hero-headline {
+    opacity: 0;
+    animation: hero-fade-up 400ms ease-out 100ms forwards;
+  }
+
+  .hero-body {
+    opacity: 0;
+    animation: hero-fade-up 400ms ease-out 200ms forwards;
+  }
+
+  .hero-ctas {
+    opacity: 0;
+    animation: hero-fade-up 500ms ease-out 300ms forwards;
+  }
+
+  .hero-trust {
+    opacity: 0;
+    animation: hero-fade-up 500ms ease-out 400ms forwards;
+  }
+
+  .hero-product-img {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: hero-image-in 600ms ease-out 200ms forwards;
+  }
+
+  .hero-badge-mobile {
+    opacity: 0;
+    animation: hero-fade-up 500ms ease-out 500ms forwards;
+  }
+
+  @keyframes hero-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-image-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-eyebrow,
+    .hero-headline,
+    .hero-body,
+    .hero-ctas,
+    .hero-trust,
+    .hero-product-img,
+    .hero-badge-mobile {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  }
+</style>

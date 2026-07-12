@@ -1,0 +1,120 @@
+---
+/**
+ * ProductCategoriesSection Component
+ * Bento grid layout. Gold Detectors gets a tall 2-row card (left),
+ * other categories fill a 2×2 grid (right).
+ * Dark background (#1E1E1A).
+ */
+import Container from "../../ui/Container.astro";
+
+const primaryCategory = {
+  name: "Gold Detectors",
+  description: "Professional gold prospecting equipment for alluvial and hard-rock deposits",
+  count: 18,
+  slug: "gold-detectors",
+  icon: "⛏",
+};
+
+const categories = [
+  { name: "Metal Detectors", count: 24, slug: "metal-detectors" },
+  { name: "Underground Imaging", count: 8, slug: "underground-imaging" },
+  { name: "Long Range Locators", count: 6, slug: "long-range-locators" },
+  { name: "Water Detectors", count: 5, slug: "water-detectors" },
+];
+---
+
+<section
+  id="product-categories"
+  class="relative bg-dark-surface py-[var(--spacing-section)]"
+  aria-labelledby="categories-heading"
+>
+  <Container>
+    <!-- Header -->
+    <div class="flex items-center gap-4 justify-center mb-4" data-reveal="up">
+      <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+      <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
+        Browse by Category
+      </span>
+      <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+    </div>
+
+    <h2
+      id="categories-heading"
+      class="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-text-primary text-center mb-12 lg:mb-16"
+      data-reveal="up"
+    >
+      Find the Right Equipment
+    </h2>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
+      <!-- Primary Category: Gold Detectors (tall, spans 2 rows) -->
+      <a
+        href={`/categories/${primaryCategory.slug}`}
+        class="group lg:row-span-2 relative flex flex-col justify-end rounded-xl border border-dark-border bg-dark-card overflow-hidden min-h-[280px] lg:min-h-0 transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_16px_rgba(197,160,68,0.08)]"
+        data-reveal="up"
+        aria-label={`${primaryCategory.name} — ${primaryCategory.count} products`}
+      >
+        <!-- Dark gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-dark-card/80 to-transparent pointer-events-none" aria-hidden="true"></div>
+
+        <!-- Gold subtle accent -->
+        <div class="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full blur-[80px] pointer-events-none" aria-hidden="true"></div>
+
+        <div class="relative z-10 p-6 lg:p-8">
+          <span class="text-3xl mb-4 block" aria-hidden="true">{primaryCategory.icon}</span>
+          <h3 class="font-display text-2xl lg:text-3xl text-text-primary leading-tight">
+            {primaryCategory.name}
+          </h3>
+          <p class="mt-2 text-sm text-text-secondary leading-relaxed max-w-sm">
+            {primaryCategory.description}
+          </p>
+          <span class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:underline">
+            {primaryCategory.count} Products
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Secondary Categories (2×2 grid) -->
+      {categories.map((cat, index) => (
+        <a
+          href={`/categories/${cat.slug}`}
+          class="group relative flex flex-col justify-end rounded-xl border border-dark-border bg-dark-card overflow-hidden min-h-[140px] p-5 lg:p-6 transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_16px_rgba(197,160,68,0.08)]"
+          data-reveal="up"
+          style={`transition-delay: ${(index + 1) * 80}ms;`}
+          aria-label={`${cat.name} — ${cat.count} products`}
+        >
+          <h3 class="text-base lg:text-lg font-semibold text-text-primary leading-tight">
+            {cat.name}
+          </h3>
+          <span class="mt-2 inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:underline">
+            {cat.count} Products
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<script>
+  const catObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          catObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+  document.querySelectorAll("#product-categories [data-reveal]").forEach((el) => catObserver.observe(el));
+</script>

@@ -1,8 +1,8 @@
 ---
 /**
  * Button Component
- * Reusable button with multiple variants (primary, outline) and sizes.
- * Supports both <button> and <a> elements via the `href` prop.
+ * Reusable button with multiple variants and sizes.
+ * Supports <button> and <a> elements via the `href` prop.
  */
 
 const {
@@ -22,6 +22,12 @@ const variantStyles = {
     "bg-primary text-dark hover:bg-primary-hover active:scale-[0.98] rounded-md",
   outline:
     "bg-transparent text-text-primary border border-dark-border hover:border-primary hover:text-primary active:scale-[0.98] rounded-md",
+  "outline-light":
+    "bg-transparent text-text-dark border border-light-border hover:border-primary hover:text-primary active:scale-[0.98] rounded-md",
+  whatsapp:
+    "bg-whatsapp text-white hover:bg-whatsapp-hover active:scale-[0.98] rounded-md",
+  ghost:
+    "bg-transparent text-text-secondary hover:text-text-primary active:scale-[0.98] rounded-md",
 };
 
 const sizeStyles = {
@@ -30,7 +36,7 @@ const sizeStyles = {
   lg: "px-8 py-3.5 text-base",
 };
 
-const styles = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+const styles = `${baseStyles} ${variantStyles[variant] || variantStyles.primary} ${sizeStyles[size] || sizeStyles.md} ${className}`;
 ---
 
 {

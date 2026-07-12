@@ -1,210 +1,55 @@
 ---
 /**
  * TrustedBrandsSection Component
- * Main section wrapper that composes the header and horizontal brand carousel.
- * Defines the brand data array and handles scroll-reveal animation
- * via lightweight Intersection Observer (no external libraries).
- * The carousel supports drag-to-scroll, navigation arrows, and auto-scrolling.
+ * 4×2 grid of brand cards (not a carousel — grid shows all brands at once).
+ * Positioned before Products to establish trust first.
  */
 import Container from "../../ui/Container.astro";
 import TrustedBrandsHeader from "./TrustedBrandsHeader.astro";
 import BrandCard from "./BrandCard.astro";
 
-/* ===== Brand Data ===== */
 const brands = [
-  {
-    id: 1,
-    name: "Nokta",
-    logo: "https://www.noktadetectors.com/wp-content/uploads/2021/04/nokta-footer-logo-1.png",
-    models: 12,
-    slug: "nokta",
-  },
-  {
-    id: 2,
-    name: "GoldXtra",
-    logo: "https://goldxtra.com/wp-content/uploads/2023/11/cropped-GOLDXTRAAAALOGOOOvar-1.png",
-    models: 8,
-    slug: "goldxtra",
-  },
-  {
-    id: 3,
-    name: "Minelab",
-    logo: "https://www.minelab.com/media/logo/stores/30/minelab-logo-inverse.svg",
-    models: 15,
-    slug: "minelab",
-  },
-  {
-    id: 4,
-    name: "Garrett",
-    logo: "https://garrett.com/app/themes/garrett-unified/assets/images/Logo_Garrett.svg",
-    models: 10,
-    slug: "garrett",
-  },
+  { id: 1, name: "Garrett", logo: "https://garrett.com/app/themes/garrett-unified/assets/images/Logo_Garrett.svg", models: 10, slug: "garrett" },
+  { id: 2, name: "Nokta", logo: "https://www.noktadetectors.com/wp-content/uploads/2021/04/nokta-footer-logo-1.png", models: 12, slug: "nokta" },
+  { id: 3, name: "Minelab", logo: "https://www.minelab.com/media/logo/stores/30/minelab-logo-inverse.svg", models: 15, slug: "minelab" },
+  { id: 4, name: "OKM", logo: "/images/brands/okm-logo.svg", models: 8, slug: "okm" },
+  { id: 5, name: "Fisher", logo: "/images/brands/fisher-logo.svg", models: 6, slug: "fisher" },
+  { id: 6, name: "Teknetics", logo: "/images/brands/teknetics-logo.svg", models: 5, slug: "teknetics" },
+  { id: 7, name: "XP", logo: "/images/brands/xp-logo.svg", models: 7, slug: "xp" },
+  { id: 8, name: "GoldXtra", logo: "https://goldxtra.com/wp-content/uploads/2023/11/cropped-GOLDXTRAAAALOGOOOvar-1.png", models: 8, slug: "goldxtra" },
 ];
 ---
 
 <section
   id="trusted-brands"
-  class="relative bg-dark-surface py-[var(--spacing-section)]"
-  aria-label="Trusted brand partners"
+  class="relative bg-dark py-[var(--spacing-section)]"
+  aria-labelledby="trusted-brands-heading"
 >
-  <!-- Subtle top divider -->
-  <div
-    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent pointer-events-none"
-    aria-hidden="true"
-  >
-  </div>
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent pointer-events-none" aria-hidden="true"></div>
 
   <Container>
-    <!-- Section Header -->
     <div class="mb-12 lg:mb-16">
       <TrustedBrandsHeader />
     </div>
+
+    <!-- 4×2 Brand Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
+      {brands.map((brand, index) => (
+        <BrandCard
+          name={brand.name}
+          logo={brand.logo}
+          models={brand.models}
+          slug={brand.slug}
+          index={index}
+        />
+      ))}
+    </div>
   </Container>
 
-  <!-- Horizontal Carousel -->
-  <div class="relative" id="brands-carousel-wrapper">
-    <!-- Navigation Arrows -->
-    <button
-      id="brands-prev"
-      class="hidden lg:flex absolute left-4 xl:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center rounded-full bg-dark-card/90 border border-dark-border text-text-secondary hover:text-primary hover:border-primary transition-all duration-200 backdrop-blur-sm cursor-pointer"
-      aria-label="Scroll brands left"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polyline points="15 18 9 12 15 6"></polyline>
-      </svg>
-    </button>
-
-    <button
-      id="brands-next"
-      class="hidden lg:flex absolute right-4 xl:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center rounded-full bg-dark-card/90 border border-dark-border text-text-secondary hover:text-primary hover:border-primary transition-all duration-200 backdrop-blur-sm cursor-pointer"
-      aria-label="Scroll brands right"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg>
-    </button>
-
-    <!-- Scroll Track with left/right fade masks -->
-    <div class="relative overflow-hidden">
-      <!-- Left Fade -->
-      <div
-        class="absolute left-0 top-0 bottom-0 w-12 sm:w-20 lg:w-32 bg-gradient-to-r from-dark-surface to-transparent z-10 pointer-events-none"
-        aria-hidden="true"
-      >
-      </div>
-      <!-- Right Fade -->
-      <div
-        class="absolute right-0 top-0 bottom-0 w-12 sm:w-20 lg:w-32 bg-gradient-to-l from-dark-surface to-transparent z-10 pointer-events-none"
-        aria-hidden="true"
-      >
-      </div>
-
-      <div
-        id="brands-track"
-        class="flex gap-6 overflow-x-auto scrollbar-hide px-6 sm:px-8 lg:px-[calc((100vw-var(--container-max))/2+var(--spacing-container))] py-2 cursor-grab active:cursor-grabbing"
-        role="list"
-        aria-label="Brand cards carousel"
-      >
-        {
-          brands.map((brand, index) => (
-            <div role="listitem">
-              <BrandCard
-                name={brand.name}
-                logo={brand.logo}
-                models={brand.models}
-                slug={brand.slug}
-                index={index}
-              />
-            </div>
-          ))
-        }
-      </div>
-    </div>
-
-    <!-- Scroll Progress Indicator -->
-    <div
-      class="mt-8 flex justify-center gap-2"
-      id="brands-dots"
-      aria-hidden="true"
-    >
-      {
-        brands.map((_, index) => (
-          <button
-            class:list={[
-              "brands-dot w-2 h-2 rounded-full transition-all duration-300",
-              index === 0
-                ? "bg-primary w-6"
-                : "bg-dark-border hover:bg-text-muted",
-            ]}
-            data-index={index}
-            aria-label={`Go to brand ${index + 1}`}
-          />
-        ))
-      }
-    </div>
-  </div>
-
-  <!-- Subtle bottom divider -->
-  <div
-    class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent pointer-events-none"
-    aria-hidden="true"
-  >
-  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent pointer-events-none" aria-hidden="true"></div>
 </section>
 
-<style>
-  /* ===== Hide Scrollbar ===== */
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* ===== Scroll Reveal: Initial States ===== */
-  :global(#trusted-brands [data-reveal]) {
-    opacity: 0;
-    will-change: transform, opacity;
-  }
-
-  :global(#trusted-brands [data-reveal="up"]) {
-    transform: translateY(30px);
-  }
-
-  /* ===== Scroll Reveal: Visible State ===== */
-  :global(#trusted-brands [data-reveal].revealed) {
-    opacity: 1;
-    transform: translate(0);
-    transition:
-      opacity 700ms ease-out,
-      transform 700ms ease-out;
-  }
-</style>
-
 <script>
-  // ===== Scroll Reveal via Intersection Observer =====
   const brandsObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -216,99 +61,5 @@ const brands = [
     },
     { threshold: 0.15 },
   );
-
-  document
-    .querySelectorAll("#trusted-brands [data-reveal]")
-    .forEach((el) => brandsObserver.observe(el));
-
-  // ===== Horizontal Carousel Logic =====
-  const track = document.getElementById("brands-track") as HTMLElement;
-  const prevBtn = document.getElementById("brands-prev") as HTMLButtonElement;
-  const nextBtn = document.getElementById("brands-next") as HTMLButtonElement;
-  const dots = document.querySelectorAll(
-    ".brands-dot",
-  ) as NodeListOf<HTMLButtonElement>;
-
-  if (track && prevBtn && nextBtn) {
-    const cardWidth = 300 + 24; // card width + gap
-
-    // Arrow navigation
-    prevBtn.addEventListener("click", () => {
-      track.scrollBy({ left: -cardWidth, behavior: "smooth" });
-    });
-
-    nextBtn.addEventListener("click", () => {
-      track.scrollBy({ left: cardWidth, behavior: "smooth" });
-    });
-
-    // Dot navigation
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        const index = parseInt(dot.dataset.index || "0");
-        const cards = track.querySelectorAll("[role='listitem']");
-        if (cards[index]) {
-          (cards[index] as HTMLElement).scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "center",
-          });
-        }
-      });
-    });
-
-    // Update dots on scroll
-    track.addEventListener("scroll", () => {
-      const scrollLeft = track.scrollLeft;
-      const maxScroll = track.scrollWidth - track.clientWidth;
-      const progress = maxScroll > 0 ? scrollLeft / maxScroll : 0;
-      const activeIndex = Math.round(progress * (dots.length - 1));
-
-      dots.forEach((dot, i) => {
-        if (i === activeIndex) {
-          dot.classList.add("bg-primary", "w-6");
-          dot.classList.remove("bg-dark-border");
-        } else {
-          dot.classList.remove("bg-primary", "w-6");
-          dot.classList.add("bg-dark-border");
-        }
-      });
-
-      // Toggle arrow visibility
-      prevBtn.style.opacity = scrollLeft <= 10 ? "0.3" : "1";
-      nextBtn.style.opacity = scrollLeft >= maxScroll - 10 ? "0.3" : "1";
-    });
-
-    // ===== Drag to Scroll =====
-    let isDragging = false;
-    let startX = 0;
-    let scrollStart = 0;
-
-    track.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      startX = e.pageX - track.offsetLeft;
-      scrollStart = track.scrollLeft;
-      track.style.scrollBehavior = "auto";
-    });
-
-    track.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      const x = e.pageX - track.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      track.scrollLeft = scrollStart - walk;
-    });
-
-    track.addEventListener("mouseup", () => {
-      isDragging = false;
-      track.style.scrollBehavior = "smooth";
-    });
-
-    track.addEventListener("mouseleave", () => {
-      isDragging = false;
-      track.style.scrollBehavior = "smooth";
-    });
-
-    // Initial arrow state
-    prevBtn.style.opacity = "0.3";
-  }
+  document.querySelectorAll("#trusted-brands [data-reveal]").forEach((el) => brandsObserver.observe(el));
 </script>

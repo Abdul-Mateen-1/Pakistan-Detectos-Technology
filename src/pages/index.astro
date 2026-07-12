@@ -1,21 +1,54 @@
 ---
 /**
- * Home Page
- * Entry point of the website. Assembles the Navbar and Hero section.
+ * Home Page — Pakistan Detectors Technology
+ * Assembles all 12 homepage sections in the order specified
+ * by the design brief. Visual rhythm alternates dark/light backgrounds.
+ *
+ * Section Order:
+ * 00. Navbar (persistent)
+ * 01. Hero (dark)
+ * 02. Trusted Brands (dark)
+ * 03. Featured Products (light #F8F6F1)
+ * 04. Product Categories (dark #1E1E1A)
+ * 05. Why Choose Us (light #F8F6F1)
+ * 06. Manufacturer Showcase (dark)
+ * 07. How It Works (dark)
+ * 08. Testimonials (light #F8F6F1)
+ * 09. Company Statistics (dark)
+ * 10. Latest Articles (dark)
+ * 11. Closing CTA (dark gradient)
+ * 12. Footer (darkest #111)
  */
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/layout/Navbar.astro';
+import Footer from '../components/layout/Footer.astro';
 import Hero from '../components/sections/Hero/Hero.astro';
-import FeaturedProductsSection from '../components/sections/FeaturedProducts/FeaturedProductsSection.astro';
 import TrustedBrandsSection from '../components/sections/TrustedBrands/TrustedBrandsSection.astro';
+import FeaturedProductsSection from '../components/sections/FeaturedProducts/FeaturedProductsSection.astro';
+import ProductCategoriesSection from '../components/sections/ProductCategories/ProductCategoriesSection.astro';
+import WhyChooseUsSection from '../components/sections/WhyChooseUs/WhyChooseUsSection.astro';
+import ManufacturerShowcaseSection from '../components/sections/ManufacturerShowcase/ManufacturerShowcaseSection.astro';
+import HowItWorksSection from '../components/sections/HowItWorks/HowItWorksSection.astro';
+import TestimonialsSection from '../components/sections/Testimonials/TestimonialsSection.astro';
+import CompanyStatsSection from '../components/sections/CompanyStats/CompanyStatsSection.astro';
+import LatestArticlesSection from '../components/sections/LatestArticles/LatestArticlesSection.astro';
+import ClosingCTASection from '../components/sections/ClosingCTA/ClosingCTASection.astro';
 ---
 
 <Layout title="Home">
   <Navbar />
   <main>
     <Hero />
-    <FeaturedProductsSection />
     <TrustedBrandsSection />
+    <FeaturedProductsSection />
+    <ProductCategoriesSection />
+    <WhyChooseUsSection />
+    <ManufacturerShowcaseSection />
+    <HowItWorksSection />
+    <TestimonialsSection />
+    <CompanyStatsSection />
+    <LatestArticlesSection />
+    <ClosingCTASection />
   </main>
+  <Footer />
 </Layout>
-

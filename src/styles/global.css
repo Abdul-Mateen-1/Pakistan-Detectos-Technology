@@ -1,31 +1,42 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap');
 
 @theme {
-  /* ===== Colors ===== */
-  --color-primary: #C89B3C;
-  --color-primary-hover: #D4A948;
-  --color-primary-light: #E0BD64;
+  /* ===== Colors (Design Brief Palette) ===== */
+  --color-primary: #C5A044;
+  --color-primary-hover: #D4AF5A;
+  --color-primary-light: #E0C06A;
+  --color-primary-glow: rgba(197, 160, 68, 0.2);
 
-  --color-dark: #0F0F10;
-  --color-dark-surface: #141415;
-  --color-dark-card: #1A1A1C;
-  --color-dark-border: #2A2A2D;
+  --color-dark: #1A1A18;
+  --color-dark-deep: #111111;
+  --color-dark-surface: #1E1E1A;
+  --color-dark-card: #222222;
+  --color-dark-border: #333333;
 
-  --color-dark-shiny: #252324;
+  /* Light section palette */
+  --color-light: #F8F6F1;
+  --color-light-surface: #F0EDE6;
+  --color-light-border: #DDD9D0;
+  --color-light-card: #FFFFFF;
 
-  /* Light tokens repurposed for dark-theme section surfaces */
-  --color-light: #0F0F10;
-  --color-light-surface: #1A1A1C;
-  --color-light-border: #2A2A2D;
-
+  /* Text tokens — dark section */
   --color-text-primary: #F5F5F5;
   --color-text-secondary: #A1A1AA;
   --color-text-muted: #71717A;
 
+  /* Text tokens — light section */
+  --color-text-dark: #1A1A18;
+  --color-text-dark-secondary: #4A4A48;
+  --color-text-dark-muted: #71706C;
+
+  /* Brand / Utility */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #20BD5A;
+
   /* ===== Typography ===== */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
 
   /* ===== Spacing ===== */
   --spacing-container: 80px;
@@ -40,8 +51,10 @@
   /* ===== Shadows ===== */
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
   --shadow-card-light: 0 2px 16px rgba(0, 0, 0, 0.3);
-  --shadow-card-light-hover: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(200, 155, 60, 0.08);
-  --shadow-glow: 0 0 24px rgba(200, 155, 60, 0.2);
+  --shadow-card-light-hover: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(197, 160, 68, 0.08);
+  --shadow-gold-glow: 0 0 24px rgba(197, 160, 68, 0.2);
+  --shadow-card-light-section: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-card-light-section-hover: 0 8px 30px rgba(0, 0, 0, 0.1), 0 0 16px rgba(197, 160, 68, 0.06);
 
   /* ===== Z-index ===== */
   --z-navbar: 50;
@@ -53,43 +66,39 @@
   --container-max: 1280px;
 
   /* ===== Animations ===== */
-  --animate-fade-in: fade-in 0.6s ease-out;
-  --animate-slide-up: slide-up 0.6s ease-out;
-  --animate-slide-right: slide-right 0.5s ease-out;
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-slide-up: slide-up 0.6s ease-out forwards;
+  --animate-slide-right: slide-right 0.5s ease-out forwards;
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slide-right {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+@keyframes draw-line {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes count-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
 }
 
 /* ===== Base Styles ===== */
@@ -116,4 +125,55 @@ body {
 ::selection {
   background-color: var(--color-primary);
   color: var(--color-dark);
+}
+
+/* ===== Scroll Reveal System ===== */
+:global([data-reveal]) {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+:global([data-reveal="up"]) {
+  transform: translateY(20px);
+}
+
+:global([data-reveal="right"]) {
+  transform: translateX(-20px);
+}
+
+:global([data-reveal="left"]) {
+  transform: translateX(20px);
+}
+
+:global([data-reveal="scale"]) {
+  transform: scale(0.8);
+}
+
+:global([data-reveal].revealed) {
+  opacity: 1;
+  transform: translate(0) scale(1);
+  transition: opacity 400ms ease-out, transform 400ms ease-out;
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  :global([data-reveal]) {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===== Scrollbar Hide Utility ===== */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

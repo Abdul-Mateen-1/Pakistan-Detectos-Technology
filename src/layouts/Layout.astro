@@ -1,22 +1,23 @@
 ---
 /**
  * Base Layout
- * Provides the HTML shell, meta tags, global styles, and SEO infrastructure.
- * All pages wrap their content inside this layout.
+ * HTML shell with SEO infrastructure, meta tags, structured data,
+ * and global styles. All pages wrap content inside this layout.
  */
 import '../styles/global.css';
 
-
-
 const {
   title,
-  description = "Pakistan's premier source for professional gold detectors, underground imaging systems, and industrial detection equipment. Official distributor for Minelab, Nokta, Garrett, and OKM.",
+  description = "Pakistan's premier authorized distributor of professional gold detectors, underground imaging systems, and industrial detection equipment. Official dealer for Garrett, Nokta, Minelab, OKM, Fisher, XP, Teknetics, and GoldXtra.",
   canonicalUrl,
   ogImage = '/og-image.jpg',
 } = Astro.props;
 
-const siteName = 'Gold Detector Price';
-const fullTitle = title === 'Home' ? `${siteName} — Professional Detection Equipment` : `${title} | ${siteName}`;
+const siteName = 'Pakistan Detectors Technology';
+const shortName = 'PDT';
+const fullTitle = title === 'Home'
+  ? `${siteName} — Professional Detection Equipment in Pakistan`
+  : `${title} | ${shortName}`;
 ---
 
 <!doctype html>
@@ -33,6 +34,9 @@ const fullTitle = title === 'Home' ? `${siteName} — Professional Detection Equ
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content={siteName} />
+    <meta name="keywords" content="gold detector Pakistan, metal detector price, Minelab Pakistan, Nokta dealer, Garrett distributor, OKM ground scanner, underground imaging system, gold prospecting equipment" />
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 
     <!-- Open Graph -->
@@ -41,6 +45,7 @@ const fullTitle = title === 'Home' ? `${siteName} — Professional Detection Equ
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="en_PK" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -51,6 +56,25 @@ const fullTitle = title === 'Home' ? `${siteName} — Professional Detection Equ
     <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": siteName,
+      "url": "https://pakistandetectors.com",
+      "description": description,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Islamabad",
+        "addressCountry": "PK"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "availableLanguage": ["English", "Urdu"]
+      }
+    })} />
   </head>
   <body class="bg-dark text-text-primary font-sans antialiased">
     <slot />

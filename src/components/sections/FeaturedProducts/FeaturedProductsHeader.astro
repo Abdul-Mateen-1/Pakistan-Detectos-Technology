@@ -1,35 +1,23 @@
 ---
 /**
  * FeaturedProductsHeader Component
- * Section header with eyebrow label, main heading, and supporting paragraph.
- * Uses the same typography hierarchy established by the Hero section.
+ * Light-section header with dark text tokens.
  */
 ---
 
-<!-- Eyebrow -->
-<div class="flex items-center gap-4" data-reveal="up">
-  <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
-  <span
-    class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary"
+<div>
+  <div class="flex items-center gap-4" data-reveal="up">
+    <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+    <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
+      Featured Products
+    </span>
+  </div>
+
+  <h2
+    id="featured-heading"
+    class="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-text-dark"
+    data-reveal="up"
   >
-    Featured Gold Detectors
-  </span>
+    Our Most Popular Detectors
+  </h2>
 </div>
-
-<!-- Main Heading -->
-<h2
-  class="mt-4 font-display text-4xl sm:text-5xl font-bold leading-[1.1] tracking-tight text-text-primary"
-  data-reveal="up"
->
-  Discover Professional<br />Detection Equipment
-</h2>
-
-<!-- Supporting Description -->
-<p
-  class="mt-4 text-sm sm:text-base text-text-muted leading-relaxed max-w-lg"
-  data-reveal="right"
->
-  A curated selection of the world's most trusted gold and metal detectors
-  — chosen by prospectors, geological survey teams, and field professionals
-  worldwide.
-</p>

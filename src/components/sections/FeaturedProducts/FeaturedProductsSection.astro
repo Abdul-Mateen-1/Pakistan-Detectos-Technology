@@ -1,120 +1,118 @@
 ---
 /**
  * FeaturedProductsSection Component
- * Main section wrapper that composes the header and product grid.
- * Defines the product data array and handles scroll-reveal animation
- * via lightweight Intersection Observer (no external libraries).
+ * Light-background section with 3 curated product cards.
+ * Shows spec tags, bestseller badges, and professional pricing.
  */
 import Container from "../../ui/Container.astro";
 import Button from "../../ui/Button.astro";
 import FeaturedProductsHeader from "./FeaturedProductsHeader.astro";
-import ProductGrid from "./ProductGrid.astro";
+import ProductCard from "./ProductCard.astro";
 
-/* ===== Product Image Imports ===== */
 import noktaGoldKruzerImg from "../../../assets/Nokta-Gold-Racer-4.png";
 import noktaImpactProImg from "../../../assets/Nokta_Impace_Pro.png";
 import fisherF75Img from "../../../assets/Fisher_F75.png";
-import tekneticsT2Img from "../../../assets/Teknetics_T2.png";
-import xpDeusImg from "../../../assets/XP_DEUS.png";
-import noktaLegendImg from "../../../assets/nokta-the-legend-metal-detector.jpg";
 
-/* ===== Product Data ===== */
 const products = [
   {
     id: 1,
     name: "Nokta Gold Kruzer",
     brand: "Nokta",
     price: 295000,
-    description:
-      "High 61 kHz frequency — gold prospecting at its sharpest.",
+    description: "61 kHz frequency for gold prospecting at its sharpest.",
     image: noktaGoldKruzerImg,
     slug: "nokta-gold-kruzer",
-    featured: true,
+    badge: "Bestseller",
+    specs: ["Waterproof", "61 kHz"],
   },
   {
     id: 2,
-    name: "Nokta Impact Pro",
-    brand: "Nokta",
-    price: 320000,
-    description:
-      "Three frequencies, wireless audio, unmatched versatility in the field.",
+    name: "OKM eXp 6000",
+    brand: "OKM",
+    price: null,
+    description: "Professional 3D ground scanner with live imaging.",
     image: noktaImpactProImg,
-    slug: "nokta-impact-pro",
-    featured: false,
+    slug: "okm-exp-6000",
+    badge: null,
+    specs: ["3D Imaging", "25m Depth"],
   },
   {
     id: 3,
-    name: "Fisher F75",
-    brand: "Fisher",
-    price: 185000,
-    description:
-      "Lightning-fast response with DSP technology — a legend in relic hunting.",
+    name: "Garrett ATX",
+    brand: "Garrett",
+    price: 450000,
+    description: "Military-grade pulse induction for extreme conditions.",
     image: fisherF75Img,
-    slug: "fisher-f75",
-    featured: false,
-  },
-  {
-    id: 4,
-    name: "Teknetics T2",
-    brand: "Teknetics",
-    price: 175000,
-    description:
-      "Ultra-light design, deep detection capability, built for serious prospectors.",
-    image: tekneticsT2Img,
-    slug: "teknetics-t2",
-    featured: false,
-  },
-  {
-    id: 5,
-    name: "XP DEUS",
-    brand: "XP",
-    price: null,
-    description:
-      "Fully wireless system with remote control — the pinnacle of modern detecting.",
-    image: xpDeusImg,
-    slug: "xp-deus",
-    featured: false,
-  },
-  {
-    id: 6,
-    name: "Nokta The Legend",
-    brand: "Nokta",
-    price: 380000,
-    description:
-      "Multi-frequency waterproof detector — legendary performance on every terrain.",
-    image: noktaLegendImg,
-    slug: "nokta-the-legend",
-    featured: false,
+    slug: "garrett-atx",
+    badge: null,
+    specs: ["PI Tech", "Military"],
   },
 ];
 ---
 
 <section
   id="featured-products"
-  class="relative bg-dark py-[var(--spacing-section)]"
-  aria-label="Featured gold detectors"
+  class="relative bg-light py-[var(--spacing-section)]"
+  aria-labelledby="featured-heading"
 >
-  <!-- Subtle top divider -->
-  <div
-    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent pointer-events-none"
-    aria-hidden="true"
-  >
-  </div>
-
   <Container>
-    <!-- Section Header -->
-    <div class="mb-12 lg:mb-16">
+    <!-- Header with View All link -->
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12 lg:mb-16">
       <FeaturedProductsHeader />
+      <div class="hidden sm:block" data-reveal="up">
+        <Button variant="outline-light" size="md" href="/products">
+          View All Products
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </Button>
+      </div>
     </div>
 
-    <!-- Product Grid -->
-    <ProductGrid products={products} />
+    <!-- Product Cards - Horizontal scroll on mobile, 3-col grid on desktop -->
+    <div class="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
+      {products.map((product, index) => (
+        <ProductCard
+          name={product.name}
+          brand={product.brand}
+          price={product.price}
+          description={product.description}
+          image={product.image}
+          slug={product.slug}
+          badge={product.badge}
+          specs={product.specs}
+          index={index}
+        />
+      ))}
+    </div>
 
-    <!-- View All Products CTA -->
-    <div class="mt-12 lg:mt-16 flex justify-center">
-      <Button variant="outline" size="lg" href="/products">
+    <!-- Mobile: Horizontal scroll -->
+    <div class="md:hidden overflow-x-auto scrollbar-hide -mx-6 px-6 snap-x snap-mandatory">
+      <div class="flex gap-4" style="width: max-content;">
+        {products.map((product, index) => (
+          <div class="w-[85vw] max-w-[340px] snap-center flex-shrink-0">
+            <ProductCard
+              name={product.name}
+              brand={product.brand}
+              price={product.price}
+              description={product.description}
+              image={product.image}
+              slug={product.slug}
+              badge={product.badge}
+              specs={product.specs}
+              index={index}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Mobile: View All -->
+    <div class="mt-8 sm:hidden flex justify-center" data-reveal="up">
+      <Button variant="outline-light" size="lg" href="/products" class="w-full">
         View All Products
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <line x1="5" y1="12" x2="19" y2="12" />
           <polyline points="12 5 19 12 12 19" />
         </svg>
@@ -123,39 +121,7 @@ const products = [
   </Container>
 </section>
 
-<style>
-  /* ===== Scroll Reveal: Initial States ===== */
-  :global([data-reveal]) {
-    opacity: 0;
-    will-change: transform, opacity;
-  }
-
-  :global([data-reveal="up"]) {
-    transform: translateY(30px);
-  }
-
-  :global([data-reveal="right"]) {
-    transform: translateX(-20px);
-  }
-
-  /* ===== Scroll Reveal: Visible State ===== */
-  :global([data-reveal].revealed) {
-    opacity: 1;
-    transform: translate(0);
-    transition:
-      opacity 700ms ease-out,
-      transform 700ms ease-out;
-  }
-
-  /* Stagger delay for description */
-  :global([data-reveal="right"].revealed) {
-    transition-delay: 150ms;
-  }
-</style>
-
 <script>
-  // Lightweight scroll-reveal using Intersection Observer.
-  // Animations trigger once and never repeat.
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -167,8 +133,5 @@ const products = [
     },
     { threshold: 0.15 }
   );
-
-  document
-    .querySelectorAll("#featured-products [data-reveal]")
-    .forEach((el) => observer.observe(el));
+  document.querySelectorAll("#featured-products [data-reveal]").forEach((el) => observer.observe(el));
 </script>
