@@ -1,0 +1,53 @@
+---
+/**
+ * EmptyState Component
+ * Hidden by default. Catalog script reveals when the filtered result set is empty.
+ * Dynamic reason message populated by the script (which filters caused it).
+ * Two ways out: Clear filters (primary) + Browse all products (outline).
+ *
+ * Buttons rendered inline (not via Button.astro) to keep script access simple —
+ * styles match the primary/outline variants exactly.
+ */
+---
+
+<div
+  id="empty-state"
+  class="hidden flex-col items-center justify-center text-center py-20 px-6"
+  role="status"
+>
+  <div
+    class="w-16 h-16 rounded-full border border-dark-border flex items-center justify-center mb-6 text-text-muted"
+    aria-hidden="true"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+    </svg>
+  </div>
+
+  <h3 class="font-display text-2xl text-text-primary">No Products Found</h3>
+
+  <p
+    id="empty-reason"
+    class="mt-3 text-sm text-text-secondary leading-relaxed max-w-md"
+  >
+    No products match your current filters. Try broadening your selection or
+    clearing them to see all products.
+  </p>
+
+  <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+    <button
+      id="empty-clear"
+      type="button"
+      class="inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300 ease-out cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary bg-primary text-dark hover:bg-primary-hover active:scale-[0.98] rounded-md px-6 py-3 text-sm"
+    >
+      Clear All Filters
+    </button>
+    <a
+      href="/products"
+      class="inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300 ease-out cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary bg-transparent text-text-primary border border-dark-border hover:border-primary hover:text-primary active:scale-[0.98] rounded-md px-6 py-3 text-sm"
+    >
+      Browse All Products
+    </a>
+  </div>
+</div>

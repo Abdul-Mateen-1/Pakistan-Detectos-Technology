@@ -1,0 +1,137 @@
+---
+/**
+ * Category Route — /categories/[slug]
+ * Statically generated per category from categories.json.
+ * Pre-filter applied on load. Unique intro copy per category (not templated).
+ */
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/layout/Navbar.astro";
+import Footer from "../../components/layout/Footer.astro";
+import Container from "../../components/ui/Container.astro";
+
+import CatalogHeader from "../../components/sections/ProductCatalog/CatalogHeader.astro";
+import FilterSidebar from "../../components/sections/ProductCatalog/FilterSidebar.astro";
+import FilterDrawer from "../../components/sections/ProductCatalog/FilterDrawer.astro";
+import ActiveFilters from "../../components/sections/ProductCatalog/ActiveFilters.astro";
+import ProductGrid from "../../components/sections/ProductCatalog/ProductGrid.astro";
+import EmptyState from "../../components/sections/ProductCatalog/EmptyState.astro";
+import Pagination from "../../components/sections/ProductCatalog/Pagination.astro";
+import CatalogController from "../../components/sections/ProductCatalog/CatalogController.astro";
+
+import categoriesData from "../../data/categories.json";
+import products from "../../data/products.json";
+
+// Unique, SEO-oriented intro copy per category — NOT templated
+const categoryIntros: Record<
+  string,
+  { title: string; intro: string; metaDescription: string }
+> = {
+  "gold-detectors": {
+    title: "Gold Detectors",
+    intro:
+      "Professional gold detection equipment designed for Pakistan's varied terrain — from the alluvial deposits of Gilgit-Baltistan to the hard-rock formations of Balochistan. Browse VLF, pulse induction, and multi-frequency detectors from the world's leading manufacturers, tuned for the mineralization and depth requirements of Pakistani prospecting.",
+    metaDescription:
+      "Professional gold detectors for Pakistan — VLF, PI, and multi-frequency machines from Minelab, Nokta, Garrett, Fisher, and more. Authorized distributor with local warranty support.",
+  },
+  "metal-detectors": {
+    title: "Metal Detectors",
+    intro:
+      "General-purpose metal detectors for coin hunting, relic recovery, and beach detection. From entry-level VLF machines to flagship multi-frequency systems, our range covers every skill level and budget — with the discrimination, target ID, and waterproofing features Pakistani hobbyists and professionals rely on.",
+    metaDescription:
+      "Metal detectors in Pakistan — coin, relic, and general detection equipment from Garrett, Nokta, Minelab, XP, Fisher, and Teknetics. Full warranty and expert support.",
+  },
+  "underground-imaging": {
+    title: "Underground Imaging Systems",
+    intro:
+      "Professional 3D ground scanners for archaeologists, geological survey teams, and treasure hunters who need to see below the surface before excavating. Our imaging systems provide real-time visualization of underground structures, cavities, and mineral deposits at depths conventional detectors can't reach.",
+    metaDescription:
+      "3D underground imaging systems and ground scanners in Pakistan — OKM and professional-grade equipment for archaeology, mining, and treasure hunting.",
+  },
+  "long-range-locators": {
+    title: "Long Range Locators",
+    intro:
+      "Long-range detection systems for locating buried targets from distance. Designed for treasure hunters and prospectors working over large search areas, these locators use directional and frequency-adjustable technology to pinpoint deep targets before switching to close-range verification.",
+    metaDescription:
+      "Long-range locators for treasure hunting and deep target detection in Pakistan. Adjustable frequency and directional systems from GoldXtra and specialist manufacturers.",
+  },
+  "water-detectors": {
+    title: "Water Detectors",
+    intro:
+      "Geoelectric water detection equipment for locating groundwater, aquifers, and subsurface cavities. Essential for well-drilling operations, agricultural planning, and geological survey work in Pakistan's arid regions, our water detectors reach depths of up to 250 meters using non-metallic resistivity measurement.",
+    metaDescription:
+      "Groundwater and aquifer detection equipment in Pakistan — geoelectric water detectors from OKM for well drilling, agriculture, and geological survey applications.",
+  },
+};
+
+export async function getStaticPaths() {
+  const all = [categoriesData.primary, ...categoriesData.secondary];
+  return all.map((cat) => ({
+    params: { slug: cat.slug },
+    props: { categoryName: cat.name },
+  }));
+}
+
+const { slug } = Astro.params;
+const { categoryName } = Astro.props;
+
+const meta = categoryIntros[slug as string] ?? {
+  title: categoryName,
+  intro: `Browse our ${categoryName.toLowerCase()} collection.`,
+  metaDescription: `${categoryName} available in Pakistan from authorized distributors.`,
+};
+
+const totalCount = products.filter((p) => p.category === slug).length;
+const canonicalUrl = `https://pakistandetectors.com/categories/${slug}`;
+---
+
+<Layout
+  title={meta.title}
+  description={meta.metaDescription}
+  canonicalUrl={canonicalUrl}
+>
+  <Navbar />
+  <main>
+    <CatalogHeader
+      title={meta.title}
+      intro={meta.intro}
+      breadcrumbs={[
+        { label: "Products", href: "/products" },
+        { label: meta.title, href: `/categories/${slug}` },
+      ]}
+      totalCount={totalCount}
+    />
+    <ActiveFilters totalCount={totalCount} />
+
+    <Container class="py-10 lg:py-14">
+      <div class="flex gap-8 lg:gap-12">
+        <FilterSidebar selectedCategory={slug as string} />
+        <div class="flex-1 min-w-0">
+          <ProductGrid />
+          <EmptyState />
+          <Pagination />
+        </div>
+      </div>
+    </Container>
+
+    <FilterDrawer totalCount={totalCount} selectedCategory={slug as string} />
+    <div class="lg:hidden h-16" aria-hidden="true"></div>
+
+    <CatalogController initialCategory={slug as string} />
+  </main>
+  <Footer />
+
+  <script>
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => obs.observe(el));
+  </script>
+</Layout>

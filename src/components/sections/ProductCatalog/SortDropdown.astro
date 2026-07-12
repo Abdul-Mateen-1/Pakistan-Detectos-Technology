@@ -1,0 +1,25 @@
+---
+/**
+ * SortDropdown Component
+ * Real <select> under the hood for a11y, custom-styled to match tokens.
+ * Options: Featured, Price (Low–High), Price (High–Low), Newest, Name (A–Z).
+ */
+---
+
+<div class="relative inline-flex items-center">
+  <label for="desktop-sort" class="text-xs text-text-muted mr-2 whitespace-nowrap">
+    Sort by:
+  </label>
+  <select
+    id="desktop-sort"
+    class="appearance-none bg-dark-card border border-dark-border rounded-md py-1.5 pl-3 pr-8 text-sm font-medium text-text-primary hover:border-primary/50 focus-visible:outline-none focus-visible:border-primary transition-colors duration-200 cursor-pointer"
+    data-sort-select
+    style="background-image: url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C5A044' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>&quot;); background-repeat: no-repeat; background-position: right 0.75rem center;"
+  >
+    <option value="featured">Featured</option>
+    <option value="price-asc">Price: Low–High</option>
+    <option value="price-desc">Price: High–Low</option>
+    <option value="newest">Newest</option>
+    <option value="name-asc">Name (A–Z)</option>
+  </select>
+</div>

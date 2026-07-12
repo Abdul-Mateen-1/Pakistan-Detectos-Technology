@@ -1,0 +1,256 @@
+---
+/**
+ * FilterSidebar Component (Desktop only)
+ * Sticky left-aligned panel, w-56 → w-64 at xl.
+ * Collapsible sections (Category, Brand, Price Range) via <details>.
+ * Custom-styled checkboxes wrapping real <input type="checkbox"> for a11y.
+ * Live counts populated by catalog script on filter change.
+ * Includes toggle switch for "Include Request Quote items".
+ * Price range with PKR-prefixed inputs and dual-thumb range slider.
+ */
+import categoriesData from "../../../data/categories.json";
+import brands from "../../../data/brands.json";
+import products from "../../../data/products.json";
+
+interface Props {
+  selectedCategory?: string;
+  selectedBrand?: string;
+}
+
+const { selectedCategory, selectedBrand } = Astro.props;
+
+const allCategories = [categoriesData.primary, ...categoriesData.secondary];
+
+// Initial static counts. Live counts recomputed client-side as filters narrow.
+const categoryCounts = Object.fromEntries(
+  allCategories.map((c) => [c.slug, products.filter((p) => p.category === c.slug).length])
+);
+const brandCounts = Object.fromEntries(
+  brands.map((b) => [b.slug, products.filter((p) => p.brand === b.name).length])
+);
+
+const pricedProducts = products.filter((p) => p.price !== null);
+const minPrice = pricedProducts.length ? Math.min(...pricedProducts.map((p) => p.price as number)) : 0;
+const maxPrice = pricedProducts.length ? Math.max(...pricedProducts.map((p) => p.price as number)) : 2000000;
+---
+
+<aside class="hidden lg:block w-56 xl:w-64 shrink-0" aria-label="Product filters">
+  <div class="sticky top-[140px] max-h-[calc(100vh-160px)] overflow-y-auto scrollbar-hide pr-2">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-5">
+      <h2 class="text-lg font-semibold text-text-primary">Filters</h2>
+      <button
+        type="button"
+        data-clear-all
+        class="text-xs font-medium text-primary hover:text-primary-hover transition-colors duration-200 hidden"
+      >
+        Reset
+      </button>
+    </div>
+
+    <!-- CATEGORY -->
+    <details class="filter-group border-b border-dark-border/60 pb-4 mb-4 group" open>
+      <summary class="flex items-center justify-between cursor-pointer list-none py-2">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.15em] text-text-primary">Category</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted transition-transform duration-200 group-open:rotate-180" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </summary>
+      <div class="mt-3 flex flex-col gap-0.5">
+        {allCategories.map((cat) => (
+          <label class="filter-option flex items-center gap-3 py-1.5 px-1 rounded-md cursor-pointer group/opt min-h-[34px] hover:bg-dark-surface/50 transition-colors duration-150">
+            <input
+              type="checkbox"
+              name="category"
+              value={cat.slug}
+              checked={selectedCategory === cat.slug}
+              class="filter-checkbox peer sr-only"
+              data-filter-input
+            />
+            <span class="w-[18px] h-[18px] shrink-0 rounded border border-dark-border bg-dark-card flex items-center justify-center transition-all duration-200 peer-checked:bg-primary peer-checked:border-primary" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A1A18" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 peer-checked:opacity-100 transition-opacity duration-150">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </span>
+            <span class="flex-1 flex items-center justify-between">
+              <span class="text-sm text-text-secondary group-hover/opt:text-text-primary transition-colors duration-200">
+                {cat.name}
+              </span>
+              <span class="text-xs text-text-muted tabular-nums" data-count-category={cat.slug}>
+                {categoryCounts[cat.slug] || 0}
+              </span>
+            </span>
+          </label>
+        ))}
+      </div>
+    </details>
+
+    <!-- BRAND -->
+    <details class="filter-group border-b border-dark-border/60 pb-4 mb-4 group" open>
+      <summary class="flex items-center justify-between cursor-pointer list-none py-2">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.15em] text-text-primary">Brand</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted transition-transform duration-200 group-open:rotate-180" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </summary>
+      <div class="mt-3 flex flex-col gap-0.5">
+        {brands.map((brand) => (
+          <label class="filter-option flex items-center gap-3 py-1.5 px-1 rounded-md cursor-pointer group/opt min-h-[34px] hover:bg-dark-surface/50 transition-colors duration-150">
+            <input
+              type="checkbox"
+              name="brand"
+              value={brand.name}
+              checked={selectedBrand === brand.slug}
+              class="filter-checkbox peer sr-only"
+              data-filter-input
+            />
+            <span class="w-[18px] h-[18px] shrink-0 rounded border border-dark-border bg-dark-card flex items-center justify-center transition-all duration-200 peer-checked:bg-primary peer-checked:border-primary" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A1A18" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 peer-checked:opacity-100 transition-opacity duration-150">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </span>
+            <span class="flex-1 flex items-center justify-between">
+              <span class="text-sm text-text-secondary group-hover/opt:text-text-primary transition-colors duration-200">
+                {brand.name}
+              </span>
+              <span class="text-xs text-text-muted tabular-nums" data-count-brand={brand.slug}>
+                {brandCounts[brand.slug] || 0}
+              </span>
+            </span>
+          </label>
+        ))}
+      </div>
+    </details>
+
+    <!-- PRICE RANGE -->
+    <details class="filter-group pb-4 group" open>
+      <summary class="flex items-center justify-between cursor-pointer list-none py-2">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.15em] text-text-primary">Price Range</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted transition-transform duration-200 group-open:rotate-180" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </summary>
+      <div class="mt-4 flex flex-col gap-4">
+        <!-- Price inputs with PKR prefix -->
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="price-min" class="block text-[10px] font-semibold uppercase tracking-wider text-text-muted mb-1.5">
+              Min
+            </label>
+            <div class="relative">
+              <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-[10px] font-semibold text-text-muted">PKR</span>
+              <input
+                id="price-min"
+                type="number"
+                name="priceMin"
+                min={minPrice}
+                max={maxPrice}
+                placeholder={minPrice.toLocaleString("en-PK")}
+                class="w-full bg-dark-card border border-dark-border rounded-md pl-9 pr-2 py-2 text-sm text-text-primary placeholder:text-text-muted focus-visible:outline-none focus-visible:border-primary transition-colors duration-200"
+                data-filter-input
+              />
+            </div>
+          </div>
+          <div>
+            <label for="price-max" class="block text-[10px] font-semibold uppercase tracking-wider text-text-muted mb-1.5">
+              Max
+            </label>
+            <div class="relative">
+              <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-[10px] font-semibold text-text-muted">PKR</span>
+              <input
+                id="price-max"
+                type="number"
+                name="priceMax"
+                min={minPrice}
+                max={maxPrice}
+                placeholder={maxPrice.toLocaleString("en-PK")}
+                class="w-full bg-dark-card border border-dark-border rounded-md pl-9 pr-2 py-2 text-sm text-text-primary placeholder:text-text-muted focus-visible:outline-none focus-visible:border-primary transition-colors duration-200"
+                data-filter-input
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Range slider (visual) -->
+        <div class="px-1">
+          <input
+            id="price-range-slider"
+            type="range"
+            min={minPrice}
+            max={maxPrice}
+            value={maxPrice}
+            class="price-range-slider w-full"
+            aria-label="Price range slider"
+          />
+        </div>
+
+        <!-- Toggle: Include "Request Quote" items -->
+        <label class="flex items-center gap-3 cursor-pointer group/toggle mt-1">
+          <input
+            type="checkbox"
+            name="includeQuote"
+            value="true"
+            checked
+            class="peer sr-only"
+            data-filter-input
+          />
+          <!-- Toggle switch -->
+          <span class="relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border border-dark-border bg-dark-surface transition-colors duration-200 peer-checked:bg-primary peer-checked:border-primary" aria-hidden="true">
+            <span class="inline-block h-3.5 w-3.5 transform rounded-full bg-text-muted transition-all duration-200 mt-[2px] ml-[2px] peer-checked:translate-x-[15px] peer-checked:bg-dark"></span>
+          </span>
+          <span class="text-xs text-text-secondary leading-tight">
+            Include "Request Quote" items
+          </span>
+        </label>
+      </div>
+    </details>
+  </div>
+</aside>
+
+<style>
+  /* Custom range slider styling */
+  .price-range-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary) 100%);
+    outline: none;
+    cursor: pointer;
+  }
+  .price-range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 2px solid var(--color-dark);
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(197, 160, 68, 0.3);
+  }
+  .price-range-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 2px solid var(--color-dark);
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(197, 160, 68, 0.3);
+  }
+  .price-range-slider::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 2px;
+  }
+  .price-range-slider::-moz-range-track {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--color-dark-border);
+  }
+
+  /* Toggle switch knob movement */
+  .peer:checked ~ span > span {
+    transform: translateX(15px);
+    background-color: var(--color-dark);
+  }
+</style>

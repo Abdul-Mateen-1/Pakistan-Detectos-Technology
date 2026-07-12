@@ -1,0 +1,160 @@
+---
+/**
+ * CatalogHeader Component
+ * Breadcrumb + H1 + intro + live result count with gold dot indicator.
+ * Works for /products, /categories/[slug], /brands/[slug].
+ * Emits BreadcrumbList structured data. Mobile: horizontal scroll breadcrumb,
+ * intro clamps to 2 lines with Read more toggle.
+ */
+import Container from "../../ui/Container.astro";
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  intro: string;
+  breadcrumbs: BreadcrumbItem[];
+  totalCount: number;
+}
+
+const { title, intro, breadcrumbs, totalCount } = Astro.props;
+
+const siteUrl = "https://pakistandetectors.com";
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    ...breadcrumbs.map((crumb, i) => ({
+      "@type": "ListItem",
+      position: i + 2,
+      name: crumb.label,
+      item: `${siteUrl}${crumb.href}`,
+    })),
+  ],
+};
+---
+
+<section class="relative bg-dark pt-[calc(72px+2.5rem)] pb-5 lg:pt-[calc(72px+3.5rem)] lg:pb-8 border-b border-dark-border/60">
+  <!-- Subtle gold accent glow -->
+  <div
+    class="absolute top-[72px] right-0 w-[500px] h-[300px] bg-primary/[0.04] rounded-full blur-[120px] pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <Container>
+    <!-- Breadcrumb -->
+    <nav
+      aria-label="Breadcrumb"
+      class="mb-5 overflow-x-auto scrollbar-hide -mx-6 px-6 sm:mx-0 sm:px-0"
+      data-reveal="up"
+    >
+      <ol class="flex items-center gap-2 text-xs whitespace-nowrap" role="list">
+        <li>
+          <a
+            href="/"
+            class="text-text-muted hover:text-primary transition-colors duration-200"
+          >
+            Home
+          </a>
+        </li>
+        {breadcrumbs.map((crumb, i) => (
+          <>
+            <li aria-hidden="true" class="text-text-muted flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </li>
+            <li>
+              {i === breadcrumbs.length - 1 ? (
+                <span class="text-text-secondary font-medium" aria-current="page">
+                  {crumb.label}
+                </span>
+              ) : (
+                <a
+                  href={crumb.href}
+                  class="text-text-muted hover:text-primary transition-colors duration-200"
+                >
+                  {crumb.label}
+                </a>
+              )}
+            </li>
+          </>
+        ))}
+      </ol>
+    </nav>
+
+    <!-- H1 -->
+    <h1
+      class="font-display text-[28px] sm:text-4xl lg:text-[44px] leading-[1.1] tracking-tight text-text-primary"
+      data-reveal="up"
+    >
+      {title}
+    </h1>
+
+    <!-- Intro -->
+    <div class="mt-4 max-w-2xl" data-reveal="up">
+      <p
+        id="catalog-intro"
+        class="text-sm sm:text-[15px] text-text-secondary leading-relaxed line-clamp-2 sm:line-clamp-none"
+      >
+        {intro}
+      </p>
+      <button
+        type="button"
+        id="catalog-intro-toggle"
+        class="mt-2 text-xs font-medium text-primary hover:text-primary-hover transition-colors duration-200 sm:hidden"
+      >
+        Read more
+      </button>
+    </div>
+
+    <!-- Result count with gold dot -->
+    <div class="mt-5 flex items-center gap-2" data-reveal="up">
+      <span class="w-2 h-2 rounded-full bg-primary shrink-0" aria-hidden="true"></span>
+      <span
+        id="catalog-result-count"
+        class="text-sm font-medium text-primary"
+        data-total={totalCount}
+      >
+        {totalCount}
+      </span>
+      <span
+        id="catalog-result-noun"
+        class="text-sm text-primary"
+      >
+        {totalCount === 1 ? "product" : "products"}
+      </span>
+    </div>
+  </Container>
+
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(breadcrumbSchema)}
+  />
+</section>
+
+<script>
+  // Read more / Read less toggle for mobile intro
+  const intro = document.getElementById("catalog-intro");
+  const toggle = document.getElementById("catalog-intro-toggle");
+  if (intro && toggle) {
+    toggle.addEventListener("click", () => {
+      const clamped = intro.classList.toggle("line-clamp-2");
+      toggle.textContent = clamped ? "Read more" : "Read less";
+    });
+  }
+</script>

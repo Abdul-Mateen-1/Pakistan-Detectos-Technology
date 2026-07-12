@@ -1,0 +1,141 @@
+---
+/**
+ * Brand Route — /brands/[slug]
+ * Statically generated per brand from brands.json.
+ * Pre-filter applied on load. Unique intro copy per brand.
+ */
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/layout/Navbar.astro";
+import Footer from "../../components/layout/Footer.astro";
+import Container from "../../components/ui/Container.astro";
+
+import CatalogHeader from "../../components/sections/ProductCatalog/CatalogHeader.astro";
+import FilterSidebar from "../../components/sections/ProductCatalog/FilterSidebar.astro";
+import FilterDrawer from "../../components/sections/ProductCatalog/FilterDrawer.astro";
+import ActiveFilters from "../../components/sections/ProductCatalog/ActiveFilters.astro";
+import ProductGrid from "../../components/sections/ProductCatalog/ProductGrid.astro";
+import EmptyState from "../../components/sections/ProductCatalog/EmptyState.astro";
+import Pagination from "../../components/sections/ProductCatalog/Pagination.astro";
+import CatalogController from "../../components/sections/ProductCatalog/CatalogController.astro";
+
+import brands from "../../data/brands.json";
+import products from "../../data/products.json";
+
+const brandIntros: Record<string, { intro: string; metaDescription: string }> = {
+  garrett: {
+    intro:
+      "American-made detectors trusted by security agencies, prospectors, and hobbyists worldwide. Since 1964, Garrett has set the standard for reliability and target discrimination — from entry-level VLF machines to military-grade pulse induction systems.",
+    metaDescription:
+      "Garrett metal detectors in Pakistan — authorized distributor for the ATX, AT Max, and full Garrett range. Genuine equipment with local warranty.",
+  },
+  nokta: {
+    intro:
+      "Precision detection technology from Turkey, engineered for professionals and enthusiasts. Nokta detectors combine advanced multi-frequency IQ with rugged waterproof construction — the choice of both first-time hunters and seasoned prospectors.",
+    metaDescription:
+      "Nokta detectors in Pakistan — Gold Kruzer, Legend, Simplex Ultra, and the full Nokta range from an authorized distributor.",
+  },
+  minelab: {
+    intro:
+      "Australia's premier detection company, pioneering the multi-frequency technology that changed gold prospecting. Minelab systems are the choice of professional prospectors, military organizations, and humanitarian demining programs — engineered to adapt to any terrain and mineralization level.",
+    metaDescription:
+      "Minelab metal detectors in Pakistan — GPX 6000, Equinox 900, and the full Minelab range. Authorized distributor with local support.",
+  },
+  okm: {
+    intro:
+      "World-leading German engineering for 3D ground scanning and geophysical instruments. OKM equipment is trusted by mining companies, geological survey teams, and archaeologists in over 80 countries — delivering real-time subsurface imaging that conventional detectors can't match.",
+    metaDescription:
+      "OKM 3D ground scanners and geophysical instruments in Pakistan — eXp 6000, Rover C4, GeoSeeker, and the full OKM range.",
+  },
+  fisher: {
+    intro:
+      "One of the oldest names in metal detection, founded in 1931. Fisher's engineering-first approach produces some of the most sensitive VLF detectors on the market — particularly favored for small-gold recovery and coin hunting in mineralized ground.",
+    metaDescription:
+      "Fisher metal detectors in Pakistan — Gold Bug Pro, F22, and the full Fisher range from an authorized distributor.",
+  },
+  teknetics: {
+    intro:
+      "Value-focused detectors engineered by the same team behind Fisher. Teknetics machines are known for their fast recovery speed, clean target ID, and hobbyist-friendly ergonomics — professional-grade features at accessible price points.",
+    metaDescription:
+      "Teknetics metal detectors in Pakistan — T2 Classic and the full Teknetics range with local warranty support.",
+  },
+  xp: {
+    intro:
+      "French innovation in wireless detector design. XP detectors were the first to introduce fully wireless architecture — no cables between coil, control box, and headphones. Modular, lightweight, and updateable via firmware, they're a favorite among European relic hunters.",
+    metaDescription:
+      "XP metal detectors in Pakistan — DEUS II and the wireless XP range from an authorized distributor.",
+  },
+  goldxtra: {
+    intro:
+      "Specialist long-range locator manufacturer focused on deep-target detection over large search areas. GoldXtra systems combine directional discrimination with adjustable frequency for professional treasure hunting operations across challenging terrain.",
+    metaDescription:
+      "GoldXtra long-range locators in Pakistan — Target 2000, Deep Hunter, and the full GoldXtra range.",
+  },
+};
+
+export async function getStaticPaths() {
+  return brands.map((brand) => ({
+    params: { slug: brand.slug },
+    props: { brandName: brand.name },
+  }));
+}
+
+const { slug } = Astro.params;
+const { brandName } = Astro.props;
+
+const meta = brandIntros[slug as string] ?? {
+  intro: `Browse the ${brandName} product range from an authorized Pakistani distributor.`,
+  metaDescription: `${brandName} detectors available in Pakistan.`,
+};
+
+const title = `${brandName} Detectors`;
+const totalCount = products.filter((p) => p.brand === brandName).length;
+const canonicalUrl = `https://pakistandetectors.com/brands/${slug}`;
+---
+
+<Layout title={title} description={meta.metaDescription} canonicalUrl={canonicalUrl}>
+  <Navbar />
+  <main>
+    <CatalogHeader
+      title={title}
+      intro={meta.intro}
+      breadcrumbs={[
+        { label: "Brands", href: "/brands" },
+        { label: brandName, href: `/brands/${slug}` },
+      ]}
+      totalCount={totalCount}
+    />
+    <ActiveFilters totalCount={totalCount} />
+
+    <Container class="py-10 lg:py-14">
+      <div class="flex gap-8 lg:gap-12">
+        <FilterSidebar selectedBrand={slug as string} />
+        <div class="flex-1 min-w-0">
+          <ProductGrid />
+          <EmptyState />
+          <Pagination />
+        </div>
+      </div>
+    </Container>
+
+    <FilterDrawer totalCount={totalCount} selectedBrand={slug as string} />
+    <div class="lg:hidden h-16" aria-hidden="true"></div>
+
+    <CatalogController initialBrand={slug as string} />
+  </main>
+  <Footer />
+
+  <script>
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => obs.observe(el));
+  </script>
+</Layout>

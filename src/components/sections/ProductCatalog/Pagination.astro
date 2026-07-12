@@ -1,0 +1,74 @@
+---
+/**
+ * Pagination Component
+ * Numbered pages rendered as real <a> elements for SEO.
+ * Script rewrites the button set on filter/page changes.
+ * Long-run ellipsis, prev/next arrows, "Showing X–Y of Z products" below.
+ * Hidden entirely if total pages ≤ 1.
+ */
+---
+
+<nav
+  id="pagination"
+  class="hidden flex-col items-center gap-4 mt-12 lg:mt-16 mb-8"
+  aria-label="Product pagination"
+>
+  <ol
+    id="pagination-list"
+    class="flex items-center gap-1.5 flex-wrap justify-center"
+    role="list"
+  >
+    <!-- Buttons injected by script -->
+  </ol>
+  <p
+    id="pagination-range"
+    class="text-xs text-text-muted"
+  >
+    <!-- "Showing 1–24 of 186 products" injected by script -->
+  </p>
+</nav>
+
+<style is:global>
+  .page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-dark-border);
+    background-color: var(--color-dark-card);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: all 200ms ease-out;
+  }
+  .page-btn:hover {
+    border-color: rgba(197, 160, 68, 0.4);
+    color: var(--color-text-primary);
+  }
+  .page-btn.is-active {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border-color: var(--color-primary);
+  }
+  .page-btn.is-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .page-ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+  @media (min-width: 640px) {
+    .page-btn { min-width: 36px; height: 36px; }
+    .page-ellipsis { min-width: 36px; height: 36px; }
+  }
+</style>

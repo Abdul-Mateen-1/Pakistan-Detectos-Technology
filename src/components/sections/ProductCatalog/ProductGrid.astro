@@ -1,0 +1,61 @@
+---
+/**
+ * ProductGrid Component
+ * Renders ALL products server-side inside CatalogProductCard (dark-theme).
+ * Each card wrapped with data attributes the catalog script reads for
+ * filter/sort/pagination. Uses show/hide rather than re-render — no JS
+ * templating, no card destruction, and full SEO crawlability.
+ *
+ * Responsive: 1 / 2 / 3 columns. Gap-6.
+ */
+import CatalogProductCard from "./CatalogProductCard.astro";
+import products from "../../../data/products.json";
+---
+
+<div
+  id="product-grid"
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-200"
+  aria-live="polite"
+>
+  {products.map((product, index) => (
+    <div
+      class="product-card-wrapper"
+      data-product-id={product.id}
+      data-category={product.category}
+      data-brand={product.brand}
+      data-price={product.price ?? ""}
+      data-name={product.name}
+      data-featured={product.featured ? "true" : "false"}
+      data-date-added={(product as any).dateAdded ?? ""}
+    >
+      <CatalogProductCard
+        name={product.name}
+        brand={product.brand}
+        price={product.price}
+        description={product.description}
+        image={product.image}
+        slug={product.slug}
+        badge={product.badge}
+        specs={product.specs}
+        index={index % 6}
+      />
+    </div>
+  ))}
+</div>
+
+<style>
+  .product-card-wrapper.is-hidden-filter,
+  .product-card-wrapper.is-hidden-page {
+    display: none;
+  }
+
+  /* Fade-in stagger for filter changes */
+  #product-grid.is-refreshing .product-card-wrapper {
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+  }
+  #product-grid.is-refreshed .product-card-wrapper {
+    opacity: 1;
+    transition: opacity 200ms ease-out;
+  }
+</style>

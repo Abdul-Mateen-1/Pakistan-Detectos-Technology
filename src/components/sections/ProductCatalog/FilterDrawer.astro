@@ -1,0 +1,295 @@
+---
+/**
+ * FilterDrawer Component (Mobile only)
+ * Fixed bottom bar with Filters trigger + inline Sort.
+ * Tap "Filters" → slides up bottom-sheet (max-h: 85vh) with drag handle.
+ * Filter fields mirror FilterSidebar; changes here sync to the sidebar
+ * checkboxes and vice versa via the catalog script.
+ * Primary actions (Reset / Show X Products) sit at bottom — thumb reach.
+ */
+import categoriesData from "../../../data/categories.json";
+import brands from "../../../data/brands.json";
+import products from "../../../data/products.json";
+
+interface Props {
+  selectedCategory?: string;
+  selectedBrand?: string;
+  totalCount: number;
+}
+
+const { selectedCategory, selectedBrand, totalCount } = Astro.props;
+
+const allCategories = [categoriesData.primary, ...categoriesData.secondary];
+
+const pricedProducts = products.filter((p) => p.price !== null);
+const minPrice = pricedProducts.length ? Math.min(...pricedProducts.map((p) => p.price as number)) : 0;
+const maxPrice = pricedProducts.length ? Math.max(...pricedProducts.map((p) => p.price as number)) : 0;
+---
+
+<!-- Fixed bottom bar (mobile only) -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 z-[var(--z-dropdown)] bg-dark border-t border-dark-border">
+  <div class="flex items-stretch">
+    <button
+      type="button"
+      id="drawer-open"
+      class="flex-1 flex items-center justify-center gap-2 py-4 text-sm font-medium text-text-primary hover:bg-dark-card transition-colors duration-200 border-r border-dark-border"
+      aria-label="Open filters"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" y1="21" x2="4" y2="14" />
+        <line x1="4" y1="10" x2="4" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="12" />
+        <line x1="12" y1="8" x2="12" y2="3" />
+        <line x1="20" y1="21" x2="20" y2="16" />
+        <line x1="20" y1="12" x2="20" y2="3" />
+        <line x1="1" y1="14" x2="7" y2="14" />
+        <line x1="9" y1="8" x2="15" y2="8" />
+        <line x1="17" y1="16" x2="23" y2="16" />
+      </svg>
+      Filters
+      <span
+        id="drawer-count-badge"
+        class="hidden ml-1 min-w-[20px] h-5 px-1.5 rounded-full bg-primary text-dark text-[11px] font-bold flex items-center justify-center"
+        aria-hidden="true"
+      >0</span>
+    </button>
+
+    <div class="flex-1 flex items-center px-4">
+      <label for="mobile-sort" class="sr-only">Sort products</label>
+      <select
+        id="mobile-sort"
+        class="w-full bg-transparent text-sm text-text-primary appearance-none focus-visible:outline-none cursor-pointer pr-6"
+        data-sort-select
+        style="background-image: url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23A1A1AA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>&quot;); background-repeat: no-repeat; background-position: right 0 center;"
+      >
+        <option value="featured">Sort: Featured</option>
+        <option value="price-asc">Price: Low–High</option>
+        <option value="price-desc">Price: High–Low</option>
+        <option value="newest">Newest</option>
+        <option value="name-asc">Name (A–Z)</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Scrim -->
+<div
+  id="drawer-scrim"
+  class="lg:hidden fixed inset-0 z-[var(--z-overlay)] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300"
+  aria-hidden="true"
+></div>
+
+<!-- Bottom sheet -->
+<div
+  id="drawer-sheet"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Product filters"
+  class="lg:hidden fixed left-0 right-0 bottom-0 z-[var(--z-modal)] max-h-[85vh] bg-dark border-t border-dark-border rounded-t-2xl translate-y-full transition-transform duration-300 ease-out flex flex-col"
+>
+  <!-- Drag handle -->
+  <div class="pt-3 pb-1 flex justify-center shrink-0">
+    <div class="w-10 h-1 rounded-full bg-dark-border" aria-hidden="true"></div>
+  </div>
+
+  <!-- Header -->
+  <div class="flex items-center justify-between px-6 py-3 border-b border-dark-border/60 shrink-0">
+    <h2 class="text-base font-semibold text-text-primary">Filters</h2>
+    <button
+      type="button"
+      data-clear-all-mobile
+      class="text-xs text-text-muted hover:text-primary transition-colors duration-200"
+    >
+      Clear all
+    </button>
+  </div>
+
+  <!-- Scrollable content -->
+  <div class="flex-1 overflow-y-auto px-6 py-4">
+    <!-- CATEGORY -->
+    <details class="filter-group border-b border-dark-border/60 pb-4 mb-4 group" open>
+      <summary class="flex items-center justify-between cursor-pointer list-none py-2 min-h-[44px]">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.15em] text-text-primary">Category</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted transition-transform duration-200 group-open:rotate-180" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </summary>
+      <div class="mt-2 flex flex-col">
+        {allCategories.map((cat) => (
+          <label class="flex items-center gap-3 py-2.5 cursor-pointer min-h-[44px]">
+            <input
+              type="checkbox"
+              name="category"
+              value={cat.slug}
+              checked={selectedCategory === cat.slug}
+              class="peer sr-only"
+              data-filter-input-mobile
+            />
+            <span class="w-5 h-5 shrink-0 rounded border border-dark-border bg-dark-card flex items-center justify-center transition-all duration-200 peer-checked:bg-primary peer-checked:border-primary" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A1A18" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 peer-checked:opacity-100 transition-opacity duration-150">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </span>
+            <span class="text-sm text-text-secondary">{cat.name}</span>
+          </label>
+        ))}
+      </div>
+    </details>
+
+    <!-- BRAND -->
+    <details class="filter-group border-b border-dark-border/60 pb-4 mb-4 group" open>
+      <summary class="flex items-center justify-between cursor-pointer list-none py-2 min-h-[44px]">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.15em] text-text-primary">Brand</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted transition-transform duration-200 group-open:rotate-180" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </summary>
+      <div class="mt-2 flex flex-col">
+        {brands.map((brand) => (
+          <label class="flex items-center gap-3 py-2.5 cursor-pointer min-h-[44px]">
+            <input
+              type="checkbox"
+              name="brand"
+              value={brand.name}
+              checked={selectedBrand === brand.slug}
+              class="peer sr-only"
+              data-filter-input-mobile
+            />
+            <span class="w-5 h-5 shrink-0 rounded border border-dark-border bg-dark-card flex items-center justify-center transition-all duration-200 peer-checked:bg-primary peer-checked:border-primary" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A1A18" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 peer-checked:opacity-100 transition-opacity duration-150">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </span>
+            <span class="text-sm text-text-secondary">{brand.name}</span>
+          </label>
+        ))}
+      </div>
+    </details>
+
+    <!-- PRICE RANGE -->
+    <details class="filter-group pb-4 group" open>
+      <summary class="flex items-center justify-between cursor-pointer list-none py-2 min-h-[44px]">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.15em] text-text-primary">Price Range</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted transition-transform duration-200 group-open:rotate-180" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </summary>
+      <div class="mt-3 flex flex-col gap-4">
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="price-min-mobile" class="block text-[10px] font-semibold uppercase tracking-wider text-text-muted mb-1.5">
+              Min (PKR)
+            </label>
+            <input
+              id="price-min-mobile"
+              type="number"
+              name="priceMin"
+              min={minPrice}
+              max={maxPrice}
+              placeholder={minPrice.toLocaleString("en-PK")}
+              class="w-full bg-dark-card border border-dark-border rounded-md px-3 py-2.5 text-sm text-text-primary placeholder:text-text-muted focus-visible:outline-none focus-visible:border-primary transition-colors duration-200"
+              data-filter-input-mobile
+            />
+          </div>
+          <div>
+            <label for="price-max-mobile" class="block text-[10px] font-semibold uppercase tracking-wider text-text-muted mb-1.5">
+              Max (PKR)
+            </label>
+            <input
+              id="price-max-mobile"
+              type="number"
+              name="priceMax"
+              min={minPrice}
+              max={maxPrice}
+              placeholder={maxPrice.toLocaleString("en-PK")}
+              class="w-full bg-dark-card border border-dark-border rounded-md px-3 py-2.5 text-sm text-text-primary placeholder:text-text-muted focus-visible:outline-none focus-visible:border-primary transition-colors duration-200"
+              data-filter-input-mobile
+            />
+          </div>
+        </div>
+
+        <label class="flex items-center gap-3 cursor-pointer min-h-[44px]">
+          <input
+            type="checkbox"
+            name="includeQuote"
+            value="true"
+            checked
+            class="peer sr-only"
+            data-filter-input-mobile
+          />
+          <span class="w-5 h-5 shrink-0 rounded border border-dark-border bg-dark-card flex items-center justify-center transition-all duration-200 peer-checked:bg-primary peer-checked:border-primary" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A1A18" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 peer-checked:opacity-100 transition-opacity duration-150">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </span>
+          <span class="text-sm text-text-secondary">Include quote-only items</span>
+        </label>
+      </div>
+    </details>
+  </div>
+
+  <!-- Fixed footer actions (thumb reach) -->
+  <div class="shrink-0 grid grid-cols-2 gap-3 p-4 border-t border-dark-border/60 bg-dark">
+    <button
+      type="button"
+      id="drawer-reset"
+      class="py-3.5 rounded-md border border-dark-border text-sm font-semibold text-text-primary hover:border-primary hover:text-primary transition-all duration-200 min-h-[52px]"
+    >
+      Reset
+    </button>
+    <button
+      type="button"
+      id="drawer-apply"
+      class="py-3.5 rounded-md bg-primary text-dark text-sm font-semibold hover:bg-primary-hover transition-all duration-200 min-h-[52px]"
+    >
+      Show <span data-mobile-count>{totalCount}</span> Products
+    </button>
+  </div>
+</div>
+
+<script>
+  const openBtn = document.getElementById("drawer-open");
+  const scrim = document.getElementById("drawer-scrim");
+  const sheet = document.getElementById("drawer-sheet");
+  const applyBtn = document.getElementById("drawer-apply");
+
+  function openDrawer() {
+    if (!scrim || !sheet) return;
+    scrim.classList.remove("opacity-0", "pointer-events-none");
+    scrim.classList.add("opacity-100");
+    sheet.classList.remove("translate-y-full");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeDrawer() {
+    if (!scrim || !sheet) return;
+    scrim.classList.add("opacity-0", "pointer-events-none");
+    scrim.classList.remove("opacity-100");
+    sheet.classList.add("translate-y-full");
+    document.body.style.overflow = "";
+  }
+
+  openBtn?.addEventListener("click", openDrawer);
+  scrim?.addEventListener("click", closeDrawer);
+  applyBtn?.addEventListener("click", closeDrawer);
+
+  // Swipe down to dismiss
+  let startY = 0;
+  let currentY = 0;
+  sheet?.addEventListener("touchstart", (e: TouchEvent) => {
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+  sheet?.addEventListener("touchmove", (e: TouchEvent) => {
+    currentY = e.touches[0].clientY;
+  }, { passive: true });
+  sheet?.addEventListener("touchend", () => {
+    if (currentY - startY > 80) closeDrawer();
+    startY = 0;
+    currentY = 0;
+  });
+
+  // Escape to close
+  document.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Escape") closeDrawer();
+  });
+</script>
