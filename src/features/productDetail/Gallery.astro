@@ -1,0 +1,157 @@
+---
+/**
+ * Gallery Component (Product Detail)
+ * Main image + optional thumbnail strip. Thumbnails only render when more
+ * than one image is available — no fabricated extra angles.
+ * Client-side thumbnail switching + a simple full-screen zoom lightbox.
+ */
+interface Props {
+  name: string;
+  brand: string;
+  badge: string | null;
+  images: string[];
+}
+
+const { name, brand, badge, images } = Astro.props;
+const gallery = images.length > 0 ? images : ["/images/products/placeholder.png"];
+const hasMultiple = gallery.length > 1;
+---
+
+<div>
+  <!-- Main Image -->
+  <div class="relative rounded-xl border border-dark-border bg-dark-card overflow-hidden">
+    <span class="absolute top-4 left-4 z-10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-text-secondary bg-dark-surface rounded border border-dark-border">
+      {brand}
+    </span>
+    {badge && (
+      <span class="absolute top-4 right-4 z-10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-dark bg-primary rounded">
+        {badge}
+      </span>
+    )}
+
+    <div id="gallery-main-wrap" class="gallery-img aspect-[4/3] flex items-center justify-center bg-dark-surface overflow-hidden">
+      <img
+        id="gallery-main-image"
+        src={gallery[0]}
+        alt={`${name} by ${brand} — professional detection equipment`}
+        width="600"
+        height="450"
+        class="w-full h-full object-contain p-10 transition-opacity duration-200"
+        loading="eager"
+      />
+    </div>
+
+    <button
+      type="button"
+      id="gallery-zoom-btn"
+      class="absolute bottom-4 right-4 z-10 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-text-primary bg-dark-card/70 backdrop-blur-md rounded-md border border-dark-border/60 hover:border-primary/50 hover:text-primary transition-colors duration-200 cursor-pointer"
+      aria-haspopup="dialog"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        <line x1="11" y1="8" x2="11" y2="14" />
+        <line x1="8" y1="11" x2="14" y2="11" />
+      </svg>
+      Zoom
+    </button>
+  </div>
+
+  <!-- Thumbnails -->
+  {hasMultiple && (
+    <div class="mt-4 grid grid-cols-4 gap-3" role="list" aria-label={`${name} image gallery`}>
+      {gallery.map((img, i) => (
+        <button
+          type="button"
+          class:list={["thumb-btn relative rounded-lg border overflow-hidden bg-dark-card aspect-square transition-colors duration-200", i === 0 ? "border-primary" : "border-dark-border hover:border-primary/50"]}
+          data-src={img}
+          aria-label={`View image ${i + 1} of ${gallery.length}`}
+          aria-current={i === 0 ? "true" : "false"}
+        >
+          <img src={img} alt="" width="120" height="120" class="w-full h-full object-contain p-2" loading="lazy" />
+        </button>
+      ))}
+    </div>
+  )}
+</div>
+
+<!-- Zoom Lightbox -->
+<div
+  id="gallery-lightbox"
+  class="hidden fixed inset-0 z-[var(--z-modal)] items-center justify-center bg-black/90 backdrop-blur-sm p-6"
+  role="dialog"
+  aria-modal="true"
+  aria-label={`${name} — enlarged image`}
+>
+  <button
+    type="button"
+    id="gallery-lightbox-close"
+    class="absolute top-5 right-5 flex items-center justify-center w-10 h-10 rounded-full bg-dark-card/80 text-text-primary hover:text-primary transition-colors duration-200 cursor-pointer"
+    aria-label="Close zoomed image"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  </button>
+  <img id="gallery-lightbox-image" src={gallery[0]} alt="" class="max-w-full max-h-full object-contain rounded-lg" />
+</div>
+
+<style>
+  /* Hide broken-image alt text — show only the surface fill */
+  .gallery-img img,
+  .thumb-btn img {
+    color: transparent;
+  }
+</style>
+
+<script>
+  const mainImage = document.getElementById("gallery-main-image") as HTMLImageElement | null;
+  const lightbox = document.getElementById("gallery-lightbox");
+  const lightboxImage = document.getElementById("gallery-lightbox-image") as HTMLImageElement | null;
+  const zoomBtn = document.getElementById("gallery-zoom-btn");
+  const closeBtn = document.getElementById("gallery-lightbox-close");
+  const thumbs = document.querySelectorAll<HTMLButtonElement>(".thumb-btn");
+
+  function openLightbox() {
+    if (!lightbox || !lightboxImage || !mainImage) return;
+    lightboxImage.src = mainImage.src;
+    lightboxImage.alt = mainImage.alt;
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+    document.body.style.overflow = "";
+  }
+
+  zoomBtn?.addEventListener("click", openLightbox);
+  mainImage?.addEventListener("click", openLightbox);
+  closeBtn?.addEventListener("click", closeLightbox);
+  lightbox?.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
+
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      const src = thumb.dataset.src;
+      if (!src || !mainImage) return;
+      mainImage.style.opacity = "0";
+      setTimeout(() => {
+        mainImage.src = src;
+        mainImage.style.opacity = "1";
+      }, 120);
+      thumbs.forEach((t) => {
+        t.classList.toggle("border-primary", t === thumb);
+        t.classList.toggle("border-dark-border", t !== thumb);
+        t.setAttribute("aria-current", String(t === thumb));
+      });
+    });
+  });
+</script>

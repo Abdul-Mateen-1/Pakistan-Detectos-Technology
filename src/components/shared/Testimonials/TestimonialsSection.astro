@@ -1,0 +1,63 @@
+---
+/**
+ * TestimonialsSection Component
+ * Dark-theme testimonial cards, shared between the homepage and About
+ * page. Reads from src/data/testimonials.json. Self-contained reveal
+ * animation so it works whether or not the including page also runs its
+ * own page-wide observer (harmless if both observe the same elements).
+ */
+import Container from "../../ui/Container.astro";
+import SectionHeading from "../../ui/SectionHeading.astro";
+import testimonials from "../../../data/testimonials.json";
+
+interface Props {
+  eyebrow?: string;
+  heading: string;
+  headingId?: string;
+}
+
+const { eyebrow = "Client Testimonials", heading, headingId = "testimonials-heading" } = Astro.props;
+---
+
+<section id="testimonials" class="py-16 lg:py-20 border-t border-dark-border" aria-labelledby={headingId}>
+  <Container>
+    <SectionHeading eyebrow={eyebrow} heading={heading} align="center" theme="dark" headingId={headingId} />
+
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {testimonials.map((t, i) => (
+        <blockquote
+          class="flex flex-col bg-dark-card rounded-xl border border-dark-border p-6 lg:p-8"
+          data-reveal="up"
+          style={`transition-delay: ${i * 100}ms;`}
+        >
+          <div class="text-primary text-4xl font-display leading-none mb-3" aria-hidden="true">"</div>
+          <p class="text-sm sm:text-[15px] text-text-secondary leading-relaxed flex-1">{t.quote}</p>
+          <div class="flex items-center gap-3 mt-6 pt-5 border-t border-dark-border">
+            <div class="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center shrink-0">
+              <span class="text-xs font-bold text-primary">{t.initials}</span>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-text-primary">{t.name}</p>
+              <p class="text-xs text-text-muted">{t.title} — {t.location}</p>
+            </div>
+          </div>
+        </blockquote>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+  document.querySelectorAll("#testimonials [data-reveal]").forEach((el) => observer.observe(el));
+</script>

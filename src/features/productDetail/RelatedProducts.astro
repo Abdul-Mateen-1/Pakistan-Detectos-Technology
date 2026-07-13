@@ -1,0 +1,73 @@
+---
+/**
+ * RelatedProducts Component (Product Detail)
+ * Real, data-driven suggestions — never the mockup's illustrative examples.
+ * Priority: same category, then same brand, then any other product —
+ * always resolves to 4 real catalog items with working /products/[slug] links.
+ */
+import Container from "../../components/ui/Container.astro";
+import CatalogProductCard from "../products/ProductGrid/CatalogProductCard.astro";
+import products from "../../data/products.json";
+
+interface Props {
+  currentSlug: string;
+  category: string;
+  categorySlug: string;
+  categoryLabel: string;
+  brand: string;
+}
+
+const { currentSlug, category, categorySlug, categoryLabel, brand } = Astro.props;
+
+const sameCategory = products.filter((p) => p.category === category && p.slug !== currentSlug);
+const sameBrand = products.filter(
+  (p) => p.brand === brand && p.slug !== currentSlug && p.category !== category,
+);
+const usedSlugs = new Set([currentSlug, ...sameCategory.map((p) => p.slug), ...sameBrand.map((p) => p.slug)]);
+const rest = products.filter((p) => !usedSlugs.has(p.slug));
+
+const related = [...sameCategory, ...sameBrand, ...rest].slice(0, 4);
+---
+
+{related.length > 0 && (
+  <section class="py-16 lg:py-20 border-t border-dark-border" aria-labelledby="related-heading">
+    <Container>
+      <div class="flex items-end justify-between gap-4 flex-wrap">
+        <div data-reveal="up">
+          <div class="flex items-center gap-4">
+            <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+            <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">You May Also Like</span>
+          </div>
+          <h2 id="related-heading" class="mt-4 font-display text-3xl sm:text-4xl text-text-primary">
+            Related Products
+          </h2>
+        </div>
+        <a
+          href={`/categories/${categorySlug}`}
+          class="text-sm font-medium text-primary hover:text-primary-hover transition-colors duration-200 whitespace-nowrap"
+          data-reveal="up"
+        >
+          View All {categoryLabel} →
+        </a>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+        {related.map((p, i) => (
+          <div class="h-full" data-reveal="up" style={`transition-delay: ${i * 80}ms;`}>
+            <CatalogProductCard
+              name={p.name}
+              brand={p.brand}
+              price={p.price}
+              description={p.description}
+              image={p.image}
+              slug={p.slug}
+              badge={p.badge}
+              specs={p.specs}
+              index={i}
+            />
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+)}

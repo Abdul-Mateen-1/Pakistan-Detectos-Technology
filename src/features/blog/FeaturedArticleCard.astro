@@ -1,0 +1,73 @@
+---
+/**
+ * FeaturedArticleCard Component (Blog Index)
+ * Large 2-column pinned card for the single featured:true article.
+ * Whole-card-clickable, consistent with the site's established card pattern.
+ */
+import team from "../../data/team.json";
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  author: string;
+  readTime: string;
+  slug: string;
+  image: string | null;
+}
+
+const { title, description, category, date, author, readTime, slug, image } = Astro.props;
+const authorInitials = team.find((m) => m.name === author)?.initials ?? author.split(" ").map((w) => w[0]).join("");
+const formattedDate = new Date(date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+---
+
+<a
+  href={`/blog/${slug}`}
+  aria-label={`${title} — read article`}
+  class="group grid lg:grid-cols-2 rounded-xl border border-dark-border bg-dark-card overflow-hidden transition-all duration-[280ms] ease-out hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_16px_rgba(197,160,68,0.08)]"
+  data-reveal="up"
+>
+  <div class="relative featured-img aspect-[4/3] lg:aspect-auto bg-dark-surface flex items-center justify-center overflow-hidden">
+    <span class="absolute top-4 left-4 z-10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-dark bg-primary rounded">
+      Featured
+    </span>
+    {image ? (
+      <img src={image} alt={title} class="w-full h-full object-cover" loading="eager" />
+    ) : (
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted/40" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" />
+      </svg>
+    )}
+  </div>
+
+  <div class="p-6 lg:p-10 flex flex-col justify-center">
+    <div class="flex items-center gap-3">
+      <span class="text-[11px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded">{category}</span>
+      <span class="text-xs text-text-muted">{formattedDate}</span>
+    </div>
+    <h2 class="mt-4 font-display text-2xl sm:text-3xl leading-tight text-text-primary group-hover:text-primary transition-colors duration-200">
+      {title}
+    </h2>
+    <p class="mt-3 text-sm sm:text-[15px] text-text-secondary leading-relaxed">{description}</p>
+
+    <div class="flex items-center gap-3 mt-6">
+      <div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/15 shrink-0">
+        <span class="text-[11px] font-bold text-primary">{authorInitials}</span>
+      </div>
+      <span class="text-sm text-text-secondary">{author}</span>
+      <span class="text-text-muted" aria-hidden="true">·</span>
+      <span class="text-xs text-text-muted">{readTime}</span>
+    </div>
+
+    <span class="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:text-primary-hover transition-colors duration-200 w-fit">
+      Read Article →
+    </span>
+  </div>
+</a>
+
+<style>
+  .featured-img img {
+    color: transparent;
+  }
+</style>

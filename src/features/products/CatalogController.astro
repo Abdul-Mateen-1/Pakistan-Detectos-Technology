@@ -41,12 +41,12 @@ const initial = {
   id="catalog-data"
   type="application/json"
   set:html={JSON.stringify(productData)}
-></script>
+/>
 <script
   id="catalog-initial"
   type="application/json"
   set:html={JSON.stringify(initial)}
-></script>
+/>
 
 <script>
   // ------- Types -------
@@ -59,7 +59,8 @@ const initial = {
     featured: boolean;
     dateAdded: string | null;
   };
-  type SortKey = "featured" | "price-asc" | "price-desc" | "newest" | "name-asc";
+  type SortKey =
+    "featured" | "price-asc" | "price-desc" | "newest" | "name-asc";
 
   // ------- Data / DOM refs -------
   const products: Product[] = JSON.parse(
@@ -76,12 +77,17 @@ const initial = {
   );
   const chipsHost = document.getElementById("active-chips");
   const chipsClearAll = document.getElementById("chips-clear-all");
-  const clearAllDesktop = document.querySelector<HTMLButtonElement>("[data-clear-all]");
-  const clearAllMobile = document.querySelector<HTMLButtonElement>("[data-clear-all-mobile]");
+  const clearAllDesktop =
+    document.querySelector<HTMLButtonElement>("[data-clear-all]");
+  const clearAllMobile = document.querySelector<HTMLButtonElement>(
+    "[data-clear-all-mobile]",
+  );
   const drawerReset = document.getElementById("drawer-reset");
   const emptyClear = document.getElementById("empty-clear");
   const drawerBadge = document.getElementById("drawer-count-badge");
-  const mobileCountEls = document.querySelectorAll<HTMLElement>("[data-mobile-count]");
+  const mobileCountEls = document.querySelectorAll<HTMLElement>(
+    "[data-mobile-count]",
+  );
   const activeCountEl = document.getElementById("active-count");
   const headerCountEl = document.getElementById("catalog-result-count");
   const headerNounEl = document.getElementById("catalog-result-noun");
@@ -118,24 +124,33 @@ const initial = {
     const categoryQ = params.get("category");
     const brandQ = params.get("brand");
     selectedCategories = new Set(
-      categoryQ ? categoryQ.split(",") : initial.category ? [initial.category] : [],
+      categoryQ
+        ? categoryQ.split(",")
+        : initial.category
+          ? [initial.category]
+          : [],
     );
     // URL brands are slugs — convert to display names to match input values
     const initialBrandSlug = initial.brand;
-    const brandSlugs = brandQ ? brandQ.split(",") : initialBrandSlug ? [initialBrandSlug] : [];
-    selectedBrands = new Set(
-      brandSlugs.map((s) => brandSlugToName[s] ?? s),
-    );
+    const brandSlugs = brandQ
+      ? brandQ.split(",")
+      : initialBrandSlug
+        ? [initialBrandSlug]
+        : [];
+    selectedBrands = new Set(brandSlugs.map((s) => brandSlugToName[s] ?? s));
     priceMin = params.get("min") ? Number(params.get("min")) : null;
     priceMax = params.get("max") ? Number(params.get("max")) : null;
     includeQuote = params.get("noquote") !== "1";
     sortKey = (params.get("sort") as SortKey) || "featured";
-    currentPage = params.get("page") ? Math.max(1, Number(params.get("page"))) : 1;
+    currentPage = params.get("page")
+      ? Math.max(1, Number(params.get("page")))
+      : 1;
   }
 
   function writeUrl() {
     const params = new URLSearchParams();
-    if (selectedCategories.size) params.set("category", [...selectedCategories].join(","));
+    if (selectedCategories.size)
+      params.set("category", [...selectedCategories].join(","));
     if (selectedBrands.size) {
       const brandSlugsForUrl = [...selectedBrands].map(
         (name) => brandNameToSlug[name] ?? name.toLowerCase(),
@@ -148,25 +163,31 @@ const initial = {
     if (sortKey !== "featured") params.set("sort", sortKey);
     if (currentPage > 1) params.set("page", String(currentPage));
     const qs = params.toString();
-    const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    const newUrl = qs
+      ? `${window.location.pathname}?${qs}`
+      : window.location.pathname;
     window.history.replaceState({}, "", newUrl);
   }
 
   // ------- Sync form inputs with state -------
   function syncInputsFromState() {
     // Desktop
-    document.querySelectorAll<HTMLInputElement>(
-      "[data-filter-input][name=category]",
-    ).forEach((el) => {
-      el.checked = selectedCategories.has(el.value);
-    });
-    document.querySelectorAll<HTMLInputElement>(
-      "[data-filter-input][name=brand]",
-    ).forEach((el) => {
-      el.checked = selectedBrands.has(el.value);
-    });
-    const priceMinEl = document.getElementById("price-min") as HTMLInputElement | null;
-    const priceMaxEl = document.getElementById("price-max") as HTMLInputElement | null;
+    document
+      .querySelectorAll<HTMLInputElement>("[data-filter-input][name=category]")
+      .forEach((el) => {
+        el.checked = selectedCategories.has(el.value);
+      });
+    document
+      .querySelectorAll<HTMLInputElement>("[data-filter-input][name=brand]")
+      .forEach((el) => {
+        el.checked = selectedBrands.has(el.value);
+      });
+    const priceMinEl = document.getElementById(
+      "price-min",
+    ) as HTMLInputElement | null;
+    const priceMaxEl = document.getElementById(
+      "price-max",
+    ) as HTMLInputElement | null;
     if (priceMinEl) priceMinEl.value = priceMin != null ? String(priceMin) : "";
     if (priceMaxEl) priceMaxEl.value = priceMax != null ? String(priceMax) : "";
     const includeEl = document.querySelector<HTMLInputElement>(
@@ -175,34 +196,47 @@ const initial = {
     if (includeEl) includeEl.checked = includeQuote;
 
     // Mobile
-    document.querySelectorAll<HTMLInputElement>(
-      "[data-filter-input-mobile][name=category]",
-    ).forEach((el) => {
-      el.checked = selectedCategories.has(el.value);
-    });
-    document.querySelectorAll<HTMLInputElement>(
-      "[data-filter-input-mobile][name=brand]",
-    ).forEach((el) => {
-      el.checked = selectedBrands.has(el.value);
-    });
-    const priceMinMob = document.getElementById("price-min-mobile") as HTMLInputElement | null;
-    const priceMaxMob = document.getElementById("price-max-mobile") as HTMLInputElement | null;
-    if (priceMinMob) priceMinMob.value = priceMin != null ? String(priceMin) : "";
-    if (priceMaxMob) priceMaxMob.value = priceMax != null ? String(priceMax) : "";
+    document
+      .querySelectorAll<HTMLInputElement>(
+        "[data-filter-input-mobile][name=category]",
+      )
+      .forEach((el) => {
+        el.checked = selectedCategories.has(el.value);
+      });
+    document
+      .querySelectorAll<HTMLInputElement>(
+        "[data-filter-input-mobile][name=brand]",
+      )
+      .forEach((el) => {
+        el.checked = selectedBrands.has(el.value);
+      });
+    const priceMinMob = document.getElementById(
+      "price-min-mobile",
+    ) as HTMLInputElement | null;
+    const priceMaxMob = document.getElementById(
+      "price-max-mobile",
+    ) as HTMLInputElement | null;
+    if (priceMinMob)
+      priceMinMob.value = priceMin != null ? String(priceMin) : "";
+    if (priceMaxMob)
+      priceMaxMob.value = priceMax != null ? String(priceMax) : "";
     const includeMob = document.querySelector<HTMLInputElement>(
       "[data-filter-input-mobile][name=includeQuote]",
     );
     if (includeMob) includeMob.checked = includeQuote;
 
     // Sort selects
-    document.querySelectorAll<HTMLSelectElement>("[data-sort-select]").forEach((sel) => {
-      sel.value = sortKey;
-    });
+    document
+      .querySelectorAll<HTMLSelectElement>("[data-sort-select]")
+      .forEach((sel) => {
+        sel.value = sortKey;
+      });
   }
 
   // ------- Filtering / sorting -------
   function matchesFilters(p: Product): boolean {
-    if (selectedCategories.size && !selectedCategories.has(p.category)) return false;
+    if (selectedCategories.size && !selectedCategories.has(p.category))
+      return false;
     if (selectedBrands.size && !selectedBrands.has(p.brand)) return false;
     if (p.price == null) {
       if (!includeQuote) return false;
@@ -257,7 +291,10 @@ const initial = {
         const id = w.dataset.productId!;
         const passesFilter = matchedIds.includes(id);
         w.classList.toggle("is-hidden-filter", !passesFilter);
-        w.classList.toggle("is-hidden-page", passesFilter && !visibleIds.has(id));
+        w.classList.toggle(
+          "is-hidden-page",
+          passesFilter && !visibleIds.has(id),
+        );
       });
       // Reorder in DOM per sort
       if (grid) {
@@ -296,7 +333,8 @@ const initial = {
 
   function updateCounts(total: number) {
     if (headerCountEl) headerCountEl.textContent = String(total);
-    if (headerNounEl) headerNounEl.textContent = total === 1 ? "product" : "products";
+    if (headerNounEl)
+      headerNounEl.textContent = total === 1 ? "product" : "products";
     if (activeCountEl) activeCountEl.textContent = String(total);
     mobileCountEls.forEach((el) => (el.textContent = String(total)));
 
@@ -317,35 +355,40 @@ const initial = {
 
   function updateLiveCounts(matchedIds: string[]) {
     // Count how many pass all *other* filters for each category / brand option
-    document.querySelectorAll<HTMLElement>("[data-count-category]").forEach((el) => {
-      const slug = el.dataset.countCategory!;
-      const count = products.filter((p) => {
-        if (p.category !== slug) return false;
-        if (selectedBrands.size && !selectedBrands.has(p.brand)) return false;
-        if (p.price == null) return includeQuote;
-        if (priceMin != null && p.price < priceMin) return false;
-        if (priceMax != null && p.price > priceMax) return false;
-        return true;
-      }).length;
-      el.textContent = String(count);
-    });
-    document.querySelectorAll<HTMLElement>("[data-count-brand]").forEach((el) => {
-      const slug = el.dataset.countBrand!;
-      const brandName = brandSlugToName[slug];
-      if (!brandName) {
-        el.textContent = "0";
-        return;
-      }
-      const count = products.filter((p) => {
-        if (p.brand !== brandName) return false;
-        if (selectedCategories.size && !selectedCategories.has(p.category)) return false;
-        if (p.price == null) return includeQuote;
-        if (priceMin != null && p.price < priceMin) return false;
-        if (priceMax != null && p.price > priceMax) return false;
-        return true;
-      }).length;
-      el.textContent = String(count);
-    });
+    document
+      .querySelectorAll<HTMLElement>("[data-count-category]")
+      .forEach((el) => {
+        const slug = el.dataset.countCategory!;
+        const count = products.filter((p) => {
+          if (p.category !== slug) return false;
+          if (selectedBrands.size && !selectedBrands.has(p.brand)) return false;
+          if (p.price == null) return includeQuote;
+          if (priceMin != null && p.price < priceMin) return false;
+          if (priceMax != null && p.price > priceMax) return false;
+          return true;
+        }).length;
+        el.textContent = String(count);
+      });
+    document
+      .querySelectorAll<HTMLElement>("[data-count-brand]")
+      .forEach((el) => {
+        const slug = el.dataset.countBrand!;
+        const brandName = brandSlugToName[slug];
+        if (!brandName) {
+          el.textContent = "0";
+          return;
+        }
+        const count = products.filter((p) => {
+          if (p.brand !== brandName) return false;
+          if (selectedCategories.size && !selectedCategories.has(p.category))
+            return false;
+          if (p.price == null) return includeQuote;
+          if (priceMin != null && p.price < priceMin) return false;
+          if (priceMax != null && p.price > priceMax) return false;
+          return true;
+        }).length;
+        el.textContent = String(count);
+      });
   }
 
   function buildEmptyReason(): string {
@@ -355,8 +398,10 @@ const initial = {
     }
     if (selectedBrands.size) parts.push([...selectedBrands].join(" + "));
     if (priceMin != null || priceMax != null) {
-      const min = priceMin != null ? `PKR ${priceMin.toLocaleString("en-PK")}` : "any";
-      const max = priceMax != null ? `PKR ${priceMax.toLocaleString("en-PK")}` : "any";
+      const min =
+        priceMin != null ? `PKR ${priceMin.toLocaleString("en-PK")}` : "any";
+      const max =
+        priceMax != null ? `PKR ${priceMax.toLocaleString("en-PK")}` : "any";
       parts.push(`${min}–${max}`);
     }
     if (!parts.length) return "No products found. Try adjusting your filters.";
@@ -364,7 +409,10 @@ const initial = {
   }
 
   function slugToLabel(slug: string): string {
-    return slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
+    return slug
+      .split("-")
+      .map((w) => w[0].toUpperCase() + w.slice(1))
+      .join(" ");
   }
 
   // ------- Chips -------
@@ -398,8 +446,10 @@ const initial = {
       });
     });
     if (priceMin != null || priceMax != null) {
-      const min = priceMin != null ? `PKR ${(priceMin / 1000).toFixed(0)}K` : "any";
-      const max = priceMax != null ? `PKR ${(priceMax / 1000).toFixed(0)}K` : "any";
+      const min =
+        priceMin != null ? `PKR ${(priceMin / 1000).toFixed(0)}K` : "any";
+      const max =
+        priceMax != null ? `PKR ${(priceMax / 1000).toFixed(0)}K` : "any";
       chips.push({
         key: "price",
         label: `${min}–${max}`,
@@ -458,9 +508,8 @@ const initial = {
       paginationList.classList.add("hidden");
       const startIdx = 1;
       const endIdx = total;
-      paginationRange.textContent = total > 0
-        ? `Showing ${startIdx}–${endIdx} of ${total} products`
-        : "";
+      paginationRange.textContent =
+        total > 0 ? `Showing ${startIdx}–${endIdx} of ${total} products` : "";
       return;
     }
     paginationList.classList.remove("hidden");
@@ -473,7 +522,11 @@ const initial = {
 
     const isMobile = window.matchMedia("(max-width: 640px)").matches;
 
-    const addBtn = (label: string, page: number, opts: { active?: boolean; disabled?: boolean; ariaLabel?: string } = {}) => {
+    const addBtn = (
+      label: string,
+      page: number,
+      opts: { active?: boolean; disabled?: boolean; ariaLabel?: string } = {},
+    ) => {
       const li = document.createElement("li");
       const a = document.createElement("a");
       a.className = "page-btn";
@@ -484,7 +537,9 @@ const initial = {
       if (page > 1) params.set("page", String(page));
       else params.delete("page");
       const qs = params.toString();
-      a.href = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+      a.href = qs
+        ? `${window.location.pathname}?${qs}`
+        : window.location.pathname;
       if (opts.ariaLabel) a.setAttribute("aria-label", opts.ariaLabel);
       if (opts.active) a.setAttribute("aria-current", "page");
       a.addEventListener("click", (e) => {
@@ -522,7 +577,10 @@ const initial = {
         addBtn(String(currentPage), currentPage, { active: true });
       }
       if (currentPage < totalPages - 1) addEllipsis();
-      if (totalPages > 1) addBtn(String(totalPages), totalPages, { active: currentPage === totalPages });
+      if (totalPages > 1)
+        addBtn(String(totalPages), totalPages, {
+          active: currentPage === totalPages,
+        });
     } else {
       const pages: (number | "…")[] = [];
       if (totalPages <= 7) {
@@ -551,47 +609,66 @@ const initial = {
 
   // ------- Event wiring -------
   function readFromInputs(scope: "desktop" | "mobile") {
-    const selCategory = scope === "desktop" ? "[data-filter-input]" : "[data-filter-input-mobile]";
-    document.querySelectorAll<HTMLInputElement>(`${selCategory}[name=category]`).forEach((el) => {
-      if (el.checked) selectedCategories.add(el.value);
-      else selectedCategories.delete(el.value);
-    });
-    document.querySelectorAll<HTMLInputElement>(`${selCategory}[name=brand]`).forEach((el) => {
-      if (el.checked) selectedBrands.add(el.value);
-      else selectedBrands.delete(el.value);
-    });
-    const minEl = document.getElementById(scope === "desktop" ? "price-min" : "price-min-mobile") as HTMLInputElement | null;
-    const maxEl = document.getElementById(scope === "desktop" ? "price-max" : "price-max-mobile") as HTMLInputElement | null;
+    const selCategory =
+      scope === "desktop"
+        ? "[data-filter-input]"
+        : "[data-filter-input-mobile]";
+    document
+      .querySelectorAll<HTMLInputElement>(`${selCategory}[name=category]`)
+      .forEach((el) => {
+        if (el.checked) selectedCategories.add(el.value);
+        else selectedCategories.delete(el.value);
+      });
+    document
+      .querySelectorAll<HTMLInputElement>(`${selCategory}[name=brand]`)
+      .forEach((el) => {
+        if (el.checked) selectedBrands.add(el.value);
+        else selectedBrands.delete(el.value);
+      });
+    const minEl = document.getElementById(
+      scope === "desktop" ? "price-min" : "price-min-mobile",
+    ) as HTMLInputElement | null;
+    const maxEl = document.getElementById(
+      scope === "desktop" ? "price-max" : "price-max-mobile",
+    ) as HTMLInputElement | null;
     priceMin = minEl?.value ? Number(minEl.value) : null;
     priceMax = maxEl?.value ? Number(maxEl.value) : null;
-    const includeEl = document.querySelector<HTMLInputElement>(`${selCategory}[name=includeQuote]`);
+    const includeEl = document.querySelector<HTMLInputElement>(
+      `${selCategory}[name=includeQuote]`,
+    );
     includeQuote = includeEl ? includeEl.checked : true;
   }
 
-  document.querySelectorAll<HTMLInputElement>("[data-filter-input]").forEach((el) => {
-    el.addEventListener("change", () => {
-      readFromInputs("desktop");
-      currentPage = 1;
-      syncInputsFromState();
-      render();
+  document
+    .querySelectorAll<HTMLInputElement>("[data-filter-input]")
+    .forEach((el) => {
+      el.addEventListener("change", () => {
+        readFromInputs("desktop");
+        currentPage = 1;
+        syncInputsFromState();
+        render();
+      });
     });
-  });
-  document.querySelectorAll<HTMLInputElement>("[data-filter-input-mobile]").forEach((el) => {
-    el.addEventListener("change", () => {
-      readFromInputs("mobile");
-      currentPage = 1;
-      syncInputsFromState();
-      render();
+  document
+    .querySelectorAll<HTMLInputElement>("[data-filter-input-mobile]")
+    .forEach((el) => {
+      el.addEventListener("change", () => {
+        readFromInputs("mobile");
+        currentPage = 1;
+        syncInputsFromState();
+        render();
+      });
     });
-  });
-  document.querySelectorAll<HTMLSelectElement>("[data-sort-select]").forEach((sel) => {
-    sel.addEventListener("change", () => {
-      sortKey = sel.value as SortKey;
-      currentPage = 1;
-      syncInputsFromState();
-      render();
+  document
+    .querySelectorAll<HTMLSelectElement>("[data-sort-select]")
+    .forEach((sel) => {
+      sel.addEventListener("change", () => {
+        sortKey = sel.value as SortKey;
+        currentPage = 1;
+        syncInputsFromState();
+        render();
+      });
     });
-  });
 
   function clearAll() {
     selectedCategories.clear();

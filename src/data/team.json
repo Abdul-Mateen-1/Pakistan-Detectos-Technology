@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Ali Hassan",
+    "initials": "AH",
+    "role": "Founder & CEO",
+    "bio": "15+ years in detection technology. Certified trainer for Garrett, Nokta, and OKM equipment."
+  },
+  {
+    "name": "Farhan Khan",
+    "initials": "FK",
+    "role": "Technical Director",
+    "bio": "Geophysics background. Specializes in 3D ground scanning systems and survey equipment configuration."
+  },
+  {
+    "name": "Rashid Ahmed",
+    "initials": "RA",
+    "role": "Sales Manager",
+    "bio": "Expert in matching customers with the right equipment. Manages government and corporate accounts."
+  },
+  {
+    "name": "Zain Malik",
+    "initials": "ZM",
+    "role": "Field Support Engineer",
+    "bio": "Handles installation, on-site training, warranty repairs, and after-sales technical support."
+  }
+]

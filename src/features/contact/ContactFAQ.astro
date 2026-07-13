@@ -1,0 +1,69 @@
+---
+/**
+ * ContactFAQ Component (Contact Page)
+ * 6-item accordion, first item open by default (native details/summary,
+ * same pattern as ProductTabs' FAQ panel and Footer's mobile accordion).
+ */
+import Container from "../../components/ui/Container.astro";
+import SectionHeading from "../../components/ui/SectionHeading.astro";
+
+const faq = [
+  {
+    question: "Do you ship to all cities in Pakistan?",
+    answer:
+      "Yes. We deliver to all major cities and towns across Pakistan through insured courier services. For remote mining locations, we arrange special delivery. Deliveries to Afghanistan can also be arranged on request — contact us for details.",
+  },
+  {
+    question: "Are your products genuine and under warranty?",
+    answer:
+      "Yes. We are an authorized distributor for every brand we carry, and every product includes full manufacturer warranty coverage — honored locally through our service center.",
+  },
+  {
+    question: "Do you provide training on how to use the equipment?",
+    answer:
+      "Yes, every purchase includes a free training session, either in person at our Islamabad office or over a video call, covering setup and field operation for your specific equipment.",
+  },
+  {
+    question: "Can I visit your showroom to see products in person?",
+    answer:
+      "Yes, by appointment. Contact us via WhatsApp or phone to schedule a visit, and we'll arrange a time to show you the equipment in person.",
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer:
+      "We accept bank transfer, major cards, and cash on delivery in select cities. For bulk or institutional orders, we also accommodate purchase orders and invoicing.",
+  },
+  {
+    question: "Do you offer bulk pricing for organizations?",
+    answer:
+      "Yes. Mining companies, survey teams, and government organizations purchasing multiple units can request bulk pricing — reach out via the form or WhatsApp for a custom quote.",
+  },
+];
+---
+
+<section class="py-16 lg:py-20 bg-dark-surface" aria-labelledby="contact-faq-heading">
+  <Container>
+    <SectionHeading
+      eyebrow="Common Questions"
+      heading="Frequently Asked Questions"
+      align="center"
+      theme="dark"
+      headingId="contact-faq-heading"
+    />
+
+    <div class="mt-10 max-w-3xl mx-auto" data-reveal="up">
+      {faq.map((item, i) => (
+        <details class="faq-item border-b border-dark-border group" open={i === 0}>
+          <summary class="flex items-center justify-between gap-4 py-5 text-base font-semibold text-text-primary cursor-pointer list-none">
+            {item.question}
+            <span class="relative flex items-center justify-center w-6 h-6 rounded-md bg-dark-card border border-dark-border shrink-0 text-text-muted" aria-hidden="true">
+              <span class="absolute w-2.5 h-[1.5px] bg-current"></span>
+              <span class="absolute w-[1.5px] h-2.5 bg-current transition-transform duration-200 group-open:scale-y-0"></span>
+            </span>
+          </summary>
+          <p class="pb-5 text-sm text-text-secondary leading-relaxed pr-10">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </Container>
+</section>

@@ -12,6 +12,8 @@ const {
   class: className = "",
   ariaLabel,
   type = "button",
+  target,
+  rel,
 } = Astro.props;
 
 const baseStyles =
@@ -41,7 +43,7 @@ const styles = `${baseStyles} ${variantStyles[variant] || variantStyles.primary}
 
 {
   href ? (
-    <a href={href} class={styles} aria-label={ariaLabel}>
+    <a href={href} class={styles} aria-label={ariaLabel} target={target} rel={rel}>
       <slot />
     </a>
   ) : (

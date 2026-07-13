@@ -1,0 +1,73 @@
+---
+/**
+ * About Page — /about
+ * Static page: story, mission/vision, differentiators, team, testimonials,
+ * represented brands, closing CTA. Footer's "Our Team" link (/about#team)
+ * is satisfied by TeamSection's id="team".
+ */
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import Footer from "../components/layout/Footer.astro";
+import Container from "../components/ui/Container.astro";
+import Breadcrumbs from "../components/layout/Breadcrumbs.astro";
+import HelpCTA from "../components/shared/HelpCTA/HelpCTA.astro";
+import CompanyStatsSection from "../components/shared/CompanyStats/CompanyStatsSection.astro";
+
+import StorySection from "../features/about/StorySection.astro";
+import MissionVisionSection from "../features/about/MissionVisionSection.astro";
+import WhatSetsUsApartSection from "../features/about/WhatSetsUsApartSection.astro";
+import TeamSection from "../features/about/TeamSection.astro";
+import TestimonialsSection from "../components/shared/Testimonials/TestimonialsSection.astro";
+import BrandsRepresented from "../features/about/BrandsRepresented.astro";
+
+import site from "../data/site.json";
+
+const canonicalUrl = "https://pakistandetectors.com/about";
+const metaDescription =
+  "Pakistan Detectors Technology — the country's premier authorized distributor of professional detection equipment since 2015. Meet our team and learn why prospectors, mining companies, and government organizations trust us across Pakistan and Afghanistan.";
+---
+
+<Layout title="About" description={metaDescription} canonicalUrl={canonicalUrl}>
+  <Navbar />
+  <main>
+    <!-- Breadcrumb + Story -->
+    <section class="bg-dark pt-[calc(72px+2.5rem)] pb-16 lg:pb-20">
+      <Container>
+        <Breadcrumbs items={[{ label: "About Us", href: "/about" }]} />
+        <StorySection />
+      </Container>
+    </section>
+
+    <CompanyStatsSection />
+    <MissionVisionSection />
+    <WhatSetsUsApartSection />
+    <TeamSection />
+    <TestimonialsSection heading="What Our Clients Say" />
+    <BrandsRepresented />
+
+    <HelpCTA
+      eyebrow="Ready to Work Together?"
+      heading="Let's Find the Right Equipment for Your Project"
+      description="Whether you're a solo prospector or managing a government survey operation, our team is ready to help you select, purchase, and learn the right equipment."
+      primaryLabel="Contact Our Team"
+      primaryHref="/contact"
+      whatsappUrl={site.contact.whatsapp}
+    />
+  </main>
+  <Footer />
+
+  <script>
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => obs.observe(el));
+  </script>
+</Layout>

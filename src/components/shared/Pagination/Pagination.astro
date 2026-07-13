@@ -6,12 +6,17 @@
  * Long-run ellipsis, prev/next arrows, "Showing X–Y of Z products" below.
  * Hidden entirely if total pages ≤ 1.
  */
+interface Props {
+  label?: string;
+}
+
+const { label = "Product pagination" } = Astro.props;
 ---
 
 <nav
   id="pagination"
   class="hidden flex-col items-center gap-4 mt-12 lg:mt-16 mb-8"
-  aria-label="Product pagination"
+  aria-label={label}
 >
   <ol
     id="pagination-list"

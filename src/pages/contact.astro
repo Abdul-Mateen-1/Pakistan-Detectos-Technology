@@ -1,0 +1,64 @@
+---
+/**
+ * Contact Page — /contact
+ * The destination for every "Request a Quote" / "Talk to a Specialist" /
+ * "Contact Our Team" CTA sitewide. Static page: hero, 4 contact methods,
+ * form + location panel, FAQ.
+ */
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import Footer from "../components/layout/Footer.astro";
+import Container from "../components/ui/Container.astro";
+import Breadcrumbs from "../components/layout/Breadcrumbs.astro";
+
+import ContactHero from "../features/contact/ContactHero.astro";
+import ContactMethods from "../features/contact/ContactMethods.astro";
+import ContactForm from "../features/contact/ContactForm.astro";
+import LocationPanel from "../features/contact/LocationPanel.astro";
+import ContactFAQ from "../features/contact/ContactFAQ.astro";
+
+const canonicalUrl = "https://pakistandetectors.com/contact";
+const metaDescription =
+  "Get in touch with Pakistan Detectors Technology — request a quote, ask a technical question, or visit our Islamabad showroom. Reach us via WhatsApp, phone, or email.";
+---
+
+<Layout title="Contact" description={metaDescription} canonicalUrl={canonicalUrl}>
+  <Navbar />
+  <main>
+    <section class="bg-dark pt-[calc(72px+2.5rem)] pb-12 lg:pb-16">
+      <Container>
+        <Breadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
+        <ContactHero />
+      </Container>
+    </section>
+
+    <section class="bg-dark pb-16 lg:pb-20">
+      <Container>
+        <ContactMethods />
+
+        <div class="mt-14 lg:mt-16 grid lg:grid-cols-[1fr_400px] gap-8 items-start">
+          <ContactForm />
+          <LocationPanel />
+        </div>
+      </Container>
+    </section>
+
+    <ContactFAQ />
+  </main>
+  <Footer />
+
+  <script>
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => obs.observe(el));
+  </script>
+</Layout>

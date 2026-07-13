@@ -1,0 +1,164 @@
+---
+/**
+ * Product Detail Route — /products/[slug]
+ * Statically generated per product from products.json, enriched with
+ * per-product content from product-details.json (tagline, features, specs,
+ * box contents, personas, FAQ, illustrative reviews).
+ */
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/layout/Navbar.astro";
+import Footer from "../../components/layout/Footer.astro";
+import Container from "../../components/ui/Container.astro";
+import Breadcrumbs from "../../components/layout/Breadcrumbs.astro";
+
+import Gallery from "../../features/productDetail/Gallery.astro";
+import BuyBox from "../../features/productDetail/BuyBox.astro";
+import ProductTabs from "../../features/productDetail/ProductTabs.astro";
+import SpecsSidebar from "../../features/productDetail/SpecsSidebar.astro";
+import IdealForSection from "../../features/productDetail/IdealForSection.astro";
+import RelatedProducts from "../../features/productDetail/RelatedProducts.astro";
+import HelpCTA from "../../components/shared/HelpCTA/HelpCTA.astro";
+
+import products from "../../data/products.json";
+import productDetails from "../../data/product-details.json";
+import categoriesData from "../../data/categories.json";
+import brandsData from "../../data/brands.json";
+import site from "../../data/site.json";
+
+export async function getStaticPaths() {
+  return products.map((p) => ({
+    params: { slug: p.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const product = products.find((p) => p.slug === slug)!;
+const details = (productDetails.products as Record<string, any>)[slug as string];
+
+const allCategories = [categoriesData.primary, ...categoriesData.secondary];
+const categoryInfo = allCategories.find((c) => c.slug === product.category)!;
+const brandInfo = brandsData.find((b) => b.name === product.brand)!;
+
+const productNounMap: Record<string, string> = {
+  "gold-detectors": "Detector",
+  "metal-detectors": "Detector",
+  "underground-imaging": "Scanner",
+  "long-range-locators": "Locator",
+  "water-detectors": "Water Detector",
+};
+const productNoun = productNounMap[product.category] ?? "Equipment";
+
+const faq = [...productDetails.shared.faq, ...details.faq];
+const galleryImages = [product.image];
+
+const canonicalUrl = `https://pakistandetectors.com/products/${slug}`;
+const metaDescription = `${product.description} Genuine ${product.brand} ${categoryInfo.name.toLowerCase()} available in Pakistan with authorized warranty and nationwide delivery.`;
+
+const productSchema: Record<string, any> = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: product.name,
+  image: `https://pakistandetectors.com${product.image}`,
+  description: metaDescription,
+  sku: product.id,
+  brand: { "@type": "Brand", name: product.brand },
+  category: categoryInfo.name,
+};
+if (product.price) {
+  productSchema.offers = {
+    "@type": "Offer",
+    url: canonicalUrl,
+    priceCurrency: "PKR",
+    price: product.price,
+    availability: "https://schema.org/InStock",
+    itemCondition: "https://schema.org/NewCondition",
+    seller: { "@type": "Organization", name: "Pakistan Detectors Technology" },
+  };
+}
+---
+
+<Layout title={product.name} description={metaDescription} canonicalUrl={canonicalUrl}>
+  <Navbar />
+  <main>
+    <!-- Hero: Breadcrumb + Gallery / BuyBox -->
+    <section class="bg-dark pt-[calc(72px+2.5rem)] pb-16 lg:pb-20">
+      <Container>
+        <Breadcrumbs
+          items={[
+            { label: "Products", href: "/products" },
+            { label: categoryInfo.name, href: `/categories/${categoryInfo.slug}` },
+            { label: product.name, href: `/products/${slug}` },
+          ]}
+        />
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mt-2">
+          <Gallery name={product.name} brand={product.brand} badge={product.badge} images={galleryImages} />
+          <BuyBox
+            name={product.name}
+            brand={product.brand}
+            brandSlug={brandInfo.slug}
+            categoryLabel={categoryInfo.name}
+            categorySlug={categoryInfo.slug}
+            price={product.price}
+            intro={product.description}
+            specs={product.specs}
+            whatsappUrl={site.contact.whatsapp}
+          />
+        </div>
+      </Container>
+    </section>
+
+    <!-- Tabs + Persistent Specs Sidebar -->
+    <section class="bg-dark pb-16 lg:pb-20 border-t border-dark-border pt-16 lg:pt-20">
+      <Container>
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 lg:gap-14 items-start">
+          <ProductTabs
+            tagline={details.tagline}
+            overviewParagraphs={details.overviewParagraphs}
+            keyFeatures={details.keyFeatures}
+            technicalSpecs={details.technicalSpecs}
+            reviews={details.reviews}
+            faq={faq}
+          />
+          <div class="lg:sticky lg:top-[100px]">
+            <SpecsSidebar technicalSpecs={details.technicalSpecs} whatsInTheBox={details.whatsInTheBox} />
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <IdealForSection name={product.name} idealFor={details.idealFor} />
+
+    <RelatedProducts
+      currentSlug={slug as string}
+      category={product.category}
+      categorySlug={categoryInfo.slug}
+      categoryLabel={categoryInfo.name}
+      brand={product.brand}
+    />
+
+    <HelpCTA
+      heading={`Not Sure if This is the Right ${productNoun}?`}
+      description="Our detection specialists can compare models, recommend accessories, and help you choose the best equipment for your terrain and budget."
+      whatsappUrl={site.contact.whatsapp}
+    />
+  </main>
+  <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+
+  <script>
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => obs.observe(el));
+  </script>
+</Layout>

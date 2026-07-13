@@ -1,0 +1,209 @@
+---
+/**
+ * ProductTabs Component (Product Detail)
+ * Overview / Specifications / Reviews / FAQ tabs.
+ * Reviews are illustrative placeholders (see product-details.json) — visual
+ * only, deliberately excluded from JSON-LD in the page so no fabricated
+ * aggregateRating/review markup is ever sent to search engines.
+ */
+interface KeyFeature {
+  title: string;
+  description: string;
+}
+interface Spec {
+  label: string;
+  value: string;
+}
+interface Review {
+  name: string;
+  location: string;
+  rating: number;
+  date: string;
+  comment: string;
+}
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  tagline: string;
+  overviewParagraphs: string[];
+  keyFeatures: KeyFeature[];
+  technicalSpecs: Spec[];
+  reviews: Review[];
+  faq: FaqItem[];
+}
+
+const { tagline, overviewParagraphs, keyFeatures, technicalSpecs, reviews, faq } = Astro.props;
+
+const tabs = [
+  { key: "overview", label: "Overview" },
+  { key: "specifications", label: "Specifications" },
+  { key: "reviews", label: `Reviews (${reviews.length})` },
+  { key: "faq", label: "FAQ" },
+];
+
+const avgRating = reviews.length
+  ? Math.round((reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length) * 10) / 10
+  : 0;
+
+function formatReviewDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+}
+---
+
+<div>
+  <!-- Tab Nav -->
+  <div class="flex items-center gap-7 border-b border-dark-border overflow-x-auto scrollbar-hide" role="tablist" aria-label="Product information">
+    {tabs.map((tab, i) => (
+      <button
+        type="button"
+        role="tab"
+        id={`tab-${tab.key}`}
+        aria-selected={i === 0 ? "true" : "false"}
+        aria-controls={`panel-${tab.key}`}
+        data-tab={tab.key}
+        class:list={["tab-trigger relative pb-4 text-sm font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer", i === 0 ? "text-text-primary is-active" : "text-text-muted hover:text-text-primary"]}
+      >
+        {tab.label}
+        <span
+          class:list={["tab-indicator absolute bottom-0 left-0 w-full h-[2px] rounded-full bg-primary transition-transform duration-200 origin-center", i === 0 ? "scale-x-100" : "scale-x-0"]}
+          aria-hidden="true"
+        />
+      </button>
+    ))}
+  </div>
+
+  <!-- Overview -->
+  <div role="tabpanel" id="panel-overview" aria-labelledby="tab-overview" class="tab-panel pt-8">
+    <h2 class="font-display text-2xl sm:text-3xl leading-tight text-text-primary">{tagline}</h2>
+    {overviewParagraphs.map((p) => (
+      <p class="mt-4 text-sm sm:text-[15px] text-text-secondary leading-relaxed">{p}</p>
+    ))}
+
+    <h3 class="mt-9 text-xs font-semibold uppercase tracking-[0.15em] text-primary">Key Features</h3>
+    <ul class="mt-5 flex flex-col gap-5" role="list">
+      {keyFeatures.map((feature) => (
+        <li class="flex items-start gap-3">
+          <span class="flex items-center justify-center w-5 h-5 rounded-full bg-primary/15 text-primary shrink-0 mt-0.5" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </span>
+          <div>
+            <p class="text-sm font-semibold text-text-primary leading-snug">{feature.title}</p>
+            <p class="mt-1 text-sm text-text-secondary leading-relaxed">{feature.description}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Specifications -->
+  <div role="tabpanel" id="panel-specifications" aria-labelledby="tab-specifications" class="tab-panel hidden pt-8">
+    <h2 class="font-display text-2xl sm:text-3xl leading-tight text-text-primary">Full Technical Specifications</h2>
+    <div class="mt-6 grid sm:grid-cols-2 sm:gap-x-10">
+      {technicalSpecs.map((spec) => (
+        <div class="flex items-center justify-between py-3.5 border-b border-dark-border/60">
+          <span class="text-sm text-text-muted">{spec.label}</span>
+          <span class="text-sm font-medium text-text-primary text-right">{spec.value}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Reviews -->
+  <div role="tabpanel" id="panel-reviews" aria-labelledby="tab-reviews" class="tab-panel hidden pt-8">
+    {reviews.length > 0 ? (
+      <>
+        <div class="flex items-center gap-4 pb-6 border-b border-dark-border">
+          <span class="font-display text-4xl text-primary">{avgRating.toFixed(1)}</span>
+          <div>
+            <div class="flex items-center gap-0.5" aria-hidden="true">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill={i < Math.round(avgRating) ? "currentColor" : "none"} stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              ))}
+            </div>
+            <p class="text-xs text-text-muted mt-1">Based on {reviews.length} customer review{reviews.length === 1 ? "" : "s"}</p>
+          </div>
+        </div>
+
+        <ul class="mt-6 flex flex-col gap-6" role="list">
+          {reviews.map((review) => (
+            <li class="pb-6 border-b border-dark-border/60 last:border-0 last:pb-0">
+              <div class="flex items-center gap-3">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/15 shrink-0">
+                  <span class="text-xs font-bold text-primary">
+                    {review.name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+                  </span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-semibold text-text-primary">{review.name}</p>
+                  <p class="text-xs text-text-muted">{review.location}</p>
+                </div>
+                <div class="flex items-center gap-0.5 shrink-0" aria-label={`${review.rating} out of 5 stars`}>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill={i < review.rating ? "currentColor" : "none"} stroke="currentColor" stroke-width="1.5" class="text-primary" aria-hidden="true">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
+              <p class="mt-3 text-sm text-text-secondary leading-relaxed">{review.comment}</p>
+              <p class="mt-2 text-[11px] text-text-muted">{formatReviewDate(review.date)}</p>
+            </li>
+          ))}
+        </ul>
+      </>
+    ) : (
+      <div class="py-10 text-center">
+        <p class="text-text-secondary">No reviews yet — be the first to share your experience.</p>
+      </div>
+    )}
+  </div>
+
+  <!-- FAQ -->
+  <div role="tabpanel" id="panel-faq" aria-labelledby="tab-faq" class="tab-panel hidden pt-8">
+    <div class="flex flex-col">
+      {faq.map((item) => (
+        <details class="faq-item border-b border-dark-border/60 group">
+          <summary class="flex items-center justify-between gap-4 py-4 text-sm sm:text-[15px] font-medium text-text-primary cursor-pointer list-none">
+            {item.question}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-text-muted transition-transform duration-200 group-open:rotate-180" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </summary>
+          <p class="pb-5 text-sm text-text-secondary leading-relaxed pr-8">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  const triggers = document.querySelectorAll<HTMLButtonElement>(".tab-trigger");
+  const panels = document.querySelectorAll<HTMLElement>(".tab-panel");
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const key = trigger.dataset.tab;
+
+      triggers.forEach((t) => {
+        const active = t === trigger;
+        t.setAttribute("aria-selected", String(active));
+        t.classList.toggle("text-text-primary", active);
+        t.classList.toggle("text-text-muted", !active);
+        const indicator = t.querySelector(".tab-indicator");
+        indicator?.classList.toggle("scale-x-100", active);
+        indicator?.classList.toggle("scale-x-0", !active);
+      });
+
+      panels.forEach((panel) => {
+        panel.classList.toggle("hidden", panel.id !== `panel-${key}`);
+      });
+    });
+  });
+</script>

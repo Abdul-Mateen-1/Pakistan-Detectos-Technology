@@ -1,8 +1,8 @@
 ---
 /**
  * WhyChooseUsSection Component
- * Light background (#F8F6F1) section with 4 trust cards.
- * Dark icon containers with gold icons. Staggered reveal animation.
+ * Dark background section with 4 trust cards, consistent with the rest
+ * of the site. Gold icon badges. Staggered reveal animation.
  */
 import Container from "../../../components/ui/Container.astro";
 
@@ -32,7 +32,7 @@ const trustCards = [
 
 <section
   id="why-choose-us"
-  class="relative bg-light py-[var(--spacing-section)]"
+  class="relative bg-dark py-[var(--spacing-section)]"
   aria-labelledby="why-heading"
 >
   <Container>
@@ -48,7 +48,7 @@ const trustCards = [
 
       <h2
         id="why-heading"
-        class="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-text-dark"
+        class="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-text-primary"
         data-reveal="up"
       >
         Pakistan's Trusted Detection Partner
@@ -59,13 +59,13 @@ const trustCards = [
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
       {trustCards.map((card, index) => (
         <div
-          class="trust-card flex flex-col items-center text-center p-6 lg:p-8 rounded-xl"
+          class="trust-card flex flex-col items-center text-center p-6 lg:p-8 rounded-xl bg-dark-card border border-dark-border"
           data-reveal="up"
           style={`transition-delay: ${index * 100}ms;`}
         >
           <!-- Icon Container -->
           <div
-            class="trust-icon flex items-center justify-center w-14 h-14 rounded-xl bg-dark-card text-primary mb-5"
+            class="trust-icon flex items-center justify-center w-14 h-14 rounded-xl bg-primary/15 text-primary mb-5"
             aria-hidden="true"
           >
             {card.icon === "check" && (
@@ -95,8 +95,8 @@ const trustCards = [
             )}
           </div>
 
-          <h3 class="text-base font-semibold text-text-dark">{card.title}</h3>
-          <p class="mt-2 text-sm text-text-dark-muted leading-relaxed">{card.description}</p>
+          <h3 class="text-base font-semibold text-text-primary">{card.title}</h3>
+          <p class="mt-2 text-sm text-text-muted leading-relaxed">{card.description}</p>
         </div>
       ))}
     </div>

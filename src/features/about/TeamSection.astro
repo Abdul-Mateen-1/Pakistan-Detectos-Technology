@@ -1,0 +1,40 @@
+---
+/**
+ * TeamSection Component (About Page)
+ * id="team" — the footer's "Our Team" link points to /about#team.
+ * Reads from src/data/team.json.
+ */
+import Container from "../../components/ui/Container.astro";
+import SectionHeading from "../../components/ui/SectionHeading.astro";
+import team from "../../data/team.json";
+---
+
+<section id="team" class="py-16 lg:py-20 border-t border-dark-border scroll-mt-20" aria-labelledby="team-heading">
+  <Container>
+    <SectionHeading
+      eyebrow="Our People"
+      heading="Meet the Experts"
+      description="Our team combines deep technical knowledge with years of field experience in Pakistan's diverse geological landscape."
+      align="center"
+      theme="dark"
+      headingId="team-heading"
+    />
+
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {team.map((member, i) => (
+        <div
+          class="flex flex-col items-center text-center p-6 rounded-xl bg-dark-card border border-dark-border"
+          data-reveal="up"
+          style={`transition-delay: ${i * 80}ms;`}
+        >
+          <div class="flex items-center justify-center w-16 h-16 rounded-full bg-dark-surface border border-primary/30 text-primary font-display text-lg" aria-hidden="true">
+            {member.initials}
+          </div>
+          <h3 class="mt-4 text-base font-semibold text-text-primary">{member.name}</h3>
+          <p class="mt-1 text-xs font-medium text-primary">{member.role}</p>
+          <p class="mt-3 text-xs text-text-muted leading-relaxed">{member.bio}</p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

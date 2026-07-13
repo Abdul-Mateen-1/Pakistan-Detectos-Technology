@@ -1,0 +1,50 @@
+---
+/**
+ * MissionVisionSection Component (About Page)
+ * 2-column mission/vision cards.
+ */
+import Container from "../../components/ui/Container.astro";
+
+const cards = [
+  {
+    icon: "target",
+    eyebrow: "Our Mission",
+    heading: "Equip Every Professional with the World's Best Detection Technology",
+    description:
+      "To bridge the gap between international detection technology and the professionals who need it in Pakistan and Afghanistan. We ensure every customer gets genuine equipment, expert guidance, and ongoing support — regardless of whether they're in Islamabad or a remote mining site in Balochistan.",
+  },
+  {
+    icon: "eye",
+    eyebrow: "Our Vision",
+    heading: "Become South Asia's Leading Authority in Detection & Survey Equipment",
+    description:
+      "To be recognized as the most knowledgeable and reliable partner for detection equipment across the region — expanding our reach, deepening our expertise, and continuously raising the standard of service that professionals expect from an authorized distributor.",
+  },
+];
+---
+
+<section class="py-16 lg:py-20 border-t border-dark-border">
+  <Container>
+    <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+      {cards.map((card, i) => (
+        <div
+          class="p-8 lg:p-10 rounded-xl bg-dark-card border border-dark-border"
+          data-reveal="up"
+          style={`transition-delay: ${i * 100}ms;`}
+        >
+          <div class="flex items-center justify-center w-11 h-11 rounded-lg bg-primary/15 text-primary mb-5" aria-hidden="true">
+            {card.icon === "target" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
+            )}
+            {card.icon === "eye" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+            )}
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-primary">{card.eyebrow}</span>
+          <h2 class="mt-2 text-xl lg:text-2xl font-display leading-snug text-text-primary">{card.heading}</h2>
+          <p class="mt-4 text-sm text-text-secondary leading-relaxed">{card.description}</p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

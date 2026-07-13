@@ -1,0 +1,48 @@
+---
+/**
+ * BrandsHero Component (Brands Index)
+ * Eyebrow + H1 + description (left) and 4 real stat cards (right).
+ * Stats are computed from real catalog data, not fixed marketing numbers.
+ * No outer section/padding/Container — the page provides the shared
+ * top section shell alongside the breadcrumb (same pattern as the
+ * product detail page's Gallery/BuyBox hero grid).
+ */
+interface Props {
+  brandsCount: number;
+  productsCount: number;
+  categoriesCount: number;
+}
+
+const { brandsCount, productsCount, categoriesCount } = Astro.props;
+
+const stats = [
+  { value: String(brandsCount), label: "Brands" },
+  { value: `${productsCount}+`, label: "Products" },
+  { value: String(categoriesCount), label: "Categories" },
+  { value: "100%", label: "Genuine" },
+];
+---
+
+<div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mt-2">
+  <div class="max-w-xl">
+    <div class="flex items-center gap-4" data-reveal="up">
+      <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+      <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">Authorized Distributor</span>
+    </div>
+    <h1 class="mt-4 font-display text-[32px] sm:text-4xl lg:text-[44px] leading-[1.1] tracking-tight text-text-primary" data-reveal="up">
+      Our Partner Brands
+    </h1>
+    <p class="mt-4 text-sm sm:text-[15px] text-text-secondary leading-relaxed" data-reveal="up">
+      We are the official authorized distributor for the world's most trusted detection equipment manufacturers. Every product is genuine, warranty-backed, and supported locally in Pakistan.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-4 gap-2.5 sm:gap-3 shrink-0" data-reveal="up">
+    {stats.map((stat) => (
+      <div class="flex flex-col items-center justify-center px-3 py-3.5 sm:px-6 sm:py-4 rounded-lg bg-dark-card border border-dark-border min-w-[72px] sm:min-w-[110px]">
+        <span class="text-lg sm:text-2xl font-bold text-primary whitespace-nowrap">{stat.value}</span>
+        <span class="text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-text-muted mt-1 text-center">{stat.label}</span>
+      </div>
+    ))}
+  </div>
+</div>

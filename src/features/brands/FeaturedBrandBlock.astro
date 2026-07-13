@@ -1,0 +1,94 @@
+---
+/**
+ * FeaturedBrandBlock Component (Brands Index)
+ * Zigzag info + product-grid block for the 4 featured brands
+ * (Garrett, Nokta, OKM, Minelab). `reverse` alternates which side the
+ * product grid sits on — DOM/reading order stays info-then-products for
+ * accessibility and SEO; only the visual order swaps via `order` classes.
+ */
+import Button from "../../components/ui/Button.astro";
+import BrandProductMiniCard from "./BrandProductMiniCard.astro";
+
+interface Stat {
+  value: string;
+  label: string;
+}
+interface MiniProduct {
+  name: string;
+  description: string;
+  price: number | null;
+  image: string;
+  slug: string;
+}
+
+interface Props {
+  name: string;
+  slug: string;
+  initials: string;
+  location: string;
+  foundedYear: number;
+  description: string;
+  specializesIn: string[];
+  pageStats: Stat[];
+  products: MiniProduct[];
+  reverse: boolean;
+}
+
+const { name, slug, initials, location, foundedYear, description, specializesIn, pageStats, products, reverse } = Astro.props;
+---
+
+<div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+  <!-- Info column -->
+  <div class:list={reverse ? "lg:order-2" : "lg:order-1"} data-reveal="up">
+    <div
+      class:list={[
+        "flex items-center justify-center w-14 h-14 rounded-lg bg-dark-card border border-primary/30 text-primary font-display",
+        initials.length > 2 ? "text-base" : "text-xl",
+      ]}
+      aria-hidden="true"
+    >
+      {initials}
+    </div>
+
+    <h2 class="mt-5 font-display text-3xl sm:text-4xl leading-tight text-text-primary">{name}</h2>
+    <p class="mt-1.5 text-sm text-text-muted">{location} · Est. {foundedYear}</p>
+    <p class="mt-4 text-sm sm:text-[15px] text-text-secondary leading-relaxed">{description}</p>
+
+    <div class="flex items-center gap-8 mt-6">
+      {pageStats.map((stat) => (
+        <div class="flex flex-col">
+          <span class="text-xl sm:text-2xl font-bold text-primary">{stat.value}</span>
+          <span class="text-[10px] font-medium uppercase tracking-wider text-text-muted mt-1">{stat.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-6">
+      <span class="text-[11px] font-semibold uppercase tracking-[0.15em] text-text-muted">Specializes In</span>
+      <div class="mt-3 flex flex-wrap gap-2">
+        {specializesIn.map((tag) => (
+          <span class="px-3 py-1 text-xs font-medium text-text-secondary bg-dark-card rounded-full border border-dark-border">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-7 flex flex-wrap gap-3">
+      <Button variant="primary" size="md" href={`/brands/${slug}`}>
+        View {name} Products
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+        </svg>
+      </Button>
+      <Button variant="outline" size="md" href="/contact">Request Quote</Button>
+    </div>
+  </div>
+
+  <!-- Product grid -->
+  <div class:list={["grid grid-cols-2 gap-4", reverse ? "lg:order-1" : "lg:order-2"]} data-reveal="up">
+    {products.map((p) => (
+      <BrandProductMiniCard name={p.name} description={p.description} price={p.price} image={p.image} slug={p.slug} />
+    ))}
+  </div>
+</div>

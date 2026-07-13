@@ -1,0 +1,37 @@
+---
+/**
+ * BlogHero Component (Blog Index)
+ * Eyebrow/H1/description (left) + working search input (right).
+ * BlogController listens on #blog-search for live filtering.
+ */
+---
+
+<div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mt-2">
+  <div class="max-w-xl">
+    <div class="flex items-center gap-4" data-reveal="up">
+      <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+      <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">Expert Insights</span>
+    </div>
+    <h1 class="mt-4 font-display text-[32px] sm:text-4xl lg:text-[44px] leading-[1.1] tracking-tight text-text-primary" data-reveal="up">
+      Blog &amp; Guides
+    </h1>
+    <p class="mt-4 text-sm sm:text-[15px] text-text-secondary leading-relaxed" data-reveal="up">
+      Buying guides, technology deep-dives, field tips, and industry news from Pakistan's detection equipment experts.
+    </p>
+  </div>
+
+  <div class="w-full lg:w-80 shrink-0" data-reveal="up">
+    <div class="relative">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none" aria-hidden="true">
+        <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+      <input
+        type="search"
+        id="blog-search"
+        placeholder="Search articles..."
+        aria-label="Search articles"
+        class="w-full bg-dark-card border border-dark-border rounded-lg pl-10 pr-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus-visible:outline-none focus-visible:border-primary transition-colors duration-200"
+      />
+    </div>
+  </div>
+</div>

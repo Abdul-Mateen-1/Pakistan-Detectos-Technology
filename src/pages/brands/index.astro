@@ -1,0 +1,110 @@
+---
+/**
+ * Brands Index Route — /brands
+ * Lists all authorized brand partners: a full zigzag showcase block for
+ * brands with rich content (garrett/nokta/okm/minelab, i.e. showcase !== null),
+ * and a compact portfolio grid for the rest. Product grids inside each
+ * showcase block use real products.json entries (capped at 4), never the
+ * mockup's illustrative examples.
+ */
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/layout/Navbar.astro";
+import Footer from "../../components/layout/Footer.astro";
+import Container from "../../components/ui/Container.astro";
+import Breadcrumbs from "../../components/layout/Breadcrumbs.astro";
+import HelpCTA from "../../components/shared/HelpCTA/HelpCTA.astro";
+
+import BrandsHero from "../../features/brands/BrandsHero.astro";
+import FeaturedBrandBlock from "../../features/brands/FeaturedBrandBlock.astro";
+import BrandPortfolioGrid from "../../features/brands/BrandPortfolioGrid.astro";
+import TrustBar from "../../features/brands/TrustBar.astro";
+
+import brands from "../../data/brands.json";
+import products from "../../data/products.json";
+import categoriesData from "../../data/categories.json";
+import site from "../../data/site.json";
+
+// Explicit display order for the featured blocks — independent of brands.json's
+// array order, which drives other pages (footer links, filter checkboxes, etc.)
+const FEATURED_ORDER = ["garrett", "nokta", "okm", "minelab"];
+const featuredBrands = brands
+  .filter((b) => (b as any).pageFeatured)
+  .sort((a, b) => FEATURED_ORDER.indexOf(a.slug) - FEATURED_ORDER.indexOf(b.slug));
+const portfolioBrands = brands.filter((b) => !(b as any).pageFeatured);
+
+function productsForBrand(brandName: string) {
+  return products
+    .filter((p) => p.brand === brandName)
+    .sort((a, b) => (a.featured === b.featured ? 0 : a.featured ? -1 : 1))
+    .slice(0, 4)
+    .map((p) => ({ name: p.name, description: p.description, price: p.price, image: p.image, slug: p.slug }));
+}
+
+const categoriesCount = 1 + categoriesData.secondary.length;
+const canonicalUrl = "https://pakistandetectors.com/brands";
+const metaDescription =
+  "Meet our authorized brand partners — Garrett, Nokta, Minelab, OKM, Fisher, XP, Teknetics, and GoldXtra. Genuine detection equipment with manufacturer warranty and local expert support in Pakistan.";
+---
+
+<Layout title="Brands" description={metaDescription} canonicalUrl={canonicalUrl}>
+  <Navbar />
+  <main>
+    <!-- Breadcrumb + Hero -->
+    <section class="bg-dark pt-[calc(72px+2.5rem)] pb-14 lg:pb-20">
+      <Container>
+        <Breadcrumbs items={[{ label: "Brands", href: "/brands" }]} />
+        <BrandsHero brandsCount={brands.length} productsCount={products.length} categoriesCount={categoriesCount} />
+      </Container>
+    </section>
+
+    <!-- Featured Brand Showcase Blocks -->
+    <section class="bg-dark pb-4">
+      <Container>
+        <div class="flex flex-col gap-20 lg:gap-24">
+          {featuredBrands.map((brand, i) => (
+            <FeaturedBrandBlock
+              name={brand.name}
+              slug={brand.slug}
+              initials={brand.initials}
+              location={brand.location}
+              foundedYear={brand.foundedYear}
+              description={brand.description}
+              specializesIn={brand.specializesIn ?? []}
+              pageStats={brand.pageStats}
+              products={productsForBrand(brand.name)}
+              reverse={i % 2 === 1}
+            />
+          ))}
+        </div>
+      </Container>
+    </section>
+
+    <BrandPortfolioGrid brands={portfolioBrands} />
+    <TrustBar />
+
+    <HelpCTA
+      eyebrow="Interested in a Specific Brand?"
+      heading="Let Us Help You Choose"
+      description="Not sure which brand fits your requirements? Our specialists can compare models across manufacturers and recommend the best match for your project."
+      primaryLabel="Compare Brands"
+      primaryHref="/products"
+      whatsappUrl={site.contact.whatsapp}
+    />
+  </main>
+  <Footer />
+
+  <script>
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => obs.observe(el));
+  </script>
+</Layout>

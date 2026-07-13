@@ -25,7 +25,9 @@ const { name, brand, price, description, image, slug, badge, specs, index } = As
 const formattedPrice = price ? price.toLocaleString("en-PK") : null;
 ---
 
-<article
+<a
+  href={`/products/${slug}`}
+  aria-label={`${name} — view details`}
   class="catalog-card group flex flex-col h-full bg-dark-card rounded-xl border border-dark-border overflow-hidden transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_16px_rgba(197,160,68,0.1)]"
 >
   <!-- Image Container -->
@@ -83,15 +85,14 @@ const formattedPrice = price ? price.toLocaleString("en-PK") : null;
         )}
       </div>
 
-      <a
-        href={`/products/${slug}`}
-        class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary-hover transition-colors duration-200 shrink-0"
+      <span
+        class="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:text-primary-hover transition-colors duration-200 shrink-0"
       >
         View Details →
-      </a>
+      </span>
     </div>
   </div>
-</article>
+</a>
 
 <style>
   /* Hide broken image alt text — show only the dark bg placeholder */

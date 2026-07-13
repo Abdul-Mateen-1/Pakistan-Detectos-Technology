@@ -1,0 +1,44 @@
+---
+/**
+ * SpecsSidebar Component (Product Detail)
+ * Persistent right-column card shown beside the tabs: quick technical
+ * specifications + what's-in-the-box list.
+ */
+interface Spec {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  technicalSpecs: Spec[];
+  whatsInTheBox: string[];
+}
+
+const { technicalSpecs, whatsInTheBox } = Astro.props;
+---
+
+<div class="flex flex-col gap-5">
+  <div class="rounded-xl border border-dark-border bg-dark-card p-6" data-reveal="up">
+    <h3 class="text-xs font-semibold uppercase tracking-[0.15em] text-primary">Technical Specifications</h3>
+    <dl class="mt-4 flex flex-col">
+      {technicalSpecs.map((spec) => (
+        <div class="flex items-center justify-between gap-4 py-2.5 border-b border-dark-border/60 last:border-0">
+          <dt class="text-sm text-text-muted">{spec.label}</dt>
+          <dd class="text-sm font-medium text-text-primary text-right">{spec.value}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+
+  <div class="rounded-xl border border-dark-border bg-dark-card p-6" data-reveal="up">
+    <h3 class="text-xs font-semibold uppercase tracking-[0.15em] text-primary">What's in the Box</h3>
+    <ul class="mt-4 flex flex-col gap-2.5" role="list">
+      {whatsInTheBox.map((item) => (
+        <li class="flex items-start gap-2.5 text-sm text-text-secondary leading-snug">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-1.5" aria-hidden="true"></span>
+          {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>

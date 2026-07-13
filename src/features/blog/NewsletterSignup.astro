@@ -1,0 +1,89 @@
+---
+/**
+ * NewsletterSignup Component (Blog Index)
+ * IMPORTANT: no email service (Mailchimp/ConvertKit/etc.) is connected
+ * anywhere in this project. This form validates client-side and shows a
+ * friendly acknowledgment, but does NOT persist or send the email
+ * anywhere — wire up a real subscribe endpoint before relying on this
+ * to capture actual signups.
+ */
+import Container from "../../components/ui/Container.astro";
+import Button from "../../components/ui/Button.astro";
+
+const trustItems = ["Free forever", "Twice monthly", "Unsubscribe anytime"];
+---
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div class="relative overflow-hidden rounded-2xl border border-dark-border bg-dark-card px-6 py-10 sm:px-10 lg:px-12 lg:py-12" data-reveal="up">
+      <div
+        class="absolute top-0 left-0 w-[500px] h-[300px] bg-primary/[0.05] rounded-full blur-[100px] pointer-events-none"
+        aria-hidden="true"
+      ></div>
+
+      <div class="relative grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-12 items-center">
+        <div>
+          <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">Stay Informed</span>
+          <h2 class="mt-3 font-display text-2xl sm:text-3xl leading-tight text-text-primary">
+            Get Expert Detection Insights Delivered to Your Inbox
+          </h2>
+          <p class="mt-3 text-sm sm:text-[15px] text-text-secondary leading-relaxed max-w-md">
+            New buying guides, technology updates, and field tips — published twice a month. No spam, unsubscribe anytime.
+          </p>
+        </div>
+
+        <div>
+          <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3" novalidate>
+            <label for="newsletter-email" class="sr-only">Email address</label>
+            <input
+              type="email"
+              id="newsletter-email"
+              name="email"
+              required
+              placeholder="your@email.com"
+              autocomplete="email"
+              class="flex-1 min-w-0 bg-dark-surface border border-dark-border rounded-md px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus-visible:outline-none focus-visible:border-primary transition-colors duration-200"
+            />
+            <Button type="submit" variant="primary" size="md" class="justify-center whitespace-nowrap">
+              Subscribe
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+              </svg>
+            </Button>
+          </form>
+          <p id="newsletter-success" class="hidden mt-3 text-sm text-primary">
+            Thanks — you're on the list. We'll be in touch.
+          </p>
+
+          <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
+            {trustItems.map((item) => (
+              <span class="inline-flex items-center gap-1.5 text-xs text-text-muted">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-primary" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<script>
+  // No email service is connected — this only shows a client-side
+  // acknowledgment. Wire up a real subscribe endpoint before launch.
+  const form = document.getElementById("newsletter-form") as HTMLFormElement | null;
+  const successMsg = document.getElementById("newsletter-success");
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    form.classList.add("hidden");
+    successMsg?.classList.remove("hidden");
+  });
+</script>

@@ -1,0 +1,75 @@
+---
+/**
+ * IdealForSection Component (Product Detail)
+ * "Who Should Use This?" 4-persona grid with a small inline icon set.
+ */
+import Container from "../../components/ui/Container.astro";
+import SectionHeading from "../../components/ui/SectionHeading.astro";
+
+interface Persona {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface Props {
+  name: string;
+  idealFor: Persona[];
+}
+
+const { name, idealFor } = Astro.props;
+---
+
+<section class="py-16 lg:py-20 border-t border-dark-border" aria-labelledby="ideal-for-heading">
+  <Container>
+    <SectionHeading
+      eyebrow="Ideal For"
+      heading={`Who Should Use the ${name}?`}
+      align="center"
+      theme="dark"
+      headingId="ideal-for-heading"
+    />
+
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+      {idealFor.map((persona, i) => (
+        <div
+          class="flex flex-col items-center text-center p-6 rounded-xl bg-dark-card border border-dark-border transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40"
+          data-reveal="up"
+          style={`transition-delay: ${i * 80}ms;`}
+        >
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/15 text-primary mb-4" aria-hidden="true">
+            {persona.icon === "star" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+            )}
+            {persona.icon === "globe" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
+            )}
+            {persona.icon === "pin" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+            )}
+            {persona.icon === "search" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+            )}
+            {persona.icon === "shield" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+            )}
+            {persona.icon === "droplet" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z" /></svg>
+            )}
+            {persona.icon === "compass" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" /></svg>
+            )}
+            {persona.icon === "users" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+            )}
+            {persona.icon === "leaf" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-4 2-8 8-11 6 3 8 7 8 11a7 7 0 0 1-7 7z" /><path d="M11 20a10 10 0 0 1 4-13" /></svg>
+            )}
+          </div>
+          <h3 class="text-sm font-semibold text-text-primary leading-snug">{persona.title}</h3>
+          <p class="mt-2 text-xs text-text-muted leading-relaxed">{persona.description}</p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

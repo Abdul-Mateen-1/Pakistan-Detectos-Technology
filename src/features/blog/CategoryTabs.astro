@@ -1,0 +1,47 @@
+---
+/**
+ * CategoryTabs Component (Blog Index)
+ * Underline-style filter tabs (same interaction pattern as ProductTabs).
+ * Renders buttons only — BlogController owns the actual filter logic.
+ */
+interface Category {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  categories: Category[];
+}
+
+const { categories } = Astro.props;
+---
+
+<div
+  class="mt-8 flex items-center gap-7 border-b border-dark-border overflow-x-auto scrollbar-hide"
+  role="tablist"
+  aria-label="Filter articles by category"
+  data-reveal="up"
+>
+  <button
+    type="button"
+    role="tab"
+    aria-selected="true"
+    data-category="all"
+    class="category-tab is-active relative pb-4 text-sm font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer text-text-primary"
+  >
+    All Posts
+    <span class="tab-indicator absolute bottom-0 left-0 w-full h-[2px] rounded-full bg-primary scale-x-100 transition-transform duration-200 origin-center" aria-hidden="true"></span>
+  </button>
+  {categories.map((cat) => (
+    <button
+      type="button"
+      role="tab"
+      aria-selected="false"
+      data-category={cat.value}
+      class="category-tab relative pb-4 text-sm font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer text-text-muted hover:text-text-primary"
+    >
+      {cat.label}
+      <span class="tab-indicator absolute bottom-0 left-0 w-full h-[2px] rounded-full bg-primary scale-x-0 transition-transform duration-200 origin-center" aria-hidden="true"></span>
+    </button>
+  ))}
+</div>

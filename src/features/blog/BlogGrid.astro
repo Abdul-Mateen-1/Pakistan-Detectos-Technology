@@ -1,0 +1,57 @@
+---
+/**
+ * BlogGrid Component (Blog Index)
+ * Renders all non-featured articles server-side inside ArticleCard.
+ * Wrapper divs carry data attributes BlogController reads for
+ * category/search filtering and pagination — hide/show only, no client
+ * templating, full SEO crawlability (same approach as ProductGrid).
+ */
+import ArticleCard from "./ArticleCard.astro";
+import Pagination from "../../components/shared/Pagination/Pagination.astro";
+
+interface Article {
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  author: string;
+  readTime: string;
+  slug: string;
+  image: string | null;
+}
+
+interface Props {
+  articles: Article[];
+}
+
+const { articles } = Astro.props;
+---
+
+<div id="blog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+  {articles.map((article) => (
+    <div class="article-card-wrapper" data-slug={article.slug} data-category={article.category}>
+      <ArticleCard
+        title={article.title}
+        description={article.description}
+        category={article.category}
+        date={article.date}
+        author={article.author}
+        readTime={article.readTime}
+        slug={article.slug}
+        image={article.image}
+      />
+    </div>
+  ))}
+</div>
+
+<div id="blog-empty-state" class="hidden flex-col items-center justify-center gap-3 py-16 text-center">
+  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted" aria-hidden="true">
+    <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+  </svg>
+  <p class="text-text-secondary">No articles match your search.</p>
+  <button type="button" id="blog-clear-search" class="text-sm font-medium text-primary hover:text-primary-hover transition-colors duration-200 cursor-pointer">
+    Clear search
+  </button>
+</div>
+
+<Pagination label="Blog pagination" />

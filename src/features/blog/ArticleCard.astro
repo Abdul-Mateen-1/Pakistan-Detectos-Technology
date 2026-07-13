@@ -1,0 +1,65 @@
+---
+/**
+ * ArticleCard Component (Blog Index)
+ * Compact whole-card-clickable grid card.
+ */
+import team from "../../data/team.json";
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  author: string;
+  readTime: string;
+  slug: string;
+  image: string | null;
+}
+
+const { title, description, category, date, author, readTime, slug, image } = Astro.props;
+const authorInitials = team.find((m) => m.name === author)?.initials ?? author.split(" ").map((w) => w[0]).join("");
+const formattedDate = new Date(date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+---
+
+<a
+  href={`/blog/${slug}`}
+  aria-label={`${title} — read article`}
+  class="group flex flex-col h-full rounded-xl border border-dark-border bg-dark-card overflow-hidden transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_16px_rgba(197,160,68,0.08)]"
+>
+  <div class="article-card-img aspect-[16/9] bg-dark-surface flex items-center justify-center overflow-hidden">
+    {image ? (
+      <img src={image} alt={title} class="w-full h-full object-cover transition-transform duration-[280ms] ease-out group-hover:scale-105" loading="lazy" />
+    ) : (
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted/40" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" />
+      </svg>
+    )}
+  </div>
+
+  <div class="flex flex-col flex-1 p-5 lg:p-6">
+    <div class="flex items-center gap-3">
+      <span class="text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded">{category}</span>
+      <span class="text-xs text-text-muted">{formattedDate}</span>
+    </div>
+    <h3 class="mt-3 text-base sm:text-lg font-semibold text-text-primary leading-snug group-hover:text-primary transition-colors duration-200">
+      {title}
+    </h3>
+    <p class="mt-2 text-sm text-text-secondary leading-relaxed line-clamp-2">{description}</p>
+
+    <div class="mt-auto pt-4 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2 min-w-0">
+        <div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary/15 shrink-0">
+          <span class="text-[9px] font-bold text-primary">{authorInitials}</span>
+        </div>
+        <span class="text-xs text-text-secondary truncate">{author}</span>
+      </div>
+      <span class="text-xs text-text-muted shrink-0">{readTime}</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .article-card-img img {
+    color: transparent;
+  }
+</style>

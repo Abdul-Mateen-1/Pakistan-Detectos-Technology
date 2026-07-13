@@ -1,0 +1,827 @@
+{
+  "shared": {
+    "faq": [
+      {
+        "question": "Is this a genuine, authorized product?",
+        "answer": "Yes. Pakistan Detectors Technology is an authorized distributor, and every unit we sell — including this one — is genuine factory stock backed by a valid international manufacturer warranty."
+      },
+      {
+        "question": "What is the warranty and how do I claim it?",
+        "answer": "This product carries a manufacturer warranty (typically 2–3 years depending on brand and model). If you experience an issue, contact us via WhatsApp or phone with your order details and we'll coordinate the claim directly with the manufacturer's regional service center."
+      },
+      {
+        "question": "Do you deliver across Pakistan, and how long does it take?",
+        "answer": "Yes, we offer nationwide insured delivery. Orders within major cities typically arrive in 2–4 business days; remote areas may take slightly longer. You'll receive tracking details once your order ships."
+      },
+      {
+        "question": "Is training included, and how does it work?",
+        "answer": "Yes, every purchase includes a free product training session — either in person at our Islamabad office or over a video call — covering setup, ground balancing, and field operation specific to your terrain."
+      }
+    ]
+  },
+  "products": {
+    "nokta-gold-kruzer": {
+      "tagline": "Built for Gold. Engineered for Pakistan.",
+      "overviewParagraphs": [
+        "The Nokta Gold Kruzer is a professional-grade gold detector designed specifically for challenging terrain conditions. Its 61 kHz operating frequency provides exceptional sensitivity to even the smallest gold nuggets, making it ideal for the alluvial gold deposits found in Northern Pakistan's river systems.",
+        "With fully waterproof construction rated to 5 meters, the Gold Kruzer can operate in wet conditions, shallow streams, and during Pakistan's monsoon season without any performance degradation. The advanced automatic ground balancing system adapts in real-time to the highly mineralized soils common in Balochistan and KPK mining regions."
+      ],
+      "keyFeatures": [
+        { "title": "61 kHz High Frequency Operation", "description": "Optimized for detecting the smallest gold nuggets and flakes that lower-frequency detectors miss." },
+        { "title": "IP68 Waterproof to 5 Meters", "description": "Full submersion capability — control box, coil, and headphones all rated for underwater use." },
+        { "title": "Automatic Ground Balancing", "description": "Continuously adapts to changing soil mineralization — critical for Pakistan's diverse geological conditions." },
+        { "title": "Built-in Wireless Module", "description": "Pair with Nokta wireless headphones for tangle-free operation in dense brush and uneven terrain." },
+        { "title": "Rechargeable Lithium Battery", "description": "Up to 19 hours of continuous use on a single charge. USB charging for field flexibility." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "VLF" },
+        { "label": "Frequency", "value": "61 kHz" },
+        { "label": "Waterproof", "value": "IP68 — 5m depth" },
+        { "label": "Coil", "value": "10\" x 5.5\" DD" },
+        { "label": "Ground Balance", "value": "Auto / Manual" },
+        { "label": "Discrimination", "value": "DISC, 2-Tone, 3-Tone" },
+        { "label": "Battery", "value": "Li-ion, up to 19 hours" },
+        { "label": "Weight", "value": "1.4 kg" },
+        { "label": "Wireless", "value": "Built-in module" }
+      ],
+      "whatsInTheBox": [
+        "Nokta Gold Kruzer detector unit",
+        "10\" x 5.5\" DD waterproof search coil",
+        "Rechargeable lithium battery",
+        "USB charging cable",
+        "Waterproof headphones",
+        "Coil cover",
+        "User manual & quick start guide"
+      ],
+      "idealFor": [
+        { "title": "Gold Prospectors", "description": "Alluvial and hard-rock gold in Northern Pakistan and KPK.", "icon": "star" },
+        { "title": "Survey Teams", "description": "Geological survey and mineral exploration fieldwork.", "icon": "globe" },
+        { "title": "Mining Companies", "description": "Surface prospecting before large-scale extraction operations.", "icon": "pin" },
+        { "title": "Treasure Hunters", "description": "Relic hunting and treasure recovery across diverse terrains.", "icon": "search" }
+      ],
+      "faq": [
+        { "question": "Can the Gold Kruzer be used in saltwater or only freshwater?", "answer": "The Gold Kruzer's waterproof rating covers freshwater submersion up to 5 meters. For saltwater beach use, we recommend switching to a saltwater-specific discrimination mode and rinsing the coil and control box with fresh water after each session to prevent corrosion." },
+        { "question": "How does the Gold Kruzer compare to the Nokta Legend for gold hunting?", "answer": "The Gold Kruzer is purpose-built for gold with a single high 61 kHz frequency, giving it an edge on small nuggets in mineralized ground. The Legend is a multi-frequency all-rounder better suited to mixed coin, relic, and gold hunting. If gold is your primary target, the Gold Kruzer's dedicated frequency typically outperforms it." }
+      ],
+      "reviews": [
+        { "name": "Zeeshan Tariq", "location": "Mardan, KPK", "rating": 5, "date": "2026-03-02", "comment": "Found gold flakes in my first week using this in a riverbed near Mardan. The ground balance handles our mineralized soil far better than my old detector." },
+        { "name": "Imran Yousafzai", "location": "Gilgit", "rating": 5, "date": "2026-01-18", "comment": "Waterproofing is genuinely reliable — I've waded through shallow streams with no issues. PDT's training session before I started using it made a real difference." }
+      ]
+    },
+    "okm-exp-6000": {
+      "tagline": "See Beneath the Surface Before You Dig.",
+      "overviewParagraphs": [
+        "The OKM eXp 6000 is a professional 3D ground scanning system that renders live subsurface visualization as you walk — revealing cavities, metal objects, mineral deposits, and structural anomalies before any excavation begins. Its multi-probe analyzer system is built for the demanding survey conditions found across Pakistan's mining and archaeological sites.",
+        "Paired with an Android tablet interface, the eXp 6000 displays real-time 3D imaging, GPS-tagged scan paths, and spectrum analysis for material discrimination. Survey teams in Balochistan's mineral belts and KPK's archaeological zones rely on it to plan excavation with confidence instead of guesswork."
+      ],
+      "keyFeatures": [
+        { "title": "Live 3D Subsurface Visualization", "description": "Real-time rendering of underground structures, cavities, and mineral deposits as you scan." },
+        { "title": "Multi-Probe Analyzer System", "description": "Interchangeable probes tune the system for metal, cavity, or mineral-specific detection tasks." },
+        { "title": "GPS-Tagged Scan Mapping", "description": "Every scan path is geo-referenced, letting teams overlay results directly onto site survey maps." },
+        { "title": "Spectrum Material Discrimination", "description": "Differentiates between metal types, voids, and mineral concentrations rather than a single generic signal." },
+        { "title": "Android Tablet Interface", "description": "Large, daylight-readable touchscreen display with exportable scan data for office-based analysis." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "3D Ground Scanning + Digital Analyzer" },
+        { "label": "Scan Depth", "value": "Up to 25 m" },
+        { "label": "Probe System", "value": "Multiple interchangeable analysis probes" },
+        { "label": "Display", "value": "Android tablet, live 3D rendering" },
+        { "label": "Discrimination", "value": "Metal / cavity / mineral differentiation" },
+        { "label": "GPS", "value": "Built-in scan geo-tagging" },
+        { "label": "Battery", "value": "Li-ion, up to 6 hours continuous scanning" },
+        { "label": "Weight", "value": "3.5 kg (analyzer unit)" },
+        { "label": "Data Export", "value": "USB / Bluetooth to PC software" }
+      ],
+      "whatsInTheBox": [
+        "OKM eXp 6000 digital analyzer unit",
+        "Android tablet with OKM visualization software",
+        "Ground scan probe set",
+        "Hard-shell carrying case",
+        "Charging equipment for analyzer and tablet",
+        "User manual & field operation guide"
+      ],
+      "idealFor": [
+        { "title": "Survey Teams", "description": "Geophysical and geological survey mapping before excavation.", "icon": "globe" },
+        { "title": "Mining Companies", "description": "Locating mineral deposits and cavities ahead of extraction planning.", "icon": "pin" },
+        { "title": "Archaeologists", "description": "Non-invasive site assessment before formal excavation.", "icon": "compass" },
+        { "title": "Treasure Hunters", "description": "Structure and cavity detection across varied terrain.", "icon": "search" }
+      ],
+      "faq": [
+        { "question": "Do I need training to operate the eXp 6000?", "answer": "Yes, and it's included. The eXp 6000's multi-probe system has a learning curve, so every purchase comes with a full on-site or video training session covering probe selection, scan technique, and result interpretation." }
+      ],
+      "reviews": [
+        { "name": "Dr. Sana Malik", "location": "Quetta", "rating": 5, "date": "2026-02-10", "comment": "We use the eXp 6000 for pre-excavation surveys across our mineral concessions in Balochistan. The 3D visualization has saved us weeks of exploratory digging." },
+        { "name": "Waqas Ahmed", "location": "Peshawar", "rating": 4, "date": "2025-12-05", "comment": "Powerful system with a real learning curve — the training session PDT provided was essential to getting reliable readings." }
+      ]
+    },
+    "garrett-atx": {
+      "tagline": "Military-Grade Detection for the Toughest Ground.",
+      "overviewParagraphs": [
+        "The Garrett ATX is a fully submersible pulse induction detector engineered for extreme conditions — highly mineralized soil, saltwater, and mixed-trash sites where VLF detectors struggle. Its PI technology ignores ground mineralization entirely, making ground balancing unnecessary even in Pakistan's most challenging iron-rich terrain.",
+        "Originally developed for military and humanitarian demining use, the ATX brings that same rugged reliability to professional prospecting and security screening applications. Fully sealed to 10 meters, it performs identically whether working dry desert ground or wading through riverbeds."
+      ],
+      "keyFeatures": [
+        { "title": "True Pulse Induction Technology", "description": "Ignores ground mineralization completely; no ground balancing required on any soil type." },
+        { "title": "Fully Submersible to 10 Meters", "description": "Sealed control box and coil rated for serious underwater and monsoon-condition use." },
+        { "title": "Programmable Frequency", "description": "Adjustable pulse delay and frequency settings tune performance for specific target types and ground conditions." },
+        { "title": "Military-Grade Build Quality", "description": "Designed to the same durability standard used in demining and security screening operations." },
+        { "title": "Interchangeable Coil System", "description": "Compatible with multiple coil sizes for area coverage versus pinpoint sensitivity trade-offs." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "Pulse Induction (PI)" },
+        { "label": "Waterproof", "value": "Fully submersible to 10 m" },
+        { "label": "Coil", "value": "10\" x 12\" DD (standard)" },
+        { "label": "Ground Balance", "value": "Not required (PI technology)" },
+        { "label": "Discrimination", "value": "Adjustable, target-size based" },
+        { "label": "Battery", "value": "NiMH rechargeable, up to 14 hours" },
+        { "label": "Weight", "value": "2.15 kg" },
+        { "label": "Frequency", "value": "Programmable pulse delay" }
+      ],
+      "whatsInTheBox": [
+        "Garrett ATX control box and coil",
+        "Rechargeable NiMH battery pack",
+        "Battery charger",
+        "Waterproof headphones",
+        "Coil cover",
+        "Carrying/transport case",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Mining Companies", "description": "Surface prospecting in heavily mineralized or iron-rich ground.", "icon": "pin" },
+        { "title": "Security Teams", "description": "Screening operations requiring reliable all-soil performance.", "icon": "shield" },
+        { "title": "Gold Prospectors", "description": "Deep-target gold recovery where VLF detectors lose sensitivity.", "icon": "star" },
+        { "title": "Survey Teams", "description": "Fieldwork across mixed-trash or saltwater-affected sites.", "icon": "globe" }
+      ],
+      "faq": [
+        { "question": "Does the ATX need ground balancing like VLF detectors?", "answer": "No. Pulse induction technology is inherently unaffected by ground mineralization, so there's no ground balance procedure — a major advantage on Pakistan's iron-mineralized soils where VLF machines typically struggle." }
+      ],
+      "reviews": [
+        { "name": "Col. (R) Asad Raza", "location": "Rawalpindi", "rating": 5, "date": "2025-11-20", "comment": "Bought this for our security screening contract. Performs consistently regardless of soil conditions — exactly what pulse induction promises." },
+        { "name": "Bilal Sarwar", "location": "Chaman, Balochistan", "rating": 5, "date": "2026-01-08", "comment": "The heavily mineralized ground near the border used to defeat every VLF detector I owned. The ATX doesn't even flinch." }
+      ]
+    },
+    "minelab-gpx-6000": {
+      "tagline": "The Deepest Reach in Gold Detection.",
+      "overviewParagraphs": [
+        "The Minelab GPX 6000 is Minelab's flagship gold detector, built around GeoSense PI technology that delivers exceptional depth on gold nuggets of every size — from tiny specimens to substantial hard-rock finds — without ever needing manual ground balancing.",
+        "At just 1.4 kg, it's remarkably light for a pulse induction machine, letting prospectors cover more ground per day across Pakistan's gold-bearing regions. Four dedicated detect modes let you tune sensitivity against ground noise depending on hunting conditions in Gilgit-Baltistan's rivers or Balochistan's hard-rock deposits."
+      ],
+      "keyFeatures": [
+        { "title": "GeoSense PI Technology", "description": "Purpose-built pulse induction for maximum depth on gold, with zero ground balancing required." },
+        { "title": "Four Dedicated Detect Modes", "description": "General, Salt/Mineral Ground, Sensitive, and Extra Sensitive modes tune performance to any terrain." },
+        { "title": "Ultra-Lightweight Design", "description": "At 1.4 kg, reduces fatigue during long prospecting days across difficult terrain." },
+        { "title": "Fully Waterproof Coil", "description": "Search coil rated for wading through streams and shallow water without performance loss." },
+        { "title": "Wireless Headphone Ready", "description": "Compatible with Minelab wireless audio accessories for cable-free operation." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "GeoSense Pulse Induction (PI)" },
+        { "label": "Coil", "value": "11\" DD (standard)" },
+        { "label": "Waterproof", "value": "Coil fully waterproof" },
+        { "label": "Ground Balance", "value": "Not required (PI technology)" },
+        { "label": "Detect Modes", "value": "General / Salt-Mineral / Sensitive / Extra Sensitive" },
+        { "label": "Battery", "value": "Up to 6+ hours, swappable AA or lithium pack" },
+        { "label": "Weight", "value": "1.4 kg" },
+        { "label": "Wireless Audio", "value": "Compatible (optional accessory)" }
+      ],
+      "whatsInTheBox": [
+        "Minelab GPX 6000 control box and coil",
+        "Standard 11\" DD search coil",
+        "Battery compartment with AA battery holder",
+        "Headphones",
+        "Coil cover",
+        "Carry bag",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Gold Prospectors", "description": "Serious nugget hunting in alluvial and hard-rock deposits.", "icon": "star" },
+        { "title": "Professional Miners", "description": "Commercial-scale gold detection operations.", "icon": "pin" },
+        { "title": "Survey Teams", "description": "High-value fieldwork requiring maximum depth performance.", "icon": "globe" },
+        { "title": "Treasure Hunters", "description": "Deep-target recovery in previously worked ground.", "icon": "search" }
+      ],
+      "faq": [
+        { "question": "Is the GPX 6000 worth the investment over the Gold Kruzer for professional use?", "answer": "For dedicated, high-volume gold prospecting — especially in worked-over ground where remaining nuggets are deeper — the GPX 6000's PI depth advantage typically justifies the price difference. For general prospecting and mixed budgets, the Gold Kruzer remains an excellent VLF alternative." }
+      ],
+      "reviews": [
+        { "name": "Rashid Baig", "location": "Gilgit", "rating": 5, "date": "2026-03-20", "comment": "The depth on this machine is on another level compared to my previous VLF detector. Found nuggets other prospectors had walked straight over." },
+        { "name": "Naveed Iqbal", "location": "Chitral", "rating": 5, "date": "2026-02-01", "comment": "Expensive but it's Minelab's flagship for a reason. Light enough for full-day sessions in the mountains." }
+      ]
+    },
+    "fisher-gold-bug-pro": {
+      "tagline": "Precision Gold Detection at an Accessible Price.",
+      "overviewParagraphs": [
+        "The Fisher Gold Bug Pro is a dedicated 19 kHz VLF detector engineered specifically for small gold recovery. Its high operating frequency and iron discrimination make it exceptionally sensitive to fine gold that lower-frequency general-purpose detectors routinely miss.",
+        "Weighing just over a kilogram, the Gold Bug Pro is built for long days working alluvial deposits and tailings piles. Manual and automatic ground balance options let prospectors fine-tune performance for the mineralized soils common across northern Pakistan's gold-bearing river systems."
+      ],
+      "keyFeatures": [
+        { "title": "19 kHz High-Sensitivity VLF", "description": "Tuned specifically for detecting small gold nuggets and fine flakes." },
+        { "title": "Iron Discrimination", "description": "Filters out iron trash while preserving sensitivity to gold-sized targets." },
+        { "title": "Manual & Automatic Ground Balance", "description": "Fine-tune control for highly mineralized or variable soil conditions." },
+        { "title": "Lightweight Ergonomic Design", "description": "At roughly 1.2 kg, minimizes fatigue during extended prospecting sessions." },
+        { "title": "Interchangeable Coil Options", "description": "5\" coil for tight, trashy areas; 10\" coil for broader ground coverage." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "VLF" },
+        { "label": "Frequency", "value": "19 kHz" },
+        { "label": "Waterproof", "value": "Weather-resistant (not submersible)" },
+        { "label": "Coil", "value": "10\" DD (5\" DD optional)" },
+        { "label": "Ground Balance", "value": "Manual / Automatic" },
+        { "label": "Discrimination", "value": "Iron discrimination, adjustable threshold" },
+        { "label": "Battery", "value": "2x AA, up to 30 hours" },
+        { "label": "Weight", "value": "1.2 kg" }
+      ],
+      "whatsInTheBox": [
+        "Fisher Gold Bug Pro detector unit",
+        "10\" DD search coil",
+        "Headphones",
+        "2x AA batteries",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Gold Prospectors", "description": "Small nugget and fine gold recovery specialists.", "icon": "star" },
+        { "title": "Hobbyist Detectorists", "description": "Accessible entry point into serious gold prospecting.", "icon": "users" },
+        { "title": "Survey Teams", "description": "Lightweight fieldwork across tailings and alluvial sites.", "icon": "globe" },
+        { "title": "Treasure Hunters", "description": "Precision recovery in previously hunted ground.", "icon": "search" }
+      ],
+      "faq": [
+        { "question": "Is the Gold Bug Pro suitable for wet or riverbed conditions?", "answer": "It's weather-resistant rather than fully submersible — safe for damp ground and light rain, but the control box shouldn't be submerged. For wading through streams, we'd recommend the Gold Kruzer or GPX 6000 instead." }
+      ],
+      "reviews": [
+        { "name": "Hamza Sheikh", "location": "Mansehra", "rating": 4, "date": "2025-10-14", "comment": "Great sensitivity to small gold. Just be careful near water, it's not a submersible unit like some of the others PDT sells." },
+        { "name": "Adnan Qureshi", "location": "Swat", "rating": 5, "date": "2025-08-22", "comment": "Best value gold detector I've used. Light enough to carry all day through the hills." }
+      ]
+    },
+    "xp-deus-ii": {
+      "tagline": "Fully Wireless. Fully Multi-Frequency.",
+      "overviewParagraphs": [
+        "The XP DEUS II is a fully wireless, multi-frequency detector that eliminates cables between coil, control box, and headphones entirely. Its Full Multi Frequency (FMF) technology processes multiple frequencies simultaneously, adapting automatically to trash density, ground mineralization, and target depth.",
+        "Waterproof to 5 meters and weighing under a kilogram at the coil, the DEUS II is built for relic and coin hunters who value speed and low fatigue over long sessions. Firmware updates keep the detection engine current without buying new hardware."
+      ],
+      "keyFeatures": [
+        { "title": "Full Multi Frequency (FMF) Technology", "description": "Processes several frequencies at once, automatically adapting to ground and target conditions." },
+        { "title": "Completely Wireless Architecture", "description": "No cables between coil, control box, or headphones — true freedom of movement." },
+        { "title": "Waterproof Coil to 5 Meters", "description": "Submersible search coil for wading and shallow-water detecting." },
+        { "title": "Ultra-Lightweight Build", "description": "Under 1 kg at the coil and rod assembly, dramatically reducing arm fatigue." },
+        { "title": "Firmware-Upgradeable Engine", "description": "Detection software updates over time without replacing the detector itself." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "Full Multi Frequency (FMF)" },
+        { "label": "Waterproof", "value": "Coil waterproof to 5 m" },
+        { "label": "Coil", "value": "9\" HF or 11\" FMF (configuration dependent)" },
+        { "label": "Ground Balance", "value": "Automatic, real-time tracking" },
+        { "label": "Discrimination", "value": "Multi-tone, fully adjustable" },
+        { "label": "Battery", "value": "Li-ion, up to 15 hours per component" },
+        { "label": "Weight", "value": "Under 1 kg (coil + rod)" },
+        { "label": "Wireless", "value": "Fully wireless coil, control unit, and headphones" }
+      ],
+      "whatsInTheBox": [
+        "XP DEUS II coil and control unit",
+        "WSA wireless headphones",
+        "Remote control unit",
+        "Charging cables and dock",
+        "Coil cover",
+        "Carry bag",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Coin & Relic Hunters", "description": "Fast target recovery with adaptive multi-frequency discrimination.", "icon": "search" },
+        { "title": "Hobbyist Detectorists", "description": "Long detecting sessions with minimal fatigue.", "icon": "users" },
+        { "title": "Beach Hunters", "description": "Waterproof coil for shoreline and shallow-water detecting.", "icon": "droplet" },
+        { "title": "Survey Teams", "description": "Lightweight, cable-free fieldwork across varied terrain.", "icon": "globe" }
+      ],
+      "faq": [
+        { "question": "How does the wireless system hold up in the field — any signal reliability concerns?", "answer": "The DEUS II's wireless protocol is purpose-built for detecting and has proven reliable even in dense brush. We recommend keeping firmware updated via the XP software, which we walk you through during your included training session." }
+      ],
+      "reviews": [
+        { "name": "Faisal Mahmood", "location": "Lahore", "rating": 5, "date": "2026-01-25", "comment": "No cables at all changes how detecting feels — genuinely less fatigue on long sessions. Multi-frequency handles our mixed-trash parks well." },
+        { "name": "Omar Siddiqui", "location": "Karachi", "rating": 4, "date": "2025-09-30", "comment": "Learning curve on the menu system is real but PDT's training session got me comfortable within a day." }
+      ]
+    },
+    "minelab-equinox-900": {
+      "tagline": "One Detector, Every Target.",
+      "overviewParagraphs": [
+        "The Minelab Equinox 900 is an all-terrain multi-IQ detector that simultaneously transmits multiple frequencies, giving it equal sensitivity to coins, relics, and gold in a single machine. It's the detector most commonly recommended for hobbyists who want one machine that excels everywhere.",
+        "Fully submersible to 3 meters and weighing just over a kilogram, the Equinox 900 pairs a bright full-color display with eight purpose-built detect modes — from park and field settings to two dedicated gold modes — covering virtually every detecting scenario found across Pakistan."
+      ],
+      "keyFeatures": [
+        { "title": "Multi-IQ Simultaneous Multi-Frequency", "description": "Transmits multiple frequencies at once for balanced sensitivity across all target types." },
+        { "title": "Fully Submersible to 3 Meters", "description": "Wade through streams or detect in shallow water without any performance compromise." },
+        { "title": "Eight Dedicated Detect Modes", "description": "Purpose-tuned settings for park, field, beach, and two gold-specific modes." },
+        { "title": "Wireless Audio Compatible", "description": "Works with Minelab's WM 08 module for cable-free headphone operation." },
+        { "title": "Full-Color LCD Display", "description": "Clear target ID, depth indication, and menu navigation even in direct sunlight." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "Multi-IQ (Simultaneous Multi-Frequency)" },
+        { "label": "Waterproof", "value": "Fully submersible to 3 m" },
+        { "label": "Coil", "value": "11\" DD (standard)" },
+        { "label": "Detect Modes", "value": "8 (Park, Field, Beach, Gold 1 & 2, and more)" },
+        { "label": "Discrimination", "value": "Multi-tone, fully adjustable" },
+        { "label": "Battery", "value": "Li-ion rechargeable, up to 12 hours" },
+        { "label": "Weight", "value": "1.1 kg" },
+        { "label": "Display", "value": "Full-color LCD" }
+      ],
+      "whatsInTheBox": [
+        "Minelab Equinox 900 control box and coil",
+        "Rechargeable battery pack",
+        "Headphones",
+        "Coil cover",
+        "Carry bag",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Coin & Relic Hunters", "description": "All-purpose detecting across parks, fields, and historic sites.", "icon": "search" },
+        { "title": "Beach Hunters", "description": "Fully submersible design for shoreline and shallow-water recovery.", "icon": "droplet" },
+        { "title": "Gold Prospectors", "description": "Dedicated gold modes for nugget hunting alongside general use.", "icon": "star" },
+        { "title": "Hobbyist Detectorists", "description": "A single versatile machine for varied detecting interests.", "icon": "users" }
+      ],
+      "faq": [
+        { "question": "Can the Equinox 900 replace a dedicated gold detector like the Gold Kruzer?", "answer": "Its gold modes perform well for general nugget hunting, but a dedicated single-frequency gold machine like the Gold Kruzer will typically out-depth it on small gold in heavily mineralized ground. The Equinox 900 is the better choice if you want one detector across multiple target types." }
+      ],
+      "reviews": [
+        { "name": "Ayesha Noor", "location": "Islamabad", "rating": 5, "date": "2026-02-14", "comment": "Genuinely one machine for everything — coins in the park on weekends, then gold mode when I travel north. Display is excellent in sunlight." },
+        { "name": "Kashif Mehmood", "location": "Multan", "rating": 5, "date": "2025-12-19", "comment": "Waded straight into a canal with no hesitation. Build quality feels premium and the modes are easy to switch between." }
+      ]
+    },
+    "nokta-legend": {
+      "tagline": "Multi-Frequency Versatility, Zero Compromise.",
+      "overviewParagraphs": [
+        "The Nokta Legend combines simultaneous multi-frequency detection with a fully wireless, IP68-rated waterproof build — no dongles, no cables, submersible to 5 meters straight out of the box. It's engineered for detectorists who refuse to trade off between depth, versatility, and durability.",
+        "A swappable 18650 battery system (with a 9V backup slot) means the Legend never has to sit idle waiting to charge. Built-in Bluetooth streams music or calls alongside detecting audio, and the 11\" x 7\" DD coil balances ground coverage with target separation in trashy sites."
+      ],
+      "keyFeatures": [
+        { "title": "Simultaneous Multi-Frequency Detection", "description": "Balanced sensitivity to coins, relics, and gold without switching frequencies manually." },
+        { "title": "IP68 Waterproof to 5 Meters", "description": "Fully submersible control box and coil, no separate waterproofing kit required." },
+        { "title": "Built-in Wireless & Bluetooth", "description": "Wireless headphone audio plus Bluetooth streaming for music, with no external accessory needed." },
+        { "title": "Swappable 18650 Battery System", "description": "Hot-swap batteries in the field instead of waiting on a recharge cycle." },
+        { "title": "11\" x 7\" DD Coil", "description": "Balances wide ground coverage with sharp target separation in iron-heavy sites." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "Simultaneous Multi-Frequency" },
+        { "label": "Waterproof", "value": "IP68 — fully submersible to 5 m" },
+        { "label": "Coil", "value": "11\" x 7\" DD (standard)" },
+        { "label": "Ground Balance", "value": "Auto / Manual / Tracking" },
+        { "label": "Discrimination", "value": "Multi-tone, accept/reject notch" },
+        { "label": "Battery", "value": "Swappable 18650 Li-ion + 9V backup" },
+        { "label": "Weight", "value": "1.4 kg" },
+        { "label": "Wireless", "value": "Built-in wireless audio + Bluetooth" }
+      ],
+      "whatsInTheBox": [
+        "Nokta Legend detector unit",
+        "11\" x 7\" DD waterproof search coil",
+        "Wireless headphones",
+        "18650 rechargeable battery + charger",
+        "Coil cover",
+        "Carry bag",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Coin & Relic Hunters", "description": "Multi-frequency depth across historic and trashy sites.", "icon": "search" },
+        { "title": "Beach Hunters", "description": "Fully submersible for shoreline and shallow-water recovery.", "icon": "droplet" },
+        { "title": "Hobbyist Detectorists", "description": "Feature-rich all-rounder for varied detecting interests.", "icon": "users" },
+        { "title": "Gold Prospectors", "description": "Capable secondary use for gold and nugget hunting.", "icon": "star" }
+      ],
+      "faq": [
+        { "question": "Does the swappable battery system really make a difference in the field?", "answer": "Yes — carrying one or two spare 18650 batteries means you're never stuck waiting for a recharge mid-session, which matters most on multi-day trips away from reliable power, common on prospecting trips to the north." }
+      ],
+      "reviews": [
+        { "name": "Tariq Jameel", "location": "Abbottabad", "rating": 5, "date": "2025-11-02", "comment": "Battery swapping is a genuine game-changer on multi-day trips. Waterproofing has held up through several stream crossings." },
+        { "name": "Salman Rafiq", "location": "Sialkot", "rating": 4, "date": "2025-07-11", "comment": "Great depth on old coins in trashy ground. Menu takes a little getting used to but support from PDT was helpful." }
+      ]
+    },
+    "garrett-at-max": {
+      "tagline": "All-Terrain Reliability, Garrett Toughness.",
+      "overviewParagraphs": [
+        "The Garrett AT Max is a 13.6 kHz all-terrain VLF detector built to perform equally well on land or fully submerged to 3 meters. Z-Lynk wireless audio and a backlit LCD display bring modern convenience to Garrett's long-trusted detection engine.",
+        "Manual and automatic ground balance tracking keep performance consistent across Pakistan's varied soil types, while the dedicated Iron Audio feature lets detectorists hear masked targets buried beneath iron trash instead of losing them entirely."
+      ],
+      "keyFeatures": [
+        { "title": "13.6 kHz All-Terrain VLF", "description": "Reliable general-purpose detection tuned for coins, relics, and jewelry." },
+        { "title": "Waterproof to 3 Meters", "description": "Fully submersible control box and coil for beach and shallow-water detecting." },
+        { "title": "Z-Lynk Wireless Audio", "description": "Garrett's proprietary low-latency wireless headphone connection, included standard." },
+        { "title": "Iron Audio Feature", "description": "Hear targets masked by iron trash instead of having them silently rejected." },
+        { "title": "Backlit LCD Display", "description": "Clear target ID and depth reading in low-light conditions." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "VLF" },
+        { "label": "Frequency", "value": "13.6 kHz" },
+        { "label": "Waterproof", "value": "Fully submersible to 3 m" },
+        { "label": "Coil", "value": "8.5\" x 11\" DD (standard)" },
+        { "label": "Ground Balance", "value": "Manual / Automatic tracking" },
+        { "label": "Discrimination", "value": "Iron Audio, adjustable notch" },
+        { "label": "Battery", "value": "4x AA, up to 40 hours" },
+        { "label": "Weight", "value": "1.5 kg" }
+      ],
+      "whatsInTheBox": [
+        "Garrett AT Max detector unit",
+        "8.5\" x 11\" DD search coil",
+        "Z-Lynk wireless headphones",
+        "4x AA batteries",
+        "Coil cover",
+        "Carry bag",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Coin & Relic Hunters", "description": "Dependable all-terrain detecting for historic sites.", "icon": "search" },
+        { "title": "Beach Hunters", "description": "Fully submersible build for shoreline recovery.", "icon": "droplet" },
+        { "title": "Hobbyist Detectorists", "description": "Trusted Garrett reliability at a mid-range price point.", "icon": "users" },
+        { "title": "Survey Teams", "description": "Consistent performance across mixed soil conditions.", "icon": "globe" }
+      ],
+      "faq": [
+        { "question": "How long does the battery actually last in real field use?", "answer": "Garrett rates the AT Max at up to 40 hours on 4 standard AA batteries, and most of our customers doing full-day sessions confirm that estimate holds up well in practice — carrying one spare set easily covers a multi-day trip." }
+      ],
+      "reviews": [
+        { "name": "Junaid Aslam", "location": "Faisalabad", "rating": 5, "date": "2025-09-08", "comment": "Iron Audio feature alone is worth the upgrade from my old detector — finding coins in trashy fields is so much easier now." },
+        { "name": "Zubair Anwar", "location": "Hyderabad", "rating": 4, "date": "2025-06-27", "comment": "Solid, no-nonsense Garrett build quality. Battery life is exactly as advertised." }
+      ]
+    },
+    "okm-rover-c4": {
+      "tagline": "Portable 3D Scanning for the Field.",
+      "overviewParagraphs": [
+        "The OKM Rover C4 brings professional 3D ground scanning into a portable, backpack-ready form factor. Favored by treasure hunters and small survey teams, it delivers live subsurface visualization without the bulk of larger analyzer systems.",
+        "Its GPS-enabled scan mapping and integrated display let a single operator survey a site, review results, and mark points of interest on the spot — ideal for teams working across multiple remote sites in a single day."
+      ],
+      "keyFeatures": [
+        { "title": "Portable 3D Ground Scanning", "description": "Full subsurface visualization in a lightweight, field-ready package." },
+        { "title": "GPS-Enabled Scan Mapping", "description": "Automatically geo-tags every scan for later site-map overlay." },
+        { "title": "Integrated Display", "description": "On-unit visualization means no separate tablet or laptop required in the field." },
+        { "title": "Single-Operator Design", "description": "Built to be carried and operated by one person across remote survey sites." },
+        { "title": "Multi-Site Daily Workflow", "description": "Fast setup and breakdown suited to surveying several locations in one outing." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "3D Ground Scanning" },
+        { "label": "Scan Depth", "value": "Up to 14 m (configuration dependent)" },
+        { "label": "Display", "value": "Integrated visualization unit" },
+        { "label": "GPS", "value": "Built-in scan geo-tagging" },
+        { "label": "Battery", "value": "Li-ion, up to 5 hours continuous scanning" },
+        { "label": "Weight", "value": "2.5 kg" },
+        { "label": "Data Export", "value": "USB to PC software" },
+        { "label": "Carrying", "value": "Backpack-portable design" }
+      ],
+      "whatsInTheBox": [
+        "OKM Rover C4 scanning unit",
+        "Integrated display module",
+        "Carrying backpack",
+        "Charging equipment",
+        "OKM visualization software (PC)",
+        "User manual & field guide"
+      ],
+      "idealFor": [
+        { "title": "Treasure Hunters", "description": "Portable cavity and structure detection across remote sites.", "icon": "search" },
+        { "title": "Survey Teams", "description": "Fast multi-site geophysical mapping in a single day.", "icon": "globe" },
+        { "title": "Archaeologists", "description": "Non-invasive assessment before excavation.", "icon": "compass" },
+        { "title": "Mining Companies", "description": "Preliminary site scanning ahead of formal exploration.", "icon": "pin" }
+      ],
+      "faq": [
+        { "question": "How does the Rover C4 compare to the eXp 6000 for someone deciding between the two?", "answer": "The Rover C4 favors portability and single-operator use across multiple sites in a day, while the eXp 6000 offers deeper scan capability and a more advanced multi-probe analyzer for dedicated survey teams. We're happy to walk through both in a WhatsApp consultation based on your typical site conditions." }
+      ],
+      "reviews": [
+        { "name": "Shahzad Latif", "location": "Peshawar", "rating": 4, "date": "2025-10-30", "comment": "Light enough to carry between sites in one day, which matters when you're covering multiple locations for a client." },
+        { "name": "Arslan Butt", "location": "Dera Ismail Khan", "rating": 5, "date": "2025-08-15", "comment": "GPS tagging makes it easy to go back and compare scans from different visits to the same site." }
+      ]
+    },
+    "okm-fusion-light": {
+      "tagline": "Metal Detection Meets Ground Scanning.",
+      "overviewParagraphs": [
+        "The OKM Fusion Light combines a VLF metal detector and a basic 3D ground scanner in a single unit — an entry point into subsurface imaging for users who don't yet need a dedicated professional analyzer system.",
+        "Switch between standard metal detection mode for coins and relics, and ground-scan mode for a first look at buried structures and cavities, all from one integrated display without carrying two separate machines."
+      ],
+      "keyFeatures": [
+        { "title": "Dual-Mode Operation", "description": "Switch between VLF metal detection and basic 3D ground scanning in one unit." },
+        { "title": "Integrated Display", "description": "On-board screen shows both detection and scan results without external hardware." },
+        { "title": "Entry-Level Ground Scanning", "description": "An accessible first step into subsurface imaging before investing in a professional analyzer." },
+        { "title": "Coil-Based Metal Detection", "description": "Standard VLF coil performance for everyday coin and relic hunting." },
+        { "title": "Compact Two-in-One Design", "description": "Reduces the need to carry separate metal detection and scanning equipment." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "VLF Metal Detection + Basic 3D Ground Scan" },
+        { "label": "Metal Detection Depth", "value": "Up to 2 m" },
+        { "label": "Structure Scan Depth", "value": "Deeper, structure-dependent" },
+        { "label": "Display", "value": "Integrated screen" },
+        { "label": "Battery", "value": "Li-ion, up to 6 hours" },
+        { "label": "Weight", "value": "2.8 kg" },
+        { "label": "Coil", "value": "Standard VLF search coil" }
+      ],
+      "whatsInTheBox": [
+        "OKM Fusion Light unit",
+        "Standard VLF search coil",
+        "Integrated display module",
+        "Charging equipment",
+        "Carry case",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Hobbyist Detectorists", "description": "An accessible step up from standard metal detectors.", "icon": "users" },
+        { "title": "Treasure Hunters", "description": "Basic structure and cavity awareness alongside metal detection.", "icon": "search" },
+        { "title": "Survey Teams", "description": "Entry-level subsurface assessment on a budget.", "icon": "globe" },
+        { "title": "Mining Companies", "description": "Preliminary site checks before committing to professional-grade equipment.", "icon": "pin" }
+      ],
+      "faq": [
+        { "question": "Is the Fusion Light a good replacement for a dedicated ground scanner like the Rover C4?", "answer": "It's best thought of as an introduction to ground scanning rather than a replacement for a dedicated analyzer — the scan depth and resolution are more basic. For serious survey work, we'd recommend stepping up to the Rover C4 or eXp 6000." }
+      ],
+      "reviews": [
+        { "name": "Fahad Rauf", "location": "Sargodha", "rating": 4, "date": "2025-09-22", "comment": "Good way to try ground scanning without the full professional price tag. Metal detection side works well for weekend coin hunting." },
+        { "name": "Nadeem Chaudhry", "location": "Gujranwala", "rating": 4, "date": "2025-05-19", "comment": "Does both jobs reasonably well, though the scan mode is clearly the entry-level version compared to OKM's bigger units." }
+      ]
+    },
+    "goldxtra-target-2000": {
+      "tagline": "Adjustable-Frequency Locating for Wide-Area Searches.",
+      "overviewParagraphs": [
+        "The GoldXtra Target 2000 is a long-range locator designed for prospectors and treasure hunters who need to narrow down a search area before switching to close-range detection equipment. Adjustable frequency channels let operators tune the unit toward specific target compositions.",
+        "Lightweight and simple to operate, the Target 2000 is typically used as a first-pass tool across large open sites — helping teams prioritize where to bring in ground scanners or metal detectors for detailed, close-range verification."
+      ],
+      "keyFeatures": [
+        { "title": "Adjustable Frequency Channels", "description": "Multiple selectable channels to tune toward different target compositions." },
+        { "title": "Lightweight Field Design", "description": "Easy to carry and operate across long search sessions." },
+        { "title": "Wide-Area First-Pass Searching", "description": "Built to help narrow down large sites before close-range verification." },
+        { "title": "Simple Operation", "description": "Straightforward controls suited to field teams without extensive technical training." },
+        { "title": "Durable Field Construction", "description": "Built to handle repeated use across outdoor prospecting conditions." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "Adjustable-frequency long-range locating" },
+        { "label": "Frequency Channels", "value": "Multiple selectable channels" },
+        { "label": "Discrimination", "value": "Directional, target-composition tuning" },
+        { "label": "Battery", "value": "Rechargeable, field-day rated" },
+        { "label": "Weight", "value": "Under 1 kg" },
+        { "label": "Recommended Use", "value": "First-pass wide-area search, paired with close-range detection equipment" }
+      ],
+      "whatsInTheBox": [
+        "GoldXtra Target 2000 unit",
+        "Rechargeable battery and charger",
+        "Carry case",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Treasure Hunters", "description": "Narrowing down large search areas before close-range work.", "icon": "search" },
+        { "title": "Gold Prospectors", "description": "Wide-area first-pass prospecting.", "icon": "star" },
+        { "title": "Professional Search Teams", "description": "Field teams covering large sites efficiently.", "icon": "users" },
+        { "title": "Survey Teams", "description": "Preliminary site assessment ahead of detailed equipment use.", "icon": "globe" }
+      ],
+      "faq": [
+        { "question": "Should the Target 2000 be used on its own, or alongside a metal detector?", "answer": "It's designed as a first-pass, wide-area tool to help prioritize where to search — we always recommend pairing it with a metal detector or ground scanner for close-range verification and pinpointing before digging." }
+      ],
+      "reviews": [
+        { "name": "Rizwan Gondal", "location": "Bahawalpur", "rating": 4, "date": "2025-07-03", "comment": "Useful for narrowing down which corner of a large site to focus on before bringing in the detector for close-range work." },
+        { "name": "Sohail Ranjha", "location": "Muzaffargarh", "rating": 4, "date": "2025-04-27", "comment": "Does what it's meant to do as a first-pass tool. Pair it with proper detection equipment for the final verification." }
+      ]
+    },
+    "goldxtra-deep-hunter": {
+      "tagline": "Directional Discrimination for Professional Search Teams.",
+      "overviewParagraphs": [
+        "The GoldXtra Deep Hunter is the professional-grade option in GoldXtra's long-range locator line, adding directional target discrimination to help operators narrow not just distance but bearing before committing to close-range verification.",
+        "Built for teams running structured, large-area search operations, the Deep Hunter is typically deployed as part of a broader workflow — locating general target direction, then handing off to ground scanners or metal detectors for confirmation and recovery."
+      ],
+      "keyFeatures": [
+        { "title": "Directional Target Discrimination", "description": "Narrows down bearing as well as general target presence across a search area." },
+        { "title": "Professional-Grade Build", "description": "Designed for structured, repeated use by dedicated search teams." },
+        { "title": "Adjustable Sensitivity", "description": "Tune response for different search-area sizes and target expectations." },
+        { "title": "Team Workflow Integration", "description": "Built to complement ground scanners and metal detectors in a structured search process." },
+        { "title": "Rugged Field Construction", "description": "Durable housing suited to extended outdoor search operations." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "Directional long-range locating" },
+        { "label": "Discrimination", "value": "Directional bearing + target composition" },
+        { "label": "Sensitivity", "value": "Adjustable" },
+        { "label": "Battery", "value": "Rechargeable, field-day rated" },
+        { "label": "Weight", "value": "Under 1.2 kg" },
+        { "label": "Recommended Use", "value": "Professional search teams, paired with close-range detection equipment" }
+      ],
+      "whatsInTheBox": [
+        "GoldXtra Deep Hunter unit",
+        "Rechargeable battery and charger",
+        "Carry case",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Professional Search Teams", "description": "Structured, large-area search operations.", "icon": "users" },
+        { "title": "Treasure Hunters", "description": "Advanced first-pass directional searching.", "icon": "search" },
+        { "title": "Gold Prospectors", "description": "Prioritizing search direction across wide prospecting sites.", "icon": "star" },
+        { "title": "Survey Teams", "description": "Team-based workflows pairing with ground scanners or detectors.", "icon": "globe" }
+      ],
+      "faq": [
+        { "question": "What's the difference between the Deep Hunter and the Target 2000?", "answer": "The Deep Hunter adds directional discrimination on top of the Target 2000's adjustable-frequency searching, making it better suited to structured team operations where narrowing down bearing — not just general presence — matters. The Target 2000 remains a solid, simpler option for individual prospectors." }
+      ],
+      "reviews": [
+        { "name": "Khalid Mansoor", "location": "Dera Ghazi Khan", "rating": 4, "date": "2025-06-11", "comment": "Directional feature genuinely helps coordinate our small search team across larger sites." },
+        { "name": "Ashfaq Niazi", "location": "Mianwali", "rating": 4, "date": "2025-03-08", "comment": "Professional-feeling build. Works best as part of a full workflow rather than a standalone solution." }
+      ]
+    },
+    "okm-geoseeker": {
+      "tagline": "Locate Groundwater Before You Drill.",
+      "overviewParagraphs": [
+        "The OKM GeoSeeker is a geoelectric water detector that measures ground resistivity to locate aquifers, groundwater channels, and subsurface cavities at depths of up to 250 meters — critical data before committing to an expensive well-drilling operation.",
+        "Used by agricultural planners and geological survey teams across Pakistan's arid regions, the GeoSeeker's non-metallic resistivity measurement approach identifies water-bearing strata that conventional detection equipment simply cannot reach."
+      ],
+      "keyFeatures": [
+        { "title": "Geoelectric Resistivity Measurement", "description": "Detects water-bearing strata by measuring ground resistivity rather than metal content." },
+        { "title": "Depth Up to 250 Meters", "description": "Reaches far beyond conventional detection equipment for serious well-siting decisions." },
+        { "title": "Aquifer & Cavity Detection", "description": "Identifies both groundwater channels and subsurface voids in a single survey." },
+        { "title": "Field-Portable Probe System", "description": "Rod and probe configuration designed for on-site drilling-location surveys." },
+        { "title": "Pre-Drilling Cost Savings", "description": "Confirms viable well locations before committing to expensive drilling operations." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "Geoelectric resistivity measurement" },
+        { "label": "Max Depth", "value": "Up to 250 m" },
+        { "label": "Measurement Method", "value": "Non-metallic ground resistivity" },
+        { "label": "Probe System", "value": "Field probes and measurement rods" },
+        { "label": "Display", "value": "Integrated measurement readout" },
+        { "label": "Battery", "value": "Field-day rated" },
+        { "label": "Weight", "value": "Portable case system" }
+      ],
+      "whatsInTheBox": [
+        "OKM GeoSeeker probe and measurement unit",
+        "Field rods and probe set",
+        "Carrying case",
+        "Charging equipment",
+        "User manual & site survey guide"
+      ],
+      "idealFor": [
+        { "title": "Well-Drilling Contractors", "description": "Confirming viable well locations before drilling.", "icon": "droplet" },
+        { "title": "Agricultural Planners", "description": "Groundwater assessment for irrigation planning.", "icon": "leaf" },
+        { "title": "Geological Survey Teams", "description": "Aquifer and subsurface water mapping.", "icon": "globe" },
+        { "title": "Rural Development Organizations", "description": "Community well-siting projects.", "icon": "users" }
+      ],
+      "faq": [
+        { "question": "How accurate is the GeoSeeker for confirming a drilling location?", "answer": "It measures ground resistivity to identify likely water-bearing strata and depth — a strong evidence-based starting point that significantly improves drilling success rates compared to guesswork, though as with any geophysical method, it should inform rather than fully replace professional hydrogeological assessment for major drilling investments." }
+      ],
+      "reviews": [
+        { "name": "Engr. Yasir Hussain", "location": "Bahawalpur", "rating": 5, "date": "2025-11-15", "comment": "Used this ahead of three well-drilling projects this year — identified viable depth ranges that matched what we found drilling." },
+        { "name": "Mudassar Iqbal", "location": "Multan", "rating": 4, "date": "2025-08-02", "comment": "Solid tool for our agricultural cooperative's irrigation planning. Takes some practice to read the results confidently." }
+      ]
+    },
+    "okm-geoseeker-mini": {
+      "tagline": "Compact Groundwater Detection for Smaller Projects.",
+      "overviewParagraphs": [
+        "The OKM GeoSeeker Mini brings geoelectric water detection into a lighter, more portable package — suited to smaller-scale well-siting projects and community groundwater assessment where the full-depth GeoSeeker's 250-meter range isn't required.",
+        "With simplified operation and reduced weight, the GeoSeeker Mini is a practical choice for rural development teams and smallholder farmers assessing groundwater and cavity presence without the cost or complexity of a full professional survey system."
+      ],
+      "keyFeatures": [
+        { "title": "Compact Geoelectric Measurement", "description": "Portable resistivity-based water and cavity detection in a lighter package." },
+        { "title": "Simplified Operation", "description": "Streamlined controls suited to smaller projects and less specialized operators." },
+        { "title": "Practical Depth Range", "description": "Covers the depth requirements of most smallholder and community well projects." },
+        { "title": "Lightweight Field Carry", "description": "Easier transport across rural and difficult-access sites than the full GeoSeeker system." },
+        { "title": "Cost-Effective Entry Point", "description": "Professional water-detection technology at a more accessible price point." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "Geoelectric resistivity measurement (compact)" },
+        { "label": "Max Depth", "value": "Up to 80 m" },
+        { "label": "Measurement Method", "value": "Non-metallic ground resistivity" },
+        { "label": "Probe System", "value": "Compact probe set" },
+        { "label": "Battery", "value": "Field-day rated" },
+        { "label": "Weight", "value": "Lightweight portable case" }
+      ],
+      "whatsInTheBox": [
+        "OKM GeoSeeker Mini probe and measurement unit",
+        "Compact probe set",
+        "Carrying case",
+        "Charging equipment",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Rural Development Organizations", "description": "Community well-siting on a practical budget.", "icon": "users" },
+        { "title": "Agricultural Planners", "description": "Smallholder irrigation groundwater assessment.", "icon": "leaf" },
+        { "title": "Well-Drilling Contractors", "description": "Smaller-scale drilling location confirmation.", "icon": "droplet" },
+        { "title": "Geological Survey Teams", "description": "Preliminary groundwater surveys.", "icon": "globe" }
+      ],
+      "faq": [
+        { "question": "Is the Mini accurate enough for a real drilling decision, or just a preliminary check?", "answer": "For smaller community and smallholder projects within its depth range, it provides genuinely actionable data. For large commercial drilling investments needing depths beyond 80 meters, we'd recommend stepping up to the full GeoSeeker." }
+      ],
+      "reviews": [
+        { "name": "Imtiaz Cheema", "location": "Okara", "rating": 4, "date": "2025-09-17", "comment": "Right-sized for our village irrigation project — didn't need the full GeoSeeker's depth range and this was more affordable." },
+        { "name": "Rafiq Dogar", "location": "Sahiwal", "rating": 4, "date": "2025-05-30", "comment": "Easy enough to learn without a hydrogeology background. Good support from PDT on interpreting first results." }
+      ]
+    },
+    "teknetics-t2-classic": {
+      "tagline": "Fast Recovery, Clean Target ID.",
+      "overviewParagraphs": [
+        "The Teknetics T2 Classic is a lightweight 13 kHz VLF detector known for exceptionally fast recovery speed — letting it separate closely spaced targets in trashy sites better than many detectors in its class.",
+        "A clear backlit LCD display, adjustable ground balance, and multi-tone audio ID make the T2 Classic a favorite among hobbyists who want dependable, no-nonsense performance without a steep learning curve."
+      ],
+      "keyFeatures": [
+        { "title": "Fast Recovery Speed", "description": "Separates closely spaced targets cleanly, even in trash-dense sites." },
+        { "title": "13 kHz VLF Performance", "description": "Balanced sensitivity across coins, relics, and small jewelry." },
+        { "title": "Backlit LCD Display", "description": "Clear target ID and depth reading in any lighting condition." },
+        { "title": "Adjustable Ground Balance", "description": "Manual and automatic tracking for varied soil conditions." },
+        { "title": "Lightweight Build", "description": "Comfortable for extended detecting sessions with minimal fatigue." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "VLF" },
+        { "label": "Frequency", "value": "13 kHz" },
+        { "label": "Waterproof", "value": "Weather-resistant (coil only submersible)" },
+        { "label": "Coil", "value": "11\" DD (standard)" },
+        { "label": "Ground Balance", "value": "Manual / Automatic" },
+        { "label": "Discrimination", "value": "Multi-tone audio ID" },
+        { "label": "Battery", "value": "4x AA, up to 30 hours" },
+        { "label": "Weight", "value": "1.4 kg" }
+      ],
+      "whatsInTheBox": [
+        "Teknetics T2 Classic detector unit",
+        "11\" DD search coil",
+        "Headphones",
+        "4x AA batteries",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Coin & Relic Hunters", "description": "Fast target separation in trash-dense historic sites.", "icon": "search" },
+        { "title": "Hobbyist Detectorists", "description": "Dependable performance without a steep learning curve.", "icon": "users" },
+        { "title": "Beach Hunters", "description": "Submersible coil for shoreline detecting.", "icon": "droplet" },
+        { "title": "Survey Teams", "description": "Reliable lightweight fieldwork across varied ground.", "icon": "globe" }
+      ],
+      "faq": [
+        { "question": "Is the T2 Classic a good first detector for a beginner?", "answer": "It's approachable, but it rewards a bit of prior experience more than a pure entry-level machine like the Simplex Ultra. First-time users typically get up to speed quickly with our included training session." }
+      ],
+      "reviews": [
+        { "name": "Waseem Akram", "location": "Sheikhupura", "rating": 4, "date": "2025-07-19", "comment": "Recovery speed really does make a difference in old trashy fields — fewer missed targets next to junk." },
+        { "name": "Aamir Shahzad", "location": "Jhang", "rating": 4, "date": "2025-04-02", "comment": "Reliable machine, does exactly what's advertised without complicated menus." }
+      ]
+    },
+    "nokta-simplex-ultra": {
+      "tagline": "The Easiest Way to Start Detecting.",
+      "overviewParagraphs": [
+        "The Nokta Simplex Ultra is an entry-level detector that doesn't compromise on core features — IP68 waterproof to 5 meters, wireless headphones included standard, and a built-in rechargeable battery, all at a price built for first-time detectorists.",
+        "At under a kilogram, it's remarkably light for all-day use, and its straightforward mode selection means new users can be detecting confidently within minutes rather than wrestling with a complex menu system."
+      ],
+      "keyFeatures": [
+        { "title": "IP68 Waterproof to 5 Meters", "description": "Submersible performance usually reserved for far more expensive detectors." },
+        { "title": "Wireless Headphones Included", "description": "No separate purchase needed for cable-free audio." },
+        { "title": "Built-in Rechargeable Battery", "description": "Simple USB charging, no battery purchases or swapping required." },
+        { "title": "Beginner-Friendly Operation", "description": "Straightforward mode selection gets new users detecting within minutes." },
+        { "title": "Ultra-Lightweight Build", "description": "At under 1 kg, ideal for long sessions and younger or first-time users." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "VLF" },
+        { "label": "Frequency", "value": "12 kHz" },
+        { "label": "Waterproof", "value": "IP68 — fully submersible to 5 m" },
+        { "label": "Coil", "value": "11\" DD (standard)" },
+        { "label": "Ground Balance", "value": "Automatic" },
+        { "label": "Discrimination", "value": "4 search modes (Field, Park, Beach, All-Use)" },
+        { "label": "Battery", "value": "Built-in rechargeable Li-ion, up to 15 hours" },
+        { "label": "Weight", "value": "1.0 kg" },
+        { "label": "Wireless", "value": "Headphones included standard" }
+      ],
+      "whatsInTheBox": [
+        "Nokta Simplex Ultra detector unit",
+        "11\" DD waterproof search coil",
+        "Wireless headphones",
+        "USB charging cable",
+        "Coil cover",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Hobbyist Detectorists", "description": "The easiest possible entry point into the hobby.", "icon": "users" },
+        { "title": "Coin & Relic Hunters", "description": "Capable everyday detecting for parks and fields.", "icon": "search" },
+        { "title": "Beach Hunters", "description": "Fully waterproof for shoreline use straight out of the box.", "icon": "droplet" },
+        { "title": "Families & First-Time Users", "description": "Simple enough for beginners of any age to pick up quickly.", "icon": "star" }
+      ],
+      "faq": [
+        { "question": "Is the Simplex Ultra powerful enough for someone who might get serious about the hobby later?", "answer": "It's a genuinely capable all-around detector, not just a toy — many hobbyists use it for years. That said, if you already know you want dedicated gold or multi-frequency performance, the Nokta Legend or Minelab Equinox 900 give more room to grow into." }
+      ],
+      "reviews": [
+        { "name": "Hina Aslam", "location": "Rawalpindi", "rating": 5, "date": "2026-01-05", "comment": "Bought this for my son as his first detector — waterproof and light enough that he actually wants to keep using it every weekend." },
+        { "name": "Usman Farooq", "location": "Gujrat", "rating": 5, "date": "2025-10-01", "comment": "Incredible value. Waterproofing and wireless headphones at this price point genuinely surprised me." }
+      ]
+    },
+    "fisher-f22": {
+      "tagline": "Simple, Weatherproof, Ready to Detect.",
+      "overviewParagraphs": [
+        "The Fisher F22 is a weatherproof entry-level detector built around straightforward 4-tone target identification — an accessible way to start metal detecting without a steep learning curve or a large upfront investment.",
+        "Preset ground balance removes a common beginner stumbling block, while a bright backlit display and iron audio feature help new detectorists confidently identify targets from their very first outing."
+      ],
+      "keyFeatures": [
+        { "title": "4-Tone Target Identification", "description": "Clear audio cues that make target identification intuitive from day one." },
+        { "title": "Weatherproof Construction", "description": "Handles rain and damp ground conditions without concern." },
+        { "title": "Preset Ground Balance", "description": "Removes a common beginner setup step entirely." },
+        { "title": "Iron Audio Feature", "description": "Hear masked targets buried near iron trash rather than losing them." },
+        { "title": "Lightweight, Accessible Design", "description": "Comfortable for new users and younger detectorists alike." }
+      ],
+      "technicalSpecs": [
+        { "label": "Technology", "value": "VLF" },
+        { "label": "Frequency", "value": "7.69 kHz" },
+        { "label": "Waterproof", "value": "Weatherproof (not submersible)" },
+        { "label": "Coil", "value": "9\" Triangulated Concentric Elliptical" },
+        { "label": "Ground Balance", "value": "Factory preset" },
+        { "label": "Discrimination", "value": "4-tone target ID, iron audio" },
+        { "label": "Battery", "value": "2x AA, up to 25 hours" },
+        { "label": "Weight", "value": "1.1 kg" }
+      ],
+      "whatsInTheBox": [
+        "Fisher F22 detector unit",
+        "9\" concentric search coil",
+        "Headphones",
+        "2x AA batteries",
+        "User manual"
+      ],
+      "idealFor": [
+        { "title": "Hobbyist Detectorists", "description": "An accessible, budget-friendly entry into the hobby.", "icon": "users" },
+        { "title": "Families & First-Time Users", "description": "Simple preset operation for beginners of any age.", "icon": "star" },
+        { "title": "Coin & Relic Hunters", "description": "Capable everyday park and field detecting.", "icon": "search" },
+        { "title": "Survey Teams", "description": "Lightweight budget option for casual fieldwork.", "icon": "globe" }
+      ],
+      "faq": [
+        { "question": "What's the main difference between the F22 and the Simplex Ultra for a first-time buyer?", "answer": "Both are excellent beginner detectors. The Simplex Ultra adds full waterproof submersion and wireless headphones for a moderately higher price; the F22 is weatherproof rather than submersible and pairs with wired headphones, making it the more budget-focused of the two." }
+      ],
+      "reviews": [
+        { "name": "Nabeel Chaudhry", "location": "Gujranwala", "rating": 4, "date": "2025-06-08", "comment": "Perfect starter detector for the price. Preset ground balance means I was finding coins on day one." },
+        { "name": "Saad Malik", "location": "Kasur", "rating": 4, "date": "2025-02-14", "comment": "Simple and honest little machine. Great way to figure out if the hobby is for you before spending more." }
+      ]
+    }
+  }
+}

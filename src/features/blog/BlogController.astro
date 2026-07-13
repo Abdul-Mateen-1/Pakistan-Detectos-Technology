@@ -1,0 +1,213 @@
+---
+/**
+ * BlogController Component
+ * Single script controlling category filtering, live search, pagination,
+ * and URL state for the blog grid. Modeled on CatalogController.astro's
+ * hide/show-over-pre-rendered-cards approach (no client templating).
+ * Include at most once per page.
+ */
+import articles from "../../data/articles.json";
+
+const regularArticles = articles.filter((a) => !a.featured);
+
+const articleData = regularArticles.map((a) => ({
+  slug: a.slug,
+  category: a.category,
+  title: a.title,
+  description: a.description,
+}));
+---
+
+<script id="blog-data" type="application/json" set:html={JSON.stringify(articleData)}></script>
+
+<script>
+  type Article = { slug: string; category: string; title: string; description: string };
+
+  const articles: Article[] = JSON.parse(document.getElementById("blog-data")?.textContent || "[]");
+
+  const grid = document.getElementById("blog-grid");
+  const emptyState = document.getElementById("blog-empty-state");
+  const cardWrappers = Array.from(document.querySelectorAll<HTMLElement>(".article-card-wrapper"));
+  const searchInput = document.getElementById("blog-search") as HTMLInputElement | null;
+  const categoryTabs = document.querySelectorAll<HTMLButtonElement>(".category-tab");
+  const clearSearchBtn = document.getElementById("blog-clear-search");
+
+  const paginationRoot = document.getElementById("pagination");
+  const paginationList = document.getElementById("pagination-list");
+  const paginationRange = document.getElementById("pagination-range");
+
+  const PAGE_SIZE = 6;
+
+  let selectedCategory = "all";
+  let searchQuery = "";
+  let currentPage = 1;
+
+  function readUrl() {
+    const params = new URLSearchParams(window.location.search);
+    selectedCategory = params.get("category") || "all";
+    searchQuery = params.get("q") || "";
+    currentPage = params.get("page") ? Math.max(1, Number(params.get("page"))) : 1;
+  }
+
+  function writeUrl() {
+    const params = new URLSearchParams();
+    if (selectedCategory !== "all") params.set("category", selectedCategory);
+    if (searchQuery) params.set("q", searchQuery);
+    if (currentPage > 1) params.set("page", String(currentPage));
+    const qs = params.toString();
+    const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    window.history.replaceState({}, "", newUrl);
+  }
+
+  function setActiveTab() {
+    categoryTabs.forEach((t) => {
+      const active = t.dataset.category === selectedCategory;
+      t.setAttribute("aria-selected", String(active));
+      t.classList.toggle("text-text-primary", active);
+      t.classList.toggle("text-text-muted", !active);
+      const indicator = t.querySelector(".tab-indicator");
+      indicator?.classList.toggle("scale-x-100", active);
+      indicator?.classList.toggle("scale-x-0", !active);
+    });
+  }
+
+  function matchesFilters(a: Article): boolean {
+    if (selectedCategory !== "all" && a.category !== selectedCategory) return false;
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      if (!a.title.toLowerCase().includes(q) && !a.description.toLowerCase().includes(q)) return false;
+    }
+    return true;
+  }
+
+  function render() {
+    const matched = articles.filter(matchesFilters);
+    const totalPages = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    const startIdx = (currentPage - 1) * PAGE_SIZE;
+    const pageSlugs = new Set(matched.slice(startIdx, startIdx + PAGE_SIZE).map((a) => a.slug));
+
+    cardWrappers.forEach((w) => {
+      const slug = w.dataset.slug!;
+      w.classList.toggle("hidden", !pageSlugs.has(slug));
+    });
+
+    const isEmpty = matched.length === 0;
+    grid?.classList.toggle("hidden", isEmpty);
+    grid?.classList.toggle("grid", !isEmpty);
+    emptyState?.classList.toggle("hidden", !isEmpty);
+    emptyState?.classList.toggle("flex", isEmpty);
+
+    renderPagination(matched.length, totalPages);
+    writeUrl();
+  }
+
+  function renderPagination(total: number, totalPages: number) {
+    if (!paginationRoot || !paginationList || !paginationRange) return;
+    paginationRoot.classList.remove("hidden");
+    paginationRoot.classList.add("flex");
+
+    if (totalPages <= 1) {
+      paginationList.innerHTML = "";
+      paginationList.classList.add("hidden");
+      paginationRange.textContent = total > 0 ? `Showing 1–${total} of ${total} articles` : "";
+      return;
+    }
+    paginationList.classList.remove("hidden");
+
+    const startIdx = (currentPage - 1) * PAGE_SIZE + 1;
+    const endIdx = Math.min(currentPage * PAGE_SIZE, total);
+    paginationRange.textContent = `Showing ${startIdx}–${endIdx} of ${total} articles`;
+
+    paginationList.innerHTML = "";
+
+    const addBtn = (
+      label: string,
+      page: number,
+      opts: { active?: boolean; disabled?: boolean; ariaLabel?: string } = {},
+    ) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.className = "page-btn";
+      if (opts.active) a.classList.add("is-active");
+      if (opts.disabled) a.classList.add("is-disabled");
+      a.textContent = label;
+      const params = new URLSearchParams(window.location.search);
+      if (page > 1) params.set("page", String(page));
+      else params.delete("page");
+      const qs = params.toString();
+      a.href = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+      if (opts.ariaLabel) a.setAttribute("aria-label", opts.ariaLabel);
+      if (opts.active) a.setAttribute("aria-current", "page");
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (opts.disabled || opts.active) return;
+        currentPage = page;
+        render();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      li.appendChild(a);
+      paginationList!.appendChild(li);
+    };
+
+    const addEllipsis = () => {
+      const li = document.createElement("li");
+      const span = document.createElement("span");
+      span.className = "page-ellipsis";
+      span.textContent = "…";
+      span.setAttribute("aria-hidden", "true");
+      li.appendChild(span);
+      paginationList!.appendChild(li);
+    };
+
+    addBtn("‹", currentPage - 1, { disabled: currentPage === 1, ariaLabel: "Previous page" });
+
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) addBtn(String(i), i, { active: i === currentPage });
+    } else {
+      addBtn("1", 1, { active: currentPage === 1 });
+      if (currentPage > 3) addEllipsis();
+      const start = Math.max(2, currentPage - 1);
+      const end = Math.min(totalPages - 1, currentPage + 1);
+      for (let i = start; i <= end; i++) addBtn(String(i), i, { active: i === currentPage });
+      if (currentPage < totalPages - 2) addEllipsis();
+      addBtn(String(totalPages), totalPages, { active: currentPage === totalPages });
+    }
+
+    addBtn("›", currentPage + 1, { disabled: currentPage === totalPages, ariaLabel: "Next page" });
+  }
+
+  // ------- Event wiring -------
+  categoryTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      selectedCategory = tab.dataset.category || "all";
+      currentPage = 1;
+      setActiveTab();
+      render();
+    });
+  });
+
+  let searchDebounce: ReturnType<typeof setTimeout>;
+  searchInput?.addEventListener("input", () => {
+    clearTimeout(searchDebounce);
+    searchDebounce = setTimeout(() => {
+      searchQuery = searchInput.value.trim();
+      currentPage = 1;
+      render();
+    }, 250);
+  });
+
+  clearSearchBtn?.addEventListener("click", () => {
+    searchQuery = "";
+    if (searchInput) searchInput.value = "";
+    currentPage = 1;
+    render();
+  });
+
+  // ------- Initial paint -------
+  readUrl();
+  if (searchInput) searchInput.value = searchQuery;
+  setActiveTab();
+  render();
+</script>

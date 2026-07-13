@@ -5,6 +5,18 @@
     "logo": "/images/brands/garrett-logo.svg",
     "models": 10,
     "slug": "garrett",
+    "initials": "G",
+    "pageFeatured": true,
+    "location": "Garland, Texas, USA",
+    "foundedYear": 1964,
+    "description": "American-made detectors trusted by security agencies, prospectors, and hobbyists worldwide. Since 1964, Garrett has set the standard for reliability and target discrimination — from entry-level VLF machines to military-grade pulse induction systems.",
+    "metaDescription": "Garrett metal detectors in Pakistan — authorized distributor for the ATX, AT Max, and full Garrett range. Genuine equipment with local warranty.",
+    "specializesIn": ["Gold Detectors", "Metal Detectors", "Security Screening", "Pinpointers"],
+    "pageStats": [
+      { "value": "10", "label": "Models" },
+      { "value": "60+", "label": "Years" },
+      { "value": "100+", "label": "Countries" }
+    ],
     "showcase": {
       "tagline": "American-made detectors trusted by security and prospecting professionals worldwide.",
       "description": "Since 1964, Garrett has been the gold standard in metal detection technology. From security screening at major events to professional gold prospecting, Garrett equipment is built to perform in the most demanding conditions.",
@@ -31,6 +43,18 @@
     "logo": "/images/brands/nokta-logo.svg",
     "models": 12,
     "slug": "nokta",
+    "initials": "N",
+    "pageFeatured": true,
+    "location": "Istanbul, Turkey",
+    "foundedYear": 2003,
+    "description": "Precision detection technology from Turkey, engineered for professionals and enthusiasts. Nokta detectors combine advanced multi-frequency IQ with rugged waterproof construction — the choice of both first-time hunters and seasoned prospectors.",
+    "metaDescription": "Nokta detectors in Pakistan — Gold Kruzer, Legend, Simplex Ultra, and the full Nokta range from an authorized distributor.",
+    "specializesIn": ["Gold Detectors", "Metal Detectors", "Multi-Frequency", "Waterproof Detectors"],
+    "pageStats": [
+      { "value": "12", "label": "Models" },
+      { "value": "23", "label": "Years" },
+      { "value": "70+", "label": "Countries" }
+    ],
     "showcase": null
   },
   {
@@ -39,6 +63,18 @@
     "logo": "/images/brands/minelab-logo.svg",
     "models": 15,
     "slug": "minelab",
+    "initials": "ML",
+    "pageFeatured": true,
+    "location": "Adelaide, Australia",
+    "foundedYear": 1985,
+    "description": "Australia's premier detection company, pioneering the multi-frequency technology that changed gold prospecting. Minelab systems are the choice of professional prospectors, military organizations, and humanitarian demining programs — engineered to adapt to any terrain and mineralization level.",
+    "metaDescription": "Minelab metal detectors in Pakistan — GPX 6000, Equinox 900, and the full Minelab range. Authorized distributor with local support.",
+    "specializesIn": ["Gold Detectors", "Metal Detectors", "Multi-Frequency", "Pulse Induction"],
+    "pageStats": [
+      { "value": "15", "label": "Models" },
+      { "value": "40", "label": "Years" },
+      { "value": "90+", "label": "Countries" }
+    ],
     "showcase": {
       "tagline": "Australia's premier detection technology company, pioneering multi-frequency innovation.",
       "description": "Minelab detectors are the choice of professional gold prospectors, military organizations, and humanitarian demining programs. Their patented multi-frequency technology adapts to any terrain and mineralization level.",
@@ -65,6 +101,18 @@
     "logo": "/images/brands/okm-logo.svg",
     "models": 8,
     "slug": "okm",
+    "initials": "OKM",
+    "pageFeatured": true,
+    "location": "Aldenburg, Germany",
+    "foundedYear": 1998,
+    "description": "World-leading German engineering for 3D ground scanning and geophysical instruments. OKM equipment is trusted by mining companies, geological survey teams, and archaeologists in over 80 countries — delivering real-time subsurface imaging that conventional detectors can't match.",
+    "metaDescription": "OKM 3D ground scanners and geophysical instruments in Pakistan — eXp 6000, Rover C4, GeoSeeker, and the full OKM range.",
+    "specializesIn": ["3D Ground Scanners", "Underground Imaging", "Geophysical Instruments", "Water Detectors"],
+    "pageStats": [
+      { "value": "8", "label": "Models" },
+      { "value": "25m", "label": "Max Depth" },
+      { "value": "80+", "label": "Countries" }
+    ],
     "showcase": {
       "tagline": "World leader in 3D ground scanners and geophysical instruments.",
       "description": "Trusted by mining companies and geological survey teams in over 80 countries. OKM's advanced 3D imaging technology provides real-time visualization of underground structures, cavities, and mineral deposits.",
@@ -91,6 +139,15 @@
     "logo": "/images/brands/fisher-logo.svg",
     "models": 6,
     "slug": "fisher",
+    "initials": "F",
+    "location": "El Paso, USA",
+    "foundedYear": 1931,
+    "description": "One of the oldest names in metal detection, founded in 1931. Fisher's engineering-first approach produces some of the most sensitive VLF detectors on the market — particularly favored for small-gold recovery and coin hunting in mineralized ground.",
+    "metaDescription": "Fisher metal detectors in Pakistan — Gold Bug Pro, F22, and the full Fisher range from an authorized distributor.",
+    "pageStats": [
+      { "value": "6", "label": "Models" },
+      { "value": "93", "label": "Years" }
+    ],
     "showcase": null
   },
   {
@@ -99,6 +156,15 @@
     "logo": "/images/brands/teknetics-logo.svg",
     "models": 5,
     "slug": "teknetics",
+    "initials": "TK",
+    "location": "El Paso, USA",
+    "foundedYear": 1985,
+    "description": "Value-focused detectors engineered by the same team behind Fisher. Teknetics machines are known for their fast recovery speed, clean target ID, and hobbyist-friendly ergonomics — professional-grade features at accessible price points.",
+    "metaDescription": "Teknetics metal detectors in Pakistan — T2 Classic and the full Teknetics range with local warranty support.",
+    "pageStats": [
+      { "value": "5", "label": "Models" },
+      { "value": "41", "label": "Years" }
+    ],
     "showcase": null
   },
   {
@@ -107,6 +173,15 @@
     "logo": "/images/brands/xp-logo.svg",
     "models": 7,
     "slug": "xp",
+    "initials": "XP",
+    "location": "Toulouse, France",
+    "foundedYear": 1998,
+    "description": "French innovation in wireless detector design. XP detectors were the first to introduce fully wireless architecture — no cables between coil, control box, and headphones. Modular, lightweight, and updateable via firmware, they're a favorite among European relic hunters.",
+    "metaDescription": "XP metal detectors in Pakistan — DEUS II and the wireless XP range from an authorized distributor.",
+    "pageStats": [
+      { "value": "7", "label": "Models" },
+      { "value": "26", "label": "Years" }
+    ],
     "showcase": null
   },
   {
@@ -115,6 +190,15 @@
     "logo": "/images/brands/goldxtra-logo.png",
     "models": 8,
     "slug": "goldxtra",
+    "initials": "GX",
+    "location": "Dubai, UAE",
+    "foundedYear": 2008,
+    "description": "Specialist long-range locator manufacturer focused on deep-target detection over large search areas. GoldXtra systems combine directional discrimination with adjustable frequency for professional treasure hunting operations across challenging terrain.",
+    "metaDescription": "GoldXtra long-range locators in Pakistan — Target 2000, Deep Hunter, and the full GoldXtra range.",
+    "pageStats": [
+      { "value": "8", "label": "Models" },
+      { "value": "18", "label": "Years" }
+    ],
     "showcase": null
   }
 ]

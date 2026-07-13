@@ -1,0 +1,90 @@
+---
+/**
+ * Blog Index Route — /blog
+ * Featured article pinned above a searchable, filterable, paginated grid
+ * of the remaining articles (client-side hide/show over pre-rendered
+ * cards, same SEO-safe approach as the products catalog).
+ *
+ * NOTE: "Read Article" links point to /blog/[slug], which doesn't exist
+ * yet — no design was provided for an article detail page. These will
+ * 404 until that page is built.
+ */
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/layout/Navbar.astro";
+import Footer from "../../components/layout/Footer.astro";
+import Container from "../../components/ui/Container.astro";
+import Breadcrumbs from "../../components/layout/Breadcrumbs.astro";
+
+import BlogHero from "../../features/blog/BlogHero.astro";
+import CategoryTabs from "../../features/blog/CategoryTabs.astro";
+import FeaturedArticleCard from "../../features/blog/FeaturedArticleCard.astro";
+import BlogGrid from "../../features/blog/BlogGrid.astro";
+import BlogController from "../../features/blog/BlogController.astro";
+import NewsletterSignup from "../../features/blog/NewsletterSignup.astro";
+
+import articles from "../../data/articles.json";
+
+const featuredArticle = articles.find((a) => a.featured)!;
+const regularArticles = articles.filter((a) => !a.featured);
+
+const categories = [
+  { label: "Buying Guides", value: "Buying Guide" },
+  { label: "Technology", value: "Technology" },
+  { label: "Field Tips", value: "Field Tips" },
+  { label: "Comparisons", value: "Comparison" },
+  { label: "Industry News", value: "Industry News" },
+];
+
+const canonicalUrl = "https://pakistandetectors.com/blog";
+const metaDescription =
+  "Buying guides, technology deep-dives, field tips, and industry news from Pakistan Detectors Technology — expert insights for gold prospectors, mining companies, and detection equipment buyers.";
+---
+
+<Layout title="Blog" description={metaDescription} canonicalUrl={canonicalUrl}>
+  <Navbar />
+  <main>
+    <section class="bg-dark pt-[calc(72px+2.5rem)] pb-10">
+      <Container>
+        <Breadcrumbs items={[{ label: "Blog", href: "/blog" }]} />
+        <BlogHero />
+        <CategoryTabs categories={categories} />
+      </Container>
+    </section>
+
+    <section class="bg-dark pb-16 lg:pb-20">
+      <Container>
+        <FeaturedArticleCard
+          title={featuredArticle.title}
+          description={featuredArticle.description}
+          category={featuredArticle.category}
+          date={featuredArticle.date}
+          author={featuredArticle.author}
+          readTime={featuredArticle.readTime}
+          slug={featuredArticle.slug}
+          image={featuredArticle.image}
+        />
+
+        <BlogGrid articles={regularArticles} />
+        <BlogController />
+      </Container>
+    </section>
+
+    <NewsletterSignup />
+  </main>
+  <Footer />
+
+  <script>
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => obs.observe(el));
+  </script>
+</Layout>
