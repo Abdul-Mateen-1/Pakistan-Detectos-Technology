@@ -1,0 +1,104 @@
+---
+/**
+ * HowItWorksSection Component
+ * Horizontal 4-step timeline. Reads from src/data/steps.json.
+ */
+import Container from "../../../components/ui/Container.astro";
+
+import steps from "../../../data/steps.json";
+---
+
+<section
+  id="how-it-works"
+  class="relative bg-dark py-[var(--spacing-section)]"
+  aria-labelledby="how-heading"
+>
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent pointer-events-none" aria-hidden="true"></div>
+
+  <Container>
+    <div class="text-center mb-14 lg:mb-20">
+      <h2
+        id="how-heading"
+        class="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-text-primary"
+        data-reveal="up"
+      >
+        Your Path to the Right Detector
+      </h2>
+    </div>
+
+    <!-- Desktop: Horizontal Timeline -->
+    <div class="hidden lg:block relative">
+      <div class="absolute top-[28px] left-[10%] right-[10%] h-[2px] bg-dark-border" aria-hidden="true">
+        <div id="timeline-line" class="h-full bg-gradient-to-r from-primary via-primary-light to-primary w-0 transition-all duration-[1500ms] ease-out"></div>
+      </div>
+
+      <div class="grid grid-cols-4 gap-8 relative z-10">
+        {steps.map((step, index) => (
+          <div class="flex flex-col items-center text-center" data-reveal="up" style={`transition-delay: ${index * 100}ms;`}>
+            <div class="w-14 h-14 rounded-full border-2 border-primary bg-dark flex items-center justify-center mb-6">
+              <span class="text-lg font-bold text-primary">{step.number}</span>
+            </div>
+            <h3 class="text-base font-semibold text-text-primary">{step.title}</h3>
+            <p class="mt-2 text-sm text-text-muted leading-relaxed max-w-[200px]">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Mobile: Vertical Timeline -->
+    <div class="lg:hidden relative pl-10">
+      <div class="absolute left-[18px] top-0 bottom-0 w-[2px] bg-dark-border" aria-hidden="true">
+        <div id="timeline-line-mobile" class="w-full bg-gradient-to-b from-primary via-primary-light to-primary h-0 transition-all duration-[1500ms] ease-out"></div>
+      </div>
+
+      <div class="flex flex-col gap-10">
+        {steps.map((step, index) => (
+          <div class="relative flex items-start gap-5" data-reveal="up" style={`transition-delay: ${index * 100}ms;`}>
+            <div class="absolute -left-10 w-10 h-10 rounded-full border-2 border-primary bg-dark flex items-center justify-center shrink-0">
+              <span class="text-sm font-bold text-primary">{step.number}</span>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-text-primary">{step.title}</h3>
+              <p class="mt-1 text-sm text-text-muted leading-relaxed">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>
+
+<script>
+  const howSection = document.getElementById("how-it-works");
+  const timelineLine = document.getElementById("timeline-line");
+  const timelineLineMobile = document.getElementById("timeline-line-mobile");
+
+  if (howSection) {
+    const lineObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (timelineLine) timelineLine.style.width = "100%";
+            if (timelineLineMobile) timelineLineMobile.style.height = "100%";
+            lineObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+    lineObserver.observe(howSection);
+  }
+
+  const howObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          howObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+  document.querySelectorAll("#how-it-works [data-reveal]").forEach((el) => howObserver.observe(el));
+</script>

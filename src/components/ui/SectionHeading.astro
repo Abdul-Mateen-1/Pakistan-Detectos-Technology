@@ -1,0 +1,77 @@
+---
+/**
+ * SectionHeading Component
+ * Reusable eyebrow + H2 + optional description pattern.
+ * Replaces duplicated header patterns across 9+ sections.
+ *
+ * align="center" renders flanking lines on both sides of the eyebrow.
+ * align="left" renders only the leading line.
+ *
+ * theme="dark" uses text-primary/text-text-primary (dark backgrounds).
+ * theme="light" uses text-primary/text-text-dark (light backgrounds).
+ */
+interface Props {
+  eyebrow: string;
+  heading: string;
+  description?: string;
+  align?: "left" | "center";
+  theme?: "dark" | "light";
+  headingId?: string;
+}
+
+const {
+  eyebrow,
+  heading,
+  description,
+  align = "left",
+  theme = "dark",
+  headingId,
+} = Astro.props;
+
+const isCenter = align === "center";
+const headingColor = theme === "dark" ? "text-text-primary" : "text-text-dark";
+const descColor = theme === "dark" ? "text-text-muted" : "text-text-dark-muted";
+---
+
+<div class:list={[isCenter && "text-center"]}>
+  <div
+    class:list={[
+      "flex items-center gap-4",
+      isCenter && "justify-center",
+    ]}
+    data-reveal="up"
+  >
+    <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+    <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
+      {eyebrow}
+    </span>
+    {isCenter && (
+      <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+    )}
+  </div>
+
+  <h2
+    id={headingId}
+    class:list={[
+      "mt-4 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight",
+      headingColor,
+      isCenter && "text-center",
+    ]}
+    data-reveal="up"
+  >
+    {heading}
+  </h2>
+
+  {description && (
+    <p
+      class:list={[
+        "mt-4 text-sm sm:text-base leading-relaxed max-w-xl",
+        descColor,
+        isCenter && "mx-auto text-center",
+      ]}
+      data-reveal="up"
+    >
+      {description}
+    </p>
+  )}
+</div>

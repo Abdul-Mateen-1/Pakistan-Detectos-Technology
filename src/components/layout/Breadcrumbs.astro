@@ -1,0 +1,89 @@
+---
+/**
+ * Breadcrumbs Component
+ * Extracts the breadcrumb nav + BreadcrumbList JSON-LD structured data
+ * from CatalogHeader into a reusable layout component.
+ *
+ * Same visual and semantic output as the original inline breadcrumb.
+ */
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+const siteUrl = "https://pakistandetectors.com";
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    ...items.map((crumb, i) => ({
+      "@type": "ListItem",
+      position: i + 2,
+      name: crumb.label,
+      item: `${siteUrl}${crumb.href}`,
+    })),
+  ],
+};
+---
+
+<nav
+  aria-label="Breadcrumb"
+  class="mb-5 overflow-x-auto scrollbar-hide -mx-6 px-6 sm:mx-0 sm:px-0"
+  data-reveal="up"
+>
+  <ol class="flex items-center gap-2 text-xs whitespace-nowrap" role="list">
+    <li>
+      <a
+        href="/"
+        class="text-text-muted hover:text-primary transition-colors duration-200"
+      >
+        Home
+      </a>
+    </li>
+    {items.map((crumb, i) => (
+      <>
+        <li aria-hidden="true" class="text-text-muted flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </li>
+        <li>
+          {i === items.length - 1 ? (
+            <span class="text-text-secondary font-medium" aria-current="page">
+              {crumb.label}
+            </span>
+          ) : (
+            <a
+              href={crumb.href}
+              class="text-text-muted hover:text-primary transition-colors duration-200"
+            >
+              {crumb.label}
+            </a>
+          )}
+        </li>
+      </>
+    ))}
+  </ol>
+</nav>
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(breadcrumbSchema)}
+/>

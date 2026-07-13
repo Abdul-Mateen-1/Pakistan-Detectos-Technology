@@ -1,0 +1,84 @@
+---
+/**
+ * All Products Route — /products
+ * Full catalog with no pre-filter applied on load.
+ */
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/layout/Navbar.astro";
+import Footer from "../../components/layout/Footer.astro";
+import Container from "../../components/ui/Container.astro";
+
+import CatalogHeader from "../../features/products/Header/CatalogHeader.astro";
+import FilterSidebar from "../../features/products/FilterSidebar/FilterSidebar.astro";
+import FilterDrawer from "../../features/products/FilterDrawer/FilterDrawer.astro";
+import ActiveFilters from "../../features/products/ActiveFilters/ActiveFilters.astro";
+import ProductGrid from "../../features/products/ProductGrid/ProductGrid.astro";
+import EmptyState from "../../features/products/ProductGrid/EmptyState.astro";
+import Pagination from "../../features/products/Pagination/Pagination.astro";
+import CatalogCTA from "../../features/products/CatalogCTA/CatalogCTA.astro";
+import CatalogController from "../../features/products/CatalogController.astro";
+
+import products from "../../data/products.json";
+
+const totalCount = products.length;
+const canonicalUrl = "https://pakistandetectors.com/products";
+
+const title = "All Products";
+const intro =
+  "Browse our full range of professional detection equipment — gold detectors, metal detectors, underground imaging systems, and water detectors from the world's most trusted manufacturers.";
+const metaDescription =
+  "Shop the complete range of professional gold detectors, metal detectors, 3D imaging systems, and long-range locators. Authorized distributor for Garrett, Nokta, Minelab, OKM, Fisher, XP, Teknetics, and GoldXtra in Pakistan.";
+---
+
+<Layout title={title} description={metaDescription} canonicalUrl={canonicalUrl}>
+  <Navbar />
+  <main>
+    <CatalogHeader
+      title={title}
+      intro={intro}
+      breadcrumbs={[{ label: "Products", href: "/products" }]}
+      totalCount={totalCount}
+    />
+    <ActiveFilters totalCount={totalCount} />
+
+    <Container class="py-8 lg:py-12">
+      <div class="flex gap-8 lg:gap-10">
+        <FilterSidebar />
+        <div class="flex-1 min-w-0">
+          <ProductGrid />
+          <EmptyState />
+          <Pagination />
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <CatalogCTA />
+    </Container>
+
+    <!-- Mobile filter drawer + trigger bar -->
+    <FilterDrawer totalCount={totalCount} />
+
+    <!-- Bottom padding so content isn't hidden by mobile drawer bar -->
+    <div class="lg:hidden h-16" aria-hidden="true"></div>
+
+    <!-- Single controller script -->
+    <CatalogController />
+  </main>
+  <Footer />
+
+  <script>
+    // Scroll-reveal for header elements — consistent with other pages
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => obs.observe(el));
+  </script>
+</Layout>

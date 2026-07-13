@@ -1,0 +1,124 @@
+---
+/**
+ * CompanyStatsSection Component
+ * Animated counters. Reads from src/data/stats.json.
+ */
+import Container from "../../../components/ui/Container.astro";
+
+import stats from "../../../data/stats.json";
+---
+
+<section
+  id="company-stats"
+  class="relative bg-dark py-20 lg:py-24"
+  aria-label="Company statistics"
+>
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent pointer-events-none" aria-hidden="true"></div>
+
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" aria-hidden="true"
+    style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M30 5C15 5 5 15 5 30s10 25 25 25 25-10 25-25S45 5 30 5zm0 10c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z&quot; fill=&quot;%23C5A044&quot; fill-opacity=&quot;0.3&quot; fill-rule=&quot;evenodd&quot;/%3E%3C/svg%3E');"
+  ></div>
+
+  <Container>
+    <!-- Desktop: horizontal row with dividers -->
+    <div class="hidden sm:flex items-center justify-between">
+      {stats.map((stat, index) => (
+        <>
+          <div class="flex flex-col items-center text-center flex-1 py-4" data-reveal="up" style={`transition-delay: ${index * 80}ms;`}>
+            <span
+              class="stat-number font-display text-4xl lg:text-5xl text-primary"
+              data-target={stat.value}
+              data-suffix={stat.suffix}
+            >
+              0{stat.suffix}
+            </span>
+            <span class="mt-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-text-muted">
+              {stat.label}
+            </span>
+          </div>
+          {index < stats.length - 1 && (
+            <div class="w-px h-16 bg-dark-border shrink-0" aria-hidden="true"></div>
+          )}
+        </>
+      ))}
+    </div>
+
+    <!-- Mobile: 2×3 grid -->
+    <div class="sm:hidden grid grid-cols-2 gap-6">
+      {stats.map((stat, index) => (
+        <div
+          class:list={[
+            "flex flex-col items-center text-center py-4",
+            index === stats.length - 1 ? "col-span-2" : "",
+          ]}
+          data-reveal="up"
+          style={`transition-delay: ${index * 80}ms;`}
+        >
+          <span
+            class="stat-number font-display text-3xl text-primary"
+            data-target={stat.value}
+            data-suffix={stat.suffix}
+          >
+            0{stat.suffix}
+          </span>
+          <span class="mt-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-text-muted">
+            {stat.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  </Container>
+
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-border to-transparent pointer-events-none" aria-hidden="true"></div>
+</section>
+
+<script>
+  function animateCounter(el: HTMLElement) {
+    const target = parseInt(el.dataset.target || "0");
+    const suffix = el.dataset.suffix || "";
+    const duration = 1500;
+    const start = performance.now();
+
+    function update(now: number) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = `${current}${suffix}`;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  const statsSection = document.getElementById("company-stats");
+  if (statsSection) {
+    const counterObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            document.querySelectorAll(".stat-number").forEach((el) => {
+              animateCounter(el as HTMLElement);
+            });
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+    counterObserver.observe(statsSection);
+  }
+
+  const statsRevealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          statsRevealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+  document.querySelectorAll("#company-stats [data-reveal]").forEach((el) => statsRevealObserver.observe(el));
+</script>
