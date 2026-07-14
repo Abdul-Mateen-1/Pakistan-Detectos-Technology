@@ -5,7 +5,7 @@
  * Reads company info from src/data/site.json.
  */
 import Container from "../ui/Container.astro";
-import logoImage from "../../assets/logo_updated.png";
+import logoIcon from "../../assets/logo-icon.png";
 
 import navigation from "../../data/navigation.json";
 import site from "../../data/site.json";
@@ -22,8 +22,11 @@ const footerSections = [
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-dark-border">
       <!-- Company Info -->
       <div class="lg:col-span-4">
-        <a href="/" aria-label="Pakistan Detectors Technology - Home">
-          <img src={logoImage.src} alt="PDT Logo" width="120" height="40" class="h-9 w-auto object-contain" loading="lazy" />
+        <a href="/" class="flex items-center gap-3" aria-label="Pakistan Detectors Technology - Home">
+          <img src={logoIcon.src} alt="" width="52" height="46" class="h-12 w-auto object-contain" loading="lazy" />
+          <span class="font-display font-semibold leading-[1.15] text-primary text-base tracking-tight">
+            Pakistan Detectors<br /> Technology
+          </span>
         </a>
         <p class="mt-4 text-sm text-text-secondary leading-relaxed max-w-sm">
           {site.description}
