@@ -1,7 +1,7 @@
 [
   { "value": 10, "suffix": "+", "label": "Years in Business" },
   { "value": 500, "suffix": "+", "label": "Products Sold" },
-  { "value": 8, "suffix": "", "label": "Premium Brands" },
+  { "value": 3, "suffix": "", "label": "Premium Brands" },
   { "value": 50, "suffix": "+", "label": "Cities Served" },
   { "value": 98, "suffix": "%", "label": "Satisfaction Rate" }
 ]

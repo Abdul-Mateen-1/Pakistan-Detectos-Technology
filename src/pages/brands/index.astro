@@ -26,7 +26,7 @@ import site from "../../data/site.json";
 
 // Explicit display order for the featured blocks — independent of brands.json's
 // array order, which drives other pages (footer links, filter checkboxes, etc.)
-const FEATURED_ORDER = ["garrett", "nokta", "okm", "minelab"];
+const FEATURED_ORDER = ["nokta", "minelab", "goldxtra"];
 const featuredBrands = brands
   .filter((b) => (b as any).pageFeatured)
   .sort((a, b) => FEATURED_ORDER.indexOf(a.slug) - FEATURED_ORDER.indexOf(b.slug));
@@ -43,7 +43,7 @@ function productsForBrand(brandName: string) {
 const categoriesCount = 1 + categoriesData.secondary.length;
 const canonicalUrl = "https://pakistandetectors.com/brands";
 const metaDescription =
-  "Meet our authorized brand partners — Garrett, Nokta, Minelab, OKM, Fisher, XP, Teknetics, and GoldXtra. Genuine detection equipment with manufacturer warranty and local expert support in Pakistan.";
+  "Meet our authorized brand partners — Nokta, Minelab, and GoldXtra. Genuine detection equipment with manufacturer warranty and local expert support in Pakistan.";
 ---
 
 <Layout title="Brands" description={metaDescription} canonicalUrl={canonicalUrl}>
@@ -79,7 +79,7 @@ const metaDescription =
       </Container>
     </section>
 
-    <BrandPortfolioGrid brands={portfolioBrands} />
+    {portfolioBrands.length > 0 && <BrandPortfolioGrid brands={portfolioBrands} />}
     <TrustBar />
 
     <HelpCTA

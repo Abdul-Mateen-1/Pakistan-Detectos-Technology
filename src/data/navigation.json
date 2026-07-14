@@ -17,12 +17,9 @@
       { "label": "Accessories", "href": "/categories/accessories" }
     ],
     "brands": [
-      { "label": "Garrett", "href": "/brands/garrett" },
       { "label": "Nokta", "href": "/brands/nokta" },
       { "label": "Minelab", "href": "/brands/minelab" },
-      { "label": "OKM", "href": "/brands/okm" },
-      { "label": "Fisher", "href": "/brands/fisher" },
-      { "label": "XP", "href": "/brands/xp" }
+      { "label": "GoldXtra", "href": "/brands/goldxtra" }
     ],
     "company": [
       { "label": "About Us", "href": "/about" },
