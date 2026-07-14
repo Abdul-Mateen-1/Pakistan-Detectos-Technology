@@ -1,0 +1,75 @@
+---
+/**
+ * ArticleSidebar Component (Blog Detail)
+ * Persistent right-column card beside the article body — matches
+ * SpecsSidebar's card treatment on the product detail page. Article info
+ * (category/date/read time) plus a share button (same share logic as BuyBox).
+ */
+interface Props {
+  category: string;
+  date: string;
+  readTime: string;
+}
+
+const { category, date, readTime } = Astro.props;
+const formattedDate = new Date(date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+---
+
+<div class="rounded-xl border border-dark-border bg-dark-card p-6" data-reveal="up">
+  <h3 class="text-xs font-semibold uppercase tracking-[0.15em] text-primary">Article Info</h3>
+  <dl class="mt-4 flex flex-col">
+    <div class="flex items-center justify-between gap-4 py-2.5 border-b border-dark-border/60">
+      <dt class="text-sm text-text-muted">Category</dt>
+      <dd class="text-sm font-medium text-text-primary text-right">{category}</dd>
+    </div>
+    <div class="flex items-center justify-between gap-4 py-2.5 border-b border-dark-border/60">
+      <dt class="text-sm text-text-muted">Published</dt>
+      <dd class="text-sm font-medium text-text-primary text-right">{formattedDate}</dd>
+    </div>
+    <div class="flex items-center justify-between gap-4 py-2.5">
+      <dt class="text-sm text-text-muted">Read Time</dt>
+      <dd class="text-sm font-medium text-text-primary text-right">{readTime}</dd>
+    </div>
+  </dl>
+
+  <button
+    type="button"
+    id="share-article-btn"
+    class="mt-5 w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-medium text-text-muted hover:text-primary border border-dark-border hover:border-primary/40 rounded-md transition-colors duration-200 cursor-pointer"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" />
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+    </svg>
+    <span id="share-article-label">Share Article</span>
+  </button>
+</div>
+
+<script>
+  const shareBtn = document.getElementById("share-article-btn");
+  const shareLabel = document.getElementById("share-article-label");
+
+  shareBtn?.addEventListener("click", async () => {
+    const shareData = { title: document.title, url: window.location.href };
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        return;
+      }
+    } catch {
+      // user cancelled or share failed — fall through to clipboard
+    }
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      if (shareLabel) {
+        const original = shareLabel.textContent;
+        shareLabel.textContent = "Link Copied!";
+        setTimeout(() => {
+          shareLabel.textContent = original;
+        }, 2000);
+      }
+    } catch {
+      // clipboard unavailable — silently no-op
+    }
+  });
+</script>

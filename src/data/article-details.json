@@ -1,0 +1,206 @@
+{
+  "gold-detector-buying-guide": {
+    "content": [
+      { "type": "paragraph", "text": "Shopping for a gold detector but not sure what separates one model from another? Prices swing widely, and a higher price tag doesn't automatically mean better performance in mineralized soil. This guide breaks devices down by price and real-world performance so you can make the right call." },
+      { "type": "heading", "level": 2, "text": "1. Gold Detector Price Tiers" },
+      { "type": "heading", "level": 3, "text": "Entry-Level — Under $270" },
+      { "type": "paragraph", "text": "Good for hobbyists and beginners who want to try the hobby without a big financial commitment. These devices run on basic VLF technology and lack advanced ground balancing, which makes them less effective in mineral-rich soil." },
+      { "type": "heading", "level": 3, "text": "Mid-Range — $270 to $1,350" },
+      { "type": "paragraph", "text": "The sweet spot for serious hobbyists after a reliable metal detector. These units feature manual or automatic ground balance, a clear display, and swappable coils suited to different search environments." },
+      { "type": "heading", "level": 3, "text": "Professional — Over $1,350" },
+      { "type": "paragraph", "text": "Built for serious prospectors chasing real depth with underground gold detectors. This tier includes Pulse Induction units and 3D ground-imaging scanners capable of mapping a target's shape and depth before you dig." },
+      { "type": "heading", "level": 2, "text": "2. Core Spec Comparison Across Tiers" },
+      {
+        "type": "table",
+        "headers": ["Spec", "Entry-Level", "Mid-Range", "Professional"],
+        "rows": [
+          ["Detection depth (small gold)", "Up to 30cm", "Up to 80cm", "Over 1.5m"],
+          ["Ground balance", "Fixed", "Manual / Automatic", "Advanced automatic"],
+          ["Discrimination", "Basic", "Mid-level", "Advanced"],
+          ["Technology", "VLF", "Advanced VLF", "PI / GPR / 3D"],
+          ["Approximate weight", "1.2–1.8 kg", "1.5–2.5 kg", "2–6 kg"]
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "3. What Actually Drives a Gold Detector's Price?" },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Technology type", "text": "Pulse Induction units cut through natural mineralization and reach deeper gold, but cost far more than VLF." },
+          { "label": "Coil quality", "text": "A larger coil reaches deeper; a smaller coil gives sharper sensitivity for tiny targets. Professional units ship with multiple swappable coils." },
+          { "label": "Ground balancing system", "text": "Advanced auto-balancing matters in naturally mineral-rich soil to cut down on false signals." },
+          { "label": "Display and ease of use", "text": "Color screens and clear VDI systems help you identify a target before digging, saving time and effort in the field." }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "4. Our Recommendation by Budget and Goal" },
+      { "type": "paragraph", "text": "Tight budget (hobbyist): Go with a basic VLF unit that has manual ground balance, and steer clear of ultra-cheap devices that skip this feature entirely." },
+      { "type": "paragraph", "text": "Mid-range budget (regular user): An advanced VLF detector with automatic ground balance and a DD (Double D) coil gives you the best performance in mineralized soil." },
+      { "type": "paragraph", "text": "Bigger budget (serious prospecting): A Pulse Induction detector for real depth in noisy soil, or a 3D ground scanner for hunting buried treasure and relics." },
+      { "type": "heading", "level": 2, "text": "5. Questions to Ask Before You Buy" },
+      {
+        "type": "list",
+        "items": [
+          { "text": "Is the device built specifically for gold, or general metal detection?" },
+          { "text": "Does it come with an official warranty and local after-sales support?" },
+          { "text": "Can the coil be swapped later depending on soil type?" },
+          { "text": "Are firmware updates available for the unit?" }
+        ]
+      }
+    ],
+    "cta": {
+      "heading": "Want to compare devices that fit your budget?",
+      "description": "Browse our full range of gold and metal detectors with detailed specs and up-to-date pricing.",
+      "buttonLabel": "Browse Devices & Compare Prices",
+      "buttonHref": "/products"
+    }
+  },
+  "how-to-use-a-gold-detector": {
+    "content": [
+      { "type": "paragraph", "text": "Owning a gold detector isn't enough on its own — the right setup and search technique determine the difference between excellent results and hours wasted in the field. Many beginners make simple mistakes that leave their machine running at less than 50% of its true potential." },
+      { "type": "heading", "level": 2, "text": "Step One: Preparing the Detector Before Heading Out" },
+      { "type": "paragraph", "text": "Correct preparation starts before you leave home, not after you've reached the search site. Make sure the battery is fully charged, check that the coil is securely attached, then test the detector on known metal objects at home to confirm it's working properly." },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Battery charge", "text": "A low battery reduces sensitivity and distorts signals" },
+          { "label": "Coil check", "text": "Make sure the coil cable is wound correctly with no breaks" },
+          { "label": "Initial test", "text": "Sweep the detector over a known gold or metal piece to confirm response" }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "Step Two: Ground Balancing On-Site" },
+      { "type": "paragraph", "text": "Ground Balance is the single most important setting on a gold detector, especially in mineral-rich soil. It must be set directly at your search location rather than somewhere else, since ground characteristics change from one site to the next." },
+      {
+        "type": "list",
+        "items": [
+          { "text": "Choose a clean spot free of any visible metal for ground balancing" },
+          { "text": "Move the coil slowly up and down while adjusting until the signal stabilises" },
+          { "text": "Repeat this every time you move to a new area with different ground characteristics" }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "Step Three: Setting Sensitivity Correctly" },
+      { "type": "paragraph", "text": "The most common mistake among beginners is maxing out sensitivity, assuming it improves performance. In reality, sensitivity that's too high in mineralized soil floods the detector with false signals and makes real targets harder to find." },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Start at 70–80%", "text": "of maximum sensitivity as your baseline" },
+          { "text": "Raise sensitivity gradually until false signals begin to appear, then drop back one level" },
+          { "text": "In heavily mineralized ground, stable low sensitivity beats unstable high sensitivity" }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "Step Four: Proper Sweeping Technique in the Field" },
+      { "type": "paragraph", "text": "How you move the coil directly affects your results. Many valuable targets are missed due to fast or uneven sweeping." },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Coil height", "text": "Keep 2–5 cm between the coil and the ground. Too high a coil loses depth, and contact with the ground increases interference." },
+          { "label": "Sweep speed", "text": "Move at a slow, steady pace — fast movement misses small or deep targets that need more time to generate a clear signal." },
+          { "label": "Sweep pattern", "text": "Use a grid pattern (horizontal then vertical) for suspicious areas, ensuring complete coverage and catching targets missed on the first pass." },
+          { "label": "Overlap", "text": "Make sure each pass overlaps the previous one by 10–15 cm to avoid coverage gaps." }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "Step Five: Reading and Interpreting Detector Signals" },
+      { "type": "paragraph", "text": "Understanding what your detector is telling you is a skill gained through experience, but there are some basic rules that help you distinguish gold from iron trash:" },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Stable, repeating signal", "text": "A good target. Gold, copper and silver give a consistent signal from any direction." },
+          { "label": "Signal that varies by direction", "text": "Usually elongated iron trash such as nails and wires." },
+          { "label": "VDI numbers (Visual Discrimination Index)", "text": "Low numbers (1–25) indicate iron, mid-range (25–75) indicate copper and aluminum, and high numbers (75–99) indicate silver and larger gold pieces." },
+          { "label": "Small raw gold", "text": "May give a low VDI reading similar to iron, because raw gold doesn't behave like refined gold — don't dismiss low signals in known gold-bearing areas." }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "Step Six: Digging Correctly Without Damaging the Target" },
+      { "type": "paragraph", "text": "Random digging damages valuable targets and makes recovery harder. Follow these steps:" },
+      {
+        "type": "list",
+        "items": [
+          { "text": "Pinpoint the centre of the signal precisely by gradually narrowing your sweep circle" },
+          { "text": "Dig a full circle around the target and lift the soil plug as a single piece" },
+          { "text": "Sweep the detector over the lifted soil plug — if it responds, the target is inside" },
+          { "text": "Use a small pinpointer to precisely locate the target within the soil" }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "Common Mistakes to Avoid" },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Ignoring weak signals", "text": "Deep gold gives a faint signal — don't dig only the strong ones." },
+          { "label": "Not re-balancing the ground", "text": "If soil conditions change at the site while searching, rebalance immediately." },
+          { "label": "Sweeping over yourself", "text": "Metal on your shoes and clothing causes false signals — always stay clear of the coil." },
+          { "label": "Neglecting maintenance", "text": "Clean the coil after every use and check connections regularly." }
+        ]
+      }
+    ],
+    "cta": {
+      "heading": "Want an easy-to-use detector with professional results?",
+      "description": "Browse our range of gold detectors suited for beginners and professionals, with specialised technical support.",
+      "buttonLabel": "Browse Detectors",
+      "buttonHref": "/products"
+    }
+  },
+  "gold-prospecting-uae-soil-types": {
+    "content": [
+      { "type": "paragraph", "text": "The UAE has more geological variety than most people expect — from the soft dune fields of Abu Dhabi's Liwa region to the rocky Hajar Mountains running through Ras Al Khaimah and Fujairah, rich with ancient mineral formations. That variety means a gold detector that performs well in one emirate can underperform in another if it isn't ground-balanced correctly." },
+      { "type": "heading", "level": 2, "text": "1. The Hajar Mountains (Ras Al Khaimah & Fujairah) — Rocky, Mineral-Rich Terrain" },
+      { "type": "paragraph", "text": "The Hajar Mountains are among the UAE's most mineral-dense regions, running along an ancient ophiolite belt with high concentrations of iron and copper — Fujairah's Masafi and Wadi Al Helo areas even carry a documented history of ancient copper mining. This terrain causes heavy interference for metal detectors with basic sensitivity." },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Soil type", "text": "Rocky, with high natural mineral deposits" },
+          { "label": "Main challenge", "text": "Frequent false signals from ground minerals" },
+          { "label": "Best device", "text": "Pulse Induction or VLF units with precise manual ground balance" },
+          { "label": "Best coil", "text": "A DD (Double D) coil to cut ground mineral interference" }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "2. Al Ain & Inland Abu Dhabi — Wide, Dry Plains" },
+      { "type": "paragraph", "text": "The soil around Al Ain and inland Abu Dhabi is relatively dry and sandy with lower natural mineral content compared to the Hajar range, making it a friendlier environment for most professional gold detectors. The wide open terrain calls for devices with larger coils to cover more ground efficiently." },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Soil type", "text": "Dry sand, low interference" },
+          { "label": "Main challenge", "text": "Vast areas that require wide coverage" },
+          { "label": "Best device", "text": "VLF with a large coil (15 inches or more)" },
+          { "label": "Best coil", "text": "A large round coil for greater depth and wider search coverage" }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "3. Coastal Sharjah & Umm Al Quwain — Mixed Sand and Salt Flats" },
+      { "type": "paragraph", "text": "The UAE's coastal areas mix sandy soil with salt-affected ground (sabkha), which can create its own signal noise if not properly balanced. Prospectors here often search old settlement sites and beach areas." },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Soil type", "text": "Sandy with pockets of salt flats" },
+          { "label": "Main challenge", "text": "Salt content can cause signal drift near the coast" },
+          { "label": "Best device", "text": "Waterproof units with automatic ground balance" },
+          { "label": "Best coil", "text": "A sealed, waterproof coil for beach and coastal work" }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "4. Liwa & the Empty Quarter — Extreme Desert Terrain" },
+      { "type": "paragraph", "text": "The Liwa region borders the Rub' al Khali (Empty Quarter), the largest connected sand desert in the world, and its harsh environment puts real demands on any device in terms of heat and sand resistance. Deep, soft dunes noticeably weaken the signal of underground gold detectors." },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Soil type", "text": "Deep, soft sand, extreme heat" },
+          { "label": "Main challenge", "text": "Intense heat and soft sand weaken signal strength" },
+          { "label": "Best device", "text": "Heat-resistant units with long battery life" },
+          { "label": "Best coil", "text": "A sealed, sand-resistant coil (waterproof/sealed coil)" }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "5. Rules and Regulations for Prospecting in the UAE" },
+      { "type": "paragraph", "text": "Before starting any prospecting activity, make sure you understand local regulations to avoid legal issues:" },
+      {
+        "type": "list",
+        "items": [
+          { "text": "Searching registered heritage or archaeological sites is illegal and carries strict penalties" },
+          { "text": "Military and border areas are off-limits to any electronic detection device" },
+          { "text": "Commercial prospecting requires a permit from the relevant UAE authority" },
+          { "text": "Hobbyist searching on private land requires the landowner's permission" }
+        ]
+      }
+    ],
+    "cta": {
+      "heading": "Need a device suited to your region's soil?",
+      "description": "Browse our range of gold detectors built to handle different soil and terrain types.",
+      "buttonLabel": "Find the Right Device",
+      "buttonHref": "/products"
+    }
+  }
+}

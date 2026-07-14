@@ -1,0 +1,86 @@
+---
+/**
+ * ArticleContent Component (Blog Detail)
+ * Renders an article's typed content-block array (paragraph/heading/list/
+ * table) with the same typography used by ProductTabs' overview panel —
+ * structured JSON in, styled HTML out, no raw HTML strings.
+ */
+interface ListItem {
+  label?: string;
+  text: string;
+}
+type ContentBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "heading"; level: 2 | 3; text: string }
+  | { type: "list"; items: ListItem[] }
+  | { type: "table"; headers: string[]; rows: string[][] };
+
+interface Props {
+  content: ContentBlock[];
+}
+
+const { content } = Astro.props;
+---
+
+<div class="article-content">
+  {content.map((block) => {
+    if (block.type === "paragraph") {
+      return <p class="text-sm sm:text-[15px] text-text-secondary leading-relaxed">{block.text}</p>;
+    }
+    if (block.type === "heading") {
+      return block.level === 2 ? (
+        <h2 class="font-display text-2xl sm:text-[28px] leading-tight text-text-primary">{block.text}</h2>
+      ) : (
+        <h3 class="font-display text-lg sm:text-xl leading-snug text-text-primary">{block.text}</h3>
+      );
+    }
+    if (block.type === "list") {
+      return (
+        <ul class="flex flex-col gap-3" role="list">
+          {block.items.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-[15px] text-text-secondary leading-relaxed">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" aria-hidden="true" />
+              <span>
+                {item.label && <strong class="text-text-primary font-semibold">{item.label}: </strong>}
+                {item.text}
+              </span>
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    if (block.type === "table") {
+      return (
+        <div class="overflow-x-auto rounded-lg border border-dark-border">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-dark-card">
+                {block.headers.map((h) => (
+                  <th class="text-left font-semibold text-text-primary px-4 py-3 border-b border-dark-border whitespace-nowrap">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {block.rows.map((row) => (
+                <tr class="border-b border-dark-border/60 last:border-0">
+                  {row.map((cell) => (
+                    <td class="text-text-secondary px-4 py-3 whitespace-nowrap">{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
+    return null;
+  })}
+</div>
+
+<style>
+  .article-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+</style>

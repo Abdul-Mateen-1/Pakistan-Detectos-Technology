@@ -1,0 +1,118 @@
+---
+/**
+ * Blog Article Detail Route — /blog/[slug]
+ * Statically generated per article from articles.json, enriched with
+ * body content + CTA from article-details.json. Mirrors the product detail
+ * page's structure: hero section, then a content + sticky-sidebar grid,
+ * a closing CTA, and related items below.
+ */
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/layout/Navbar.astro";
+import Footer from "../../components/layout/Footer.astro";
+import Container from "../../components/ui/Container.astro";
+import Breadcrumbs from "../../components/layout/Breadcrumbs.astro";
+import HelpCTA from "../../components/shared/HelpCTA/HelpCTA.astro";
+
+import ArticleHero from "../../features/blogDetail/ArticleHero.astro";
+import ArticleContent from "../../features/blogDetail/ArticleContent.astro";
+import ArticleSidebar from "../../features/blogDetail/ArticleSidebar.astro";
+import RelatedArticles from "../../features/blogDetail/RelatedArticles.astro";
+
+import articles from "../../data/articles.json";
+import articleDetails from "../../data/article-details.json";
+import site from "../../data/site.json";
+
+export async function getStaticPaths() {
+  return articles.map((a) => ({
+    params: { slug: a.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const article = articles.find((a) => a.slug === slug)!;
+const details = (articleDetails as Record<string, any>)[slug as string];
+
+const canonicalUrl = `https://pakistandetectors.com/blog/${slug}`;
+
+const articleSchema: Record<string, any> = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: article.title,
+  description: article.description,
+  datePublished: article.date,
+  author: { "@type": "Person", name: article.author },
+  publisher: { "@type": "Organization", name: "Pakistan Detectors Technology" },
+  mainEntityOfPage: canonicalUrl,
+};
+if (article.image) {
+  articleSchema.image = `https://pakistandetectors.com${article.image}`;
+}
+---
+
+<Layout title={article.title} description={article.description} canonicalUrl={canonicalUrl}>
+  <Navbar />
+  <main>
+    <!-- Hero: Breadcrumb + Title/Meta + Hero Image -->
+    <section class="bg-dark pt-[calc(72px+2.5rem)] pb-14 lg:pb-16">
+      <Container>
+        <Breadcrumbs
+          items={[
+            { label: "Blog", href: "/blog" },
+            { label: article.title, href: `/blog/${slug}` },
+          ]}
+        />
+
+        <ArticleHero
+          title={article.title}
+          category={article.category}
+          date={article.date}
+          author={article.author}
+          readTime={article.readTime}
+          image={article.image}
+        />
+      </Container>
+    </section>
+
+    <!-- Content + Sticky Sidebar -->
+    <section class="bg-dark pb-16 lg:pb-20 border-t border-dark-border pt-14 lg:pt-16">
+      <Container>
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 lg:gap-14 items-start">
+          <ArticleContent content={details.content} />
+          <div class="lg:sticky lg:top-[100px]">
+            <ArticleSidebar category={article.category} date={article.date} readTime={article.readTime} />
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <Container>
+      <HelpCTA
+        heading={details.cta.heading}
+        description={details.cta.description}
+        primaryLabel={details.cta.buttonLabel}
+        primaryHref={details.cta.buttonHref}
+        whatsappUrl={site.contact.whatsapp}
+      />
+    </Container>
+
+    <RelatedArticles currentSlug={slug as string} />
+  </main>
+  <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <script>
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => obs.observe(el));
+  </script>
+</Layout>

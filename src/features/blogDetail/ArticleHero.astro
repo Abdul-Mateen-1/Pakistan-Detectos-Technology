@@ -1,0 +1,62 @@
+---
+/**
+ * ArticleHero Component (Blog Detail)
+ * Category badge + H1 + author/date/read-time meta row, then a full-width
+ * hero image below — mirrors the product detail page's BuyBox/Gallery
+ * typography and spacing, but single-column since an article has no
+ * price/CTA buttons to sit beside the image.
+ */
+import team from "../../data/team.json";
+
+interface Props {
+  title: string;
+  category: string;
+  date: string;
+  author: string;
+  readTime: string;
+  image: string | null;
+}
+
+const { title, category, date, author, readTime, image } = Astro.props;
+const authorInitials = team.find((m) => m.name === author)?.initials ?? author.split(" ").map((w) => w[0]).join("");
+const formattedDate = new Date(date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+---
+
+<div class="max-w-3xl">
+  <span class="text-[11px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded" data-reveal="up">
+    {category}
+  </span>
+
+  <h1 class="mt-4 font-display text-3xl sm:text-4xl lg:text-[42px] leading-[1.15] tracking-tight text-text-primary" data-reveal="up">
+    {title}
+  </h1>
+
+  <div class="mt-5 flex items-center gap-3" data-reveal="up">
+    <div class="flex items-center justify-center w-9 h-9 rounded-full bg-primary/15 shrink-0">
+      <span class="text-xs font-bold text-primary">{authorInitials}</span>
+    </div>
+    <span class="text-sm text-text-secondary">{author}</span>
+    <span class="text-text-muted" aria-hidden="true">·</span>
+    <time datetime={date} class="text-xs text-text-muted">{formattedDate}</time>
+    <span class="text-text-muted" aria-hidden="true">·</span>
+    <span class="text-xs text-text-muted">{readTime}</span>
+  </div>
+</div>
+
+<div class="mt-8 rounded-xl border border-dark-border bg-dark-card overflow-hidden" data-reveal="up">
+  <div class="article-hero-img aspect-[21/9] bg-dark-surface flex items-center justify-center overflow-hidden">
+    {image ? (
+      <img src={image} alt={title} class="w-full h-full object-cover" loading="eager" />
+    ) : (
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted/40" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" />
+      </svg>
+    )}
+  </div>
+</div>
+
+<style>
+  .article-hero-img img {
+    color: transparent;
+  }
+</style>

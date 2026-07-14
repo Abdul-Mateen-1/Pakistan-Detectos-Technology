@@ -1,0 +1,50 @@
+---
+/**
+ * RelatedArticles Component (Blog Detail)
+ * Real, data-driven suggestions — the other published articles, same
+ * pattern as RelatedProducts.astro on the product detail page. Always
+ * excludes the current article, capped at 3.
+ */
+import Container from "../../components/ui/Container.astro";
+import ArticleCard from "../blog/ArticleCard.astro";
+import articles from "../../data/articles.json";
+
+interface Props {
+  currentSlug: string;
+}
+
+const { currentSlug } = Astro.props;
+
+const related = articles.filter((a) => a.slug !== currentSlug).slice(0, 3);
+---
+
+{related.length > 0 && (
+  <section class="py-16 lg:py-20 border-t border-dark-border" aria-labelledby="related-articles-heading">
+    <Container>
+      <div class="flex items-center gap-4" data-reveal="up">
+        <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+        <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">Keep Reading</span>
+      </div>
+      <h2 id="related-articles-heading" class="mt-4 font-display text-3xl sm:text-4xl text-text-primary" data-reveal="up">
+        Related Articles
+      </h2>
+
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+        {related.map((a, i) => (
+          <div class="h-full" data-reveal="up" style={`transition-delay: ${i * 80}ms;`}>
+            <ArticleCard
+              title={a.title}
+              description={a.description}
+              category={a.category}
+              date={a.date}
+              author={a.author}
+              readTime={a.readTime}
+              slug={a.slug}
+              image={a.image}
+            />
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+)}
