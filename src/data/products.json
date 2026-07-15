@@ -5,7 +5,7 @@
     "brand": "Nokta",
     "price": 931300,
     "description": "An advanced 3D underground-imaging metal detector that delivers deep treasure and cavity detection, precise single-coin identification, and dual search systems with four search coils for professional treasure hunting.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-deephunter-3d-metal-detector-1.jpg",
+    "image": "/images/products/nokta-deephunter-3d-metal-detector-1.jpg",
     "slug": "deephunter-3d-pro",
     "badge": "Professional",
     "specs": [
@@ -22,7 +22,7 @@
     "brand": "Nokta",
     "price": 931300,
     "description": "An advanced 3D underground-imaging metal detector delivering deep metal detection, cavity detection, and precise target discrimination, supplied with three search coils for professional treasure hunting.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-jeohunter-3d-metal-detector-dual-system-1.jpg",
+    "image": "/images/products/nokta-jeohunter-3d-metal-detector-dual-system-1.jpg",
     "slug": "jeohunter-3d-dual-system",
     "badge": "Bestseller",
     "specs": [
@@ -39,7 +39,7 @@
     "brand": "Nokta",
     "price": 2196200,
     "description": "A revolutionary AI-powered smart detector and imaging system with 3D target imaging, cavity detection, IPTU sensor technology, and unmatched analysis for deep treasure hunting.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-invenio-pro-metal-detector-1.jpg",
+    "image": "/images/products/nokta-invenio-pro-metal-detector-1.jpg",
     "slug": "nokta-invenio-pro",
     "badge": "Bestseller",
     "specs": [
@@ -56,7 +56,7 @@
     "brand": "Nokta",
     "price": 277722,
     "description": "An advanced multi-frequency SMF metal detector with an ergonomic design, full IP68 waterproofing, and long battery life — built for power, precision, and reliability across every terrain.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-the-legend-2-metal-detector-1.jpg",
+    "image": "/images/products/nokta-the-legend-2-metal-detector-1.jpg",
     "slug": "the-legend-2",
     "badge": "New",
     "specs": [
@@ -73,7 +73,7 @@
     "brand": "Nokta",
     "price": 80620,
     "description": "An affordable, waterproof metal detector operating at 15 kHz with 4 search modes, vibration, notch discrimination, and a collapsible shaft for instant, easy operation.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-simplex-lite-image-1.webp",
+    "image": "/images/products/nokta-simplex-lite-image-1.webp",
     "slug": "nokta-simplex-lite",
     "badge": "New",
     "specs": [
@@ -90,7 +90,7 @@
     "brand": "Nokta",
     "price": 389200,
     "description": "The Nokta Anfibio Multi is a rugged, multi-frequency metal detector built for coins, relics, jewelry, and gold. Operating at 5, 14, and 20 kHz with 9 search modes, a fully waterproof design, and included 2.4 GHz wireless headphones, it delivers fast target response both on land and underwater.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-makro-anfibio-multi-metal-detector-1.jpg",
+    "image": "/images/products/nokta-makro-anfibio-multi-metal-detector-1.jpg",
     "slug": "anfibio-multi",
     "badge": "Bestseller",
     "specs": [
@@ -107,7 +107,7 @@
     "brand": "Nokta",
     "price": 97300,
     "description": "The Nokta Simplex Ultra is a lightweight, IP68 waterproof metal detector operating at 15 kHz, featuring Bluetooth connectivity, a full carbon-fiber shaft, and 6 search modes for advanced performance across every terrain.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-simplex-ultra-image-1.webp",
+    "image": "/images/products/nokta-simplex-ultra-image-1.webp",
     "slug": "nokta-simplex-ultra",
     "badge": "New",
     "specs": [
@@ -124,7 +124,7 @@
     "brand": "Nokta",
     "price": 111200,
     "description": "The Nokta FindX is a beginner-friendly 15 kHz metal detector with Field, Garden, and Beach search modes, an 11-inch waterproof coil, accurate pinpointing, target ID, and a rechargeable lithium battery.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-findx-1.jpg",
+    "image": "/images/products/nokta-findx-1.jpg",
     "slug": "nokta-findx",
     "badge": "New",
     "specs": [
@@ -141,7 +141,7 @@
     "brand": "Nokta",
     "price": 166800,
     "description": "The Nokta FindX Pro is the ultimate beginner-friendly metal detector, combining fully automatic search modes, easy turn-on-and-go operation, IP68 waterproofing to 5 meters, a 15 kHz frequency, a rechargeable lithium battery, and a complete accessory package.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-findx-pro-1.jpg",
+    "image": "/images/products/nokta-findx-pro-1.jpg",
     "slug": "findx-pro",
     "badge": "New",
     "specs": [
@@ -158,7 +158,7 @@
     "brand": "Nokta",
     "price": 169580,
     "description": "The Nokta Gold Finder 2000 is a rugged, easy-to-use gold detector built for the gold fields, combining a 61 kHz frequency with fully automatic turn-on-and-go operation and advanced discrimination for serious nugget-hunting performance.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-gold-finder-2000-1.jpg",
+    "image": "/images/products/nokta-gold-finder-2000-1.jpg",
     "slug": "gold-finder-2000",
     "badge": "New",
     "specs": [
@@ -175,7 +175,7 @@
     "brand": "Nokta",
     "price": 110922,
     "description": "A multi-frequency (SMF) metal detector built for instant, no-fuss operation — IP68 waterproof to 5 meters, with Garden, Field, and Beach search modes, vibration alert, LED light, and 60-segment target ID.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-score-metal-detector-1.webp",
+    "image": "/images/products/nokta-score-metal-detector-1.webp",
     "slug": "score",
     "badge": "New",
     "specs": [
@@ -192,7 +192,7 @@
     "brand": "Nokta",
     "price": 180422,
     "description": "A high-frequency 61 kHz VLF gold detector with IP68 waterproofing, E.U.D. extra-depth technology, and 4 search modes — purpose-built for fine gold nuggets and micro-jewelry.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-gold-kruzer-metal-detector-1.jpg",
+    "image": "/images/products/nokta-gold-kruzer-metal-detector-1.jpg",
     "slug": "nokta-gold-kruzer",
     "badge": "Trending",
     "specs": [
@@ -209,7 +209,7 @@
     "brand": "Nokta",
     "price": 239636,
     "description": "A Simultaneous Multi-Frequency (SMF) metal detector rated IP68 waterproof to 5 meters, with 4 search modes including a dedicated Relic mode, two included coils (SC30 and SC24), and low-latency aptX Bluetooth headphones for versatile, high-performance detecting.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-triple-score-metal-detector-1.webp",
+    "image": "/images/products/nokta-triple-score-metal-detector-1.webp",
     "slug": "triple-score-pro-pack",
     "badge": "New",
     "specs": [
@@ -226,7 +226,7 @@
     "brand": "Minelab",
     "price": 102860,
     "description": "A lightweight Multi-IQ metal detector with precise target pinpointing, adjustable Iron Bias, 5 search modes, and a waterproof coil — smart, capable performance for treasure hunting across all terrain types.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-440-1.webp",
+    "image": "/images/products/vanquish-440-1.webp",
     "slug": "vanquish-440",
     "badge": "New",
     "specs": [
@@ -243,7 +243,7 @@
     "brand": "Minelab",
     "price": 55322,
     "description": "An easy, turn-on-and-go Multi-IQ metal detector with 3 search modes, 4 sensitivity levels, 3 target tones, and lightweight performance across all terrain types.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-340-1.webp",
+    "image": "/images/products/vanquish-340-1.webp",
     "slug": "vanquish-340",
     "badge": "New",
     "specs": [
@@ -260,7 +260,7 @@
     "brand": "Minelab",
     "price": 83400,
     "description": "An intelligent all-terrain metal detector powered by Multi-IQ technology, featuring 5 search modes, adjustable Iron Bias, 25 discrimination segments, Bluetooth wireless audio, and a waterproof V12 search coil.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-540-1.webp",
+    "image": "/images/products/vanquish-540-1.webp",
     "slug": "vanquish-540",
     "badge": "New",
     "specs": [
@@ -277,7 +277,7 @@
     "brand": "Minelab",
     "price": 194600,
     "description": "An advanced all-terrain metal detector built on Multi-IQ technology, offering 3 search modes, 4 single frequencies, low-latency wireless audio, a comfortable carbon-fiber shaft, and IP68 waterproof performance.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/equinox-700-1.webp",
+    "image": "/images/products/equinox-700-1.webp",
     "slug": "equinox-700",
     "badge": "Bestseller",
     "specs": [
@@ -294,7 +294,7 @@
     "brand": "Minelab",
     "price": 361400,
     "description": "A premium all-terrain metal detector built on Multi-IQ technology, featuring a dedicated Gold Mode, 6 single frequencies up to 40 kHz, wireless audio, a carbon-fiber shaft, and IP68 waterproof performance.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/equinox-900-1.webp",
+    "image": "/images/products/equinox-900-1.webp",
     "slug": "equinox-900",
     "badge": "New",
     "specs": [
@@ -311,7 +311,7 @@
     "brand": "Minelab",
     "price": 500122,
     "description": "A high-performance metal detector powered by Multi-IQ+ technology, featuring a 2D target ID map, 10 search modes, fast target recovery, and IP68 waterproof protection to 5 meters — engineered for professional all-terrain performance.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/FullBanner_MANTICORE_1_1.webp",
+    "image": "/images/products/FullBanner_MANTICORE_1_1.webp",
     "slug": "manticore",
     "badge": "New",
     "specs": [
@@ -328,7 +328,7 @@
     "brand": "Minelab",
     "price": 27800,
     "description": "A lightweight, entry-level metal detector that's the ideal choice for a first experience in the hobby, with a practical folding design, a simple single audio tone, and a clear display suited to beginners and kids in the park or on the beach.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/go-find-11.webp",
+    "image": "/images/products/go-find-11.webp",
     "slug": "go-find-11",
     "badge": "New",
     "specs": [
@@ -345,7 +345,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "A step up from the entry-level Go Find 11, the Minelab Go Find 22 adds two-tone audio discrimination in a lightweight, foldable body — an accessible choice for families and beginners who want clearer target feedback without added complexity.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/go-find-22.webp",
+    "image": "/images/products/go-find-22.webp",
     "slug": "go-find-22",
     "badge": "New",
     "specs": [
@@ -362,7 +362,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "The Minelab Go Find 44 steps up the Go Find family with a third search mode, Pinpoint targeting, a larger 10-inch coil, and free Bluetooth connectivity to the GO-FIND app — built for serious beginners who want more precision without moving to a professional-grade machine.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/go-find-44.webp",
+    "image": "/images/products/go-find-44.webp",
     "slug": "go-find-44",
     "badge": "New",
     "specs": [
@@ -379,7 +379,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "The flagship of Minelab's Go Find series, the Go Find 66 pairs four search modes and five sensitivity levels with the free full-featured GO-FIND Pro app, plus a bundled earphone, digging tool, and phone mount — a ready-to-go kit for serious hobbyists who want the most the series offers.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/go-find-66.webp",
+    "image": "/images/products/go-find-66.webp",
     "slug": "go-find-66",
     "badge": "New",
     "specs": [
@@ -396,7 +396,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "The flagship Vanquish 540 Pro Pack pairs Minelab's simultaneous multi-frequency Multi-IQ technology with two waterproof coils, wireless ML80 headphones, and adjustable iron bias — a complete, ready-to-search bundle for serious coin, relic, and jewelry hunters.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-540-pro-pack.webp",
+    "image": "/images/products/vanquish-540-pro-pack.webp",
     "slug": "vanquish-540-pro-pack",
     "badge": "New",
     "specs": [
@@ -413,7 +413,7 @@
     "brand": "Minelab",
     "price": 27800,
     "description": "A straightforward, beginner-friendly metal detector from Minelab, the X-Terra Intrepid pairs a large target-ID display with adjustable sensitivity and a waterproof 10-inch coil — a confident first step into the hobby.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/x-terra-intrepid.webp",
+    "image": "/images/products/x-terra-intrepid.webp",
     "slug": "x-terra-intrepid",
     "badge": "New",
     "specs": [
@@ -430,7 +430,7 @@
     "brand": "Minelab",
     "price": 41700,
     "description": "An ideal single-frequency metal detector for beginners, featuring 4 search modes (General, Custom, Jewelry, Learn), 5 sensitivity levels, 7 discrimination segments, and a precise pinpoint mode — supplied as a complete, ready-to-use kit with headphones, backpack, and digging tool.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/x-terra-voyager.webp",
+    "image": "/images/products/x-terra-voyager.webp",
     "slug": "x-terra-voyager",
     "badge": "New",
     "specs": [
@@ -447,7 +447,7 @@
     "brand": "Minelab",
     "price": 91740,
     "description": "A PRO-SWITCH-equipped detector that lets you manually select the operating frequency — 5, 8, 10, or 15 kHz — to match the target and soil type, with full IP68 waterproofing to 5 meters, three search modes (Park, Field, Beach) including a dedicated setting for salt-water beaches, plus a built-in flashlight and vibration alert for low-light use.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/x-terra-pro.webp",
+    "image": "/images/products/x-terra-pro.webp",
     "slug": "x-terra-pro",
     "badge": "New",
     "specs": [
@@ -464,7 +464,7 @@
     "brand": "Minelab",
     "price": 133162,
     "description": "The flagship model in the X-Terra series, featuring true simultaneous multi-frequency Multi-IQ technology with no manual switching required, full IP68 waterproofing to 5 meters, three search modes with six customizable presets, 119 target ID segments, 4-level advanced iron control, 25 sensitivity levels, pinpoint mode, and low-latency wireless audio.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/x-terra-elite.webp",
+    "image": "/images/products/x-terra-elite.webp",
     "slug": "x-terra-elite",
     "badge": "Bestseller",
     "specs": [
@@ -481,7 +481,7 @@
     "brand": "Minelab",
     "price": 166522,
     "description": "The complete X-Terra Elite package with simultaneous multi-frequency Multi-IQ technology, including two search coils — the larger V12X for wider coverage and the smaller V8X for tight, junk-heavy sites — plus low-latency ML-85 wireless headphones, full IP68 waterproofing to 5 meters, three search modes, and advanced iron control, forming a fully equipped kit ready for any detecting environment.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/x-terra-elite-expedition-pack.webp",
+    "image": "/images/products/x-terra-elite-expedition-pack.webp",
     "slug": "x-terra-elite-expedition-pack",
     "badge": "Bestseller",
     "specs": [
@@ -498,7 +498,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "A reliable, easy-to-use detector with simultaneous multi-frequency Multi-IQ technology, the option to switch between 3 single frequencies (5, 10, and 15 kHz), three search modes (Park, Field, Beach) with six custom presets, full waterproofing to 3 meters, an 11-inch EQX11 coil, and precise pinpoint mode — ideal for anyone who wants strong Equinox performance without the complexity of higher-end features.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/equinox-600.webp",
+    "image": "/images/products/equinox-600.webp",
     "slug": "equinox-600",
     "badge": "New",
     "specs": [
@@ -515,7 +515,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "An advanced evolution of the Equinox 600 that adds a dedicated gold mode (20 and 40 kHz) atop the same simultaneous Multi-IQ platform, with wider iron discrimination control, 8 recovery-speed settings, and bundled wireless headphones — waterproof to 3 meters.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/equinox-800.webp",
+    "image": "/images/products/equinox-800.webp",
     "slug": "equinox-800",
     "badge": "New",
     "specs": [
@@ -532,7 +532,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "A gold detector built entirely around automation, combining a 45 kHz VLF frequency with a high-speed 24-bit signal processor for exceptional sensitivity to fine and large gold alike. Fully automatic ground balance, sensitivity, and noise cancellation, two dedicated search-only modes (Gold — ignoring iron, and Deep Metal), and a Gold Chance probability indicator make it an uncomplicated starting point for newcomers to gold prospecting.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/gold-monster-1000.webp",
+    "image": "/images/products/gold-monster-1000.webp",
     "slug": "gold-monster-1000",
     "badge": "Professional",
     "specs": [
@@ -550,7 +550,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "A professional dive detector built for underwater searching, fully waterproof to 60 meters and powered by BBS technology that transmits 17 simultaneous frequencies (1.5 to 25.5 kHz) for stable, accurate performance in salt water and mineralized sand. It features a high-visibility phosphorescent housing, two interchangeable shafts (standard for land and a compact dive shaft), and wired integrated headphones — the top choice for shipwreck hunting, beaches, and deep diving.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/excalibur-ii.webp",
+    "image": "/images/products/excalibur-ii.webp",
     "slug": "excalibur-ii",
     "badge": "Professional",
     "specs": [
@@ -568,7 +568,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "A fully integrated professional detector with a full-color LCD screen and a built-in GPS system (GPSi) that automatically logs find locations and search paths for later review on a computer. FBS 2 multi-frequency technology (1.5 to 100 kHz) and the Smartfind 2 system provide visual ferrous and conductivity discrimination, backed by waterproofing to 3 meters, wireless audio, and portable setting memory via XChange 2 software — built for serious collectors who want to document every find.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/ctx-3030.webp",
+    "image": "/images/products/ctx-3030.webp",
     "slug": "ctx-3030",
     "badge": "Professional",
     "specs": [
@@ -586,7 +586,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "A professional gold-prospecting detector using GeoSense-PI pulse-induction technology, delivering standout performance across all soil types including heavily mineralized and salty ground. It ships with three coil options (an included 11-inch mono for tight spots and fine gold, an included 14-inch DD for salty ground, and an optional 17-inch mono for wider coverage and larger nuggets), fully automatic ground balancing, a lightweight 2.1 kg carbon-fiber build, up to 8 hours of battery life, and wireless Bluetooth headphones — the strongest option for prospecting in difficult ground.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/gpx-6000.webp",
+    "image": "/images/products/gpx-6000.webp",
     "slug": "gpx-6000",
     "badge": "Professional",
     "specs": [
@@ -603,7 +603,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "The Minelab GPZ 7000 is Minelab's ultimate flagship gold detector, built on exclusive ZVT (Zero Voltage Transmission) technology that generates highly stable magnetic fields for exceptional sensitivity and up to 40% more depth than the GPX series. Its smart Super-D coil reduces ground interference, while 256-channel noise cancelling, built-in GPS for logging locations, and low-latency wireless audio make it the first choice for professional prospectors working difficult, previously-worked goldfields.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/gpz-7000.webp",
+    "image": "/images/products/gpz-7000.webp",
     "slug": "gpz-7000",
     "badge": "Professional",
     "specs": [
@@ -620,7 +620,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "The Minelab Vanquish 560 is the most capable model in the new Vanquish 60 series, using Multi-IQ technology with a larger V12X coil for wider coverage and better depth. It offers 5 target tones, 30 discrimination segments, 4 iron-bias levels, and 10 sensitivity levels, plus full waterproofing to 5 meters, low-latency wireless Bluetooth audio, a backlit red display with flashlight, a vibrating handle, and up to 10 hours of battery life — ideal for advancing detectorists who want professional performance without complexity.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-560.webp",
+    "image": "/images/products/vanquish-560.webp",
     "slug": "vanquish-560",
     "badge": "Bestseller",
     "specs": [
@@ -637,7 +637,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "The Minelab Vanquish 360 is a fully automatic, waterproof metal detector that delivers professional performance in a lightweight, compact build. Built on Minelab's proven Multi-IQ technology, it scans multiple frequencies at once for wider ground coverage and better target separation, with Park, Beach, and All Metal search modes, 119 target IDs, six discrimination segments, and full IP68 waterproofing to 5 meters (16 ft).",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-360.webp",
+    "image": "/images/products/vanquish-360.webp",
     "slug": "vanquish-360",
     "badge": "New",
     "specs": [
@@ -654,7 +654,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "The Minelab SDC 2300 is a compact gold-prospecting detector using ultra-fast MPF pulse induction technology, with a fully collapsible design (no disassembly required) that folds down to just 40cm for easy backpack carrying. Waterproof to 3 meters for searching directly in riverbeds and on beaches, with automatic ground balance, a dedicated saline-ground mode, and 9 LED indicators showing signal strength and battery level — built to military-grade standards for prospecting the toughest terrain without any assembly.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/sdc-2300.webp",
+    "image": "/images/products/sdc-2300.webp",
     "slug": "sdc-2300",
     "badge": "Professional",
     "specs": [
@@ -671,7 +671,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "The Minelab PRO-FIND 15 is a target pinpointer, not a full metal detector — it precisely locates a target inside the hole after your primary detector has found it, reducing dig size and speeding up recovery. It uses VLF technology with fixed sensitivity, a tone that intensifies as you approach the target, DIF interference-reduction technology, and is waterproof to 1.5 meters, running on a single 9V battery for up to 30 hours.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/pro-find-15.webp",
+    "image": "/images/products/pro-find-15.webp",
     "slug": "pro-find-15",
     "badge": "Accessory",
     "specs": [
@@ -688,7 +688,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "Minelab's newest flagship for 2026 and successor to the GPZ 7000, the GPZ 8000 pairs next-generation GeoZVT ground technology with the multi-layered, stereo-separated Echo Sonic Pro sound system and a three-size Z-Set concentric coil range for maximum depth in the toughest ground. A lightweight chassis, Pro-Swing 125 support harness, and dual rechargeable lithium batteries make it Minelab's most powerful gold detector to date.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/gpz-8000.webp",
+    "image": "/images/products/gpz-8000.webp",
     "slug": "gpz-8000",
     "badge": "Newest",
     "specs": [
@@ -705,7 +705,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "The Vanquish 560 Pro Pack is the top-tier package in Minelab's Vanquish family, pairing proven Multi-IQ multi-frequency technology with a simplified, intuitive design for professional-level performance. It bundles both the wide-coverage V12X coil and the precision-focused V8X coil alongside ML60 wireless headphones, giving you a complete detecting kit ready for any environment.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-560-pro-pack.webp",
+    "image": "/images/products/vanquish-560-pro-pack.webp",
     "slug": "vanquish-560-pro-pack",
     "badge": "Bestseller",
     "specs": [
@@ -722,7 +722,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "The Vanquish 460 is built for detectorists who want more than entry-level performance, powered by Minelab's proven Multi-IQ technology that reads multiple frequencies at once for faster target separation, better coverage, and improved accuracy. Fully waterproof to IP68 (5 meters), it pairs a precision V10X coil with handle vibration and low-latency Bluetooth LE Audio for up to 10 hours of runtime.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-460.webp",
+    "image": "/images/products/vanquish-460.webp",
     "slug": "vanquish-460",
     "badge": "New",
     "specs": [
@@ -739,7 +739,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "The Gold Monster 2000 tracks the finest gold with greater precision in highly mineralized ground, thanks to Minelab's exclusive Multi-Au technology, which combines synchronized multi-frequency VLF sensitivity (12-76 kHz) with a pulse induction ground-processing engine. Echo Wave audio separates faint gold signals from hot rocks and iron trash, while the instant Gold Probability indicator and 0-99 digital target ID speed up dig decisions.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/gold-monster-2000.webp",
+    "image": "/images/products/gold-monster-2000.webp",
     "slug": "gold-monster-2000",
     "badge": "Newest",
     "specs": [
@@ -757,7 +757,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "The Pro-Find 35 is a rugged, professional-grade pinpointer built for serious detecting, submersible to 3 meters and equipped with five sensitivity levels, Ferrous Tone ID, and DIF technology for fast, accurate target pinpointing with minimal interference. A built-in LED flashlight, intensifying vibration feedback, and up to 20 hours of runtime make it a practical companion for fieldwork.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/pro-find-35.webp",
+    "image": "/images/products/pro-find-35.webp",
     "slug": "pro-find-35",
     "badge": "Accessory",
     "specs": [
@@ -775,7 +775,7 @@
     "brand": "Minelab",
     "price": null,
     "description": "Minelab's deepest and most accurate target pinpointer, offering up to 10% greater detection depth than previous models, one-touch Rapid Re-Tune for instant adaptation to changing ground, 5 sensitivity levels with Ferrous Tone ID for audible iron discrimination, vibration and sound feedback that intensify near the target, a built-in LED light, and a high-visibility red handle with a loss alarm — ideal for professionals seeking maximum accuracy and fast target recovery.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/pro-find-40.webp",
+    "image": "/images/products/pro-find-40.webp",
     "slug": "pro-find-40",
     "badge": "Accessory",
     "specs": [
@@ -792,7 +792,7 @@
     "brand": "GoldXtra",
     "price": 695000,
     "description": "An entry-level model in the TGX series, this professional-grade detector combines three detection systems for gold, precious metals, and voids — an accessible way into serious detecting at a lower price than the higher models in the series.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/Goldxtra-TGX-LITE.jpg",
+    "image": "/images/products/Goldxtra-TGX-LITE.jpg",
     "slug": "goldxtra-tgx-lite",
     "badge": "Bestseller",
     "specs": [
@@ -808,7 +808,7 @@
     "brand": "GoldXtra",
     "price": 834000,
     "description": "GoldXtra TGX Pro is a fully integrated professional detector with five detection systems for gold, precious metals, treasures, voids, and underground cavities.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/Goldxtra-tgx-pro.jpg",
+    "image": "/images/products/Goldxtra-tgx-pro.jpg",
     "slug": "goldxtra-tgx-pro",
     "badge": "Bestseller",
     "specs": [
@@ -824,7 +824,7 @@
     "brand": "GoldXtra",
     "price": 1000800,
     "description": "The most fully equipped model in the TGX series, featuring five advanced detection systems for gold, precious metals, treasures, voids, and caves, along with extra accessories and enhanced sensitivity — built for professional prospectors seeking maximum performance.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/TGX-PRO-PLUS.jpg",
+    "image": "/images/products/TGX-PRO-PLUS.jpg",
     "slug": "goldxtra-tgx-pro-plus",
     "badge": "Bestseller",
     "specs": [
@@ -841,7 +841,7 @@
     "brand": "GoldXtra",
     "price": 278000,
     "description": "A compact model built for easy carrying without compromising on reliable detection results.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/Revealer-Metal-Detector.webp",
+    "image": "/images/products/Revealer-Metal-Detector.webp",
     "slug": "goldxtra-revealer",
     "badge": "Bestseller",
     "specs": [
@@ -858,7 +858,7 @@
     "brand": "GoldXtra",
     "price": 389200,
     "description": "The GoldXtra Revealer Plus pairs wireless Bluetooth connectivity with customizable settings and 8 detection modes, making it a reliable choice for finding coins, gold nuggets, artifacts, and treasure in demanding terrain.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/Revealer-Metal-Detector.webp",
+    "image": "/images/products/Revealer-Metal-Detector.webp",
     "slug": "goldxtra-revealer-plus",
     "badge": "New",
     "specs": [
@@ -875,7 +875,7 @@
     "brand": "GoldXtra",
     "price": 417000,
     "description": "The GoldXtra Unveiler metal and gold detector is built for finding gold coins, artifacts, jewelry, and gold nuggets, combining sensitive deep-detection capability with an easy-to-read LCD screen for accurate results.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/unveiler-metal-detector.webp",
+    "image": "/images/products/unveiler-metal-detector.webp",
     "slug": "goldxtra-unveiler",
     "badge": "New",
     "specs": [
@@ -892,7 +892,7 @@
     "brand": "GoldXtra",
     "price": 500400,
     "description": "The GoldXtra Unveiler Plus delivers enhanced sensitivity and deeper detection range for finding gold coins, artifacts, jewelry, and gold pieces, with Bluetooth connectivity and easy-to-use controls.",
-    "image": "https://madinagold.sa/assets/images/Metal-Detectors/unveiler-plus.webp",
+    "image": "/images/products/unveiler-plus.webp",
     "slug": "goldxtra-unveiler-plus",
     "badge": "New",
     "specs": [

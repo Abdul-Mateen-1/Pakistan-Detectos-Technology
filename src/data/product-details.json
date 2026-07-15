@@ -197,10 +197,10 @@
         }
       ],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-deephunter-3d-metal-detector-1.jpg",
+        "main": "/images/products/nokta-deephunter-3d-metal-detector-1.jpg",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-deephunter-3d-metal-detector-2.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-deephunter-3d-metal-detector-3.jpg"
+          "/images/products/nokta-deephunter-3d-metal-detector-2.jpg",
+          "/images/products/nokta-deephunter-3d-metal-detector-3.jpg"
         ],
         "suggestedFilenames": {
           "main": "nokta-deephunter-3d-pro-main.jpg",
@@ -410,10 +410,9 @@
         }
       ],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-jeohunter-3d-metal-detector-dual-system-1.jpg",
+        "main": "/images/products/nokta-jeohunter-3d-metal-detector-dual-system-1.jpg",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-jeohunter-3d-metal-detector-dual-system-2.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-jeohunter-3d-metal-detector-dual-system-3.jpg"
+          "/images/products/nokta-jeohunter-3d-metal-detector-dual-system-3.jpg"
         ],
         "suggestedFilenames": {
           "main": "nokta-jeohunter-3d-dual-system-main.jpg",
@@ -707,11 +706,11 @@
         }
       ],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-invenio-pro-metal-detector-1.jpg",
+        "main": "/images/products/nokta-invenio-pro-metal-detector-1.jpg",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-invenio-pro-metal-detector-2.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-invenio-pro-metal-detector-3.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-invenio-pro-metal-detector-4.jpg"
+          "/images/products/nokta-invenio-pro-metal-detector-2.jpg",
+          "/images/products/nokta-invenio-pro-metal-detector-3.jpg",
+          "/images/products/nokta-invenio-pro-metal-detector-4.jpg"
         ],
         "suggestedFilenames": {
           "main": "nokta-invenio-pro-main.jpg",
@@ -973,12 +972,11 @@
         }
       ],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-the-legend-2-metal-detector-1.jpg",
+        "main": "/images/products/nokta-the-legend-2-metal-detector-1.jpg",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-the-legend-2-metal-detector-2.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-the-legend-2-metal-detector-3.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-the-legend-2-metal-detector-4.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-the-legend-2-metal-detector-5.jpg"
+          "/images/products/nokta-the-legend-2-metal-detector-2.jpg",
+          "/images/products/nokta-the-legend-2-metal-detector-3.jpg",
+          "/images/products/nokta-the-legend-2-metal-detector-5.jpg"
         ],
         "suggestedFilenames": {
           "main": "nokta-the-legend-2-main.jpg",
@@ -1236,12 +1234,12 @@
         }
       ],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-simplex-lite-image-1.webp",
+        "main": "/images/products/nokta-simplex-lite-image-1.webp",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-simplex-lite-image-2.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-simplex-lite-image-3.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-simplex-lite-image-4.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-simplex-lite-image-5.webp"
+          "/images/products/nokta-simplex-lite-image-2.webp",
+          "/images/products/nokta-simplex-lite-image-3.webp",
+          "/images/products/nokta-simplex-lite-image-4.webp",
+          "/images/products/nokta-simplex-lite-image-5.webp"
         ],
         "suggestedFilenames": {
           "main": "nokta-simplex-lite-main.webp",
@@ -1438,12 +1436,11 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-makro-anfibio-multi-metal-detector-1.jpg",
+        "main": "/images/products/nokta-makro-anfibio-multi-metal-detector-1.jpg",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-makro-anfibio-multi-metal-detector-2.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-makro-anfibio-multi-metal-detector-3.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-makro-anfibio-multi-metal-detector-4.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-makro-anfibio-multi-metal-detector-5.jpg"
+          "/images/products/nokta-makro-anfibio-multi-metal-detector-2.jpg",
+          "/images/products/nokta-makro-anfibio-multi-metal-detector-3.jpg",
+          "/images/products/nokta-makro-anfibio-multi-metal-detector-4.jpg"
         ],
         "suggestedFilenames": {
           "main": "nokta-anfibio-multi-main.jpg",
@@ -1670,11 +1667,10 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-simplex-ultra-image-1.webp",
+        "main": "/images/products/nokta-simplex-ultra-image-1.webp",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-simplex-ultra-image-2.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-simplex-ultra-image-3.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-simplex-ultra-image-4.webp"
+          "/images/products/nokta-simplex-ultra-image-3.webp",
+          "/images/products/nokta-simplex-ultra-image-4.webp"
         ],
         "suggestedFilenames": {
           "main": "nokta-simplex-ultra-main.webp",
@@ -1882,12 +1878,11 @@
         }
       ],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-findx-1.jpg",
+        "main": "/images/products/nokta-findx-1.jpg",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-findx-2.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-findx-3.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-findx-4.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-findx-5.jpg"
+          "/images/products/nokta-findx-2.jpg",
+          "/images/products/nokta-findx-3.jpg",
+          "/images/products/nokta-findx-4.jpg"
         ],
         "suggestedFilenames": {
           "main": "nokta-findx-main.jpg",
@@ -2105,11 +2100,11 @@
         }
       ],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-findx-pro-1.jpg",
+        "main": "/images/products/nokta-findx-pro-1.jpg",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-findx-pro-2.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-findx-pro-3.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-findx-pro-4.jpg"
+          "/images/products/nokta-findx-pro-2.jpg",
+          "/images/products/nokta-findx-pro-3.jpg",
+          "/images/products/nokta-findx-pro-4.jpg"
         ],
         "suggestedFilenames": {
           "main": "nokta-findx-pro-main.jpg",
@@ -2310,11 +2305,11 @@
         }
       ],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-gold-finder-2000-1.jpg",
+        "main": "/images/products/nokta-gold-finder-2000-1.jpg",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-gold-finder-2000-2.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-gold-finder-2000-3.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-gold-finder-2000-4.jpg"
+          "/images/products/nokta-gold-finder-2000-2.jpg",
+          "/images/products/nokta-gold-finder-2000-3.jpg",
+          "/images/products/nokta-gold-finder-2000-4.jpg"
         ],
         "suggestedFilenames": {
           "main": "nokta-gold-finder-2000-main.jpg",
@@ -2506,11 +2501,11 @@
         }
       ],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-score-metal-detector-1.webp",
+        "main": "/images/products/nokta-score-metal-detector-1.webp",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-score-metal-detector-2.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-score-metal-detector-3.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-score-metal-detector-4.webp"
+          "/images/products/nokta-score-metal-detector-2.webp",
+          "/images/products/nokta-score-metal-detector-3.webp",
+          "/images/products/nokta-score-metal-detector-4.webp"
         ],
         "suggestedFilenames": {
           "main": "score-front.webp",
@@ -2739,12 +2734,11 @@
         }
       ],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-gold-kruzer-metal-detector-1.jpg",
+        "main": "/images/products/nokta-gold-kruzer-metal-detector-1.jpg",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-gold-kruzer-metal-detector-2.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-gold-kruzer-metal-detector-3.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-gold-kruzer-metal-detector-4.jpg",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-gold-kruzer-metal-detector-5.jpg"
+          "/images/products/nokta-gold-kruzer-metal-detector-2.jpg",
+          "/images/products/nokta-gold-kruzer-metal-detector-3.jpg",
+          "/images/products/nokta-gold-kruzer-metal-detector-4.jpg"
         ],
         "suggestedFilenames": {
           "main": "nokta-gold-kruzer-front.jpg",
@@ -3017,12 +3011,12 @@
         }
       ],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/nokta-triple-score-metal-detector-1.webp",
+        "main": "/images/products/nokta-triple-score-metal-detector-1.webp",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-triple-score-metal-detector-2.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-triple-score-metal-detector-3.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-triple-score-metal-detector-4.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/nokta-triple-score-metal-detector-5.webp"
+          "/images/products/nokta-triple-score-metal-detector-2.webp",
+          "/images/products/nokta-triple-score-metal-detector-3.webp",
+          "/images/products/nokta-triple-score-metal-detector-4.webp",
+          "/images/products/nokta-triple-score-metal-detector-5.webp"
         ],
         "suggestedFilenames": {
           "main": "triple-score-pro-pack-front.webp",
@@ -3248,10 +3242,10 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-440-1.webp",
+        "main": "/images/products/vanquish-440-1.webp",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-440-2.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-440-3.webp"
+          "/images/products/vanquish-440-2.webp",
+          "/images/products/vanquish-440-3.webp"
         ],
         "suggestedFilenames": {
           "main": "vanquish-440-front.webp",
@@ -3461,10 +3455,10 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-340-1.webp",
+        "main": "/images/products/vanquish-340-1.webp",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-340-2.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-340-3.webp"
+          "/images/products/vanquish-340-2.webp",
+          "/images/products/vanquish-340-3.webp"
         ],
         "suggestedFilenames": {
           "main": "vanquish-340-front.webp",
@@ -3669,10 +3663,10 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-540-1.webp",
+        "main": "/images/products/vanquish-540-1.webp",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-540-2.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-540-3.webp"
+          "/images/products/vanquish-540-2.webp",
+          "/images/products/vanquish-540-3.webp"
         ],
         "suggestedFilenames": {
           "main": "minelab-vanquish-540-main.webp",
@@ -3920,10 +3914,10 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/equinox-700-1.webp",
+        "main": "/images/products/equinox-700-1.webp",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/equinox-700-2.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/equinox-700-3.webp"
+          "/images/products/equinox-700-2.webp",
+          "/images/products/equinox-700-3.webp"
         ],
         "suggestedFilenames": {
           "main": "minelab-equinox-700-main.webp",
@@ -4168,10 +4162,10 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/equinox-900-1.webp",
+        "main": "/images/products/equinox-900-1.webp",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/equinox-900-2.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/equinox-900-3.webp"
+          "/images/products/equinox-900-2.webp",
+          "/images/products/equinox-900-3.webp"
         ],
         "suggestedFilenames": {
           "main": "minelab-equinox-900-main.webp",
@@ -4390,12 +4384,12 @@
         }
       ],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/FullBanner_MANTICORE_1_1.webp",
+        "main": "/images/products/FullBanner_MANTICORE_1_1.webp",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/FullBanner_MANTICORE_2.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/FullBanner_MANTICORE_3.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/FullBanner_MANTICORE_4.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/FullBanner_MANTICORE_5.webp"
+          "/images/products/FullBanner_MANTICORE_2.webp",
+          "/images/products/FullBanner_MANTICORE_3.webp",
+          "/images/products/FullBanner_MANTICORE_4.webp",
+          "/images/products/FullBanner_MANTICORE_5.webp"
         ],
         "suggestedFilenames": {
           "main": "minelab-manticore-main.webp",
@@ -4578,7 +4572,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/go-find-11.webp",
+        "main": "/images/products/go-find-11.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-go-find-11-main.webp",
@@ -4789,7 +4783,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/go-find-22.webp",
+        "main": "/images/products/go-find-22.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-go-find-22-main.jpg",
@@ -5012,7 +5006,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/go-find-44.webp",
+        "main": "/images/products/go-find-44.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-go-find-44-main.jpg",
@@ -5237,7 +5231,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/go-find-66.webp",
+        "main": "/images/products/go-find-66.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-go-find-66-main.jpg",
@@ -5444,7 +5438,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-540-pro-pack.webp",
+        "main": "/images/products/vanquish-540-pro-pack.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-vanquish-540-pro-pack-main.jpg",
@@ -5632,7 +5626,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/x-terra-intrepid.webp",
+        "main": "/images/products/x-terra-intrepid.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-x-terra-intrepid-main.jpg",
@@ -5855,7 +5849,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/x-terra-voyager.webp",
+        "main": "/images/products/x-terra-voyager.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "x-terra-voyager-main.webp",
@@ -6098,7 +6092,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/x-terra-pro.webp",
+        "main": "/images/products/x-terra-pro.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "x-terra-pro-main.webp",
@@ -6348,7 +6342,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/x-terra-elite.webp",
+        "main": "/images/products/x-terra-elite.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "x-terra-elite-main.webp",
@@ -6597,7 +6591,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/x-terra-elite-expedition-pack.webp",
+        "main": "/images/products/x-terra-elite-expedition-pack.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "x-terra-elite-expedition-pack-main.webp",
@@ -6832,7 +6826,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/equinox-600.webp",
+        "main": "/images/products/equinox-600.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "equinox-600-main.webp",
@@ -7046,7 +7040,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/equinox-800.webp",
+        "main": "/images/products/equinox-800.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-equinox-800-main.webp",
@@ -7234,7 +7228,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/gold-monster-1000.webp",
+        "main": "/images/products/gold-monster-1000.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-gold-monster-1000-main.webp",
@@ -7421,7 +7415,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/excalibur-ii.webp",
+        "main": "/images/products/excalibur-ii.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-excalibur-ii-main.webp",
@@ -7620,7 +7614,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/ctx-3030.webp",
+        "main": "/images/products/ctx-3030.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-ctx-3030-main.webp",
@@ -7817,7 +7811,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/gpx-6000.webp",
+        "main": "/images/products/gpx-6000.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-gpx-6000-main.webp",
@@ -8026,7 +8020,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/gpz-7000.webp",
+        "main": "/images/products/gpz-7000.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "gpz-7000-main.jpg",
@@ -8243,7 +8237,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-560.webp",
+        "main": "/images/products/vanquish-560.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "vanquish-560-main.jpg",
@@ -8452,7 +8446,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-360.webp",
+        "main": "/images/products/vanquish-360.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "vanquish-360-main.jpg",
@@ -8658,7 +8652,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/sdc-2300.webp",
+        "main": "/images/products/sdc-2300.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "sdc-2300-main.jpg",
@@ -8835,7 +8829,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/pro-find-15.webp",
+        "main": "/images/products/pro-find-15.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "pro-find-15-main.jpg",
@@ -9016,7 +9010,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/gpz-8000.webp",
+        "main": "/images/products/gpz-8000.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-gpz-8000-main.webp",
@@ -9199,7 +9193,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-560-pro-pack.webp",
+        "main": "/images/products/vanquish-560-pro-pack.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-vanquish-560-pro-pack-main.webp",
@@ -9386,7 +9380,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/vanquish-460.webp",
+        "main": "/images/products/vanquish-460.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-vanquish-460-main.webp",
@@ -9572,7 +9566,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/gold-monster-2000.webp",
+        "main": "/images/products/gold-monster-2000.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-gold-monster-2000-main.webp",
@@ -9737,7 +9731,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/pro-find-35.webp",
+        "main": "/images/products/pro-find-35.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-pro-find-35-main.webp",
@@ -9922,7 +9916,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/pro-find-40.webp",
+        "main": "/images/products/pro-find-40.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "minelab-pro-find-40-pinpointer.webp",
@@ -10080,11 +10074,9 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/Goldxtra-TGX-LITE.jpg",
+        "main": "/images/products/Goldxtra-TGX-LITE.jpg",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/Goldxtra-TGX-LITE-1.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/Goldxtra-TGX-LITE-2.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/Goldxtra-TGX-LITE-3.webp"
+          "/images/products/Goldxtra-TGX-LITE-1.webp"
         ],
         "suggestedFilenames": {
           "main": "goldxtra-tgx-lite-front.jpg",
@@ -10233,7 +10225,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/Goldxtra-tgx-pro.jpg",
+        "main": "/images/products/Goldxtra-tgx-pro.jpg",
         "gallery": [],
         "suggestedFilenames": {
           "main": "goldxtra-tgx-pro-front.jpg",
@@ -10385,9 +10377,9 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/TGX-PRO-PLUS.jpg",
+        "main": "/images/products/TGX-PRO-PLUS.jpg",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/Goldxtra TGX PRO PLUS Detectors.webp"
+          "/images/products/Goldxtra-TGX-PRO-PLUS-Detectors.webp"
         ],
         "suggestedFilenames": {
           "main": "goldxtra-tgx-pro-plus-front.jpg",
@@ -10549,12 +10541,12 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/Revealer-Metal-Detector.webp",
+        "main": "/images/products/Revealer-Metal-Detector.webp",
         "gallery": [
-          "https://madinagold.sa/assets/images/Metal-Detectors/Revealer-Metal-Detector1.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/Revealer-Metal-Detector2.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/Revealer-Metal-Detector3.webp",
-          "https://madinagold.sa/assets/images/Metal-Detectors/Revealer-Metal-Detector4.webp"
+          "/images/products/Revealer-Metal-Detector1.webp",
+          "/images/products/Revealer-Metal-Detector2.webp",
+          "/images/products/Revealer-Metal-Detector3.webp",
+          "/images/products/Revealer-Metal-Detector4.webp"
         ],
         "suggestedFilenames": {
           "main": "goldxtra-revealer-main.webp",
@@ -10739,7 +10731,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/Revealer-Metal-Detector.webp",
+        "main": "/images/products/Revealer-Metal-Detector.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "goldxtra-revealer-plus-main.webp",
@@ -10893,7 +10885,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/unveiler-metal-detector.webp",
+        "main": "/images/products/unveiler-metal-detector.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "goldxtra-unveiler-main.webp",
@@ -11047,7 +11039,7 @@
       ],
       "downloads": [],
       "images": {
-        "main": "https://madinagold.sa/assets/images/Metal-Detectors/unveiler-plus.webp",
+        "main": "/images/products/unveiler-plus.webp",
         "gallery": [],
         "suggestedFilenames": {
           "main": "goldxtra-unveiler-plus-main.webp",
