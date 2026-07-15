@@ -5,18 +5,20 @@
  * and global styles. All pages wrap content inside this layout.
  */
 import '../styles/global.css';
+import site from '../data/site.json';
 
 const {
   title,
-  description = "Pakistan's premier authorized distributor of professional gold detectors, underground imaging systems, and industrial detection equipment. Official dealer for Nokta, Minelab, and GoldXtra.",
+  description = "Pakistan's premier authorized distributor of gold detectors, underground imaging systems, and detection equipment. Official Nokta, Minelab, GoldXtra dealer.",
   canonicalUrl,
   ogImage = '/og-image.jpg',
+  noindex = false,
 } = Astro.props;
 
 const siteName = 'Pakistan Detectors Technology';
-const shortName = 'PDT';
+const shortName = 'Pakistan Detectors';
 const fullTitle = title === 'Home'
-  ? `${siteName} — Professional Detection Equipment in Pakistan`
+  ? `${siteName} — Gold & Metal Detectors`
   : `${title} | ${shortName}`;
 
 // Social crawlers (WhatsApp/Facebook/Twitter) require absolute image URLs.
@@ -38,9 +40,8 @@ const absoluteOgImage = new URL(ogImage, siteUrl).toString();
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
     <meta name="author" content={siteName} />
-    <meta name="keywords" content="gold detector Pakistan, metal detector price, Minelab Pakistan, Nokta dealer, GoldXtra distributor, long range locator, underground imaging system, gold prospecting equipment" />
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 
     <!-- Open Graph -->
@@ -62,21 +63,33 @@ const absoluteOgImage = new URL(ogImage, siteUrl).toString();
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Structured Data: Organization -->
+    <!-- Structured Data: LocalBusiness -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": ["Organization", "LocalBusiness"],
       "name": siteName,
       "url": "https://pakistandetectors.com",
       "description": description,
+      "telephone": site.contact.phone,
+      "email": site.contact.email,
+      "hasMap": site.contact.mapsUrl,
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Gulberg Trade Center",
         "addressLocality": "Islamabad",
         "addressCountry": "PK"
       },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
+        "telephone": site.contact.phone,
         "contactType": "sales",
+        "areaServed": "PK",
         "availableLanguage": ["English", "Urdu"]
       }
     })} />

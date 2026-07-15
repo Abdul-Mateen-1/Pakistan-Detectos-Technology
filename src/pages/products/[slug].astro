@@ -52,7 +52,9 @@ const faq = [...productDetails.shared.faq, ...details.faq];
 const galleryImages = [product.image];
 
 const canonicalUrl = `https://pakistandetectors.com/products/${slug}`;
-const metaDescription = `${product.description} Genuine ${product.brand} ${categoryInfo.name.toLowerCase()} available in Pakistan with authorized warranty and nationwide delivery.`;
+const metaDescription =
+  details.seo?.metaDescription ??
+  `${product.description} Genuine ${product.brand} ${categoryInfo.name.toLowerCase()} available in Pakistan with authorized warranty and nationwide delivery.`;
 
 const productSchema: Record<string, any> = {
   "@context": "https://schema.org",
@@ -75,9 +77,19 @@ if (product.price) {
     seller: { "@type": "Organization", name: "Pakistan Detectors Technology" },
   };
 }
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+};
 ---
 
-<Layout title={product.name} description={metaDescription} canonicalUrl={canonicalUrl}>
+<Layout title={product.name} description={metaDescription} canonicalUrl={canonicalUrl} ogImage={product.image}>
   <Navbar />
   <main>
     <!-- Hero: Breadcrumb + Gallery / BuyBox -->
@@ -146,6 +158,7 @@ if (product.price) {
   <Footer />
 
   <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  {faq.length > 0 && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <script>
     const obs = new IntersectionObserver(
