@@ -5,6 +5,7 @@
  * shown below the product grid on the catalog page.
  * Glassmorphic card with gold accent border.
  */
+import site from "../../../data/site.json";
 ---
 
 <section class="mt-16 mb-8 lg:mt-20">
@@ -36,7 +37,7 @@
           Request a Quote →
         </a>
         <a
-          href="https://wa.me/92XXXXXXXXXX"
+          href={site.contact.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300 ease-out bg-whatsapp text-white hover:bg-whatsapp-hover active:scale-[0.98] rounded-full px-7 py-3 text-sm"

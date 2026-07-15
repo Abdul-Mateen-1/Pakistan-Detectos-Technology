@@ -127,32 +127,58 @@ body {
   color: var(--color-dark);
 }
 
-/* ===== Scroll Reveal System ===== */
-:global([data-reveal]) {
+/* ===== Scroll Reveal System =====
+   Plain selectors — this stylesheet is already global (imported once via
+   Layout.astro), so no :global() wrapper is needed. That wrapper is Astro's
+   SFC <style>-scoping escape hatch; here it isn't recognized as CSS at all,
+   which silently invalidated every rule in this block. */
+[data-reveal] {
   opacity: 0;
   will-change: transform, opacity;
 }
 
-:global([data-reveal="up"]) {
+[data-reveal="up"] {
   transform: translateY(20px);
 }
 
-:global([data-reveal="right"]) {
+[data-reveal="right"] {
   transform: translateX(-20px);
 }
 
-:global([data-reveal="left"]) {
+[data-reveal="left"] {
   transform: translateX(20px);
 }
 
-:global([data-reveal="scale"]) {
+[data-reveal="scale"] {
   transform: scale(0.8);
 }
 
-:global([data-reveal].revealed) {
+[data-reveal].revealed {
   opacity: 1;
   transform: translate(0) scale(1);
   transition: opacity 400ms ease-out, transform 400ms ease-out;
+}
+
+/* Heading variant — slightly larger offset + softer decel, so h1/h2 reads
+   with a touch more weight than surrounding body content. */
+[data-reveal="heading"] {
+  transform: translateY(28px);
+}
+
+[data-reveal="heading"].revealed {
+  transition: opacity 550ms ease-out, transform 550ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Eyebrow accent line — draws in alongside its heading. transform/scaleX
+   (not width) so it stays compositor-only and never triggers layout. */
+[data-reveal] .eyebrow-line {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 450ms ease-out;
+}
+
+[data-reveal].revealed .eyebrow-line {
+  transform: scaleX(1);
 }
 
 /* ===== Reduced Motion ===== */
@@ -163,7 +189,7 @@ body {
     transition-duration: 0.01ms !important;
   }
 
-  :global([data-reveal]) {
+  [data-reveal] {
     opacity: 1;
     transform: none;
   }

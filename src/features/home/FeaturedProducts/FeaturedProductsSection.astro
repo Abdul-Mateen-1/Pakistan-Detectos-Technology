@@ -37,17 +37,19 @@ const products = allProducts.filter((p) => p.featured);
     <!-- Product Cards - 3-col grid on desktop -->
     <div class="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
       {products.map((product, index) => (
-        <CatalogProductCard
-          name={product.name}
-          brand={product.brand}
-          price={product.price}
-          description={product.description}
-          image={product.image}
-          slug={product.slug}
-          badge={product.badge}
-          specs={product.specs}
-          index={index}
-        />
+        <div class="h-full" data-reveal="up" style={`transition-delay: ${index * 80}ms;`}>
+          <CatalogProductCard
+            name={product.name}
+            brand={product.brand}
+            price={product.price}
+            description={product.description}
+            image={product.image}
+            slug={product.slug}
+            badge={product.badge}
+            specs={product.specs}
+            index={index}
+          />
+        </div>
       ))}
     </div>
 
@@ -55,7 +57,7 @@ const products = allProducts.filter((p) => p.featured);
     <div class="md:hidden overflow-x-auto scrollbar-hide -mx-6 px-6 snap-x snap-mandatory">
       <div class="flex gap-4" style="width: max-content;">
         {products.map((product, index) => (
-          <div class="w-[85vw] max-w-[340px] snap-center flex-shrink-0">
+          <div class="w-[85vw] max-w-[340px] snap-center flex-shrink-0" data-reveal="up" style={`transition-delay: ${index * 80}ms;`}>
             <CatalogProductCard
               name={product.name}
               brand={product.brand}

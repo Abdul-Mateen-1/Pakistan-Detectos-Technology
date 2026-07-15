@@ -7,6 +7,9 @@
  */
 import Container from "../../../components/ui/Container.astro";
 import Button from "../../../components/ui/Button.astro";
+import site from "../../../data/site.json";
+
+const telHref = `tel:${site.contact.phone.replace(/[^\d+]/g, "")}`;
 ---
 
 <section
@@ -22,18 +25,18 @@ import Button from "../../../components/ui/Button.astro";
     <div class="text-center max-w-2xl mx-auto">
       <!-- Eyebrow -->
       <div class="flex items-center gap-4 justify-center" data-reveal="up">
-        <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+        <span class="w-10 h-[2px] bg-primary eyebrow-line" aria-hidden="true"></span>
         <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
           Ready to Get Started?
         </span>
-        <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+        <span class="w-10 h-[2px] bg-primary eyebrow-line" aria-hidden="true"></span>
       </div>
 
       <!-- Heading -->
       <h2
         id="cta-heading"
         class="mt-6 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-text-primary"
-        data-reveal="up"
+        data-reveal="heading"
       >
         Find the Perfect Detector<br class="hidden sm:inline" /> for Your Next Project
       </h2>
@@ -57,7 +60,7 @@ import Button from "../../../components/ui/Button.astro";
 
         <!-- WhatsApp (with pulse) -->
         <a
-          href="https://wa.me/92XXXXXXXXXX"
+          href={site.contact.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
           class="whatsapp-cta inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base font-semibold rounded-md bg-whatsapp text-white hover:bg-whatsapp-hover transition-all duration-300 ease-out active:scale-[0.98]"
@@ -70,7 +73,7 @@ import Button from "../../../components/ui/Button.astro";
 
         <!-- Call Sales -->
         <a
-          href="tel:+92XXXXXXXXXX"
+          href={telHref}
           class="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base font-semibold rounded-md bg-transparent text-text-primary border border-dark-border hover:border-primary hover:text-primary transition-all duration-300 ease-out active:scale-[0.98]"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

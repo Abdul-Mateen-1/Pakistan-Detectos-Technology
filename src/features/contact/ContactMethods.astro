@@ -9,7 +9,7 @@ import site from "../../data/site.json";
 const whatsappDigits = site.contact.whatsapp.replace("https://wa.me/", "");
 const whatsappDisplay = `+${whatsappDigits.slice(0, 2)}-${whatsappDigits.slice(2)}`;
 const telHref = `tel:${site.contact.phone.replace(/[^\d+]/g, "")}`;
-const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.contact.address)}`;
+const mapsHref = site.contact.mapsUrl;
 
 const methods = [
   {

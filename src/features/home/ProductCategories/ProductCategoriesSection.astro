@@ -19,17 +19,17 @@ const categories = categoriesData.secondary;
   <Container>
     <!-- Header -->
     <div class="flex items-center gap-4 justify-center mb-4" data-reveal="up">
-      <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+      <span class="w-10 h-[2px] bg-primary eyebrow-line" aria-hidden="true"></span>
       <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
         Browse by Category
       </span>
-      <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+      <span class="w-10 h-[2px] bg-primary eyebrow-line" aria-hidden="true"></span>
     </div>
 
     <h2
       id="categories-heading"
       class="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-text-primary text-center mb-12 lg:mb-16"
-      data-reveal="up"
+      data-reveal="heading"
     >
       Find the Right Equipment
     </h2>
@@ -43,7 +43,18 @@ const categories = categoriesData.secondary;
         data-reveal="up"
         aria-label={`${primaryCategory.name} — ${primaryCategory.count} products`}
       >
-        <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-dark-card/80 to-transparent pointer-events-none" aria-hidden="true"></div>
+        {primaryCategory.image && (
+          <div class="absolute right-4 top-4 left-4 h-[40%] max-h-[180px]">
+            <img
+              src={primaryCategory.image}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              class="w-full h-full object-contain object-right-top opacity-80 transition-all duration-[280ms] ease-out group-hover:opacity-100 pointer-events-none"
+            />
+          </div>
+        )}
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-dark-card/60 to-dark-card/20 pointer-events-none" aria-hidden="true"></div>
         <div class="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full blur-[80px] pointer-events-none" aria-hidden="true"></div>
 
         <div class="relative z-10 p-6 lg:p-8">
@@ -73,10 +84,23 @@ const categories = categoriesData.secondary;
           style={`transition-delay: ${(index + 1) * 80}ms;`}
           aria-label={`${cat.name} — ${cat.count} products`}
         >
-          <h3 class="text-base lg:text-lg font-semibold text-text-primary leading-tight">
+          {cat.image && (
+            <div class="absolute right-3 top-3 left-3 h-[42%] max-h-[70px]">
+              <img
+                src={cat.image}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                class="w-full h-full object-contain object-right-top opacity-75 transition-all duration-[280ms] ease-out group-hover:opacity-100 pointer-events-none"
+              />
+            </div>
+          )}
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-dark-card/65 to-dark-card/25 pointer-events-none" aria-hidden="true"></div>
+
+          <h3 class="relative text-base lg:text-lg font-semibold text-text-primary leading-tight">
             {cat.name}
           </h3>
-          <span class="mt-2 inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:underline">
+          <span class="relative mt-2 inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:underline">
             {cat.count} Products
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
               <line x1="5" y1="12" x2="19" y2="12" />

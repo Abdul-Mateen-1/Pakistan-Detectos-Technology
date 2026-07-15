@@ -6,13 +6,13 @@
  */
 import site from "../../data/site.json";
 
-const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.contact.address)}`;
+const mapsHref = site.contact.mapsUrl;
 
 const officeDetails = [
   {
     icon: "pin",
     title: "Address",
-    lines: ["Office #XX, Floor X, Building Name", "Sector X, Islamabad, Pakistan"],
+    lines: ["Gulberg Trade Center", "Islamabad, Pakistan"],
   },
   {
     icon: "clock",
