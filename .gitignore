@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local browser-profile data from screenshot/review sessions — never commit
+screenshotsForYou/live-review/
