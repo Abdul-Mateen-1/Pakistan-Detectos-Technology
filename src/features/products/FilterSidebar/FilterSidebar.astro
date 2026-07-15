@@ -34,8 +34,8 @@ const minPrice = pricedProducts.length ? Math.min(...pricedProducts.map((p) => p
 const maxPrice = pricedProducts.length ? Math.max(...pricedProducts.map((p) => p.price as number)) : 2000000;
 ---
 
-<aside class="hidden lg:block w-56 xl:w-64 shrink-0" aria-label="Product filters">
-  <div class="sticky top-[140px] max-h-[calc(100vh-160px)] overflow-y-auto scrollbar-hide pr-2">
+<aside class="hidden lg:block w-60 xl:w-72 shrink-0" aria-label="Product filters">
+  <div class="sticky top-[140px] max-h-[calc(100vh-160px)] overflow-y-auto scrollbar-hide rounded-2xl border border-dark-border bg-dark-card p-5">
     <!-- Header -->
     <div class="flex items-center justify-between mb-5">
       <h2 class="text-lg font-semibold text-text-primary">Filters</h2>
