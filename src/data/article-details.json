@@ -137,61 +137,61 @@
       "buttonHref": "/products"
     }
   },
-  "gold-prospecting-uae-soil-types": {
+  "gold-prospecting-pakistan-soil-types": {
     "content": [
-      { "type": "paragraph", "text": "The UAE has more geological variety than most people expect — from the soft dune fields of Abu Dhabi's Liwa region to the rocky Hajar Mountains running through Ras Al Khaimah and Fujairah, rich with ancient mineral formations. That variety means a gold detector that performs well in one emirate can underperform in another if it isn't ground-balanced correctly." },
-      { "type": "heading", "level": 2, "text": "1. The Hajar Mountains (Ras Al Khaimah & Fujairah) — Rocky, Mineral-Rich Terrain" },
-      { "type": "paragraph", "text": "The Hajar Mountains are among the UAE's most mineral-dense regions, running along an ancient ophiolite belt with high concentrations of iron and copper — Fujairah's Masafi and Wadi Al Helo areas even carry a documented history of ancient copper mining. This terrain causes heavy interference for metal detectors with basic sensitivity." },
+      { "type": "paragraph", "text": "Pakistan has more geological variety than almost anywhere a prospector can work — from the glacier-fed river gravels of Gilgit-Baltistan to the volcanic Chagai belt in western Balochistan, home to some of the world's largest known copper-gold systems. That variety means a gold detector that performs beautifully in one province can underperform badly in another if it isn't ground-balanced for the local soil." },
+      { "type": "heading", "level": 2, "text": "1. The Northern River Valleys (Gilgit-Baltistan & KP) — Placer Gold Country" },
+      { "type": "paragraph", "text": "The Indus and its northern tributaries — the Gilgit, Hunza, and Chitral rivers — carry fine placer gold washed down from the Karakoram and Hindu Kush, and gold panning along these gravels is a centuries-old local tradition. For detector work, the challenge is wet, rounded gravel and cold, fast water rather than mineralization: small nuggets and flakes sit deep between stones, and signals are faint." },
       {
         "type": "list",
         "items": [
-          { "label": "Soil type", "text": "Rocky, with high natural mineral deposits" },
-          { "label": "Main challenge", "text": "Frequent false signals from ground minerals" },
-          { "label": "Best device", "text": "Pulse Induction or VLF units with precise manual ground balance" },
-          { "label": "Best coil", "text": "A DD (Double D) coil to cut ground mineral interference" }
+          { "label": "Soil type", "text": "Water-worn river gravel and alluvial sandbars" },
+          { "label": "Main challenge", "text": "Small, deep targets with faint signals in wet ground" },
+          { "label": "Best device", "text": "A high-frequency VLF gold detector, or Pulse Induction for deeper bench gravels" },
+          { "label": "Best coil", "text": "A small, waterproof coil for target separation between stones" }
         ]
       },
-      { "type": "heading", "level": 2, "text": "2. Al Ain & Inland Abu Dhabi — Wide, Dry Plains" },
-      { "type": "paragraph", "text": "The soil around Al Ain and inland Abu Dhabi is relatively dry and sandy with lower natural mineral content compared to the Hajar range, making it a friendlier environment for most professional gold detectors. The wide open terrain calls for devices with larger coils to cover more ground efficiently." },
+      { "type": "heading", "level": 2, "text": "2. The Chagai Volcanic Belt (Balochistan) — Highly Mineralized Hard Rock" },
+      { "type": "paragraph", "text": "Western Balochistan's Chagai arc hosts porphyry copper-gold systems on a world scale — Reko Diq and Saindak are the famous names — and the same volcanic geology that concentrates gold also loads the ground with iron oxides. This is the most mineralized detecting environment in the country, and entry-level machines chatter constantly here." },
       {
         "type": "list",
         "items": [
-          { "label": "Soil type", "text": "Dry sand, low interference" },
-          { "label": "Main challenge", "text": "Vast areas that require wide coverage" },
-          { "label": "Best device", "text": "VLF with a large coil (15 inches or more)" },
-          { "label": "Best coil", "text": "A large round coil for greater depth and wider search coverage" }
+          { "label": "Soil type", "text": "Iron-rich volcanic rock and oxidized gravel plains" },
+          { "label": "Main challenge", "text": "Heavy ground mineralization causing constant false signals" },
+          { "label": "Best device", "text": "Pulse Induction, or multi-frequency VLF with precise manual ground balance" },
+          { "label": "Best coil", "text": "A DD (Double D) coil to cut through ground mineral interference" }
         ]
       },
-      { "type": "heading", "level": 2, "text": "3. Coastal Sharjah & Umm Al Quwain — Mixed Sand and Salt Flats" },
-      { "type": "paragraph", "text": "The UAE's coastal areas mix sandy soil with salt-affected ground (sabkha), which can create its own signal noise if not properly balanced. Prospectors here often search old settlement sites and beach areas." },
+      { "type": "heading", "level": 2, "text": "3. The Thar & Cholistan Deserts (Sindh & Punjab) — Deep, Soft Sand" },
+      { "type": "paragraph", "text": "Pakistan's eastern deserts are wide, soft, and brutally hot in summer. Deep dune sand absorbs signal strength noticeably, and long search days demand equipment that tolerates heat and fine dust. The reward is huge, uncrowded ground — old caravan routes and abandoned settlements included." },
       {
         "type": "list",
         "items": [
-          { "label": "Soil type", "text": "Sandy with pockets of salt flats" },
-          { "label": "Main challenge", "text": "Salt content can cause signal drift near the coast" },
-          { "label": "Best device", "text": "Waterproof units with automatic ground balance" },
-          { "label": "Best coil", "text": "A sealed, waterproof coil for beach and coastal work" }
+          { "label": "Soil type", "text": "Deep, soft dune sand with low mineralization" },
+          { "label": "Main challenge", "text": "Signal loss in soft sand, extreme heat, and fine dust" },
+          { "label": "Best device", "text": "A heat-tolerant unit with long battery life and a large coil (15 inches or more)" },
+          { "label": "Best coil", "text": "A large, sealed coil for depth and wide ground coverage" }
         ]
       },
-      { "type": "heading", "level": 2, "text": "4. Liwa & the Empty Quarter — Extreme Desert Terrain" },
-      { "type": "paragraph", "text": "The Liwa region borders the Rub' al Khali (Empty Quarter), the largest connected sand desert in the world, and its harsh environment puts real demands on any device in terms of heat and sand resistance. Deep, soft dunes noticeably weaken the signal of underground gold detectors." },
+      { "type": "heading", "level": 2, "text": "4. The Potohar Plateau & Salt Range (Punjab) — Mixed Rocky Ground and Salt" },
+      { "type": "paragraph", "text": "Between Islamabad and the Salt Range, the Potohar plateau mixes loess, gravel beds, and eroded rocky outcrops — and near Khewra's salt formations, conductive salty ground adds its own signal drift, much like beach detecting. This region is popular for coin and relic hunting given its long settlement history." },
       {
         "type": "list",
         "items": [
-          { "label": "Soil type", "text": "Deep, soft sand, extreme heat" },
-          { "label": "Main challenge", "text": "Intense heat and soft sand weaken signal strength" },
-          { "label": "Best device", "text": "Heat-resistant units with long battery life" },
-          { "label": "Best coil", "text": "A sealed, sand-resistant coil (waterproof/sealed coil)" }
+          { "label": "Soil type", "text": "Loess and gravel with salt-affected pockets near the Salt Range" },
+          { "label": "Main challenge", "text": "Salt conductivity causing signal drift and unstable threshold" },
+          { "label": "Best device", "text": "Multi-frequency units with automatic ground tracking" },
+          { "label": "Best coil", "text": "A mid-size DD coil balancing stability and coverage" }
         ]
       },
-      { "type": "heading", "level": 2, "text": "5. Rules and Regulations for Prospecting in the UAE" },
-      { "type": "paragraph", "text": "Before starting any prospecting activity, make sure you understand local regulations to avoid legal issues:" },
+      { "type": "heading", "level": 2, "text": "5. Rules and Regulations for Prospecting in Pakistan" },
+      { "type": "paragraph", "text": "Before starting any prospecting activity, make sure you understand the rules that apply — mining and exploration are regulated at the provincial level in Pakistan:" },
       {
         "type": "list",
         "items": [
-          { "text": "Searching registered heritage or archaeological sites is illegal and carries strict penalties" },
-          { "text": "Military and border areas are off-limits to any electronic detection device" },
-          { "text": "Commercial prospecting requires a permit from the relevant UAE authority" },
+          { "text": "Protected archaeological and heritage sites are strictly off-limits — searching them is illegal under antiquities law and carries serious penalties" },
+          { "text": "Military, border, and other restricted zones are off-limits to any electronic detection device" },
+          { "text": "Commercial prospecting and mining require a licence from the relevant provincial Mines & Minerals department" },
           { "text": "Hobbyist searching on private land requires the landowner's permission" }
         ]
       }
