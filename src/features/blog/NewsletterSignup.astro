@@ -1,11 +1,12 @@
 ---
 /**
  * NewsletterSignup Component (Blog Index)
- * IMPORTANT: no email service (Mailchimp/ConvertKit/etc.) is connected
- * anywhere in this project. This form validates client-side and shows a
- * friendly acknowledgment, but does NOT persist or send the email
- * anywhere — wire up a real subscribe endpoint before relying on this
- * to capture actual signups.
+ * Posts to the PHP endpoint at /api/newsletter.php (repo: public/api/,
+ * deployed at public_html/api/ on Hostinger). No mailing-list service is
+ * connected yet — each signup is emailed to the business inbox, which acts
+ * as the list until a real service (Mailchimp/ConvertKit/etc.) replaces it.
+ * NOTE: `astro dev`/`astro preview` serve public/ statically and cannot run
+ * PHP — the endpoint only works on the live server.
  */
 import Container from "../../components/ui/Container.astro";
 import Button from "../../components/ui/Button.astro";
@@ -33,27 +34,31 @@ const trustItems = ["Free forever", "Twice monthly", "Unsubscribe anytime"];
         </div>
 
         <div>
-          <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3" novalidate>
+          <form id="newsletter-form" method="post" action="/api/newsletter.php" class="flex flex-col sm:flex-row gap-3" novalidate>
             <label for="newsletter-email" class="sr-only">Email address</label>
             <input
               type="email"
               id="newsletter-email"
               name="email"
               required
+              maxlength="254"
               placeholder="your@email.com"
               autocomplete="email"
               class="flex-1 min-w-0 bg-dark-surface border border-dark-border rounded-md px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus-visible:outline-none focus-visible:border-primary transition-colors duration-200"
             />
-            <Button type="submit" variant="primary" size="md" class="justify-center whitespace-nowrap">
+            <!-- Honeypot: hidden from humans; filled = silently dropped server-side -->
+            <div class="nl-hp" aria-hidden="true">
+              <label for="newsletter-botcheck">Do not fill this field</label>
+              <input type="text" id="newsletter-botcheck" name="botcheck" tabindex="-1" autocomplete="off" />
+            </div>
+            <Button type="submit" variant="primary" size="md" class="justify-center whitespace-nowrap disabled:opacity-60 disabled:pointer-events-none">
               Subscribe
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
               </svg>
             </Button>
           </form>
-          <p id="newsletter-success" class="hidden mt-3 text-sm text-primary">
-            Thanks — you're on the list. We'll be in touch.
-          </p>
+          <p id="newsletter-status" class="hidden mt-3 text-sm" role="status" aria-live="polite"></p>
 
           <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
             {trustItems.map((item) => (
@@ -71,19 +76,71 @@ const trustItems = ["Free forever", "Twice monthly", "Unsubscribe anytime"];
   </Container>
 </section>
 
-<script>
-  // No email service is connected — this only shows a client-side
-  // acknowledgment. Wire up a real subscribe endpoint before launch.
-  const form = document.getElementById("newsletter-form") as HTMLFormElement | null;
-  const successMsg = document.getElementById("newsletter-success");
+<style>
+  .nl-hp {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+</style>
 
-  form?.addEventListener("submit", (e) => {
+<script>
+  const form = document.getElementById("newsletter-form") as HTMLFormElement | null;
+  const statusEl = document.getElementById("newsletter-status");
+  const submitBtn = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+  const submitBtnHtml = submitBtn?.innerHTML ?? "";
+
+  function showStatus(message: string, ok: boolean) {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+    statusEl.classList.remove("hidden");
+    statusEl.classList.toggle("text-primary", ok);
+    statusEl.classList.toggle("text-red-400", !ok);
+  }
+
+  function setLoading(loading: boolean) {
+    if (!submitBtn) return;
+    submitBtn.disabled = loading;
+    submitBtn.setAttribute("aria-busy", String(loading));
+    submitBtn.innerHTML = loading ? "Subscribing…" : submitBtnHtml;
+  }
+
+  form?.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
-    form.classList.add("hidden");
-    successMsg?.classList.remove("hidden");
+
+    setLoading(true);
+    statusEl?.classList.add("hidden");
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      let data: { success?: boolean; message?: string } | null = null;
+      try {
+        data = await res.json();
+      } catch {
+        data = null;
+      }
+
+      if (res.ok && data?.success) {
+        form.classList.add("hidden");
+        showStatus(data.message ?? "Thanks — you're on the list. We'll be in touch.", true);
+      } else {
+        showStatus(data?.message ?? "Something went wrong — please try again.", false);
+      }
+    } catch {
+      showStatus("Network error — please check your connection and try again.", false);
+    } finally {
+      setLoading(false);
+    }
   });
 </script>

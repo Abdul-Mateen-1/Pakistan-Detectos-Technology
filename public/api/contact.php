@@ -44,7 +44,7 @@ declare(strict_types=1);
  * ======================================================================== */
 
 /** Inbox that receives the inquiries. */
-const RECIPIENT_EMAIL = 'abdul.mateen1771@gmail.com';
+const RECIPIENT_EMAIL = 'hrdetectors2025@gmail.com';
 
 /** Sender identity — MUST be on your own domain (see note above). */
 const FROM_EMAIL = 'noreply@pakistandetectors.com';
