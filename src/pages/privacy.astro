@@ -1,0 +1,109 @@
+---
+/**
+ * Privacy Policy Page — /privacy
+ * Static legal page linked from the footer. Content reflects how the site
+ * actually works: static pages, a PHP contact/newsletter endpoint that
+ * emails submissions to the business inbox, no accounts, no online payments.
+ */
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import Footer from "../components/layout/Footer.astro";
+import Container from "../components/ui/Container.astro";
+import Breadcrumbs from "../components/layout/Breadcrumbs.astro";
+import site from "../data/site.json";
+
+const canonicalUrl = "https://pakistandetectors.com/privacy";
+const metaDescription =
+  "How Pakistan Detectors Technology handles the information you share through our contact and newsletter forms — what we collect, how we use it, and how to reach us.";
+---
+
+<Layout title="Privacy Policy" description={metaDescription} canonicalUrl={canonicalUrl}>
+  <Navbar />
+  <main>
+    <section class="bg-dark pt-[calc(72px+2.5rem)] pb-16 lg:pb-20">
+      <Container>
+        <Breadcrumbs items={[{ label: "Privacy Policy", href: "/privacy" }]} />
+
+        <div class="max-w-3xl">
+          <h1 class="mt-6 font-display text-3xl sm:text-4xl text-text-primary leading-tight">Privacy Policy</h1>
+          <p class="mt-2 text-sm text-text-muted">Last updated: 15 July 2026</p>
+
+          <p class="mt-6 text-sm text-text-secondary leading-relaxed">
+            Pakistan Detectors Technology ("we", "us") operates this website to present our detection
+            equipment catalog and let you get in touch with our team. This page explains what information
+            the site handles and how we use it. In short: we only receive what you choose to send us, and
+            we use it to respond to you.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Information We Collect</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            This website has no user accounts and processes no online payments. The only personal
+            information we receive is what you submit yourself:
+          </p>
+          <ul class="mt-3 list-disc pl-5 text-sm text-text-secondary leading-relaxed space-y-1.5">
+            <li>
+              <strong class="text-text-primary font-medium">Inquiry form</strong> — your name, email address,
+              phone/WhatsApp number, inquiry type, optional country and city, and your message.
+            </li>
+            <li>
+              <strong class="text-text-primary font-medium">Newsletter form</strong> — your email address.
+            </li>
+            <li>
+              Along with each submission, our server records the submission time, the sending IP address,
+              and the page it was sent from — standard information used solely to filter spam and abuse.
+            </li>
+          </ul>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">How We Use It</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            Form submissions are delivered directly to our business email inbox. We use them to answer your
+            questions, prepare quotes, and follow up with you by email, phone, or WhatsApp. Newsletter
+            addresses are used to send occasional product and field-tip updates. We do not sell, rent, or
+            share your information with third parties for their marketing.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Cookies</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            The site uses a single short-lived session cookie, and only when you submit a form — it powers
+            our spam rate-limiting. We run no advertising trackers. If third-party analytics are added in
+            the future, this policy will be updated to say so.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Third-Party Services</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            Links on this site can take you to services we don't operate — WhatsApp for chat, Google Maps
+            for directions, and manufacturer websites for documentation. Once you leave this site, the
+            privacy policy of the service you visit applies.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Retention &amp; Security</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            Inquiries are kept as ordinary business correspondence in our email inbox for as long as needed
+            to serve you and meet our record-keeping obligations. The website is served over HTTPS.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Your Choices</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            You can ask us at any time to delete your past inquiries or remove your address from the
+            newsletter — one message to the email below is enough.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Contact</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            Questions about this policy or your data:
+            <a href={`mailto:${site.contact.email}`} class="text-primary hover:text-primary-hover transition-colors duration-200">{site.contact.email}</a>
+            &nbsp;·&nbsp;
+            <a href={`tel:${site.contact.phone.replace(/[^0-9+]/g, "")}`} class="text-primary hover:text-primary-hover transition-colors duration-200">{site.contact.phone}</a>
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Changes to This Policy</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            If how the site handles information changes, we will update this page and its "last updated"
+            date. Significant changes will be noted clearly here.
+          </p>
+        </div>
+      </Container>
+    </section>
+  </main>
+  <Footer />
+</Layout>

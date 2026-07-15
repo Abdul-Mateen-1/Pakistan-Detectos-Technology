@@ -26,12 +26,14 @@ const officeDetails = [
   },
 ];
 
+// Hide icons whose profile URL isn't filled in yet ("#") — they reappear
+// automatically once real URLs are set in site.json.
 const socials = [
   { key: "facebook", href: site.social.facebook },
   { key: "youtube", href: site.social.youtube },
   { key: "instagram", href: site.social.instagram },
   { key: "whatsapp", href: site.contact.whatsapp },
-];
+].filter((s) => s.href && s.href !== "#");
 ---
 
 <div class="flex flex-col gap-5">

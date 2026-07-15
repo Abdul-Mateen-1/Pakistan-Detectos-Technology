@@ -12,9 +12,7 @@
       { "label": "Gold Detectors", "href": "/categories/gold-detectors" },
       { "label": "Metal Detectors", "href": "/categories/metal-detectors" },
       { "label": "Imaging Systems", "href": "/categories/underground-imaging" },
-      { "label": "Long Range", "href": "/categories/long-range-locators" },
-      { "label": "Water Detectors", "href": "/categories/water-detectors" },
-      { "label": "Accessories", "href": "/categories/accessories" }
+      { "label": "Long Range", "href": "/categories/long-range-locators" }
     ],
     "brands": [
       { "label": "Nokta", "href": "/brands/nokta" },
@@ -25,7 +23,6 @@
       { "label": "About Us", "href": "/about" },
       { "label": "Our Team", "href": "/about#team" },
       { "label": "Blog", "href": "/blog" },
-      { "label": "Careers", "href": "/careers" },
       { "label": "Contact", "href": "/contact" }
     ]
   }

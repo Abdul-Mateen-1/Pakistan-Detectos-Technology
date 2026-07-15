@@ -1,0 +1,107 @@
+---
+/**
+ * Terms of Service Page — /terms
+ * Static legal page linked from the footer. Reflects how the business
+ * actually sells: catalog site with quotes/orders arranged off-site via
+ * WhatsApp, phone, email, or the Islamabad showroom — no online checkout.
+ */
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import Footer from "../components/layout/Footer.astro";
+import Container from "../components/ui/Container.astro";
+import Breadcrumbs from "../components/layout/Breadcrumbs.astro";
+import site from "../data/site.json";
+
+const canonicalUrl = "https://pakistandetectors.com/terms";
+const metaDescription =
+  "Terms of service for the Pakistan Detectors Technology website — product information, pricing, quotes and orders, warranties, and responsible use of detection equipment.";
+---
+
+<Layout title="Terms of Service" description={metaDescription} canonicalUrl={canonicalUrl}>
+  <Navbar />
+  <main>
+    <section class="bg-dark pt-[calc(72px+2.5rem)] pb-16 lg:pb-20">
+      <Container>
+        <Breadcrumbs items={[{ label: "Terms of Service", href: "/terms" }]} />
+
+        <div class="max-w-3xl">
+          <h1 class="mt-6 font-display text-3xl sm:text-4xl text-text-primary leading-tight">Terms of Service</h1>
+          <p class="mt-2 text-sm text-text-muted">Last updated: 15 July 2026</p>
+
+          <p class="mt-6 text-sm text-text-secondary leading-relaxed">
+            These terms govern your use of the Pakistan Detectors Technology website. By browsing the site
+            or contacting us through it, you agree to them. They're deliberately plain — if anything is
+            unclear, ask us before relying on it.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Product Information &amp; Pricing</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            We work to keep specifications, availability, and prices accurate, but all of them can change
+            without notice. Prices are shown in Pakistani Rupees (PKR) and are indicative; items marked
+            "Request Quote" are priced on inquiry. Technical specifications come from the manufacturers.
+            The final price, availability, and configuration of any product are the ones we confirm to you
+            directly when you order — please verify details with our team before purchasing.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Quotes &amp; Orders</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            This website has no online checkout. Orders, payments, and delivery are arranged person-to-person
+            through WhatsApp, phone, email, or at our Islamabad showroom. A quote or inquiry submitted through
+            the site is not a binding order — a sale happens only when we confirm it with you.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Warranty &amp; Support</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            Products we sell carry their manufacturer's warranty, which we honor and facilitate as an
+            authorized distributor. Warranty periods and coverage vary by product and are stated on each
+            product's detail page or confirmed at the time of sale. Training and after-sales support terms
+            are agreed per purchase.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Responsible Use of Detection Equipment</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            Detection equipment must be used lawfully. Prospecting, excavation, and the use of detectors are
+            regulated activities in Pakistan and elsewhere — protected archaeological sites are off-limits,
+            and commercial prospecting requires provincial licensing. You are solely responsible for
+            complying with the laws and permit requirements that apply where you use the equipment.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Intellectual Property</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            The content of this website — text, layout, and branding — belongs to Pakistan Detectors
+            Technology. Manufacturer names, logos, and product imagery belong to their respective owners and
+            are used in our capacity as an authorized distributor.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">External Links</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            Links to manufacturer sites, WhatsApp, and Google Maps are provided for convenience. We are not
+            responsible for the content or practices of external services.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Limitation of Liability</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            The website and its content are provided "as is". To the extent permitted by law, Pakistan
+            Detectors Technology is not liable for indirect or consequential losses arising from use of the
+            website or reliance on catalog information. Nothing here limits rights you have under applicable
+            consumer protection law or the product warranties described above.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Governing Law</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            These terms are governed by the laws of Pakistan.
+          </p>
+
+          <h2 class="mt-10 font-display text-xl text-text-primary">Contact</h2>
+          <p class="mt-3 text-sm text-text-secondary leading-relaxed">
+            Questions about these terms:
+            <a href={`mailto:${site.contact.email}`} class="text-primary hover:text-primary-hover transition-colors duration-200">{site.contact.email}</a>
+            &nbsp;·&nbsp;
+            <a href={`tel:${site.contact.phone.replace(/[^0-9+]/g, "")}`} class="text-primary hover:text-primary-hover transition-colors duration-200">{site.contact.phone}</a>
+          </p>
+        </div>
+      </Container>
+    </section>
+  </main>
+  <Footer />
+</Layout>

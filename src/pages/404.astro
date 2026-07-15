@@ -1,0 +1,41 @@
+---
+/**
+ * 404 Page — served for unknown URLs.
+ * Astro builds this to dist/404.html; public/.htaccess points Apache/LiteSpeed
+ * at it via ErrorDocument, so Hostinger serves it with a proper 404 status.
+ */
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import Footer from "../components/layout/Footer.astro";
+import Container from "../components/ui/Container.astro";
+import Button from "../components/ui/Button.astro";
+
+const metaDescription =
+  "The page you're looking for doesn't exist. Browse our detection equipment catalog or head back to the Pakistan Detectors Technology homepage.";
+---
+
+<Layout title="Page Not Found" description={metaDescription}>
+  <Navbar />
+  <main>
+    <section class="bg-dark pt-[calc(72px+4rem)] pb-20 lg:pb-28 min-h-[70vh] flex items-center">
+      <Container>
+        <div class="max-w-xl mx-auto text-center">
+          <p class="font-display text-7xl sm:text-8xl text-primary leading-none">404</p>
+          <h1 class="mt-6 font-display text-2xl sm:text-3xl text-text-primary leading-tight">
+            This page doesn't exist
+          </h1>
+          <p class="mt-3 text-sm sm:text-base text-text-secondary leading-relaxed">
+            The link may be outdated, or the address was mistyped. Everything we sell is one click away —
+            or ask our team directly and we'll point you to the right detector.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Button href="/" variant="primary" size="md">Back to Homepage</Button>
+            <Button href="/products" variant="outline" size="md">Browse Products</Button>
+            <Button href="/contact" variant="outline" size="md">Contact Us</Button>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
+  <Footer />
+</Layout>
