@@ -10,6 +10,9 @@ import logoIcon from "../../assets/logo-icon.png";
 
 import navigation from "../../data/navigation.json";
 import site from "../../data/site.json";
+import products from "../../data/products.json";
+import categoriesData from "../../data/categories.json";
+import brandsData from "../../data/brands.json";
 
 const navLinks = navigation.main;
 const whatsappUrl = site.contact.whatsapp;
@@ -20,6 +23,25 @@ function isActive(href: string): boolean {
   if (href === "/") return currentPath === "/";
   return currentPath.startsWith(href);
 }
+
+// Lightweight client-side search index — products, categories, brands
+const allCategories = [categoriesData.primary, ...categoriesData.secondary];
+const categoryLabelBySlug = new Map(allCategories.map((c) => [c.slug, c.name]));
+
+const searchIndex = {
+  products: products.map((p) => ({
+    name: p.name,
+    brand: p.brand,
+    category: categoryLabelBySlug.get(p.category) ?? p.category,
+    slug: p.slug,
+    image: p.image,
+    price: p.price,
+  })),
+  categories: allCategories
+    .filter((c) => c.count > 0)
+    .map((c) => ({ name: c.name, slug: c.slug })),
+  brands: brandsData.map((b) => ({ name: b.name, slug: b.slug })),
+};
 ---
 
 <header
@@ -46,7 +68,7 @@ function isActive(href: string): boolean {
           class="h-11 w-auto object-contain"
           loading="eager"
         />
-        <span class="font-display font-semibold leading-[1.15] text-primary text-sm sm:text-base tracking-tight">
+        <span class="font-display font-semibold leading-[1.15] text-text-primary text-sm sm:text-base tracking-tight">
           Pakistan Detectors<br class="hidden sm:block" /> Technology
         </span>
       </a>
@@ -104,8 +126,11 @@ function isActive(href: string): boolean {
       <div class="flex items-center gap-4">
         <button
           type="button"
-          class="hidden lg:flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors duration-200 cursor-pointer"
+          id="search-trigger"
+          class="flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors duration-200 cursor-pointer"
           aria-label="Search products"
+          aria-haspopup="dialog"
+          aria-controls="search-overlay"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -144,32 +169,6 @@ function isActive(href: string): boolean {
             ></path>
           </svg>
         </a>
-
-        <button
-          type="button"
-          class="hidden lg:flex items-center gap-1.5 text-sm text-text-secondary hover:text-text-primary transition-colors duration-200 cursor-pointer"
-          aria-label="Change language"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path
-              d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-            ></path>
-          </svg>
-          <span>EN / UR</span>
-        </button>
 
         <Button
           variant="primary"
@@ -315,6 +314,76 @@ function isActive(href: string): boolean {
   </div>
 </header>
 
+<!-- Search Overlay -->
+<div
+  id="search-overlay"
+  class="hidden fixed inset-0 z-[var(--z-modal)] bg-black/80 backdrop-blur-sm p-4 sm:p-6"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Search"
+>
+  <div class="mx-auto w-full max-w-xl mt-[8vh] sm:mt-[12vh] bg-dark-card border border-dark-border rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col max-h-[76vh]">
+    <!-- Input row -->
+    <div class="flex items-center gap-3 px-4 sm:px-5 shrink-0 border-b border-dark-border">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="shrink-0 text-text-muted"
+        aria-hidden="true"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Search detectors, brands, categories..."
+        class="flex-1 min-w-0 bg-transparent py-4 text-sm sm:text-base text-text-primary placeholder:text-text-muted focus-visible:outline-none"
+        autocomplete="off"
+        aria-label="Search detectors, brands, categories"
+        aria-controls="search-results"
+      />
+      <button
+        type="button"
+        id="search-close"
+        class="shrink-0 flex items-center justify-center w-8 h-8 rounded-md text-text-muted hover:text-text-primary hover:bg-dark-surface transition-colors duration-200 cursor-pointer"
+        aria-label="Close search"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Results -->
+    <div id="search-results" class="overflow-y-auto"></div>
+
+    <!-- Hint (default) state -->
+    <p id="search-hint" class="px-5 py-10 text-center text-sm text-text-muted">
+      Start typing to search our catalog of detectors, brands, and categories.
+    </p>
+
+    <!-- No-results state -->
+    <p id="search-empty" class="hidden px-5 py-10 text-center text-sm text-text-muted">
+      No results for "<span id="search-empty-query" class="text-text-secondary"></span>". Try a different term.
+    </p>
+  </div>
+</div>
+
+<script
+  id="search-index"
+  type="application/json"
+  set:html={JSON.stringify(searchIndex)}
+/>
+
 <style>
   .nav-link:hover .nav-indicator {
     transform: scaleX(1);
@@ -348,4 +417,160 @@ function isActive(href: string): boolean {
       { passive: true },
     );
   }
+</script>
+
+<script>
+  type SearchProduct = {
+    name: string;
+    brand: string;
+    category: string;
+    slug: string;
+    image: string;
+    price: number | null;
+  };
+  type SearchLink = { name: string; slug: string };
+  type SearchData = {
+    products: SearchProduct[];
+    categories: SearchLink[];
+    brands: SearchLink[];
+  };
+
+  const searchData: SearchData = JSON.parse(
+    document.getElementById("search-index")?.textContent ||
+      '{"products":[],"categories":[],"brands":[]}',
+  );
+
+  const trigger = document.getElementById("search-trigger");
+  const overlay = document.getElementById("search-overlay");
+  const searchInput = document.getElementById(
+    "search-input",
+  ) as HTMLInputElement | null;
+  const closeBtn = document.getElementById("search-close");
+  const resultsHost = document.getElementById("search-results");
+  const hintEl = document.getElementById("search-hint");
+  const emptyEl = document.getElementById("search-empty");
+  const emptyQueryEl = document.getElementById("search-empty-query");
+
+  function escapeHtml(value: string): string {
+    const div = document.createElement("div");
+    div.textContent = value;
+    return div.innerHTML;
+  }
+
+  function formatPrice(price: number | null): string {
+    return price != null ? `PKR ${price.toLocaleString("en-PK")}` : "Quote";
+  }
+
+  function renderResults(query: string) {
+    if (!resultsHost || !hintEl || !emptyEl) return;
+    const q = query.trim().toLowerCase();
+
+    if (!q) {
+      resultsHost.innerHTML = "";
+      hintEl.classList.remove("hidden");
+      emptyEl.classList.add("hidden");
+      return;
+    }
+    hintEl.classList.add("hidden");
+
+    const matchedCategories = searchData.categories
+      .filter((c) => c.name.toLowerCase().includes(q))
+      .slice(0, 3);
+    const matchedBrands = searchData.brands
+      .filter((b) => b.name.toLowerCase().includes(q))
+      .slice(0, 3);
+    const matchedProducts = searchData.products
+      .filter(
+        (p) =>
+          p.name.toLowerCase().includes(q) ||
+          p.brand.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q),
+      )
+      .sort((a, b) => {
+        const aStarts = a.name.toLowerCase().startsWith(q) ? 0 : 1;
+        const bStarts = b.name.toLowerCase().startsWith(q) ? 0 : 1;
+        return aStarts - bStarts;
+      })
+      .slice(0, 8);
+
+    const totalMatches =
+      matchedCategories.length + matchedBrands.length + matchedProducts.length;
+
+    if (totalMatches === 0) {
+      resultsHost.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      if (emptyQueryEl) emptyQueryEl.textContent = query.trim();
+      return;
+    }
+    emptyEl.classList.add("hidden");
+
+    let html = "";
+
+    if (matchedCategories.length || matchedBrands.length) {
+      html += `<div class="flex flex-wrap gap-2 px-4 sm:px-5 pt-3 pb-2">`;
+      matchedCategories.forEach((c) => {
+        html += `<a href="/categories/${c.slug}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-dark-border text-xs font-medium text-text-secondary hover:border-primary hover:text-primary transition-colors duration-150">${escapeHtml(c.name)} <span class="text-text-muted">· Category</span></a>`;
+      });
+      matchedBrands.forEach((b) => {
+        html += `<a href="/brands/${b.slug}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-dark-border text-xs font-medium text-text-secondary hover:border-primary hover:text-primary transition-colors duration-150">${escapeHtml(b.name)} <span class="text-text-muted">· Brand</span></a>`;
+      });
+      html += `</div>`;
+    }
+
+    if (matchedProducts.length) {
+      html += `<div class="px-4 sm:px-5 pt-2 pb-1 text-[10px] font-semibold uppercase tracking-wider text-text-muted">Products</div>`;
+      matchedProducts.forEach((p) => {
+        html += `<a href="/products/${p.slug}" class="flex items-center gap-3 px-4 sm:px-5 py-2.5 hover:bg-dark-surface transition-colors duration-150">
+          <span class="w-11 h-11 shrink-0 rounded-lg bg-white overflow-hidden flex items-center justify-center">
+            <img src="${p.image}" alt="" class="w-full h-full object-contain p-1" loading="lazy" />
+          </span>
+          <span class="min-w-0 flex-1">
+            <span class="block text-sm font-medium text-text-primary truncate">${escapeHtml(p.name)}</span>
+            <span class="block text-xs text-text-muted truncate">${escapeHtml(p.brand)} · ${escapeHtml(p.category)}</span>
+          </span>
+          <span class="text-xs font-semibold text-primary shrink-0">${formatPrice(p.price)}</span>
+        </a>`;
+      });
+      html += `<div class="pb-2"></div>`;
+    }
+
+    resultsHost.innerHTML = html;
+  }
+
+  function openSearch() {
+    if (!overlay) return;
+    overlay.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    window.requestAnimationFrame(() => searchInput?.focus());
+  }
+
+  function closeSearch() {
+    if (!overlay || !searchInput) return;
+    overlay.classList.add("hidden");
+    document.body.style.overflow = "";
+    searchInput.value = "";
+    renderResults("");
+  }
+
+  trigger?.addEventListener("click", openSearch);
+  closeBtn?.addEventListener("click", closeSearch);
+  overlay?.addEventListener("click", (e: MouseEvent) => {
+    if (e.target === overlay) closeSearch();
+  });
+  document.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Escape" && overlay && !overlay.classList.contains("hidden")) {
+      closeSearch();
+    }
+  });
+  searchInput?.addEventListener("input", () => renderResults(searchInput.value));
+  searchInput?.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Enter") {
+      const firstResult =
+        resultsHost?.querySelector<HTMLAnchorElement>("a");
+      if (firstResult) {
+        e.preventDefault();
+        window.location.href = firstResult.href;
+      }
+    }
+  });
 </script>

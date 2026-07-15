@@ -29,7 +29,7 @@ const hasMultiple = gallery.length > 1;
       </span>
     )}
 
-    <div id="gallery-main-wrap" class="gallery-img aspect-[4/3] flex items-center justify-center bg-dark-surface overflow-hidden">
+    <div id="gallery-main-wrap" class="gallery-img aspect-[4/3] flex items-center justify-center bg-white overflow-hidden">
       <img
         id="gallery-main-image"
         src={gallery[0]}
@@ -63,7 +63,7 @@ const hasMultiple = gallery.length > 1;
       {gallery.map((img, i) => (
         <button
           type="button"
-          class:list={["thumb-btn relative rounded-lg border overflow-hidden bg-dark-card aspect-square transition-colors duration-200", i === 0 ? "border-primary" : "border-dark-border hover:border-primary/50"]}
+          class:list={["thumb-btn relative rounded-lg border overflow-hidden bg-white aspect-square transition-colors duration-200", i === 0 ? "border-primary" : "border-dark-border hover:border-primary/50"]}
           data-src={img}
           aria-label={`View image ${i + 1} of ${gallery.length}`}
           aria-current={i === 0 ? "true" : "false"}

@@ -45,7 +45,7 @@ const formattedPrice = price ? price.toLocaleString("en-PK") : null;
     )}
 
     <!-- Product Image — overflow-hidden hides broken-image alt text -->
-    <div class="catalog-card-img aspect-[4/3] flex items-center justify-center rounded-lg bg-dark-surface mt-2 overflow-hidden">
+    <div class="catalog-card-img aspect-[4/3] flex items-center justify-center rounded-lg bg-white mt-2 overflow-hidden">
       <img
         src={image}
         alt={`${name} by ${brand}`}
@@ -95,7 +95,7 @@ const formattedPrice = price ? price.toLocaleString("en-PK") : null;
 </a>
 
 <style>
-  /* Hide broken image alt text — show only the dark bg placeholder */
+  /* Hide broken image alt text — show only the white tile */
   .catalog-card-img img {
     color: transparent;
   }

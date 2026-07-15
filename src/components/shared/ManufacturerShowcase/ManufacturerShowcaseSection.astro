@@ -22,7 +22,7 @@ const brands = allBrands.filter((b) => b.showcase !== null);
   <Container>
     <!-- Header -->
     <div class="flex items-center gap-4 mb-4" data-reveal="up">
-      <span class="w-10 h-[2px] bg-primary" aria-hidden="true"></span>
+      <span class="w-10 h-[2px] bg-primary eyebrow-line" aria-hidden="true"></span>
       <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
         Featured Manufacturer
       </span>
@@ -95,12 +95,12 @@ const brands = allBrands.filter((b) => b.showcase !== null);
           </div>
 
           <!-- Image Column -->
-          <div class="aspect-[4/3] rounded-xl bg-dark-card border border-dark-border flex items-center justify-center overflow-hidden">
+          <div class="aspect-[4/3] rounded-xl bg-white border border-dark-border flex items-center justify-center overflow-hidden">
             {brand.showcase!.image ? (
               <img
                 src={brand.showcase!.image}
                 alt={`${brand.name} product lineup`}
-                class="w-full h-full object-cover"
+                class="w-full h-full object-contain p-6"
                 loading="lazy"
               />
             ) : (
