@@ -1,108 +1,100 @@
 ---
 /**
  * ContactForm Component (Contact Page)
- * IMPORTANT: no backend/email service exists anywhere in this project.
- * Since WhatsApp is already the site's established primary contact
- * channel (fastest response, featured first in ContactMethods), this
- * form validates client-side then opens a pre-filled WhatsApp message
- * to the business number on submit — a real, working, backend-free
- * substitute for a traditional form POST. No data is emailed or stored.
+ * Submits inquiries to the PHP endpoint at /api/contact.php (in this repo:
+ * public/api/contact.php, deployed on Hostinger as public_html/api/contact.php).
+ * Native browser validation runs first, then the fields are sent with fetch()
+ * as FormData; the endpoint answers { success, message } JSON.
+ * NOTE: `astro dev` serves public/ statically and cannot execute PHP — the
+ * endpoint only works on the live server (or any PHP server pointed at dist/,
+ * e.g. `php -S 127.0.0.1:8080 -t dist`).
  */
 import Button from "../../components/ui/Button.astro";
-import site from "../../data/site.json";
 
-const whatsappDigits = site.contact.whatsapp.replace("https://wa.me/", "");
-
-const subjectOptions = [
-  "Product Inquiry",
-  "Request Quote",
-  "Technical Support",
-  "Bulk Order",
-  "Training",
-  "Other",
+const inquiryTypes = [
+  "Buying a gold detector",
+  "Pricing & availability",
+  "Shipping & delivery",
+  "Technical support",
+  "Warranty & maintenance",
+  "General inquiry",
 ];
 ---
 
 <div class="rounded-2xl border border-dark-border bg-dark-card p-6 lg:p-8" data-reveal="up">
   <span class="text-xs font-semibold uppercase tracking-[0.15em] text-primary">Send a Message</span>
-  <h2 class="mt-2 font-display text-2xl sm:text-3xl text-text-primary leading-tight">Request a Quote or Ask a Question</h2>
-  <p class="mt-2 text-sm text-text-secondary">Fill out the form and our team will get back to you within one business day.</p>
+  <h2 class="mt-2 font-display text-2xl sm:text-3xl text-text-primary leading-tight">Send an Inquiry</h2>
+  <p class="mt-2 text-sm text-text-secondary">Fill out the form and we'll get back to you quickly via WhatsApp or email with the best device recommendation.</p>
 
-  <form id="contact-form" data-whatsapp-number={whatsappDigits} class="mt-6 flex flex-col gap-5" novalidate>
-    <div class="grid sm:grid-cols-2 gap-5">
-      <div>
-        <label for="first-name" class="block text-xs font-medium text-text-secondary mb-1.5">First Name *</label>
-        <input type="text" id="first-name" name="firstName" required placeholder="Enter first name" class="form-input" />
-      </div>
-      <div>
-        <label for="last-name" class="block text-xs font-medium text-text-secondary mb-1.5">Last Name *</label>
-        <input type="text" id="last-name" name="lastName" required placeholder="Enter last name" class="form-input" />
-      </div>
+  <form id="contact-form" method="post" action="/api/contact.php" class="mt-6 flex flex-col gap-5" novalidate>
+    <div>
+      <label for="full-name" class="block text-xs font-medium text-text-secondary mb-1.5">Full Name *</label>
+      <input type="text" id="full-name" name="fullName" required maxlength="100" autocomplete="name" placeholder="Enter your name" class="form-input" />
     </div>
 
     <div class="grid sm:grid-cols-2 gap-5">
       <div>
         <label for="email" class="block text-xs font-medium text-text-secondary mb-1.5">Email *</label>
-        <input type="email" id="email" name="email" required placeholder="your@email.com" class="form-input" />
+        <input type="email" id="email" name="email" required maxlength="254" autocomplete="email" placeholder="example@email.com" class="form-input" />
       </div>
       <div>
-        <label for="phone" class="block text-xs font-medium text-text-secondary mb-1.5">Phone / WhatsApp</label>
-        <input type="tel" id="phone" name="phone" placeholder="+92-3XX-XXXXXXX" class="form-input" />
+        <label for="phone" class="block text-xs font-medium text-text-secondary mb-1.5">Phone / WhatsApp *</label>
+        <input type="tel" id="phone" name="phone" required maxlength="30" autocomplete="tel" placeholder="+92 3XX XXXXXXX" class="form-input" />
       </div>
     </div>
 
     <div>
-      <label for="company" class="block text-xs font-medium text-text-secondary mb-1.5">Company / Organization</label>
-      <input type="text" id="company" name="company" placeholder="Optional" class="form-input" />
-    </div>
-
-    <div>
-      <label for="subject" class="block text-xs font-medium text-text-secondary mb-1.5">Subject *</label>
+      <label for="inquiry-type" class="block text-xs font-medium text-text-secondary mb-1.5">Inquiry Type *</label>
       <div class="relative">
-        <select id="subject" name="subject" required class="form-input appearance-none pr-10 cursor-pointer">
-          {subjectOptions.map((opt) => (
-            <option value={opt} selected={opt === "Request Quote"}>{opt}</option>
-          ))}
+        <select id="inquiry-type" name="inquiryType" required class="form-input appearance-none pr-10 cursor-pointer">
+          <option value="" disabled selected>Select inquiry type</option>
+          {inquiryTypes.map((opt) => <option value={opt}>{opt}</option>)}
         </select>
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none" aria-hidden="true">
           <polyline points="6 9 12 15 18 9" />
         </svg>
       </div>
-      <div class="mt-3 flex flex-wrap gap-2">
-        {subjectOptions.map((opt) => (
-          <button
-            type="button"
-            data-subject-pill={opt}
-            class:list={["subject-pill px-3.5 py-1.5 text-xs font-medium rounded-full border transition-colors duration-200 cursor-pointer", opt === "Request Quote" ? "is-active" : "border-dark-border text-text-secondary hover:border-primary/40"]}
-          >
-            {opt}
-          </button>
-        ))}
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div>
+        <label for="country" class="block text-xs font-medium text-text-secondary mb-1.5">Country</label>
+        <input type="text" id="country" name="country" maxlength="100" autocomplete="country-name" placeholder="Pakistan" class="form-input" />
+      </div>
+      <div>
+        <label for="city" class="block text-xs font-medium text-text-secondary mb-1.5">City</label>
+        <input type="text" id="city" name="city" maxlength="100" autocomplete="address-level2" placeholder="Islamabad" class="form-input" />
       </div>
     </div>
 
     <div>
-      <label for="message" class="block text-xs font-medium text-text-secondary mb-1.5">Message *</label>
+      <label for="message" class="block text-xs font-medium text-text-secondary mb-1.5">Message Details *</label>
       <textarea
         id="message"
         name="message"
         required
-        rows="4"
-        placeholder="Tell us what you're looking for — include product names, quantities, or any specific requirements…"
+        minlength="10"
+        maxlength="5000"
+        rows="5"
+        placeholder="Tell us the device type, target, and budget…"
         class="form-input resize-none"
       ></textarea>
     </div>
 
-    <Button type="submit" variant="primary" size="lg" class="w-full justify-center">
-      Send Message
+    <!-- Honeypot: hidden from humans; submissions that fill it are silently dropped server-side -->
+    <div class="hp-field" aria-hidden="true">
+      <label for="botcheck">Do not fill this field</label>
+      <input type="text" id="botcheck" name="botcheck" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <Button type="submit" variant="primary" size="lg" class="w-full justify-center disabled:opacity-60 disabled:pointer-events-none">
+      Send Inquiry
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
       </svg>
     </Button>
 
-    <p class="text-xs text-text-muted text-center -mt-1">
-      Sending opens a pre-filled WhatsApp message to our team — you'll confirm and send it from there.
-    </p>
+    <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
   </form>
 </div>
 
@@ -124,58 +116,105 @@ const subjectOptions = [
     outline: none;
     border-color: var(--color-primary);
   }
-  .subject-pill.is-active {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    color: var(--color-dark);
+  /* Muted color while the select still shows its "Select inquiry type" placeholder */
+  select.form-input:invalid {
+    color: var(--color-text-muted);
+  }
+  .hp-field {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .form-status {
+    display: none;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+  .form-status.is-success {
+    display: block;
+    border-color: rgba(74, 222, 128, 0.35);
+    background-color: rgba(74, 222, 128, 0.08);
+    color: #4ade80;
+  }
+  .form-status.is-error {
+    display: block;
+    border-color: rgba(248, 113, 113, 0.35);
+    background-color: rgba(248, 113, 113, 0.08);
+    color: #f87171;
   }
 </style>
 
 <script>
   const form = document.getElementById("contact-form") as HTMLFormElement | null;
-  const subjectSelect = document.getElementById("subject") as HTMLSelectElement | null;
-  const pills = document.querySelectorAll<HTMLButtonElement>(".subject-pill");
+  const statusEl = document.getElementById("form-status");
+  const submitBtn = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+  const submitBtnHtml = submitBtn?.innerHTML ?? "";
 
-  function setActivePill(value: string) {
-    pills.forEach((pill) => {
-      pill.classList.toggle("is-active", pill.dataset.subjectPill === value);
-      pill.classList.toggle("border-dark-border", pill.dataset.subjectPill !== value);
-      pill.classList.toggle("text-text-secondary", pill.dataset.subjectPill !== value);
-    });
+  function showStatus(message: string, ok: boolean) {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+    statusEl.classList.toggle("is-success", ok);
+    statusEl.classList.toggle("is-error", !ok);
   }
 
-  pills.forEach((pill) => {
-    pill.addEventListener("click", () => {
-      const value = pill.dataset.subjectPill || "";
-      if (subjectSelect) subjectSelect.value = value;
-      setActivePill(value);
-    });
-  });
+  function hideStatus() {
+    statusEl?.classList.remove("is-success", "is-error");
+  }
 
-  subjectSelect?.addEventListener("change", () => {
-    setActivePill(subjectSelect.value);
-  });
+  function setLoading(loading: boolean) {
+    if (!submitBtn) return;
+    submitBtn.disabled = loading;
+    submitBtn.setAttribute("aria-busy", String(loading));
+    submitBtn.innerHTML = loading ? "Sending…" : submitBtnHtml;
+  }
 
-  form?.addEventListener("submit", (e) => {
+  form?.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    // Let the browser surface required/format problems before we send anything.
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
 
-    const data = new FormData(form);
-    const lines = [
-      "New inquiry from website:",
-      `Name: ${data.get("firstName")} ${data.get("lastName")}`,
-      `Email: ${data.get("email")}`,
-      data.get("phone") ? `Phone: ${data.get("phone")}` : null,
-      data.get("company") ? `Company: ${data.get("company")}` : null,
-      `Subject: ${data.get("subject")}`,
-      `Message: ${data.get("message")}`,
-    ].filter(Boolean);
+    setLoading(true);
+    hideStatus();
 
-    const text = encodeURIComponent(lines.join("\n"));
-    const number = form.dataset.whatsappNumber || "";
-    window.open(`https://wa.me/${number}?text=${text}`, "_blank", "noopener,noreferrer");
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      // A misconfigured server can answer with an HTML error page — treat
+      // unparseable bodies as a server error rather than crashing.
+      let data: { success?: boolean; message?: string } | null = null;
+      try {
+        data = await res.json();
+      } catch {
+        data = null;
+      }
+
+      if (res.ok && data?.success) {
+        form.reset();
+        showStatus(data.message ?? "Your enquiry has been sent successfully.", true);
+      } else {
+        showStatus(
+          data?.message ?? "Something went wrong while sending your enquiry. Please try again.",
+          false,
+        );
+      }
+    } catch {
+      showStatus("Network error — please check your connection and try again.", false);
+    } finally {
+      setLoading(false);
+    }
   });
 </script>
