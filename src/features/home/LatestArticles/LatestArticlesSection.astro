@@ -53,7 +53,7 @@ const articles = allArticles.filter((a) => !a.featured);
       <!-- Featured Article (Large) -->
       <a
         href={`/blog/${featuredArticle.slug}`}
-        class="group flex flex-col rounded-xl border border-dark-border bg-dark-card overflow-hidden transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_16px_rgba(197,160,68,0.08)]"
+        class="group flex flex-col rounded-xl border border-dark-border bg-dark-card overflow-hidden transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_26px_rgba(26,26,24,0.09),0_0_12px_rgba(148,116,42,0.07)]"
         data-reveal="up"
       >
         <div class="aspect-[16/9] bg-dark-surface flex items-center justify-center overflow-hidden">
@@ -88,7 +88,7 @@ const articles = allArticles.filter((a) => !a.featured);
         {articles.map((article, index) => (
           <a
             href={`/blog/${article.slug}`}
-            class="group flex flex-col rounded-xl border border-dark-border bg-dark-card p-5 lg:p-6 transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_16px_rgba(197,160,68,0.08)]"
+            class="group flex flex-col rounded-xl border border-dark-border bg-dark-card p-5 lg:p-6 transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_26px_rgba(26,26,24,0.09),0_0_12px_rgba(148,116,42,0.07)]"
             data-reveal="up"
             style={`transition-delay: ${(index + 1) * 80}ms;`}
           >

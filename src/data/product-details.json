@@ -11077,6 +11077,2477 @@
         "Minor spelling variant: JS title uses \"جولد إكسترا أنفيلر بلس\" (spaced) while the page's H1/JSON-LD use \"جولدإكسترا أنفيلر بلس\"/\"جولدإكسترا\" (unspaced) — same brand, normalized to \"GoldXtra\" in English output.",
         "JS 'systems'/'detect' fields are generic catalog defaults shared across GoldXtra products and don't match this page's specific mode names — not used; page content used instead."
       ]
+    },
+    "garrett-200i": {
+      "tagline": "A lightweight, beginner-friendly metal detector built for simple, effective treasure hunting.",
+      "overviewParagraphs": [
+        "The Garrett ACE 200i is the entry point into the ACE lineup, built for hobbyists who want dependable performance without a steep learning curve. Its fixed 6.5 kHz frequency is tuned for sensitivity to small and fine metal objects such as coins and jewelry, while One-Touch operation means the detector is ready to hunt the moment it powers on.",
+        "A 6.5\" x 9\" PROformance concentric search coil is fully submersible, so the ACE 200i handles dry sand and shallow water without hesitation. A Digital Target ID scale from 0 to 99 combined with a target depth indicator gives users a clear read on what lies beneath the coil before they dig.",
+        "At just 2.75 lbs, the ACE 200i disassembles into three pieces for easy transport and storage, making it a practical choice for beginners, families, and anyone starting out in relic and coin hunting."
+      ],
+      "keyFeatures": [
+        {
+          "title": "One-Touch Operation",
+          "description": "turn the detector on and start hunting immediately, with no complex setup required"
+        },
+        {
+          "title": "Digital Target ID",
+          "description": "a 0-99 numeric scale identifies target conductivity to help judge what's buried before digging"
+        },
+        {
+          "title": "Three Search Modes",
+          "description": "switch between Zero-Disc (all-metal), Jewelry, and Coins presets to match the hunt"
+        },
+        {
+          "title": "Submersible Search Coil",
+          "description": "the 6.5\" x 9\" PROformance concentric coil handles dry sand and shallow water"
+        },
+        {
+          "title": "Camlock Stem Stability",
+          "description": "secure camlock fittings keep the shaft rigid and steady through long swings"
+        },
+        {
+          "title": "Compact & Lightweight",
+          "description": "at 2.75 lbs and disassembling into three pieces, it travels and stores easily"
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Frequency",
+          "value": "6.5 kHz (fixed)"
+        },
+        {
+          "label": "Search Coil",
+          "value": "6.5\" x 9\" PROformance concentric (submersible)"
+        },
+        {
+          "label": "Waterproofing",
+          "value": "Search coil submersible; control housing not waterproof"
+        },
+        {
+          "label": "Battery",
+          "value": "4 x AA batteries (included)"
+        },
+        {
+          "label": "Weight",
+          "value": "2.75 lbs (1.25 kg)"
+        },
+        {
+          "label": "Shaft Length",
+          "value": "42\" to 51\" adjustable (1.06m - 1.29m)"
+        },
+        {
+          "label": "Search Modes",
+          "value": "3 (Zero-Disc, Jewelry, Coins)"
+        },
+        {
+          "label": "Target ID",
+          "value": "Digital Target ID, 0-99 scale with depth indicator"
+        },
+        {
+          "label": "Warranty",
+          "value": "2 Years"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Garrett"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "USA"
+        }
+      ],
+      "whatsInTheBox": [
+        "ACE 200i control housing and shaft assembly",
+        "6.5\" x 9\" PROformance concentric search coil",
+        "Search coil cover",
+        "4 x AA batteries",
+        "Owner's manual"
+      ],
+      "idealFor": [
+        {
+          "title": "First-Time Detectorists",
+          "description": "A strong fit for first-time detectorists with the Garrett ACE 200i.",
+          "icon": "users"
+        },
+        {
+          "title": "Coin & Jewelry Hunting",
+          "description": "A strong fit for coin & jewelry hunting with the Garrett ACE 200i.",
+          "icon": "search"
+        },
+        {
+          "title": "Family Outings",
+          "description": "A strong fit for family outings with the Garrett ACE 200i.",
+          "icon": "star"
+        },
+        {
+          "title": "Shallow Water & Beach",
+          "description": "A strong fit for shallow water & beach hunting with the Garrett ACE 200i.",
+          "icon": "compass"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "ACE-200i",
+      "model": "ACE 200i",
+      "availability": "Available",
+      "applications": [
+        "First-Time Detectorists",
+        "Coin & Jewelry Hunting",
+        "Family Outings",
+        "Shallow Water & Beach"
+      ],
+      "downloads": [
+        {
+          "title": "Owner's Manual",
+          "url": "https://garrett.com/sites/default/files/2019-11/1534110_ace_200i_manual_english.pdf"
+        }
+      ],
+      "images": {
+        "main": "/images/products/garrett-200i-metal-detector-1.jpg",
+        "gallery": [
+          "/images/products/garrett-200i-metal-detector-2.jpg"
+        ]
+      },
+      "seo": {
+        "title": "Garrett ACE 200i | Garrett Metal Detector",
+        "metaDescription": "Garrett ACE 200i metal detector in Pakistan - 6.5 kHz frequency, submersible PROformance coil, Digital Target ID, and one-touch operation for beginners.",
+        "imageAltText": {
+          "main": "Garrett ACE 200i metal detector with orange control housing and concentric search coil",
+          "gallery": [
+            "Garrett ACE 200i metal detector side view showing digital display"
+          ]
+        },
+        "suggestedSlug": "garrett-200i"
+      }
+    },
+    "garrett-300i": {
+      "tagline": "A step up in depth and control, built for detectorists ready to move beyond the basics.",
+      "overviewParagraphs": [
+        "The Garrett ACE 300i steps up from the entry-level ACE 200i with an adjustable 8 kHz frequency and a larger 7\" x 10\" concentric PROformance search coil, giving it more depth and better sensitivity to gold and silver jewelry. It's built for hobbyists who've outgrown a basic detector but aren't ready for a professional-grade machine.",
+        "Five preset search modes plus non-motion Pinpoint cover everything from all-metal relic hunting to iron-heavy coin sites. Frequency Adjust lets users dial out electrical interference or crosstalk from nearby detectors at club hunts, while enhanced iron resolution gives finer control over how aggressively iron trash is rejected.",
+        "A Digital Target ID scale from 0 to 99 and Graphic Target Analyzing display conductivity and discrimination pattern side by side, so users can make faster, more confident decisions about what to dig."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Adjustable Frequency",
+          "description": "dial out interference from power lines or nearby detectors at crowded sites"
+        },
+        {
+          "title": "Digital Target ID",
+          "description": "a 0-99 numeric scale reads target conductivity for faster identification"
+        },
+        {
+          "title": "Five Search Modes",
+          "description": "switch between Zero-Disc, Jewelry, Custom, Relics, and Coins plus a dedicated Pinpoint function"
+        },
+        {
+          "title": "Enhanced Iron Resolution",
+          "description": "finer, higher-resolution control over how much iron discrimination is applied"
+        },
+        {
+          "title": "7\" x 10\" PROformance Coil",
+          "description": "a larger submersible concentric coil adds ground coverage and detection depth"
+        },
+        {
+          "title": "Graphic Target Analyzing",
+          "description": "displays conductivity and discrimination pattern simultaneously for clearer target reads"
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Frequency",
+          "value": "8 kHz (adjustable)"
+        },
+        {
+          "label": "Search Coil",
+          "value": "7\" x 10\" concentric PROformance (submersible)"
+        },
+        {
+          "label": "Waterproofing",
+          "value": "Search coil submersible; control housing not waterproof"
+        },
+        {
+          "label": "Battery",
+          "value": "4 x AA batteries (included), 20-40 hour runtime"
+        },
+        {
+          "label": "Weight",
+          "value": "2.8 lbs (1.27 kg)"
+        },
+        {
+          "label": "Shaft Length",
+          "value": "42\" to 51\" adjustable (1.06m - 1.29m)"
+        },
+        {
+          "label": "Search Modes",
+          "value": "5 plus Pinpoint"
+        },
+        {
+          "label": "Target ID",
+          "value": "Digital Target ID, 0-99 scale, 4-segment iron discrimination"
+        },
+        {
+          "label": "Warranty",
+          "value": "2 Years"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Garrett"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "USA"
+        }
+      ],
+      "whatsInTheBox": [
+        "ACE 300i control housing and shaft assembly",
+        "7\" x 10\" PROformance concentric search coil",
+        "ClearSound Easy Stow headphones",
+        "Search coil cover",
+        "4 x AA batteries",
+        "Owner's manual"
+      ],
+      "idealFor": [
+        {
+          "title": "Coin & Silver Hunting",
+          "description": "A strong fit for coin & silver hunting with the Garrett ACE 300i.",
+          "icon": "search"
+        },
+        {
+          "title": "Club Hunts & Rallies",
+          "description": "A strong fit for club hunts & rallies with the Garrett ACE 300i.",
+          "icon": "users"
+        },
+        {
+          "title": "Light Gold Prospecting",
+          "description": "A strong fit for light gold prospecting with the Garrett ACE 300i.",
+          "icon": "star"
+        },
+        {
+          "title": "Growing Hobbyists",
+          "description": "A strong fit for growing hobbyists with the Garrett ACE 300i.",
+          "icon": "compass"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "1141450",
+      "model": "ACE 300i",
+      "availability": "Available",
+      "applications": [
+        "Coin & Silver Hunting",
+        "Club Hunts & Rallies",
+        "Light Gold Prospecting",
+        "Growing Hobbyists"
+      ],
+      "downloads": [
+        {
+          "title": "Owner's Manual",
+          "url": "https://garrett.com/sites/default/files/2019-11/1534210_ace_300i_manual_english.pdf"
+        }
+      ],
+      "images": {
+        "main": "/images/products/garrett-300i-metal-detector-1.jpg",
+        "gallery": [
+          "/images/products/garrett-300i-metal-detector-2.jpg"
+        ]
+      },
+      "seo": {
+        "title": "Garrett ACE 300i | Garrett Metal Detector",
+        "metaDescription": "Garrett ACE 300i metal detector in Pakistan - 8 kHz adjustable frequency, 7\" x 10\" PROformance coil, 5 search modes, Digital Target ID for coins and gold.",
+        "imageAltText": {
+          "main": "Garrett ACE 300i metal detector with yellow control housing and concentric search coil",
+          "gallery": [
+            "Garrett ACE 300i metal detector angled view showing coil and shaft"
+          ]
+        },
+        "suggestedSlug": "garrett-300i"
+      }
+    },
+    "garrett-400i": {
+      "tagline": "Advanced target separation and iron handling for intermediate detectorists chasing deeper finds.",
+      "overviewParagraphs": [
+        "The Garrett ACE 400i sits at the top of the i-series ACE lineup, running a 10 kHz adjustable frequency through an 8.5\" x 11\" DD PROformance search coil - the same coil design used on Garrett's higher-end AT series. The wider DD coil pattern improves target separation in trashy ground compared to the concentric coils on the 200i and 300i.",
+        "Iron Audio produces a distinct audible response for discriminated iron, letting users identify flat iron junk like bottle caps and washers without digging them, while still hearing borderline signals worth investigating. Five search modes plus adjustable frequency and enhanced iron resolution round out a feature set built for intermediate detectorists.",
+        "A Digital Target ID scale from 0 to 99, non-motion electronic pinpointing, and Graphic Target Analyzing give the ACE 400i the control and feedback serious hobbyists expect from a mid-range detector."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Iron Audio",
+          "description": "hear discriminated iron as a distinct tone so borderline targets aren't dug or missed"
+        },
+        {
+          "title": "8.5\" x 11\" DD Coil",
+          "description": "a wider DD search pattern improves target separation in iron-heavy or trashy ground"
+        },
+        {
+          "title": "Digital Target ID",
+          "description": "a 0-99 numeric scale reads target conductivity for faster identification"
+        },
+        {
+          "title": "Adjustable Frequency",
+          "description": "dial out interference from power lines or nearby detectors"
+        },
+        {
+          "title": "Five Search Modes",
+          "description": "Zero-Disc, Jewelry, Custom, Relics, and Coins, plus non-motion Pinpoint"
+        },
+        {
+          "title": "Enhanced Iron Resolution",
+          "description": "finer control over how aggressively iron trash is rejected"
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Frequency",
+          "value": "10 kHz (adjustable)"
+        },
+        {
+          "label": "Search Coil",
+          "value": "8.5\" x 11\" DD PROformance (submersible)"
+        },
+        {
+          "label": "Waterproofing",
+          "value": "Search coil submersible; control housing not waterproof"
+        },
+        {
+          "label": "Battery",
+          "value": "4 x AA batteries (included)"
+        },
+        {
+          "label": "Weight",
+          "value": "2.9 lbs (1.32 kg)"
+        },
+        {
+          "label": "Shaft Length",
+          "value": "42\" to 51\" adjustable (1.06m - 1.29m)"
+        },
+        {
+          "label": "Search Modes",
+          "value": "5 plus Pinpoint"
+        },
+        {
+          "label": "Target ID",
+          "value": "Digital Target ID, 0-99 scale, 4-segment iron discrimination, Iron Audio"
+        },
+        {
+          "label": "Warranty",
+          "value": "2 Years"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Garrett"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "USA"
+        }
+      ],
+      "whatsInTheBox": [
+        "ACE 400i control housing and shaft assembly",
+        "8.5\" x 11\" DD PROformance search coil",
+        "ClearSound Easy Stow headphones",
+        "Search coil cover",
+        "4 x AA batteries",
+        "Owner's manual"
+      ],
+      "idealFor": [
+        {
+          "title": "Trashy or Iron-Heavy Sites",
+          "description": "A strong fit for trashy or iron-heavy sites with the Garrett ACE 400i.",
+          "icon": "pin"
+        },
+        {
+          "title": "Coin & Relic Hunting",
+          "description": "A strong fit for coin & relic hunting with the Garrett ACE 400i.",
+          "icon": "search"
+        },
+        {
+          "title": "Intermediate Detectorists",
+          "description": "A strong fit for intermediate detectorists with the Garrett ACE 400i.",
+          "icon": "star"
+        },
+        {
+          "title": "Jewelry Recovery",
+          "description": "A strong fit for jewelry recovery with the Garrett ACE 400i.",
+          "icon": "compass"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "1141560",
+      "model": "ACE 400i",
+      "availability": "Available",
+      "applications": [
+        "Trashy or Iron-Heavy Sites",
+        "Coin & Relic Hunting",
+        "Intermediate Detectorists",
+        "Jewelry Recovery"
+      ],
+      "downloads": [
+        {
+          "title": "Owner's Manual",
+          "url": "https://garrett.com/sites/default/files/2019-11/1534310_ace_400i_manual_english.pdf"
+        }
+      ],
+      "images": {
+        "main": "/images/products/garrett-400i-metal-detector-1.jpg",
+        "gallery": [
+          "/images/products/garrett-400i-metal-detector-2.jpg"
+        ]
+      },
+      "seo": {
+        "title": "Garrett ACE 400i | Garrett Metal Detector",
+        "metaDescription": "Garrett ACE 400i metal detector in Pakistan - 10 kHz adjustable frequency, 8.5\" x 11\" DD PROformance coil, Iron Audio, Digital Target ID for coins and relics.",
+        "imageAltText": {
+          "main": "Garrett ACE 400i metal detector with yellow control housing and DD search coil",
+          "gallery": [
+            "Garrett ACE 400i metal detector side profile view"
+          ]
+        },
+        "suggestedSlug": "garrett-400i"
+      }
+    },
+    "garrett-apex": {
+      "tagline": "Multi-frequency versatility and wireless freedom in a lightweight, well-balanced detector.",
+      "overviewParagraphs": [
+        "The Garrett ACE Apex brings true simultaneous multi-frequency detection to the ACE line, offering four single frequencies (5, 10, 15, and 20 kHz) plus Multi-Frequency and Multi-Salt modes selectable on the fly. Lower frequencies favor high-conductivity targets like silver and copper, while higher frequencies improve sensitivity to low-conductivity targets such as gold.",
+        "A fully waterproof 6\" x 11\" DD Multi-Flex Viper search coil handles wading in shallow water, and built-in Z-Lynk wireless technology streams audio to compatible headphones up to six times faster than Bluetooth, with no pairing lag. A Hybrid Audio System blends binary and proportional tones, and 5-Tone Audible Target ID adds another layer of on-the-fly target discrimination.",
+        "At 2.5 lbs with a built-in rechargeable lithium-ion battery rated for roughly 15 hours of use, the Apex is balanced for long sessions of coin shooting, relic hunting, beach hunting, and gold prospecting alike."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Multi-Flex Frequency Technology",
+          "description": "select 5, 10, 15, 20 kHz, Multi-Frequency, or Multi-Salt to match ground and target conditions"
+        },
+        {
+          "title": "Built-In Z-Lynk Wireless",
+          "description": "stream audio to compatible wireless headphones up to 6x faster than Bluetooth, cord-free"
+        },
+        {
+          "title": "Waterproof Viper Search Coil",
+          "description": "the 6\" x 11\" DD Multi-Flex coil is fully submersible for shallow water wading"
+        },
+        {
+          "title": "175-Point Ground Balance",
+          "description": "fine-grained automatic or manual ground balance resolution from ferrous ground to saltwater"
+        },
+        {
+          "title": "Hybrid Audio System",
+          "description": "combines binary simplicity with proportional audio for faint, deep signals"
+        },
+        {
+          "title": "Rechargeable Lithium-Ion Battery",
+          "description": "built-in battery delivers up to 15 hours of use per charge via Micro-USB"
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Frequency",
+          "value": "5, 10, 15, 20 kHz, Multi-Frequency, Multi-Salt (selectable)"
+        },
+        {
+          "label": "Search Coil",
+          "value": "6\" x 11\" DD Multi-Flex Viper (fully waterproof)"
+        },
+        {
+          "label": "Waterproofing",
+          "value": "Search coil fully waterproof; control housing weatherproof"
+        },
+        {
+          "label": "Battery",
+          "value": "Built-in rechargeable lithium-ion, ~15 hours per charge, Micro-USB charging"
+        },
+        {
+          "label": "Weight",
+          "value": "2.5 lbs (1.13 kg)"
+        },
+        {
+          "label": "Shaft Length",
+          "value": "40\" to 53\" adjustable (1.02m - 1.35m)"
+        },
+        {
+          "label": "Search Modes",
+          "value": "6 (Zero, Coins, US Coins, Jewelry, Relics, Custom) plus Pinpoint"
+        },
+        {
+          "label": "Target ID",
+          "value": "Digital Target ID, 20-pixel Notch Discrimination (8 pixels Iron), 5-Tone Audible Target ID"
+        },
+        {
+          "label": "Wireless",
+          "value": "Built-in Z-Lynk wireless technology"
+        },
+        {
+          "label": "Warranty",
+          "value": "2 Years"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Garrett"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "USA"
+        }
+      ],
+      "whatsInTheBox": [
+        "ACE Apex control housing and shaft assembly",
+        "6\" x 11\" DD Multi-Flex Viper search coil",
+        "Adjustable armrest with cuff",
+        "Micro-USB charging cable",
+        "Headphone cable",
+        "Owner's manual"
+      ],
+      "idealFor": [
+        {
+          "title": "Gold Prospecting",
+          "description": "A strong fit for gold prospecting with the Garrett ACE Apex.",
+          "icon": "search"
+        },
+        {
+          "title": "Beach & Shallow Water Hunting",
+          "description": "A strong fit for beach & shallow water hunting with the Garrett ACE Apex.",
+          "icon": "compass"
+        },
+        {
+          "title": "Relic & Coin Shooting",
+          "description": "A strong fit for relic & coin shooting with the Garrett ACE Apex.",
+          "icon": "pin"
+        },
+        {
+          "title": "Multi-Frequency Detectorists",
+          "description": "A strong fit for detectorists wanting multi-frequency versatility with the Garrett ACE Apex.",
+          "icon": "star"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "1142320",
+      "model": "ACE Apex",
+      "availability": "Available",
+      "applications": [
+        "Gold Prospecting",
+        "Beach & Shallow Water Hunting",
+        "Relic & Coin Shooting",
+        "Multi-Frequency Detectorists"
+      ],
+      "downloads": [
+        {
+          "title": "Owner's Manual",
+          "url": "https://garrett.com/sites/default/files/2020-08/1535600-a-apex_manual_en_0.pdf"
+        }
+      ],
+      "images": {
+        "main": "/images/products/garrett-apex-metal-detector-1.jpg",
+        "gallery": [
+          "/images/products/garrett-apex-metal-detector-2.jpg"
+        ]
+      },
+      "seo": {
+        "title": "Garrett ACE Apex | Garrett Metal Detector",
+        "metaDescription": "Garrett ACE Apex metal detector in Pakistan - Multi-Flex 5-20 kHz frequencies, waterproof Viper DD coil, built-in Z-Lynk wireless, rechargeable battery.",
+        "imageAltText": {
+          "main": "Garrett ACE Apex metal detector with black and yellow control housing and DD Viper search coil",
+          "gallery": [
+            "Garrett ACE Apex metal detector control panel close-up showing Multi-Flex display"
+          ]
+        },
+        "suggestedSlug": "garrett-apex"
+      }
+    },
+    "garrett-gti-2500": {
+      "tagline": "See the size and depth of every target before you dig with Garrett's imaging technology.",
+      "overviewParagraphs": [
+        "The Garrett GTI 2500 is built around Graphic Target Imaging (GTI), Garrett's onboard DSP-driven system that displays a target's true size - graded from A (smaller than a coin) to E (larger than a soda can) - and its estimated depth directly on the detector's large LCD screen before any digging starts.",
+        "A Graphic Target Analyzer (GTA) reads target conductivity and, on coin-sized targets, will indicate the probable denomination. ScanTrack and Ground Track work together to automatically adapt to coil swing speed and shifting ground mineralization, while a 9.5\" PROformance Imaging search coil covers 24 discrimination segments across six search modes: All Metal, Zero, Jewelry, Relics, Coins, and a user-programmable Custom mode.",
+        "A Hip Mount Battery Pack shifts the weight of 8 AA batteries to the hip rather than the shaft, reducing arm fatigue during long sessions, and a Salt Elimination Aid cancels false signals from wet salt sand at the beach."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Graphic Target Imaging (GTI)",
+          "description": "displays a target's true size (A to E) and depth directly on the LCD before you dig"
+        },
+        {
+          "title": "Graphic Target Analyzer (GTA)",
+          "description": "reads target conductivity to help identify probable coin denominations"
+        },
+        {
+          "title": "True Digital Signal Processing",
+          "description": "an onboard DSP chip sharpens discrimination accuracy in trashy or mineralized ground"
+        },
+        {
+          "title": "ScanTrack & Ground Track",
+          "description": "automatically adapts to coil swing speed and changing ground mineralization"
+        },
+        {
+          "title": "Six Search Modes",
+          "description": "All Metal, Zero, Jewelry, Relics, Coins, and a user-programmable Custom mode"
+        },
+        {
+          "title": "Hip Mount Battery Pack",
+          "description": "shifts battery weight to the hip for reduced arm fatigue on long hunts"
+        },
+        {
+          "title": "Salt Elimination Aid",
+          "description": "cancels false signals caused by wet salt sand at the beach"
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Frequency",
+          "value": "7.2 kHz (adjustable)"
+        },
+        {
+          "label": "Search Coil",
+          "value": "9.5\" PROformance Imaging searchcoil (submersible)"
+        },
+        {
+          "label": "Waterproofing",
+          "value": "Search coil submersible; control housing not waterproof"
+        },
+        {
+          "label": "Battery",
+          "value": "8 x AA batteries (Hip Mount Battery Pack included)"
+        },
+        {
+          "label": "Weight",
+          "value": "4.6 lbs (2.1 kg)"
+        },
+        {
+          "label": "Shaft Length",
+          "value": "40\" to 51\" adjustable (1.01m - 1.29m)"
+        },
+        {
+          "label": "Search Modes",
+          "value": "6 (All Metal, Zero, Jewelry, Relics, Coins, Custom)"
+        },
+        {
+          "label": "Target ID",
+          "value": "Graphic Target Imaging (GTI) with GTA, 24-segment discrimination scale"
+        },
+        {
+          "label": "Warranty",
+          "value": "2 Years"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Garrett"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "USA"
+        }
+      ],
+      "whatsInTheBox": [
+        "GTI 2500 control housing and shaft assembly",
+        "9.5\" PROformance Imaging search coil",
+        "Search coil cover",
+        "Hip Mount Battery Pack",
+        "8 x AA batteries",
+        "Owner's manual"
+      ],
+      "idealFor": [
+        {
+          "title": "Relic & Cache Hunting",
+          "description": "A strong fit for relic & cache hunting with the Garrett GTI 2500.",
+          "icon": "compass"
+        },
+        {
+          "title": "Deep Coin & Jewelry Recovery",
+          "description": "A strong fit for deep coin & jewelry recovery with the Garrett GTI 2500.",
+          "icon": "search"
+        },
+        {
+          "title": "Experienced Detectorists",
+          "description": "A strong fit for experienced detectorists with the Garrett GTI 2500.",
+          "icon": "star"
+        },
+        {
+          "title": "Trashy or Mineralized Ground",
+          "description": "A strong fit for trashy or mineralized ground with the Garrett GTI 2500.",
+          "icon": "pin"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "1120570",
+      "model": "GTI 2500",
+      "availability": "Available",
+      "applications": [
+        "Relic & Cache Hunting",
+        "Deep Coin & Jewelry Recovery",
+        "Experienced Detectorists",
+        "Trashy or Mineralized Ground"
+      ],
+      "downloads": [
+        {
+          "title": "Owner's Manual",
+          "url": "https://garrett.com/sites/default/files/2019-11/1525000_gti_2500_manual_english.pdf"
+        }
+      ],
+      "images": {
+        "main": "/images/products/garrett-gti-2500-metal-detector-1.jpg",
+        "gallery": []
+      },
+      "seo": {
+        "title": "Garrett GTI 2500 | Garrett Metal Detector",
+        "metaDescription": "Garrett GTI 2500 metal detector in Pakistan - 7.2 kHz frequency, Graphic Target Imaging, 9.5\" PROformance Imaging coil, 6 search modes for pro-level hunting.",
+        "imageAltText": {
+          "main": "Garrett GTI 2500 metal detector with green control housing and imaging search coil",
+          "gallery": []
+        },
+        "suggestedSlug": "garrett-gti-2500"
+      }
+    },
+    "nokta-the-legend": {
+      "tagline": "Nokta's first Simultaneous Multi-Frequency detector — exceptional depth, stability, and IP68 waterproofing for every terrain and target type.",
+      "overviewParagraphs": [
+        "The Nokta Legend is Nokta's first Simultaneous Multi-Frequency (SMF) metal detector, loaded with features that make it a versatile, all-purpose machine adaptable to virtually every target type and ground condition. Its depth and advanced discrimination in trashy sites, combined with silent, stable operation on the beach and underwater, make it a strong choice for both land and beach hunters.",
+        "Fully submersible to 5 meters (16 ft) with an IP68 rating against dust and water, The Legend runs on a 5050mAh lithium-polymer battery delivering up to 20 hours of use per charge, and includes Bluetooth aptX Low Latency headphones for cable-free detecting.",
+        "Automatic, manual, and tracking ground balance, 60-segment Target ID, four user profiles, and a Beast Mode for maximum depth on large, deep targets give experienced detectorists precise control, while its multi-frequency operation keeps setup simple for newer users."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Simultaneous Multi-Frequency (SMF)",
+          "description": "true multi-frequency detection plus four selectable single frequencies (4/10/15/20/40 kHz)."
+        },
+        {
+          "title": "IP68 waterproof",
+          "description": "fully submersible to 5 meters (16 feet) with complete dust protection."
+        },
+        {
+          "title": "60 Target IDs",
+          "description": "with harmonic, adjustable-frequency tones for precise identification."
+        },
+        {
+          "title": "Beast Mode",
+          "description": "resets ground balance to expose deep coins and large masses others miss."
+        },
+        {
+          "title": "Long-lasting battery",
+          "description": "5050mAh lithium-polymer battery delivering up to 20 hours of use, USB/power-bank rechargeable."
+        },
+        {
+          "title": "Bluetooth aptX headphones included",
+          "description": "low-latency wireless audio out of the box."
+        },
+        {
+          "title": "Four user profiles",
+          "description": "each storing 16 separate mode configurations for quick recall."
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Frequency",
+          "value": "Multi (SMF) plus 4 / 10 / 15 / 20 / 40 kHz single frequencies"
+        },
+        {
+          "label": "Discrimination Modes",
+          "value": "All Metal, Ferrous Off, Ground Effect Off, Custom (Notch)"
+        },
+        {
+          "label": "Target ID",
+          "value": "60 segments"
+        },
+        {
+          "label": "User Profiles",
+          "value": "4 (16 settings each)"
+        },
+        {
+          "label": "Ground Balance",
+          "value": "Automatic / Manual / Tracking"
+        },
+        {
+          "label": "Noise Management",
+          "value": "13-channel frequency shift + auto noise cancellation"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "30 adjustable levels"
+        },
+        {
+          "label": "Search Coil",
+          "value": "LG30 (12\"x9\") and LG15 (6\") waterproof DD coils included"
+        },
+        {
+          "label": "Display",
+          "value": "Custom LCD with backlight, LED flashlight"
+        },
+        {
+          "label": "Waterproofing",
+          "value": "IP68, fully submersible to 5 meters (16 ft)"
+        },
+        {
+          "label": "Battery",
+          "value": "5050mAh Lithium Polymer, USB / power-bank rechargeable"
+        },
+        {
+          "label": "Battery Life",
+          "value": "Up to 20 hours"
+        },
+        {
+          "label": "Weight",
+          "value": "1.3 kg (3.0 lb) including search coil"
+        },
+        {
+          "label": "Length",
+          "value": "63 - 132 cm (25 - 52 in), adjustable"
+        },
+        {
+          "label": "Audio",
+          "value": "100Hz - 1200Hz adjustable, 1/2/4/6/60/Pitch tone options"
+        },
+        {
+          "label": "Vibration",
+          "value": "Yes"
+        },
+        {
+          "label": "Warranty",
+          "value": "3 Years"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Nokta Detectors"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "Turkey"
+        }
+      ],
+      "whatsInTheBox": [
+        "Main control unit (system box)",
+        "LG30 waterproof DD search coil (12\"x9\") with cover",
+        "LG15 waterproof DD search coil (6\") with cover",
+        "USB charging & data cable",
+        "Waterproof spare battery & charger",
+        "Bluetooth aptX Low Latency headphones with soft case",
+        "Carry bag"
+      ],
+      "idealFor": [
+        {
+          "title": "Coin and relic hunting in trashy sites",
+          "description": "A strong fit for coin and relic hunting in trashy sites with the Nokta The Legend.",
+          "icon": "compass"
+        },
+        {
+          "title": "Beach and underwater detecting",
+          "description": "A strong fit for beach and underwater detecting with the Nokta The Legend.",
+          "icon": "globe"
+        },
+        {
+          "title": "Small gold nugget prospecting",
+          "description": "A strong fit for small gold nugget prospecting with the Nokta The Legend.",
+          "icon": "star"
+        },
+        {
+          "title": "All-terrain, mixed-target detecting",
+          "description": "A strong fit for all-terrain, mixed-target detecting with the Nokta The Legend.",
+          "icon": "search"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "11000838",
+      "model": "The Legend",
+      "availability": "Available",
+      "applications": [
+        "Coin and relic hunting in trashy sites",
+        "Beach and underwater detecting",
+        "Small gold nugget prospecting",
+        "All-terrain, mixed-target detecting"
+      ],
+      "downloads": [
+        {
+          "title": "User Manual",
+          "url": "https://www.noktadetectors.com/wp-content/file-download/the-legend/the-legend-user-manual-en.pdf"
+        },
+        {
+          "title": "Brochure",
+          "url": "https://www.noktadetectors.com/wp-content/file-download/the-legend/the-legend-brochure-en.pdf"
+        }
+      ],
+      "images": {
+        "main": "/images/products/nokta-the-legend-metal-detector-1.jpg",
+        "gallery": []
+      },
+      "seo": {
+        "title": "Nokta The Legend | Multi-Frequency SMF Metal Detector",
+        "metaDescription": "Nokta's first Simultaneous Multi-Frequency metal detector — IP68 waterproof to 5 meters, 60 Target IDs, 20-hour battery, and Bluetooth headphones included.",
+        "imageAltText": {
+          "main": "Nokta The Legend metal detector",
+          "gallery": []
+        },
+        "suggestedSlug": "nokta-the-legend"
+      }
+    },
+    "nokta-impact-pro": {
+      "tagline": "A 3-frequency VLF metal detector with 12 search modes and a rugged, waterproof-coil design for coins, relics, and deep treasure across every terrain.",
+      "overviewParagraphs": [
+        "The Nokta Impact Pro combines multiple detectors in one machine, giving new and experienced detectorists alike an easy-to-use experience backed by 12 dedicated search modes for coins, relics, and deep treasure caches. Three selectable operating frequencies (5, 14, and 20 kHz) let you match the machine to the target and ground condition.",
+        "It performs strongly across wet beach sand, parks, and mineralized soil, with automatic, manual, and tracking ground balance, adjustable iron volume, tone break, notch filtering, and frequency shift to cut through interference on crowded sites.",
+        "The Impact Pro ships as a complete kit with two waterproof DD search coils, an LCD display with backlight and LED flashlight, vibration feedback, and online firmware updates via USB — built for reliable performance season after season."
+      ],
+      "keyFeatures": [
+        {
+          "title": "3 operating frequencies",
+          "description": "selectable 5 kHz, 14 kHz, and 20 kHz VLF operation for different targets and soils."
+        },
+        {
+          "title": "12 search modes",
+          "description": "2 non-motion, 2 all-metal, and 8 discrimination modes."
+        },
+        {
+          "title": "Two search coils included",
+          "description": "28x18cm (IM28) and 19x10cm (IM19) waterproof DD coils with covers."
+        },
+        {
+          "title": "Ground balance flexibility",
+          "description": "automatic, manual, and tracking modes for changing soil conditions."
+        },
+        {
+          "title": "Iron Volume and Tone Break",
+          "description": "fine-tuned audio discrimination for trashy sites."
+        },
+        {
+          "title": "LCD with backlight and LED flashlight",
+          "description": "clear visibility for low-light and night detecting."
+        },
+        {
+          "title": "Online firmware updates",
+          "description": "via PC USB to keep the detector current."
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Principle",
+          "value": "VLF"
+        },
+        {
+          "label": "Operating Frequency",
+          "value": "5 kHz / 14 kHz / 20 kHz"
+        },
+        {
+          "label": "Audio Frequency",
+          "value": "150Hz - 700Hz, adjustable"
+        },
+        {
+          "label": "Search Modes",
+          "value": "12 (2 non-motion, 2 all-metal, 8 discrimination)"
+        },
+        {
+          "label": "Gain Setting",
+          "value": "01 - 99"
+        },
+        {
+          "label": "Target ID",
+          "value": "00 - 99"
+        },
+        {
+          "label": "Ground Balance",
+          "value": "Automatic / Manual / Tracking"
+        },
+        {
+          "label": "Search Coil",
+          "value": "IM28 (28x18cm / 11\"x7\") and IM19 (19x10cm / 7.5\"x4\") waterproof DD coils included"
+        },
+        {
+          "label": "Display",
+          "value": "Custom LCD with backlight, LED flashlight"
+        },
+        {
+          "label": "Waterproofing",
+          "value": "Waterproof search coils"
+        },
+        {
+          "label": "Battery",
+          "value": "4 x AA (rechargeable set included with USB charger)"
+        },
+        {
+          "label": "Weight",
+          "value": "1.8 kg (4 lb) including coil and batteries"
+        },
+        {
+          "label": "Length",
+          "value": "107 - 143 cm (42 - 56 in), adjustable"
+        },
+        {
+          "label": "Vibration",
+          "value": "Yes"
+        },
+        {
+          "label": "Warranty",
+          "value": "2 Years"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Nokta Detectors"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "Turkey"
+        }
+      ],
+      "whatsInTheBox": [
+        "System box",
+        "IM28 waterproof DD search coil (28x18cm) with cover",
+        "IM19 waterproof DD search coil (19x10cm) with cover",
+        "Headphones",
+        "Extra lower shaft",
+        "USB data cable",
+        "USB charger with 4x AA rechargeable batteries",
+        "Stand",
+        "Protective covers",
+        "Carrying bag",
+        "User manual"
+      ],
+      "idealFor": [
+        {
+          "title": "Coin and relic hunting in parks",
+          "description": "A strong fit for coin and relic hunting in parks with the Nokta Impact Pro.",
+          "icon": "compass"
+        },
+        {
+          "title": "Detecting in wet beach sand",
+          "description": "A strong fit for detecting in wet beach sand with the Nokta Impact Pro.",
+          "icon": "globe"
+        },
+        {
+          "title": "Deep treasure and cache hunting",
+          "description": "A strong fit for deep treasure and cache hunting with the Nokta Impact Pro.",
+          "icon": "search"
+        },
+        {
+          "title": "Mineralized and trashy ground",
+          "description": "A strong fit for mineralized and trashy ground with the Nokta Impact Pro.",
+          "icon": "pin"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "11000702",
+      "model": "Impact Pro",
+      "availability": "Available",
+      "applications": [
+        "Coin and relic hunting in parks",
+        "Detecting in wet beach sand",
+        "Deep treasure and cache hunting",
+        "Mineralized and trashy ground"
+      ],
+      "downloads": [
+        {
+          "title": "User Manual",
+          "url": "https://www.noktadetectors.com/wp-content/file-download/impact/IMPACT_USER_MANUAL_KKIM300517EN.pdf"
+        }
+      ],
+      "images": {
+        "main": "/images/products/nokta-impact-pro-metal-detector-1.jpg",
+        "gallery": []
+      },
+      "seo": {
+        "title": "Nokta Impact Pro | 3-Frequency VLF Metal Detector",
+        "metaDescription": "Nokta Impact Pro metal detector with 3 selectable frequencies (5/14/20 kHz), 12 search modes, and two waterproof search coils included. 2-year warranty.",
+        "imageAltText": {
+          "main": "Nokta Impact Pro metal detector",
+          "gallery": []
+        },
+        "suggestedSlug": "nokta-impact-pro"
+      }
+    },
+    "nokta-impact-pro-3-coils": {
+      "tagline": "The Nokta Impact Pro detector bundled with three waterproof search coils instead of the standard two — built for maximum coverage flexibility.",
+      "overviewParagraphs": [
+        "The Nokta Impact Pro (3 Coils Package) is the same 3-frequency Impact Pro control unit, upgraded from the standard two-coil kit to a three-coil package for detectorists who want maximum flexibility without buying accessories separately.",
+        "Alongside the standard IM28 (28x18cm) and IM19 (19x10cm) waterproof DD coils, this package adds the larger IM45 (39x45cm) waterproof DD coil for wider ground coverage and greater depth on large or deeply buried targets — ideal for open fields and beach sweeps where the smaller coils trade depth for precision.",
+        "Every other feature carries over unchanged: 3 selectable operating frequencies (5/14/20 kHz), 12 search modes, automatic/manual/tracking ground balance, and a rugged, field-tested build backed by a 2-year warranty."
+      ],
+      "keyFeatures": [
+        {
+          "title": "3 search coils included",
+          "description": "IM19 (19x10cm), IM28 (28x18cm), and IM45 (39x45cm) waterproof DD coils in one package."
+        },
+        {
+          "title": "Same proven Impact Pro electronics",
+          "description": "3 selectable operating frequencies (5/14/20 kHz) and 12 search modes, unchanged from the base unit."
+        },
+        {
+          "title": "Wider coverage with IM45",
+          "description": "the added large coil extends depth and ground coverage for open-field and beach searching."
+        },
+        {
+          "title": "Ground balance flexibility",
+          "description": "automatic, manual, and tracking modes across all three coils."
+        },
+        {
+          "title": "LCD with backlight and LED flashlight",
+          "description": "clear visibility for low-light and night detecting."
+        },
+        {
+          "title": "Complete ready-to-hunt kit",
+          "description": "extra coil arrives alongside the full standard Impact Pro accessory set."
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Principle",
+          "value": "VLF"
+        },
+        {
+          "label": "Operating Frequency",
+          "value": "5 kHz / 14 kHz / 20 kHz"
+        },
+        {
+          "label": "Audio Frequency",
+          "value": "150Hz - 700Hz, adjustable"
+        },
+        {
+          "label": "Search Modes",
+          "value": "12 (2 non-motion, 2 all-metal, 8 discrimination)"
+        },
+        {
+          "label": "Gain Setting",
+          "value": "01 - 99"
+        },
+        {
+          "label": "Target ID",
+          "value": "00 - 99"
+        },
+        {
+          "label": "Ground Balance",
+          "value": "Automatic / Manual / Tracking"
+        },
+        {
+          "label": "Search Coils",
+          "value": "IM19 (19x10cm), IM28 (28x18cm), and IM45 (39x45cm) waterproof DD coils, 3 total"
+        },
+        {
+          "label": "Display",
+          "value": "Custom LCD with backlight, LED flashlight"
+        },
+        {
+          "label": "Waterproofing",
+          "value": "Waterproof search coils"
+        },
+        {
+          "label": "Battery",
+          "value": "4 x AA (rechargeable set included with USB charger)"
+        },
+        {
+          "label": "Weight",
+          "value": "1.8 kg (4 lb) including standard coil and batteries"
+        },
+        {
+          "label": "Length",
+          "value": "107 - 143 cm (42 - 56 in), adjustable"
+        },
+        {
+          "label": "Vibration",
+          "value": "Yes"
+        },
+        {
+          "label": "Warranty",
+          "value": "2 Years"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Nokta Detectors"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "Turkey"
+        }
+      ],
+      "whatsInTheBox": [
+        "System box",
+        "IM19 waterproof DD search coil (19x10cm) with cover",
+        "IM28 waterproof DD search coil (28x18cm) with cover",
+        "IM45 waterproof DD search coil (39x45cm) with cover — 3rd coil, package upgrade over the standard 2-coil kit",
+        "Headphones",
+        "Extra lower shaft",
+        "USB data cable",
+        "USB charger with 4x AA rechargeable batteries",
+        "Stand",
+        "Protective covers",
+        "Carrying bag",
+        "User manual"
+      ],
+      "idealFor": [
+        {
+          "title": "Detectorists who want every coil size",
+          "description": "A strong fit for detectorists who want every coil size with the Nokta Impact Pro (3 Coils Package).",
+          "icon": "star"
+        },
+        {
+          "title": "Open-field and wide-area sweeps",
+          "description": "A strong fit for open-field and wide-area sweeps with the Nokta Impact Pro (3 Coils Package).",
+          "icon": "globe"
+        },
+        {
+          "title": "Tight, junk-heavy sites",
+          "description": "A strong fit for tight, junk-heavy sites with the Nokta Impact Pro (3 Coils Package).",
+          "icon": "pin"
+        },
+        {
+          "title": "Deep treasure and cache hunting",
+          "description": "A strong fit for deep treasure and cache hunting with the Nokta Impact Pro (3 Coils Package).",
+          "icon": "search"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "11000702-3C",
+      "model": "Impact Pro (3 Coils Package)",
+      "availability": "Available",
+      "applications": [
+        "Detectorists who want every coil size",
+        "Open-field and wide-area sweeps",
+        "Tight, junk-heavy sites",
+        "Deep treasure and cache hunting"
+      ],
+      "downloads": [
+        {
+          "title": "User Manual",
+          "url": "https://www.noktadetectors.com/wp-content/file-download/impact/IMPACT_USER_MANUAL_KKIM300517EN.pdf"
+        }
+      ],
+      "images": {
+        "main": "/images/products/nokta-impact-pro-3-coils-metal-detector-1.jpg",
+        "gallery": []
+      },
+      "seo": {
+        "title": "Nokta Impact Pro (3 Coils Package) | VLF Metal Detector",
+        "metaDescription": "Nokta Impact Pro bundled with 3 waterproof search coils (IM19, IM28, IM45) instead of the standard two — same 3-frequency VLF electronics, 2-year warranty.",
+        "imageAltText": {
+          "main": "Nokta Impact Pro metal detector, 3 coils package",
+          "gallery": []
+        },
+        "suggestedSlug": "nokta-impact-pro-3-coils"
+      }
+    },
+    "goldxtra-revealer-plus-2-coils": {
+      "tagline": "The GoldXtra Revealer Plus (With 2 Coils) pairs wireless Bluetooth connectivity, 8 detection modes, and a bundled second search coil, giving serious researchers both long-range coverage and fine target precision in one package.",
+      "overviewParagraphs": [
+        "The GoldXtra Revealer Plus (With 2 Coils) is the same professional-grade gold and metal detector built for serious researchers in Pakistan, now bundled with a second interchangeable search coil so you're equipped for both wide-area scanning and tighter, more precise searches straight out of the box.",
+        "It reaches a detection depth of up to 40 meters through advanced VLF technology, backed by automatic ground balance that copes efficiently with Pakistan's highly mineralized soil, cutting down false signals and improving detection accuracy in every condition — and swapping coils takes seconds when the terrain or target size changes."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Two search coils included",
+          "description": "swap between the primary and secondary coil to match ground conditions and target size without buying accessories separately."
+        },
+        {
+          "title": "40-meter depth",
+          "description": "exceptional detection capability that outperforms most devices in its price class."
+        },
+        {
+          "title": "8 detection modes",
+          "description": "including All Metal, Mineral, Boost, and Pinpoint modes for every situation and terrain."
+        },
+        {
+          "title": "Advanced VLF technology",
+          "description": "precise, fast target response across all soil types."
+        },
+        {
+          "title": "Automatic ground balance",
+          "description": "instant adaptation to Pakistan's varied ground conditions."
+        },
+        {
+          "title": "Advanced wireless Bluetooth",
+          "description": "cable-free connection to headphones and external devices."
+        },
+        {
+          "title": "Waterproof design with built-in LED light",
+          "description": "ready for valleys, beaches, wet ground, and low-light sessions."
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Brand",
+          "value": "GoldXtra"
+        },
+        {
+          "label": "Model",
+          "value": "Revealer Plus (2 Coils)"
+        },
+        {
+          "label": "Detection Mode",
+          "value": "VLF (Very Low Frequency)"
+        },
+        {
+          "label": "Detection Modes",
+          "value": "All Metal / Mineral / Boost / Pinpoint"
+        },
+        {
+          "label": "Detection Depth",
+          "value": "Up to 40 meters"
+        },
+        {
+          "label": "Pinpointing",
+          "value": "Motionless pinpoint mode"
+        },
+        {
+          "label": "Ground Balance",
+          "value": "Fully automatic"
+        },
+        {
+          "label": "Coil",
+          "value": "Two interchangeable search coils included (primary + secondary)"
+        },
+        {
+          "label": "Bluetooth",
+          "value": "Yes — advanced wireless connectivity"
+        },
+        {
+          "label": "Waterproof",
+          "value": "Yes — waterproof design"
+        },
+        {
+          "label": "Built-in Light",
+          "value": "Yes"
+        },
+        {
+          "label": "Warranty",
+          "value": "3 years"
+        },
+        {
+          "label": "Country of Manufacture",
+          "value": "Canada"
+        }
+      ],
+      "whatsInTheBox": [
+        "Main control unit",
+        "Primary search coil",
+        "Secondary search coil",
+        "Fast battery charger",
+        "Wireless Bluetooth headphones",
+        "User manual",
+        "Warranty certificate"
+      ],
+      "idealFor": [
+        {
+          "title": "Gold and coin hunting across Pakistan's deserts and open plains",
+          "description": "A strong fit for gold and coin hunting across Pakistan's deserts and open plains with the GoldXtra Revealer Plus (With 2 Coils).",
+          "icon": "star"
+        },
+        {
+          "title": "Exploring historical and archaeological sites across Pakistan",
+          "description": "A strong fit for exploring historical and archaeological sites across Pakistan with the GoldXtra Revealer Plus (With 2 Coils).",
+          "icon": "compass"
+        },
+        {
+          "title": "Detecting in valleys and along seasonal riverbeds",
+          "description": "A strong fit for detecting in valleys and along seasonal riverbeds with the GoldXtra Revealer Plus (With 2 Coils).",
+          "icon": "globe"
+        },
+        {
+          "title": "Switching coils on the fly for mixed terrain and target sizes",
+          "description": "A strong fit for switching coils on the fly for mixed terrain and target sizes with the GoldXtra Revealer Plus (With 2 Coils).",
+          "icon": "search"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "REVEALER-PLUS-2COILS",
+      "model": "Revealer Plus (2 Coils)",
+      "availability": "Available",
+      "applications": [
+        "Gold and coin hunting across Pakistan's deserts and open plains",
+        "Exploring historical and archaeological sites across Pakistan",
+        "Detecting in valleys and along seasonal riverbeds",
+        "Switching coils on the fly for mixed terrain and target sizes"
+      ],
+      "downloads": [],
+      "images": {
+        "main": "/images/products/goldxtra-revealer-plus-2-coils-1.jpg",
+        "gallery": []
+      },
+      "seo": {
+        "title": "GoldXtra Revealer Plus (With 2 Coils) | GoldXtra Metal Detector",
+        "metaDescription": "GoldXtra Revealer Plus with 2 coils: VLF gold & metal detector, 40m depth, 8 detection modes, auto ground balance, Bluetooth, and a bundled second search coil.",
+        "imageAltText": {
+          "main": "GoldXtra Revealer Plus with 2 coils - gold and metal detector",
+          "gallery": []
+        },
+        "suggestedSlug": "goldxtra-revealer-plus-2-coils"
+      }
+    },
+    "goldxtra-unveiler-plus-2-coils": {
+      "tagline": "The GoldXtra Unveiler Plus (With 2 Coils) delivers enhanced sensitivity, deeper detection range, and Bluetooth connectivity, now with a second search coil included so you can match the coil to the ground and target without a separate purchase.",
+      "overviewParagraphs": [
+        "The GoldXtra Unveiler Plus (With 2 Coils) is built for precise gold and metal detection, with high sensitivity, deep detection capability, and an easy-to-read LCD screen — and it now ships with a second interchangeable search coil so you're ready for a wider range of soil types and target sizes from day one.",
+        "Building on the strengths of earlier GoldXtra models, the Unveiler Plus adds Bluetooth connectivity, advanced discrimination options, and 8 detection modes including a dedicated gold-search mode; having two coils on hand means you can switch between wider ground coverage and finer target precision without breaking your search."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Two search coils included",
+          "description": "switch coils to match the ground and target size without buying accessories separately."
+        },
+        {
+          "title": "Powerful general search mode",
+          "description": "high sensitivity for detecting a wide range of targets."
+        },
+        {
+          "title": "Greater detection depth",
+          "description": "reaches coins, artifacts, and buried pieces at greater depths."
+        },
+        {
+          "title": "Stability in mineralized soil",
+          "description": "less interference for accurate results in difficult ground."
+        },
+        {
+          "title": "Precise target pinpointing",
+          "description": "a stationary pinpoint mode that gets you to the target quickly."
+        },
+        {
+          "title": "Dual ground modes",
+          "description": "Mineral mode for difficult soil, and Boost mode for extra depth."
+        },
+        {
+          "title": "Built for all terrain",
+          "description": "rugged design for reliable use across different environments."
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Brand",
+          "value": "GoldXtra"
+        },
+        {
+          "label": "Model",
+          "value": "Unveiler Plus (2 Coils)"
+        },
+        {
+          "label": "Detection Mode",
+          "value": "VLF (Very Low Frequency)"
+        },
+        {
+          "label": "Detection Modes",
+          "value": "General Search, Mineral Mode, Boost Mode"
+        },
+        {
+          "label": "Target Pinpointing",
+          "value": "Stationary pinpoint mode (Non-motion Pinpoint)"
+        },
+        {
+          "label": "Ground Balance",
+          "value": "Automatic"
+        },
+        {
+          "label": "Coil",
+          "value": "Two interchangeable search coils included (primary + secondary)"
+        },
+        {
+          "label": "Features",
+          "value": "Waterproof design + built-in light"
+        },
+        {
+          "label": "Warranty",
+          "value": "3 years"
+        },
+        {
+          "label": "Country of Manufacture",
+          "value": "Canada"
+        }
+      ],
+      "whatsInTheBox": [
+        "Main control unit",
+        "Primary search coil",
+        "Secondary search coil",
+        "Power supply / charger",
+        "User manual"
+      ],
+      "idealFor": [
+        {
+          "title": "Coin and artifact hunting",
+          "description": "A strong fit for coin and artifact hunting with the GoldXtra Unveiler Plus (With 2 Coils).",
+          "icon": "globe"
+        },
+        {
+          "title": "Deep treasure hunting",
+          "description": "A strong fit for deep treasure hunting with the GoldXtra Unveiler Plus (With 2 Coils).",
+          "icon": "search"
+        },
+        {
+          "title": "Beginners learning metal detecting",
+          "description": "A strong fit for beginners learning metal detecting with the GoldXtra Unveiler Plus (With 2 Coils).",
+          "icon": "users"
+        },
+        {
+          "title": "Professionals wanting a coil for every ground type",
+          "description": "A strong fit for professionals wanting a coil for every ground type with the GoldXtra Unveiler Plus (With 2 Coils).",
+          "icon": "globe"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "UNVEILER-PLUS-2COILS",
+      "model": "Unveiler Plus (2 Coils)",
+      "availability": "Available",
+      "applications": [
+        "Coin and artifact hunting",
+        "Deep treasure hunting",
+        "Beginners learning metal detecting",
+        "Professionals wanting a coil for every ground type"
+      ],
+      "downloads": [],
+      "images": {
+        "main": "/images/products/goldxtra-unveiler-plus-2-coils-1.jpg",
+        "gallery": []
+      },
+      "seo": {
+        "title": "GoldXtra Unveiler Plus (With 2 Coils) | GoldXtra Metal Detector",
+        "metaDescription": "GoldXtra Unveiler Plus with 2 coils: enhanced sensitivity, deeper range, Bluetooth connectivity, and a bundled second coil for gold, coins, and artifacts.",
+        "imageAltText": {
+          "main": "GoldXtra Unveiler Plus with 2 coils - gold and metal detector",
+          "gallery": []
+        },
+        "suggestedSlug": "goldxtra-unveiler-plus-2-coils"
+      }
+    },
+    "goldxtra-tgx-special-edition": {
+      "tagline": "A premium, fully accessorized variant of the TGX series, the GoldXtra TGX Special Edition bundles two search coils, a digital pinpoint tracker, and Bluetooth headphones with dedicated Gold Mode and Detect-All Mode detection — built for prospectors who want the complete GoldXtra kit in a single box.",
+      "overviewParagraphs": [
+        "The GoldXtra TGX Special Edition is a premium edition of the TGX platform, built for professional searchers who want maximum capability and a complete accessory kit straight out of the box. It carries the \"3D Special Edition\" branding printed directly on the control unit, marking it as a fully-loaded variant of GoldXtra's TGX line.",
+        "The kit pairs a large deep-seeking coil with a second precision coil for detailed target work, plus a handheld digital pinpoint/tracker accessory, wireless Bluetooth headphones, fast USB-C charging, and a deluxe carry case and shoulder strap — so you head into the field with everything the TGX platform offers in one purchase.",
+        "On the detection side, Gold Mode delivers focused gold detection with minimal interference, Detect-All Mode provides sensitive scanning across all metal types, and the device maintains strong depth and stability even in difficult mineralized soil."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Two search coils included",
+          "description": "a large deep-seeking coil plus a second precision coil for detailed target work."
+        },
+        {
+          "title": "Digital pinpoint tracker",
+          "description": "a handheld accessory for fast, accurate target location once you've narrowed the search."
+        },
+        {
+          "title": "Wireless Bluetooth headphones",
+          "description": "cable-free audio for comfortable, focused searching."
+        },
+        {
+          "title": "Gold Mode",
+          "description": "focused gold detection with minimal interference."
+        },
+        {
+          "title": "Detect-All Mode",
+          "description": "sensitive scanning across all metal types."
+        },
+        {
+          "title": "Fast USB-C charging",
+          "description": "less downtime between search sessions."
+        },
+        {
+          "title": "Deluxe carry case and shoulder strap",
+          "description": "organized transport for the full accessory kit."
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Brand",
+          "value": "GoldXtra"
+        },
+        {
+          "label": "Model",
+          "value": "TGX Special Edition"
+        },
+        {
+          "label": "Detection Mode",
+          "value": "Multi-system (Gold Mode + Detect-All Mode)"
+        },
+        {
+          "label": "Search Modes",
+          "value": "Gold Mode, Detect-All Mode"
+        },
+        {
+          "label": "Ground Performance",
+          "value": "High stability in mineralized soil"
+        },
+        {
+          "label": "Coil",
+          "value": "Two coils included (large deep-seeking + secondary precision coil)"
+        },
+        {
+          "label": "Ground Balance",
+          "value": "Automatic"
+        },
+        {
+          "label": "Accessories",
+          "value": "Digital pinpoint tracker, Bluetooth headphones, deluxe carry case"
+        },
+        {
+          "label": "Charging",
+          "value": "Fast USB-C charging"
+        },
+        {
+          "label": "Warranty",
+          "value": "3 years"
+        },
+        {
+          "label": "Depth",
+          "value": "3 meters"
+        },
+        {
+          "label": "Country of Manufacture",
+          "value": "Canada"
+        }
+      ],
+      "whatsInTheBox": [
+        "Main control unit (3D Special Edition)",
+        "Large deep-seeking search coil",
+        "Secondary precision search coil",
+        "Digital pinpoint/tracker accessory",
+        "Wireless Bluetooth headphones",
+        "USB-C fast charging cable",
+        "Padded carrying pouch",
+        "Deluxe carry bag",
+        "Shoulder strap",
+        "User manual and warranty certificate"
+      ],
+      "idealFor": [
+        {
+          "title": "Professional prospectors wanting the full GoldXtra kit",
+          "description": "A strong fit for professional prospectors wanting the full GoldXtra kit with the GoldXtra TGX Special Edition.",
+          "icon": "star"
+        },
+        {
+          "title": "Deep treasure and cache hunting",
+          "description": "A strong fit for deep treasure and cache hunting with the GoldXtra TGX Special Edition.",
+          "icon": "search"
+        },
+        {
+          "title": "Gold prospecting and mineral exploration",
+          "description": "A strong fit for gold prospecting and mineral exploration with the GoldXtra TGX Special Edition.",
+          "icon": "compass"
+        },
+        {
+          "title": "Collectors seeking the flagship TGX edition",
+          "description": "A strong fit for collectors seeking the flagship TGX edition with the GoldXtra TGX Special Edition.",
+          "icon": "users"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "TGX-SPECIAL-EDITION",
+      "model": "TGX Special Edition",
+      "availability": "Available",
+      "applications": [
+        "Professional prospectors wanting the full GoldXtra kit",
+        "Deep treasure and cache hunting",
+        "Gold prospecting and mineral exploration",
+        "Collectors seeking the flagship TGX edition"
+      ],
+      "downloads": [],
+      "images": {
+        "main": "/images/products/goldxtra-tgx-special-edition-1.jpg",
+        "gallery": []
+      },
+      "seo": {
+        "title": "GoldXtra TGX Special Edition | GoldXtra Metal Detector",
+        "metaDescription": "GoldXtra TGX Special Edition: a premium TGX detector bundling two search coils, a pinpoint tracker, Bluetooth headphones, Gold Mode, and Detect-All Mode.",
+        "imageAltText": {
+          "main": "GoldXtra TGX Special Edition metal detector with full accessory kit",
+          "gallery": []
+        },
+        "suggestedSlug": "goldxtra-tgx-special-edition"
+      }
+    },
+    "aka-signum": {
+      "tagline": "Deep-search precision engineered by AKA Intronika for professional treasure hunters.",
+      "overviewParagraphs": [
+        "The AKA Signum MFD is a computerized, high-sensitivity, multi-frequency metal detector engineered by AKA Intronika of Moscow, Russia. It uses AKA's patented space-harmonic filtering (SFT) technology and a distinctive 'hodograph' target-identification method, giving operators an exact graphical read on buried targets that few competing detectors can match.",
+        "An electronic unit transmits and processes signals across a 1-30 kHz range, with an automatic compensator that pushes sensitivity to roughly 65cm on a 25mm coin when paired with the 10\" DD/7kHz coil. Three selectable discrimination algorithms (MSF, SSF, MM) let the operator tune the detector for iron-heavy ground, mixed terrain, or maximum all-round performance.",
+        "Dynamic and static search modes, automatic and manual ground balance with adjustable readjustment speed, hot-rock suppression, and a dedicated Turbo mode for extreme depth make the Signum suited to serious deep-search and relic-hunting work. The waterproof control housing and quick-release coil mount allow fast field changes between AKA's range of dedicated deep-search coils."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Space-Harmonic Filtering (SFT)",
+          "description": "patented signal-processing technology unique to AKA that sharpens target identification and cuts false signals"
+        },
+        {
+          "title": "Hodograph Target ID",
+          "description": "displays a spectral-graphic hodograph of each target on the 128x64 LCD for precise, visual identification"
+        },
+        {
+          "title": "1-30 kHz Multi-Frequency Range",
+          "description": "transmits and processes signal across a wide frequency band for flexibility across soil types and target sizes"
+        },
+        {
+          "title": "Turbo Deep-Search Mode",
+          "description": "an additional program dedicated to locating large objects at extreme depth"
+        },
+        {
+          "title": "Triple Discrimination Algorithms",
+          "description": "switch between MSF, SSF, and MM modes to match iron-heavy, mixed, or open ground conditions"
+        },
+        {
+          "title": "Automatic & Manual Ground Balance",
+          "description": "self-corrects for mineralized soil with adjustable readjustment speed, or can be set manually"
+        },
+        {
+          "title": "Waterproof Control Housing",
+          "description": "sealed electronic control unit with a quick-release, tool-free coil mount for fast field swaps"
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Principle",
+          "value": "VLF induction balance with space-harmonic filtering (SFT)"
+        },
+        {
+          "label": "Operating Frequency",
+          "value": "1-30 kHz (multi-frequency)"
+        },
+        {
+          "label": "Detection Depth",
+          "value": "Up to 65cm on a 25mm coin (10\" DD/7kHz coil); maximum depth 1.2m on large targets"
+        },
+        {
+          "label": "Display",
+          "value": "128x64 pixel LCD with hodograph spectral-graphic target display"
+        },
+        {
+          "label": "Search Modes",
+          "value": "Dynamic and static, with RT (Real Time) and ST search channels"
+        },
+        {
+          "label": "Discrimination Algorithms",
+          "value": "MSF, SSF, MM selectable programs"
+        },
+        {
+          "label": "Ground Balance",
+          "value": "Automatic and manual, with adjustable auto-correction speed"
+        },
+        {
+          "label": "User Programs",
+          "value": "4 user-programmable presets with instant access"
+        },
+        {
+          "label": "Coil Compatibility",
+          "value": "Compatible with 22 AKA search coils, from 6\" (14 kHz) to 18\" deep-search DD coils (3 kHz)"
+        },
+        {
+          "label": "Power Source",
+          "value": "6 x 1.5V AA batteries"
+        },
+        {
+          "label": "Battery Life",
+          "value": "Up to 20 hours depending on mode"
+        },
+        {
+          "label": "Weight",
+          "value": "1.3 kg (without batteries, control unit only)"
+        },
+        {
+          "label": "Housing",
+          "value": "Waterproof control module, quick-release coil mount"
+        },
+        {
+          "label": "Warranty",
+          "value": "2 Years (1 Year on search coil)"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "AKA Intronika"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "Russia"
+        }
+      ],
+      "whatsInTheBox": [
+        "AKA Signum MFD control unit",
+        "Telescopic shaft / rod set",
+        "Search coil (per configuration ordered)",
+        "Coil connection cable",
+        "Armrest with strap",
+        "6x AA batteries",
+        "User manual"
+      ],
+      "idealFor": [
+        {
+          "title": "Deep relic hunting",
+          "description": "A strong fit for locating large, deeply buried relics and historical objects with the AKA Signum.",
+          "icon": "search"
+        },
+        {
+          "title": "Mineralized and iron-heavy ground",
+          "description": "A strong fit for working difficult, iron-contaminated or mineralized soil with the AKA Signum.",
+          "icon": "compass"
+        },
+        {
+          "title": "Professional treasure hunting operations",
+          "description": "A strong fit for professional and semi-professional treasure hunting teams with the AKA Signum.",
+          "icon": "star"
+        },
+        {
+          "title": "Coin and cache recovery",
+          "description": "A strong fit for pinpointing coin caches and buried valuables at depth with the AKA Signum.",
+          "icon": "pin"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "SIGNUM-MFD-7272M",
+      "model": "Signum",
+      "availability": "Available",
+      "applications": [
+        "Deep relic hunting",
+        "Mineralized and iron-heavy ground",
+        "Professional treasure hunting operations",
+        "Coin and cache recovery"
+      ],
+      "downloads": [],
+      "images": {
+        "main": "/images/products/aka-signum-detector-1.jpg",
+        "gallery": [
+          "/images/products/aka-signum-detector-2.jpg",
+          "/images/products/aka-signum-detector-3.jpg",
+          "/images/products/aka-signum-detector-4.jpg"
+        ]
+      },
+      "seo": {
+        "title": "AKA Signum | Long-Range Locator",
+        "metaDescription": "AKA Signum MFD multi-frequency deep-search detector in Pakistan. Space-harmonic filtering, hodograph target ID, 1.2m max depth. 655,000 PKR.",
+        "imageAltText": {
+          "main": "AKA Signum MFD metal detector with DD search coil and armrest on white background",
+          "gallery": [
+            "AKA Signum MFD control unit close-up view",
+            "Three AKA Signum MFD detectors on display stand",
+            "AKA Signum MFD control box speaker and power switch detail"
+          ]
+        },
+        "suggestedSlug": "aka-signum"
+      }
+    },
+    "stinger-x5-2-coils": {
+      "tagline": "A USA-engineered VLF ground detector for serious gold and treasure hunters, backed by two waterproof search coils for both depth and precision.",
+      "overviewParagraphs": [
+        "The Stinger X5 is a VLF (very low frequency) ground detector from Stinger Detectors, engineered for prospectors who need reliable performance across mineralized soil, wet ground, and trash-heavy sites. It runs three core detection modes — Discrimination, All Metal, and Pinpointer — so operators can match the search method to the target and terrain.",
+        "Automatic ground balancing pairs with a ZB filter and a dedicated Hot Rocks filter to suppress false signals from mineralized soil and non-metallic rocks that commonly trip up lower-end detectors. A numerical Target ID and an on-screen depth estimate in centimeters (All Metal mode) give operators a quick read on what's buried and roughly how deep, while the 4.3-inch TFT color display keeps the menu system accessible across eight languages.",
+        "This package includes two waterproof elliptical DD search coils — a 36 x 41cm coil for wide, deep coverage over open ground and a 26 x 32cm coil for tighter control in mineralized or debris-heavy areas — mounted on a 3-piece telescopic aluminum shaft built for long search sessions."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Three Detection Modes",
+          "description": "switches between Discrimination, All Metal, and Pinpointer modes to match the target and terrain."
+        },
+        {
+          "title": "Automatic Ground Balance",
+          "description": "compensates for mineralized and wet soils automatically so operators can start scanning within minutes."
+        },
+        {
+          "title": "ZB & Hot Rocks Filtering",
+          "description": "suppresses false signals from mineralized ground and non-metallic hot rocks for cleaner target reads."
+        },
+        {
+          "title": "Numerical Target ID with Depth Estimate",
+          "description": "displays a numeric target identity plus an on-screen depth estimate in centimeters while in All Metal mode."
+        },
+        {
+          "title": "Two Waterproof Elliptical Coils",
+          "description": "includes a 36 x 41cm coil for wide, deep sweeps and a 26 x 32cm coil for tight, mineralized, or trash-heavy ground."
+        },
+        {
+          "title": "4.3-Inch TFT Color Display",
+          "description": "presents an 8-language graphical interface at 480 x 272 resolution for simple menu navigation."
+        },
+        {
+          "title": "Fast-Charging Li-Ion Battery",
+          "description": "delivers roughly 5 hours of continuous searching per charge and recharges quickly via the included charger."
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Frequency",
+          "value": "VLF, multi-frequency scanning"
+        },
+        {
+          "label": "Search Coil",
+          "value": "2 waterproof elliptical DD coils included — 36 x 41cm (deep/wide coverage) and 26 x 32cm (precision/mineralized ground)"
+        },
+        {
+          "label": "Detection Depth",
+          "value": "Up to 3-4 meters in Discrimination mode (ground- and mode-dependent)"
+        },
+        {
+          "label": "Detection Modes",
+          "value": "Discrimination, All Metal, Pinpointer"
+        },
+        {
+          "label": "Discrimination Categories",
+          "value": "Gold, Precious Metal (non-ferrous), Non-Precious Metal (ferrous), Voids"
+        },
+        {
+          "label": "Display",
+          "value": "4.3-inch LED edgelight TFT color screen, 480 x 272 pixels, 8-language menu"
+        },
+        {
+          "label": "Ground Balance",
+          "value": "Automatic, with ZB filter and Hot Rocks filter"
+        },
+        {
+          "label": "Waterproofing",
+          "value": "Search coils are waterproof/submersible; control box is not submersible"
+        },
+        {
+          "label": "Battery",
+          "value": "7.4V 2.6Ah lithium-ion, approx. 5 hours continuous use / 20 hours standby, fast charging"
+        },
+        {
+          "label": "Shaft",
+          "value": "3-piece telescopic aluminum shaft"
+        },
+        {
+          "label": "Warranty",
+          "value": "3 Years"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Stinger Detectors"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "USA"
+        }
+      ],
+      "whatsInTheBox": [
+        "Stinger X5 control unit with 4.3-inch TFT display",
+        "36 x 41cm elliptical DD search coil (primary)",
+        "26 x 32cm elliptical DD search coil (secondary)",
+        "3-piece telescopic aluminum shaft with arm strap",
+        "Wired headphones",
+        "Battery charger",
+        "Coil mounting hardware (bolts, nuts, gaskets)",
+        "User manual and warranty card"
+      ],
+      "idealFor": [
+        {
+          "title": "Gold Prospecting",
+          "description": "A strong fit for gold prospecting with the Stinger X5.",
+          "icon": "search"
+        },
+        {
+          "title": "Treasure & Relic Hunting",
+          "description": "A strong fit for treasure & relic hunting with the Stinger X5.",
+          "icon": "compass"
+        },
+        {
+          "title": "Coin Shooting",
+          "description": "A strong fit for coin shooting with the Stinger X5.",
+          "icon": "pin"
+        },
+        {
+          "title": "Cavity & Void Detection",
+          "description": "A strong fit for cavity & void detection with the Stinger X5.",
+          "icon": "globe"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "OR1000EN192",
+      "model": "X5",
+      "availability": "Available",
+      "applications": [
+        "Gold Prospecting",
+        "Treasure & Relic Hunting",
+        "Coin Shooting",
+        "Cavity & Void Detection"
+      ],
+      "downloads": [],
+      "images": {
+        "main": "/images/products/stinger-x5-metal-detector-1.jpg",
+        "gallery": []
+      },
+      "seo": {
+        "title": "Stinger X5 | Metal Detector",
+        "metaDescription": "Stinger X5 metal detector with two waterproof search coils, automatic ground balance, and 3-mode discrimination for gold and treasure hunting in Pakistan.",
+        "imageAltText": {
+          "main": "Stinger X5 VLF metal detector control unit with elliptical search coil and telescopic shaft",
+          "gallery": []
+        },
+        "suggestedSlug": "stinger-x5-2-coils"
+      }
+    },
+    "multimax": {
+      "tagline": "The world's deepest pulse detector in its class, engineered for professional deep ground search.",
+      "overviewParagraphs": [
+        "Multimax is a professional long-range, deep ground-search scanning device manufactured by ASTEAM (AS Dedektor's R&D division) in Istanbul, Turkey. Built around a multi-channel pulse ground balance system, it is designed to outperform competing detectors in heavily mineralized, rocky, and challenging ground conditions where conventional VLF detectors lose depth and accuracy.",
+        "The system's true ground balance technology filters out soil mineral interference while preserving sensitivity to genuine metal targets, giving operators a stable, low-noise signal even at extreme depth. Multimax reaches a working depth of 16-20 feet, making it suited to treasure hunting, archaeological survey, industrial metal screening, and security sweep applications.",
+        "The kit is built around interchangeable search coils - including Relic Hunter and Coin Hunter discs - plus a long-range directional antenna frame, all controlled from a rugged handheld unit with an onboard display, and transported in a hard protective case for field deployment."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Multi-Channel Pulse Ground Balance",
+          "description": "clears mineralized soil interference while continuing to track valuable metal targets accurately"
+        },
+        {
+          "title": "Extreme Search Depth",
+          "description": "detects buried targets at 16-20 feet, well beyond the range of standard VLF detectors"
+        },
+        {
+          "title": "Interchangeable Search Coils",
+          "description": "ships with Relic Hunter and Coin Hunter coil options to match different target sizes and search styles"
+        },
+        {
+          "title": "Long-Range Directional Antenna",
+          "description": "adds wide-area directional scanning for pinpointing deep targets over large search zones"
+        },
+        {
+          "title": "Ferrous/Non-Ferrous Discrimination",
+          "description": "displays conductivity readings on a 0-100 scale and separates iron from non-iron targets near the surface"
+        },
+        {
+          "title": "Rugged Field-Ready Kit",
+          "description": "packs into a hard protective transport case built for professional outdoor deployment"
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Principle",
+          "value": "Multi-Channel Pulse Ground Balance (PI)"
+        },
+        {
+          "label": "Detection Range",
+          "value": "Long-range deep ground search"
+        },
+        {
+          "label": "Depth",
+          "value": "16-20 feet"
+        },
+        {
+          "label": "Target Discrimination",
+          "value": "Ferrous/Non-Ferrous near-surface discrimination, 0-100 conductivity scale"
+        },
+        {
+          "label": "Search Coils Included",
+          "value": "Relic Hunter and Coin Hunter interchangeable coils"
+        },
+        {
+          "label": "Additional Accessory",
+          "value": "Long-range directional antenna frame"
+        },
+        {
+          "label": "Power Source",
+          "value": "Rechargeable battery, 5-7 hours per charge (varies with display brightness and coil selection)"
+        },
+        {
+          "label": "Display",
+          "value": "Onboard LCD control unit display"
+        },
+        {
+          "label": "Warranty",
+          "value": "2 Years"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "ASTEAM (AS Dedektor)"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "Turkey"
+        }
+      ],
+      "whatsInTheBox": [
+        "Multimax control unit",
+        "Relic Hunter search coil",
+        "Coin Hunter search coil",
+        "Long-range directional antenna frame",
+        "Connection cables",
+        "Hard protective carrying case",
+        "Carrying strap and harness",
+        "User manual"
+      ],
+      "idealFor": [
+        {
+          "title": "Deep treasure hunting",
+          "description": "A strong fit for deep treasure hunting with Multimax.",
+          "icon": "search"
+        },
+        {
+          "title": "Archaeological survey",
+          "description": "A strong fit for archaeological survey with Multimax.",
+          "icon": "compass"
+        },
+        {
+          "title": "Relic and coin recovery",
+          "description": "A strong fit for relic and coin recovery with Multimax.",
+          "icon": "pin"
+        },
+        {
+          "title": "Professional exploration teams",
+          "description": "A strong fit for professional exploration teams with Multimax.",
+          "icon": "users"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "ASTEAM-MULTIMAX",
+      "model": "Multimax",
+      "availability": "Available",
+      "applications": [
+        "Deep treasure hunting",
+        "Archaeological survey",
+        "Relic and coin recovery",
+        "Professional exploration teams"
+      ],
+      "downloads": [],
+      "images": {
+        "main": "/images/products/multimax-ground-scanner-1.jpg",
+        "gallery": [
+          "/images/products/multimax-ground-scanner-2.jpg",
+          "/images/products/multimax-ground-scanner-3.jpg"
+        ]
+      },
+      "seo": {
+        "title": "Multimax | Deep Ground Search Scanner",
+        "metaDescription": "Multimax is a professional Turkish-made pulse ground balance detector reaching 16-20 feet depth, built for deep treasure hunting, relic recovery, and archaeological survey.",
+        "imageAltText": {
+          "main": "Multimax deep ground search detector control unit, search coils, and hard case in a field",
+          "gallery": [
+            "Multimax pulse ground balance detector with Relic Hunter and Coin Hunter coils and long-range antenna frame"
+          ]
+        },
+        "suggestedSlug": "multimax"
+      }
+    },
+    "lorenz-deepmax-z2": {
+      "tagline": "German-engineered pulse induction system for long-range, deep-target ground scanning.",
+      "overviewParagraphs": [
+        "The Lorenz Deepmax Z2 is a professional-grade pulse induction ground scanner manufactured in Germany by Lorenz Detecting Systems. Built around the company's Pulse Ground Balancing System (Pulse GBS) and Pulse Shaping Technology (PST), it is engineered for treasure hunters, archaeologists, and geologists who need dependable depth on large, deeply buried targets.",
+        "A CNC-machined anodized aluminum control housing and a simplified LC display keep the unit rugged and straightforward to operate in the field, while differential electromagnetic noise cancellation lets it work reliably near power lines and other sources of interference.",
+        "The Deepmax Z2 accepts a range of interchangeable coils, from compact 26cm DD coils for coins and gold nuggets to large 1m x 1m frame coils for long-range detection of bulk metal, cavities, and voids at extended depth."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Pulse GBS Ground Balancing",
+          "description": "automatically compensates for mineralized and saline ground so depth and stability hold steady across changing terrain."
+        },
+        {
+          "title": "Pulse Shaping Technology (PST)",
+          "description": "refines the transmitted pulse waveform to sharpen sensitivity and push detection range on large, deep targets."
+        },
+        {
+          "title": "Interchangeable Coil System",
+          "description": "runs on 26cm, 35cm, 44cm and 1m x 1m frame coils so one control unit adapts from coin-sized targets to long-range bulk searches."
+        },
+        {
+          "title": "Differential Noise Cancellation",
+          "description": "filters out electromagnetic interference from power lines and nearby structures for a cleaner signal in built-up areas."
+        },
+        {
+          "title": "Rugged Aluminum Control Housing",
+          "description": "is CNC-machined from a single block of anodized aluminum to withstand demanding field conditions."
+        },
+        {
+          "title": "Multi-Channel Data Logger (Optional)",
+          "description": "records scan data for post-survey 2D/3D mapping and metal-type analysis using Lorenz Scripter and Surfer software."
+        },
+        {
+          "title": "All-Condition Reliability",
+          "description": "keeps performance stable in saltwater, highly mineralized ground, and a wide range of operating temperatures."
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Principle",
+          "value": "Non-motion Pulse Ground Balancing System (Pulse GBS) with Pulse Shaping Technology (PST)"
+        },
+        {
+          "label": "Detection Range",
+          "value": "Long-range detection of large non-ferrous metal objects, cavities and voids; small coils tuned for coins and gold nuggets"
+        },
+        {
+          "label": "Depth",
+          "value": "14-15 feet"
+        },
+        {
+          "label": "Ground Balance",
+          "value": "Automatic Pulse GBS with preset, two-step automatic and manual modes"
+        },
+        {
+          "label": "Coil Options",
+          "value": "26cm, 35cm, 44cm and 1m x 1m frame coils (single and double configurations)"
+        },
+        {
+          "label": "Control Unit Weight",
+          "value": "Approx. 1.4 kg (3 lbs)"
+        },
+        {
+          "label": "Coil Weight",
+          "value": "0.55-0.9 kg depending on coil size"
+        },
+        {
+          "label": "Battery Life",
+          "value": "3-8 hours depending on temperature, coil and settings"
+        },
+        {
+          "label": "Power Source",
+          "value": "Rechargeable low self-discharge battery pack with fast charger (100-240 VAC, worldwide use)"
+        },
+        {
+          "label": "Display",
+          "value": "LC display with simplified control layout"
+        },
+        {
+          "label": "Environmental Resistance",
+          "value": "Saltwater-resistant, stable in highly mineralized ground and wide temperature ranges"
+        },
+        {
+          "label": "Warranty",
+          "value": "2 Years"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "Lorenz"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "Germany"
+        }
+      ],
+      "whatsInTheBox": [
+        "Control box electronics",
+        "Adjustable shoulder and belt strap",
+        "Fast charger (100-240 VAC)",
+        "Stereo headphones with adapter",
+        "1m x 1m frame coil with carrying straps",
+        "Carrying bag for frame coil",
+        "35cm DD search coil",
+        "Three-section telescopic rod",
+        "Instruction manual (English)"
+      ],
+      "idealFor": [
+        {
+          "title": "Long-Range Treasure Hunting",
+          "description": "A strong fit for long-range treasure hunting with the Lorenz Deepmax Z2.",
+          "icon": "search"
+        },
+        {
+          "title": "Cavity and Void Detection",
+          "description": "A strong fit for cavity and void detection with the Lorenz Deepmax Z2.",
+          "icon": "compass"
+        },
+        {
+          "title": "Archaeological Surveys",
+          "description": "A strong fit for archaeological surveys with the Lorenz Deepmax Z2.",
+          "icon": "pin"
+        },
+        {
+          "title": "Professional Geological Prospecting",
+          "description": "A strong fit for professional geological prospecting with the Lorenz Deepmax Z2.",
+          "icon": "globe"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "LZ-DPMX-Z2",
+      "model": "Deepmax Z2",
+      "availability": "Available",
+      "applications": [
+        "Long-Range Treasure Hunting",
+        "Cavity and Void Detection",
+        "Archaeological Surveys",
+        "Professional Geological Prospecting"
+      ],
+      "downloads": [],
+      "images": {
+        "main": "/images/products/lorenz-deepmax-z2-1.png",
+        "gallery": [
+          "/images/products/lorenz-deepmax-z2-unit.jpg",
+          "/images/products/lorenz-deepmax-z2-framecoil.jpg",
+          "/images/products/lorenz-deepmax-z2-basicset.jpg",
+          "/images/products/lorenz-deepmax-z2-kit.jpg"
+        ]
+      },
+      "seo": {
+        "title": "Lorenz Deepmax Z2 | Deep Search Ground Scanner",
+        "metaDescription": "Lorenz Deepmax Z2 - German pulse induction ground scanner with Pulse GBS balancing, interchangeable coils and long-range deep search to 14-15 feet. In stock.",
+        "imageAltText": {
+          "main": "Lorenz Deepmax Z2 professional deep search ground scanner control unit",
+          "gallery": [
+            "Lorenz Deepmax Z2 control unit and electronics",
+            "Lorenz Deepmax Z2 frame coil in field use",
+            "Lorenz Deepmax Z2 basic electronics set",
+            "Lorenz Deepmax Z2 standard detecting kit with coils and accessories"
+          ]
+        },
+        "suggestedSlug": "lorenz-deepmax-z2"
+      }
+    },
+    "okm-exp-6000-pro-plus": {
+      "tagline": "A wireless 3D ground scanner and metal detector built for the highest professional demands.",
+      "overviewParagraphs": [
+        "The OKM EXP 6000 PRO+ is a fully wireless 3D ground scanning system engineered in Altenburg, Germany, for treasure hunters, archaeologists, geologists, and prospectors who need to see beneath the surface before they dig. Its interchangeable carbon-fiber probes connect via magnetic mounts and communicate with the touchscreen control unit over WiFi, eliminating trailing cables in the field.",
+        "Six operating modes cover 3D Ground Scan, Tunnel Scan, Magnetometer, Mineral Scan, Pinpointer, and Live Scan, letting a single system handle cavity detection, tunnel mapping, natural gold prospecting, and pinpointing without swapping equipment. Scan data appears on the 6.5-inch touchscreen in real time and is later reconstructed into rotatable, color-coded 2D and 3D models.",
+        "Included is a pre-configured notebook running OKM Visualizer 3D Studio Professional Edition, which reconstructs saved scans into detailed 3D models for determining the position, size, and depth of buried targets after the field session. The system's telescopic probe extends to 124 cm and, combined with the SCMI-15-D dual/hexa geophysical phase reader, is rated for detection depths down to 25 m under favorable ground conditions."
+      ],
+      "keyFeatures": [
+        {
+          "title": "Wireless Telescopic Probe",
+          "description": "extends to 124 cm and connects over WiFi, removing the need for trailing sensor cables"
+        },
+        {
+          "title": "Six Operation Modes",
+          "description": "covers 3D Ground Scan, Tunnel Scan, Magnetometer, Mineral Scan, Pinpointer, and Live Scan in one device"
+        },
+        {
+          "title": "Carbon-Fiber Probe Set",
+          "description": "includes the Telescopic Probe, Super Sensor, Live-Stream Sensor, and Tunnel Sensor, each rigid yet lightweight for extended field use"
+        },
+        {
+          "title": "6.5-inch Touchscreen Control Unit",
+          "description": "displays live scan data at 1024 x 768 resolution and runs a multilingual interface translated into 12+ languages"
+        },
+        {
+          "title": "Visualizer 3D Studio Professional Edition",
+          "description": "reconstructs saved scans into rotatable, color-coded 3D models on the included notebook for detailed post-scan analysis"
+        },
+        {
+          "title": "Removable GPS Receiver",
+          "description": "geo-tags scan locations directly from the telescopic rod handle for accurate return-to-site mapping"
+        },
+        {
+          "title": "Video Glasses Compatibility",
+          "description": "streams live scan feed to compatible smart eyewear for hands-free field operation"
+        }
+      ],
+      "technicalSpecs": [
+        {
+          "label": "Operating Principle",
+          "value": "SCMI-15-D Dual/Hexa Geophysical Phase Reader with 3D ground scanning"
+        },
+        {
+          "label": "Detection Range",
+          "value": "Up to 30 m wireless operating distance (line of sight) between probe and control unit"
+        },
+        {
+          "label": "Depth",
+          "value": "Down to 25 m (82 ft) under favorable ground conditions"
+        },
+        {
+          "label": "3D Imaging Software",
+          "value": "OKM Visualizer 3D Studio Professional Edition (included on pre-configured notebook)"
+        },
+        {
+          "label": "Power Source",
+          "value": "Rechargeable battery, 11.8-19 VDC, 50W max (control unit)"
+        },
+        {
+          "label": "Weight",
+          "value": "Control unit ~2.34 kg; telescopic rod ~1.76 kg; probes 0.76-1.04 kg each"
+        },
+        {
+          "label": "Warranty",
+          "value": "2 Years"
+        },
+        {
+          "label": "Manufacturer",
+          "value": "OKM"
+        },
+        {
+          "label": "Country of Origin",
+          "value": "Germany"
+        },
+        {
+          "label": "Control Unit Display",
+          "value": "6.5\" touchscreen, 1024 x 768 pixels"
+        },
+        {
+          "label": "Operating Modes",
+          "value": "3D Ground Scan, Tunnel Scan, Magnetometer, Mineral Scan, Pinpointer, Live Scan"
+        },
+        {
+          "label": "Operating Time",
+          "value": "Approx. 4 hours (control unit), approx. 5 hours (telescopic rod) at full charge, 25°C"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "-10°C to 50°C"
+        },
+        {
+          "label": "Processor / Memory",
+          "value": "QuadCore AMD @ 2GHz, 4GB RAM, 8GB microSD storage"
+        },
+        {
+          "label": "Connectivity",
+          "value": "WiFi 802.11n wireless probe connection"
+        },
+        {
+          "label": "Probe Material",
+          "value": "Carbon fiber, magnetic quick-mount connectors"
+        }
+      ],
+      "whatsInTheBox": [
+        "1x Control Unit",
+        "1x Wireless Telescopic Probe",
+        "1x Wireless Super Sensor",
+        "1x Wireless Live-Stream Sensor",
+        "1x Wireless Tunnel Sensor",
+        "1x Telescopic Rod with GPS Receiver Cap",
+        "1x Pre-configured Notebook",
+        "1x OKM Visualizer 3D Studio Professional Edition (software)",
+        "1x Bluetooth Headphones with charging cable",
+        "1x Charger with cable",
+        "1x Travel Adapter Set",
+        "1x Waterproof Protector Case",
+        "1x Quick Start Guide"
+      ],
+      "idealFor": [
+        {
+          "title": "Archaeological Surveys",
+          "description": "A strong fit for archaeological surveys with the OKM EXP 6000 PRO+.",
+          "icon": "compass"
+        },
+        {
+          "title": "Cavity & Tunnel Detection",
+          "description": "A strong fit for cavity and tunnel detection with the OKM EXP 6000 PRO+.",
+          "icon": "search"
+        },
+        {
+          "title": "Natural Gold Prospecting",
+          "description": "A strong fit for natural gold prospecting with the OKM EXP 6000 PRO+.",
+          "icon": "star"
+        },
+        {
+          "title": "Professional Treasure Hunting",
+          "description": "A strong fit for professional treasure hunting with the OKM EXP 6000 PRO+.",
+          "icon": "pin"
+        }
+      ],
+      "faq": [],
+      "reviews": [],
+      "sku": "OKM-EXP6000-PROPLUS",
+      "model": "EXP 6000 PRO+",
+      "availability": "Available",
+      "applications": [
+        "Archaeological Surveys",
+        "Cavity & Tunnel Detection",
+        "Natural Gold Prospecting",
+        "Professional Treasure Hunting"
+      ],
+      "downloads": [],
+      "images": {
+        "main": "/images/products/okm-exp-6000-pro-plus-1.jpg",
+        "gallery": [
+          "/images/products/okm-exp-6000-pro-plus-2.jpg",
+          "/images/products/okm-exp-6000-pro-plus-3.jpg",
+          "/images/products/okm-exp-6000-pro-plus-4-delivery-scope.jpg"
+        ]
+      },
+      "seo": {
+        "title": "OKM EXP 6000 PRO+ | 3D Ground Scanner",
+        "metaDescription": "OKM EXP 6000 PRO+ wireless 3D ground scanner from Germany. 25m detection depth, six scan modes, carbon probes, and Visualizer 3D Studio software.",
+        "imageAltText": {
+          "main": "OKM EXP 6000 PRO+ 3D ground scanner control unit and telescopic probe",
+          "gallery": [
+            "OKM EXP 6000 PRO+ wireless probe assembly",
+            "OKM EXP 6000 PRO+ control unit touchscreen display",
+            "OKM EXP 6000 PRO+ full delivery scope with case and accessories"
+          ]
+        },
+        "suggestedSlug": "okm-exp-6000-pro-plus"
+      }
     }
   }
 }

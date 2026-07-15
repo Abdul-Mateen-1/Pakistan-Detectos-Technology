@@ -2,17 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap');
 
 @theme {
-  /* ===== Colors (Design Brief Palette) ===== */
-  --color-primary: #C5A044;
-  --color-primary-hover: #D4AF5A;
-  --color-primary-light: #E0C06A;
-  --color-primary-glow: rgba(197, 160, 68, 0.2);
+  /* ===== Colors — HYBRID LIGHT THEME =====
+     The site body is light (warm cream pages, white cards, dark text) while
+     the navbar, footer, and closing CTA stay black-and-gold via the
+     `.theme-dark` scope class defined below @theme. The `dark-*` token NAMES
+     are kept (253 usages across 65 components read them) — only their VALUES
+     are light now. Inside `.theme-dark` the original dark values are restored,
+     so the same utility classes render correctly in both contexts. */
 
-  --color-dark: #1A1A18;
-  --color-dark-deep: #111111;
-  --color-dark-surface: #1E1E1A;
-  --color-dark-card: #222222;
-  --color-dark-border: #333333;
+  /* Deep gold — darker than the dark-theme gold so text stays readable on
+     white (≈4.5:1); `.theme-dark` restores the brighter #C5A044 family. */
+  --color-primary: #94742A;
+  --color-primary-hover: #7E621F;
+  --color-primary-light: #A98A3B;
+  --color-primary-glow: rgba(148, 116, 42, 0.14);
+
+  --color-dark: #F8F6F1;         /* page background */
+  --color-dark-deep: #F1EDE5;    /* deeper page bands */
+  --color-dark-surface: #F0EDE6; /* input fills, chips */
+  --color-dark-card: #FFFFFF;    /* cards */
+  --color-dark-border: #E3DED3;  /* hairlines */
 
   /* Light section palette */
   --color-light: #F8F6F1;
@@ -20,10 +29,10 @@
   --color-light-border: #DDD9D0;
   --color-light-card: #FFFFFF;
 
-  /* Text tokens — dark section */
-  --color-text-primary: #F5F5F5;
-  --color-text-secondary: #A1A1AA;
-  --color-text-muted: #71717A;
+  /* Text tokens — main (light) sections; `.theme-dark` restores light-on-dark */
+  --color-text-primary: #1A1A18;
+  --color-text-secondary: #4A4A48;
+  --color-text-muted: #71706C;
 
   /* Text tokens — light section */
   --color-text-dark: #1A1A18;
@@ -48,11 +57,11 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
 
-  /* ===== Shadows ===== */
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --shadow-card-light: 0 2px 16px rgba(0, 0, 0, 0.3);
-  --shadow-card-light-hover: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(197, 160, 68, 0.08);
-  --shadow-gold-glow: 0 0 24px rgba(197, 160, 68, 0.2);
+  /* ===== Shadows (tuned for light backgrounds) ===== */
+  --shadow-card: 0 4px 20px rgba(26, 26, 24, 0.07);
+  --shadow-card-light: 0 2px 12px rgba(26, 26, 24, 0.06);
+  --shadow-card-light-hover: 0 10px 30px rgba(26, 26, 24, 0.10), 0 0 16px rgba(148, 116, 42, 0.07);
+  --shadow-gold-glow: 0 0 24px rgba(148, 116, 42, 0.14);
   --shadow-card-light-section: 0 2px 12px rgba(0, 0, 0, 0.06);
   --shadow-card-light-section-hover: 0 8px 30px rgba(0, 0, 0, 0.1), 0 0 16px rgba(197, 160, 68, 0.06);
 
@@ -69,6 +78,33 @@
   --animate-fade-in: fade-in 0.6s ease-out forwards;
   --animate-slide-up: slide-up 0.6s ease-out forwards;
   --animate-slide-right: slide-right 0.5s ease-out forwards;
+}
+
+/* ===== Dark scope — navbar, footer, closing CTA =====
+   Restores the original black-and-gold palette for any subtree carrying
+   .theme-dark. Utilities like bg-dark-card / text-text-primary read these
+   CSS variables, so the same components render dark here and light
+   elsewhere without per-component changes. */
+.theme-dark {
+  --color-primary: #C5A044;
+  --color-primary-hover: #D4AF5A;
+  --color-primary-light: #E0C06A;
+  --color-primary-glow: rgba(197, 160, 68, 0.2);
+
+  --color-dark: #1A1A18;
+  --color-dark-deep: #111111;
+  --color-dark-surface: #1E1E1A;
+  --color-dark-card: #222222;
+  --color-dark-border: #333333;
+
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #A1A1AA;
+  --color-text-muted: #71717A;
+
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-card-light: 0 2px 16px rgba(0, 0, 0, 0.3);
+  --shadow-card-light-hover: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(197, 160, 68, 0.08);
+  --shadow-gold-glow: 0 0 24px rgba(197, 160, 68, 0.2);
 }
 
 @keyframes fade-in {
@@ -124,7 +160,7 @@ body {
 /* ===== Selection Styles ===== */
 ::selection {
   background-color: var(--color-primary);
-  color: var(--color-dark);
+  color: #FFFFFF;
 }
 
 /* ===== Scroll Reveal System =====

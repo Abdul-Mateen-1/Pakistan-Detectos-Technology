@@ -6,18 +6,19 @@
  */
 interface Props {
   name: string;
-  logo: string;
+  logo?: string;
+  initials: string;
   models: number;
   slug: string;
   index: number;
 }
 
-const { name, logo, models, slug, index } = Astro.props;
+const { name, logo, initials, models, slug, index } = Astro.props;
 ---
 
 <a
   href={`/brands/${slug}`}
-  class="brand-card group flex flex-col items-center bg-dark-card rounded-xl border border-dark-border overflow-hidden transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_16px_rgba(197,160,68,0.1)]"
+  class="brand-card group flex flex-col items-center bg-dark-card rounded-xl border border-dark-border overflow-hidden transition-all duration-[280ms] ease-out hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_26px_rgba(26,26,24,0.09),0_0_14px_rgba(148,116,42,0.08)]"
   data-reveal="up"
   style={`transition-delay: ${index * 80}ms;`}
   aria-label={`${name} — ${models} models available. Explore collection.`}
@@ -25,12 +26,18 @@ const { name, logo, models, slug, index } = Astro.props;
   <!-- Logo -->
   <div class="w-full flex items-center justify-center px-6 py-8 sm:py-10">
     <div class="h-10 sm:h-12 flex items-center justify-center">
-      <img
-        src={logo}
-        alt={`${name} logo`}
-        class="max-h-full max-w-[140px] object-contain brightness-0 invert opacity-70 transition-all duration-[280ms] ease-out group-hover:brightness-100 group-hover:invert-0 group-hover:opacity-100"
-        loading="lazy"
-      />
+      {logo ? (
+        <img
+          src={logo}
+          alt={`${name} logo`}
+          class="max-h-full max-w-[140px] object-contain brightness-0 opacity-60 transition-all duration-[280ms] ease-out group-hover:brightness-100 group-hover:opacity-100"
+          loading="lazy"
+        />
+      ) : (
+        <div class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-dark-surface border border-dark-border text-primary font-display text-sm opacity-80 transition-opacity duration-[280ms] ease-out group-hover:opacity-100">
+          {initials}
+        </div>
+      )}
     </div>
   </div>
 

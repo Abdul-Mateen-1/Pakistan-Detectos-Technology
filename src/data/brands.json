@@ -3,7 +3,7 @@
     "id": "nokta",
     "name": "Nokta",
     "logo": "/images/brands/nokta-logo.svg",
-    "models": 13,
+    "models": 16,
     "slug": "nokta",
     "initials": "N",
     "pageFeatured": true,
@@ -19,7 +19,7 @@
     ],
     "pageStats": [
       {
-        "value": "13",
+        "value": "16",
         "label": "Models"
       },
       {
@@ -36,7 +36,7 @@
       "description": "Precision detection technology from Turkey, engineered for professionals and enthusiasts. Nokta detectors combine advanced multi-frequency IQ with rugged waterproof construction — the choice of both first-time hunters and seasoned prospectors.",
       "stats": [
         {
-          "value": "13",
+          "value": "16",
           "label": "Models"
         },
         {
@@ -107,7 +107,7 @@
     "id": "goldxtra",
     "name": "GoldXtra",
     "logo": "/images/brands/goldxtra-logo.png",
-    "models": 7,
+    "models": 10,
     "slug": "goldxtra",
     "initials": "GX",
     "location": "Dubai, UAE",
@@ -116,7 +116,7 @@
     "metaDescription": "GoldXtra long-range locators in Pakistan — Target 2000, Deep Hunter, and the full GoldXtra range.",
     "pageStats": [
       {
-        "value": "7",
+        "value": "10",
         "label": "Models"
       },
       {
@@ -129,7 +129,7 @@
       "description": "Specialist long-range locator manufacturer focused on deep-target detection over large search areas. GoldXtra systems combine directional discrimination with adjustable frequency for professional treasure hunting operations across challenging terrain.",
       "stats": [
         {
-          "value": "7",
+          "value": "10",
           "label": "Models"
         },
         {
@@ -149,5 +149,212 @@
       "Long-Range Locators",
       "Metal Detectors"
     ]
+  },
+  {
+    "id": "garrett",
+    "name": "Garrett",
+    "logo": "/images/brands/garrett-logo.svg",
+    "models": 5,
+    "slug": "garrett",
+    "initials": "GA",
+    "location": "Garland, Texas, USA",
+    "foundedYear": 1964,
+    "description": "American pioneer of metal detection technology since 1964, trusted by hobbyists, security services, and archaeologists worldwide. Garrett's ACE and Apex lines pair rugged, field-tested electronics with the kind of straightforward operation that keeps both beginners and veteran detectorists coming back.",
+    "metaDescription": "Garrett metal detectors in Pakistan — ACE 200i/300i/400i, Apex, and GTI 2500, from an authorized distributor.",
+    "specializesIn": [
+      "Metal Detectors",
+      "VLF Technology",
+      "Multi-Frequency"
+    ],
+    "pageStats": [
+      {
+        "value": "5",
+        "label": "Models"
+      },
+      {
+        "value": "60+",
+        "label": "Years"
+      },
+      {
+        "value": "USA",
+        "label": "Made"
+      }
+    ],
+    "showcase": {
+      "tagline": "American-engineered metal detectors trusted worldwide since 1964.",
+      "description": "Garrett pioneered modern metal detection technology, and its ACE and Apex lines remain a byword for reliable, easy-to-use detectors — from beginner-friendly single-frequency machines to multi-frequency, wireless-ready professional models.",
+      "stats": [
+        {
+          "value": "5",
+          "label": "Models"
+        },
+        {
+          "value": "VLF",
+          "label": "Technology"
+        },
+        {
+          "value": "USA",
+          "label": "Made"
+        }
+      ],
+      "image": "/images/products/garrett-apex-metal-detector-1.jpg"
+    }
+  },
+  {
+    "id": "aka",
+    "name": "AKA",
+    "logo": "/images/brands/aka-logo.png",
+    "slug": "aka",
+    "initials": "AK",
+    "location": "Moscow, Russia",
+    "foundedYear": 1993,
+    "description": "Russian manufacturer of professional deep-search metal detectors, in production since 1993. AKA Intronika systems combine patented space-harmonic filtering with hodograph target identification for precise discrimination at extreme depth across mineralized and iron-heavy ground.",
+    "metaDescription": "AKA long-range and deep-search locators in Pakistan — the AKA Signum and other professional detection systems from Russia.",
+    "specializesIn": [
+      "Long-Range Locators",
+      "Deep-Search Detectors",
+      "Ground Balance Systems"
+    ],
+    "models": 1,
+    "pageStats": [
+      {
+        "value": "1",
+        "label": "Models"
+      },
+      {
+        "value": "33",
+        "label": "Years"
+      }
+    ]
+  },
+  {
+    "id": "stinger",
+    "name": "Stinger",
+    "logo": "/images/brands/stinger-logo.png",
+    "slug": "stinger",
+    "initials": "ST",
+    "location": "United States",
+    "description": "USA-branded VLF ground detection manufacturer focused on gold prospecting and treasure hunting equipment. Stinger detectors pair automatic ground balancing with mineral and hot-rock filtering, distributed through an international authorized-dealer network across Asia, the Middle East, and beyond.",
+    "metaDescription": "Stinger metal detectors in Pakistan — the Stinger X5 VLF ground detector with dual search coils, from an authorized distributor.",
+    "specializesIn": [
+      "Metal Detectors",
+      "Gold Detectors",
+      "VLF Technology"
+    ],
+    "models": 1,
+    "pageStats": [
+      {
+        "value": "1",
+        "label": "Models"
+      },
+      {
+        "value": "USA",
+        "label": "Made"
+      }
+    ]
+  },
+  {
+    "id": "multimax",
+    "name": "Multimax",
+    "slug": "multimax",
+    "initials": "MX",
+    "location": "Cekmekoy, Istanbul, Turkey",
+    "description": "Multimax is a professional deep ground-search detector line manufactured by ASTEAM, a Turkish R&D firm under AS Dedektor based in Istanbul. Built around multi-channel pulse ground balance technology, Multimax systems are engineered for extreme-depth target recovery in mineralized and rocky soils across treasure hunting and archaeological applications.",
+    "metaDescription": "Multimax deep ground search detectors, manufactured by ASTEAM (AS Dedektor) in Turkey, deliver 16-20 foot pulse ground balance detection for professional treasure hunting and archaeological survey.",
+    "specializesIn": [
+      "Underground Imaging",
+      "Deep Ground Search",
+      "Pulse Induction Detection"
+    ],
+    "models": 1,
+    "pageStats": [
+      {
+        "value": "1",
+        "label": "Models"
+      },
+      {
+        "value": "Turkey",
+        "label": "Made"
+      }
+    ]
+  },
+  {
+    "id": "lorenz",
+    "name": "Lorenz",
+    "logo": "/images/brands/lorenz-logo.png",
+    "slug": "lorenz",
+    "initials": "LZ",
+    "location": "Germany",
+    "foundedYear": 1996,
+    "description": "German manufacturer of professional pulse induction ground scanners engineered for maximum depth on large, deeply buried targets. Lorenz Deepmax systems combine Pulse GBS ground balancing with interchangeable frame coils, serving treasure hunters, archaeologists and geologists working at extreme range.",
+    "metaDescription": "Lorenz metal detectors in Pakistan — the German-engineered Deepmax Z2 long-range deep search ground scanner, available from an authorized distributor.",
+    "specializesIn": [
+      "Underground Imaging",
+      "Deep Search Systems",
+      "Pulse Induction",
+      "Long-Range Locators"
+    ],
+    "models": 1,
+    "pageStats": [
+      {
+        "value": "1",
+        "label": "Models"
+      },
+      {
+        "value": "30",
+        "label": "Years"
+      }
+    ]
+  },
+  {
+    "id": "okm",
+    "name": "OKM",
+    "logo": "/images/brands/okm-logo.png",
+    "slug": "okm",
+    "initials": "OK",
+    "location": "Altenburg, Germany",
+    "foundedYear": 2002,
+    "description": "German manufacturer specializing in handmade 3D ground scanners and geophysical detection systems for archaeology, cavity detection, and professional treasure hunting. OKM devices are engineered in Altenburg, Germany and certified by independent geophysical experts, combining wireless probe technology with dedicated 3D visualization software.",
+    "metaDescription": "OKM Germany builds professional 3D ground scanners and metal detectors handmade in Altenburg, Germany, used by archaeologists, prospectors, and treasure hunters worldwide.",
+    "specializesIn": [
+      "Underground Imaging",
+      "3D Ground Scanning",
+      "Cavity Detection",
+      "Gold Prospecting"
+    ],
+    "models": 1,
+    "pageStats": [
+      {
+        "value": "1",
+        "label": "Models"
+      },
+      {
+        "value": "24",
+        "label": "Years"
+      },
+      {
+        "value": "25m",
+        "label": "Max Depth"
+      }
+    ],
+    "showcase": {
+      "tagline": "German-engineered 3D ground scanning technology, handmade in Altenburg since 2002.",
+      "description": "OKM builds professional 3D ground scanners and metal detectors by hand in Altenburg, Germany, combining wireless carbon-fiber probe technology with dedicated 3D visualization software for archaeology, cavity detection, and treasure hunting.",
+      "stats": [
+        {
+          "value": "25m",
+          "label": "Max Depth"
+        },
+        {
+          "value": "6",
+          "label": "Scan Modes"
+        },
+        {
+          "value": "3D",
+          "label": "Imaging"
+        }
+      ],
+      "image": "/images/products/okm-exp-6000-pro-plus-1.jpg"
+    }
   }
 ]

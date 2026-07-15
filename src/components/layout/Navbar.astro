@@ -46,7 +46,7 @@ const searchIndex = {
 
 <header
   id="navbar"
-  class="fixed top-0 left-0 right-0 z-[var(--z-navbar)] transition-all duration-300 backdrop-blur-xl border-b border-white/5 bg-[rgba(26,26,24,0.72)] shadow-[0_1px_0_rgba(255,255,255,0.04)_inset,0_8px_30px_rgba(0,0,0,0.28)]"
+  class="theme-dark fixed top-0 left-0 right-0 z-[var(--z-navbar)] transition-all duration-300 backdrop-blur-xl border-b border-white/5 bg-[rgba(26,26,24,0.88)] shadow-[0_1px_0_rgba(255,255,255,0.04)_inset,0_8px_30px_rgba(0,0,0,0.18)]"
   role="banner"
 >
   <Container>
@@ -175,7 +175,7 @@ const searchIndex = {
           variant="primary"
           size="sm"
           href="/contact"
-          class="hidden lg:inline-flex"
+          class="max-lg:hidden lg:inline-flex"
         >
           Get Quote
           <svg
@@ -200,7 +200,7 @@ const searchIndex = {
           variant="primary"
           size="sm"
           href="/contact"
-          class="hidden sm:inline-flex lg:hidden whitespace-nowrap"
+          class="max-sm:hidden sm:inline-flex lg:hidden whitespace-nowrap"
         >
           Quote
         </Button>
@@ -324,7 +324,7 @@ const searchIndex = {
   aria-modal="true"
   aria-label="Search"
 >
-  <div class="mx-auto w-full max-w-xl mt-[8vh] sm:mt-[12vh] bg-dark-card border border-dark-border rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col max-h-[76vh]">
+  <div class="mx-auto w-full max-w-xl mt-[8vh] sm:mt-[12vh] bg-dark-card border border-dark-border rounded-xl shadow-[0_20px_50px_rgba(26,26,24,0.2)] overflow-hidden flex flex-col max-h-[76vh]">
     <!-- Input row -->
     <div class="flex items-center gap-3 px-4 sm:px-5 shrink-0 border-b border-dark-border">
       <svg
@@ -523,7 +523,7 @@ const searchIndex = {
       html += `<div class="px-4 sm:px-5 pt-2 pb-1 text-[10px] font-semibold uppercase tracking-wider text-text-muted">Products</div>`;
       matchedProducts.forEach((p) => {
         html += `<a href="/products/${p.slug}" class="flex items-center gap-3 px-4 sm:px-5 py-2.5 hover:bg-dark-surface transition-colors duration-150">
-          <span class="w-11 h-11 shrink-0 rounded-lg bg-white overflow-hidden flex items-center justify-center">
+          <span class="w-11 h-11 shrink-0 rounded-lg bg-white border border-dark-border/70 overflow-hidden flex items-center justify-center">
             <img src="${p.image}" alt="" class="w-full h-full object-contain p-1" loading="lazy" />
           </span>
           <span class="min-w-0 flex-1">

@@ -2,7 +2,7 @@
   "primary": {
     "name": "Gold Detectors",
     "description": "Professional gold prospecting equipment for alluvial and hard-rock deposits",
-    "count": 11,
+    "count": 12,
     "slug": "gold-detectors",
     "icon": "⛏",
     "image": "/images/categories/gold-detectors.png"
@@ -10,19 +10,19 @@
   "secondary": [
     {
       "name": "Metal Detectors",
-      "count": 36,
+      "count": 45,
       "slug": "metal-detectors",
       "image": "/images/categories/metal-detectors.png"
     },
     {
       "name": "Underground Imaging",
-      "count": 2,
+      "count": 5,
       "slug": "underground-imaging",
       "image": "/images/categories/underground-imaging.png"
     },
     {
       "name": "Long Range Locators",
-      "count": 4,
+      "count": 7,
       "slug": "long-range-locators",
       "image": "/images/categories/long-range-locators.png"
     }

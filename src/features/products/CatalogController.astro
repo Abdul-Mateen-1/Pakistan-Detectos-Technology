@@ -95,6 +95,12 @@ const initial = {
   const paginationRoot = document.getElementById("pagination");
   const paginationList = document.getElementById("pagination-list");
   const paginationRange = document.getElementById("pagination-range");
+  const priceRangeSlider = document.getElementById(
+    "price-range-slider",
+  ) as HTMLInputElement | null;
+  const priceMaxInput = document.getElementById(
+    "price-max",
+  ) as HTMLInputElement | null;
 
   const PAGE_SIZE = 24;
 
@@ -169,6 +175,15 @@ const initial = {
     window.history.replaceState({}, "", newUrl);
   }
 
+  // ------- Price slider fill -------
+  function updateSliderFill(slider: HTMLInputElement) {
+    const min = Number(slider.min) || 0;
+    const max = Number(slider.max) || 100;
+    const val = Number(slider.value);
+    const pct = max > min ? ((val - min) / (max - min)) * 100 : 100;
+    slider.style.background = `linear-gradient(to right, var(--color-primary) ${pct}%, var(--color-dark-border) ${pct}%)`;
+  }
+
   // ------- Sync form inputs with state -------
   function syncInputsFromState() {
     // Desktop
@@ -190,6 +205,11 @@ const initial = {
     ) as HTMLInputElement | null;
     if (priceMinEl) priceMinEl.value = priceMin != null ? String(priceMin) : "";
     if (priceMaxEl) priceMaxEl.value = priceMax != null ? String(priceMax) : "";
+    if (priceRangeSlider) {
+      priceRangeSlider.value =
+        priceMax != null ? String(priceMax) : priceRangeSlider.max;
+      updateSliderFill(priceRangeSlider);
+    }
     const includeEl = document.querySelector<HTMLInputElement>(
       "[data-filter-input][name=includeQuote]",
     );
@@ -659,6 +679,17 @@ const initial = {
         render();
       });
     });
+  priceRangeSlider?.addEventListener("input", () => {
+    updateSliderFill(priceRangeSlider);
+    if (priceMaxInput) priceMaxInput.value = priceRangeSlider.value;
+  });
+  priceRangeSlider?.addEventListener("change", () => {
+    if (priceMaxInput) {
+      priceMaxInput.value = priceRangeSlider.value;
+      priceMaxInput.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+  });
+
   document
     .querySelectorAll<HTMLSelectElement>("[data-sort-select]")
     .forEach((sel) => {
