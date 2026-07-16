@@ -22,7 +22,7 @@ const fullTitle = title === 'Home'
   : `${title} | ${shortName}`;
 
 // Social crawlers (WhatsApp/Facebook/Twitter) require absolute image URLs.
-const siteUrl = (Astro.site ?? new URL('https://pakistandetectors.com')).toString();
+const siteUrl = (Astro.site ?? new URL('https://metaldetectors.pk')).toString();
 const absoluteOgImage = new URL(ogImage, siteUrl).toString();
 ---
 
@@ -68,7 +68,7 @@ const absoluteOgImage = new URL(ogImage, siteUrl).toString();
       "@context": "https://schema.org",
       "@type": ["Organization", "LocalBusiness"],
       "name": siteName,
-      "url": "https://pakistandetectors.com",
+      "url": "https://metaldetectors.pk",
       "description": description,
       "telephone": site.contact.phone,
       "email": site.contact.email,

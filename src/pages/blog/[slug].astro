@@ -32,7 +32,7 @@ const { slug } = Astro.params;
 const article = articles.find((a) => a.slug === slug)!;
 const details = (articleDetails as Record<string, any>)[slug as string];
 
-const canonicalUrl = `https://pakistandetectors.com/blog/${slug}`;
+const canonicalUrl = `https://metaldetectors.pk/blog/${slug}`;
 
 const articleSchema: Record<string, any> = {
   "@context": "https://schema.org",
@@ -45,7 +45,7 @@ const articleSchema: Record<string, any> = {
   mainEntityOfPage: canonicalUrl,
 };
 if (article.image) {
-  articleSchema.image = `https://pakistandetectors.com${article.image}`;
+  articleSchema.image = `https://metaldetectors.pk${article.image}`;
 }
 ---
 

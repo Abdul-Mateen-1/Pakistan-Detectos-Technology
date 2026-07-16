@@ -50,7 +50,7 @@ const productNoun = productNounMap[product.category] ?? "Equipment";
 const faq = [...productDetails.shared.faq, ...details.faq];
 const galleryImages = [product.image];
 
-const canonicalUrl = `https://pakistandetectors.com/products/${slug}`;
+const canonicalUrl = `https://metaldetectors.pk/products/${slug}`;
 const metaDescription =
   details.seo?.metaDescription ??
   `${product.description} Genuine ${product.brand} ${categoryInfo.name.toLowerCase()} available in Pakistan with authorized warranty and nationwide delivery.`;
@@ -59,7 +59,7 @@ const productSchema: Record<string, any> = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: product.name,
-  image: `https://pakistandetectors.com${product.image}`,
+  image: `https://metaldetectors.pk${product.image}`,
   description: metaDescription,
   sku: product.id,
   brand: { "@type": "Brand", name: product.brand },

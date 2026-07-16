@@ -15,8 +15,8 @@
 declare(strict_types=1);
 
 /* ---- Configuration ---- */
-const RECIPIENT_EMAIL  = 'hrdetectors2025@gmail.com';
-const FROM_EMAIL       = 'noreply@pakistandetectors.com'; // must be on your own domain
+const RECIPIENT_EMAIL  = 'abdul.mateen1771@gmail.com';
+const FROM_EMAIL       = 'noreply@metaldetectors.pk'; // must be on your own domain
 const FROM_NAME        = 'Pakistan Detectors Technology';
 const HONEYPOT_FIELD   = 'botcheck';
 const COOLDOWN_SECONDS = 30;

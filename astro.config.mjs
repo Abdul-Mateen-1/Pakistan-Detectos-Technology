@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://pakistandetectors.com',
+  site: 'https://metaldetectors.pk',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
