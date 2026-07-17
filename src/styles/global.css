@@ -107,6 +107,34 @@
   --shadow-gold-glow: 0 0 24px rgba(197, 160, 68, 0.2);
 }
 
+/* ===== Fixed header stack (announcement bar + navbar) =====
+   --header-h is the combined height a page must clear to sit below both
+   fixed bars; --announcement-h is just the announcement bar's own height.
+   Navbar.astro's scroll listener toggles `header-collapsed` on <html> once
+   the user scrolls past the announcement bar, shrinking both variables —
+   every consumer (Navbar's `top`, the products page's sticky filter bar/
+   sidebar) animates via its own `transition`, since a custom-property
+   change alone doesn't tween; only the property reading it does. */
+:root {
+  --announcement-h: 40px;
+  --header-h: 112px;
+}
+
+html.header-collapsed {
+  --announcement-h: 0px;
+  --header-h: 72px;
+}
+
+#announcement-bar {
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+html.header-collapsed #announcement-bar {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }

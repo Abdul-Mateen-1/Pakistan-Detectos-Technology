@@ -49,7 +49,7 @@ const searchIndex = {
 
 <header
   id="navbar"
-  class="theme-dark fixed top-10 left-0 right-0 z-[var(--z-navbar)] transition-all duration-300 backdrop-blur-xl border-b border-white/5 bg-[rgba(26,26,24,0.88)] shadow-[0_1px_0_rgba(255,255,255,0.04)_inset,0_8px_30px_rgba(0,0,0,0.18)]"
+  class="theme-dark fixed top-[var(--announcement-h)] left-0 right-0 z-[var(--z-navbar)] transition-all duration-300 backdrop-blur-xl border-b border-white/5 bg-[rgba(26,26,24,0.88)] shadow-[0_1px_0_rgba(255,255,255,0.04)_inset,0_8px_30px_rgba(0,0,0,0.18)]"
   role="banner"
 >
   <Container>
@@ -413,14 +413,13 @@ const searchIndex = {
 
   const navbar = document.getElementById("navbar");
   if (navbar) {
-    window.addEventListener(
-      "scroll",
-      () => {
-        navbar.style.backgroundColor =
-          window.scrollY > 50 ? "rgba(26,26,24,0.95)" : "rgba(26,26,24,0.72)";
-      },
-      { passive: true },
-    );
+    const onScroll = () => {
+      document.documentElement.classList.toggle("header-collapsed", window.scrollY > 10);
+      navbar.style.backgroundColor =
+        window.scrollY > 50 ? "rgba(26,26,24,0.95)" : "rgba(26,26,24,0.72)";
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
   }
 </script>
 
