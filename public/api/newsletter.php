@@ -7,6 +7,11 @@
  * an email notification to the business inbox, which acts as the list until
  * a real service (Mailchimp/ConvertKit/etc.) is wired in.
  *
+ * Sends via authenticated SMTP (see smtp-mailer.php) rather than PHP's
+ * built-in mail() — mail() is disabled on this host. Requires
+ * smtp-config.php (gitignored, real credentials) alongside this file on
+ * the server — see smtp-config.example.php for the template.
+ *
  * ACCEPTS   POST only ({ email, botcheck } form-encoded).
  * RETURNS   JSON: { "success": true|false, "message": "..." }
  * REQUIRES  PHP 7.4+.
@@ -16,7 +21,6 @@ declare(strict_types=1);
 
 /* ---- Configuration ---- */
 const RECIPIENT_EMAIL  = 'abdul.mateen1771@gmail.com';
-const FROM_EMAIL       = 'noreply@metaldetectors.pk'; // must be on your own domain
 const FROM_NAME        = 'Pakistan Detectors Technology';
 const HONEYPOT_FIELD   = 'botcheck';
 const COOLDOWN_SECONDS = 30;
@@ -34,6 +38,14 @@ function respond(int $status, bool $success, string $message): void
 header('Content-Type: application/json; charset=UTF-8');
 header('X-Content-Type-Options: nosniff');
 header('Cache-Control: no-store');
+
+/* ---- SMTP config (mail() is disabled on this host) ---- */
+$smtpConfigPath = __DIR__ . '/smtp-config.php';
+if (!is_file($smtpConfigPath)) {
+    respond(500, false, 'Mail is not configured on this server yet.');
+}
+require $smtpConfigPath;
+require __DIR__ . '/smtp-mailer.php';
 
 /* ---- POST only ---- */
 if (strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
@@ -70,18 +82,19 @@ $body = "New newsletter subscription from the website:\n\n"
     . ((string) ($_SERVER['HTTP_REFERER'] ?? '') !== '' ? 'Page: ' . substr((string) $_SERVER['HTTP_REFERER'], 0, 300) . "\n" : '');
 
 $headers = [
-    'From'         => FROM_NAME . ' <' . FROM_EMAIL . '>',
+    'Date'         => date('r'),
+    'Message-ID'   => '<' . bin2hex(random_bytes(16)) . '@' . substr(SMTP_USERNAME, strpos(SMTP_USERNAME, '@') + 1) . '>',
+    'From'         => FROM_NAME . ' <' . SMTP_USERNAME . '>',
+    'To'           => RECIPIENT_EMAIL,
     'Reply-To'     => $email, // validated above, cannot contain CR/LF
+    'Subject'      => 'New Newsletter Subscription',
     'MIME-Version' => '1.0',
     'Content-Type' => 'text/plain; charset=UTF-8',
 ];
 
-$sent = @mail(RECIPIENT_EMAIL, 'New Newsletter Subscription', $body, $headers, '-f' . FROM_EMAIL);
-if (!$sent) {
-    $sent = @mail(RECIPIENT_EMAIL, 'New Newsletter Subscription', $body, $headers);
-}
+$result = smtp_send(SMTP_HOST, SMTP_PORT, SMTP_USERNAME, SMTP_PASSWORD, SMTP_USERNAME, RECIPIENT_EMAIL, $headers, $body);
 
-if (!$sent) {
+if (!$result['success']) {
     respond(500, false, 'Sorry — the subscription could not be processed right now. Please try again later.');
 }
 

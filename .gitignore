@@ -17,6 +17,9 @@ pnpm-debug.log*
 .env
 .env.production
 
+# real SMTP credentials — never commit; see public/api/smtp-config.example.php
+public/api/smtp-config.php
+
 # macOS-specific files
 .DS_Store
 

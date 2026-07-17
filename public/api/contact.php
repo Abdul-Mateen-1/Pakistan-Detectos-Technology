@@ -6,15 +6,20 @@
  *
  *  WHAT THIS IS
  *      A single-file, dependency-free endpoint for the website contact form.
- *      No framework, no Composer, no database — only PHP's built-in mail().
- *      Requires PHP 7.4+ (every current Hostinger plan ships 7.4–8.x).
+ *      No framework, no Composer, no database. Sends mail via authenticated
+ *      SMTP (see smtp-mailer.php) rather than PHP's built-in mail() — mail()
+ *      is disabled on this host, and SMTP is more reliable anyway.
+ *      Requires PHP 7.4+.
  *
- *  DEPLOYMENT (Hostinger)
+ *  DEPLOYMENT
  *      In this repo the file lives at  public/api/contact.php  so that
  *      `astro build` copies it verbatim to  dist/api/contact.php .
- *      Upload the contents of dist/ to public_html/ and it becomes:
+ *      Upload the contents of dist/ to your host's web root and it becomes:
  *
  *          public_html/api/contact.php  →  https://yourdomain.com/api/contact.php
+ *
+ *      Requires smtp-config.php (gitignored, real credentials) to exist
+ *      alongside this file on the server — see smtp-config.example.php.
  *
  *  HOW THE FORM CALLS IT
  *      fetch("/api/contact.php", { method: "POST", body: new FormData(form) })
@@ -30,10 +35,10 @@
  *        -d "message=This is a test message from curl."
  *
  *  DELIVERABILITY
- *      FROM_EMAIL must be an address on the domain this script is hosted on
- *      (Hostinger hPanel → Emails — creating the mailbox also sets up
- *      SPF/DKIM). Never put the visitor's address in From: — that fails
- *      SPF/DKIM and lands in spam; the visitor's address goes in Reply-To.
+ *      SMTP_USERNAME (in smtp-config.php) must be a real mailbox on the
+ *      domain this script is hosted on. Never put the visitor's address in
+ *      From: — that fails SPF/DKIM and lands in spam; the visitor's address
+ *      goes in Reply-To instead.
  * ============================================================================
  */
 
@@ -46,9 +51,8 @@ declare(strict_types=1);
 /** Inbox that receives the inquiries. */
 const RECIPIENT_EMAIL = 'abdul.mateen1771@gmail.com';
 
-/** Sender identity — MUST be on your own domain (see note above). */
-const FROM_EMAIL = 'noreply@metaldetectors.pk';
-const FROM_NAME  = 'Pakistan Detectors Technology';
+/** Display name shown as the sender; the address is SMTP_USERNAME (below). */
+const FROM_NAME = 'Pakistan Detectors Technology';
 
 /** Prefix for the email subject line. */
 const SUBJECT_PREFIX = 'New Website Inquiry';
@@ -193,6 +197,19 @@ function detail_row(string $label, string $value, string $href = ''): string
 header('Content-Type: application/json; charset=UTF-8');
 header('X-Content-Type-Options: nosniff');
 header('Cache-Control: no-store');
+
+/* ==========================================================================
+ * 3b. SMTP CONFIG — mail() is disabled on this host, so mail is sent via
+ *     authenticated SMTP instead. Real credentials live in smtp-config.php,
+ *     which is gitignored; see smtp-config.example.php for the template.
+ * ======================================================================== */
+
+$smtpConfigPath = __DIR__ . '/smtp-config.php';
+if (!is_file($smtpConfigPath)) {
+    respond(500, false, 'Mail is not configured on this server yet.');
+}
+require $smtpConfigPath;
+require __DIR__ . '/smtp-mailer.php';
 
 /* ==========================================================================
  * 4. METHOD GATE — POST only; direct GET access (or anything else) → 405
@@ -396,29 +413,40 @@ $body = '--' . $boundary . "\r\n"
     . '--' . $boundary . "--\r\n";
 
 /*
- * Headers as an array (PHP 7.2+): PHP joins them correctly and applies its
- * own header-injection protection on top of our sanitization.
- * From = our own domain (SPF/DKIM alignment); Reply-To = the visitor, so
- * hitting "Reply" in the inbox answers them directly.
+ * Headers as an array: written verbatim into the SMTP DATA block.
+ * From = our own mailbox (SPF/DKIM/auth alignment); Reply-To = the visitor,
+ * so hitting "Reply" in the inbox answers them directly.
+ * Date/Message-ID are normally added automatically by mail() — since raw
+ * SMTP bypasses that, we add them ourselves; spam filters (SpamAssassin)
+ * heavily penalize mail missing either one.
  */
 $headers = [
-    'From'         => format_address(FROM_NAME, FROM_EMAIL),
+    'Date'         => date('r'),
+    'Message-ID'   => '<' . bin2hex(random_bytes(16)) . '@' . substr(SMTP_USERNAME, strpos(SMTP_USERNAME, '@') + 1) . '>',
+    'From'         => format_address(FROM_NAME, SMTP_USERNAME),
+    'To'           => RECIPIENT_EMAIL,
     'Reply-To'     => format_address($fullName, $email),
+    'Subject'      => encode_mime_header($subject),
     'MIME-Version' => '1.0',
     'Content-Type' => 'multipart/alternative; boundary="' . $boundary . '"',
 ];
 
 /* ==========================================================================
- * 11. SEND — the -f flag sets the envelope sender (helps deliverability on
- *     Hostinger); if the server rejects the flag, retry once without it.
+ * 11. SEND — via authenticated SMTP (mail() is disabled on this host).
  * ======================================================================== */
 
-$sent = @mail(RECIPIENT_EMAIL, encode_mime_header($subject), $body, $headers, '-f' . FROM_EMAIL);
-if (!$sent) {
-    $sent = @mail(RECIPIENT_EMAIL, encode_mime_header($subject), $body, $headers);
-}
+$result = smtp_send(
+    SMTP_HOST,
+    SMTP_PORT,
+    SMTP_USERNAME,
+    SMTP_PASSWORD,
+    SMTP_USERNAME,
+    RECIPIENT_EMAIL,
+    $headers,
+    $body
+);
 
-if (!$sent) {
+if (!$result['success']) {
     respond(500, false, 'Sorry — your enquiry could not be sent right now. Please try again shortly, or contact us directly on WhatsApp.');
 }
 

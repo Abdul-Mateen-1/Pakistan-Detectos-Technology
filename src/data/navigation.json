@@ -1,11 +1,11 @@
 {
   "main": [
     { "label": "Home", "href": "/", "hasDropdown": false },
-    { "label": "Products", "href": "/products", "hasDropdown": true },
+    { "label": "About Us", "href": "/about", "hasDropdown": false },
     { "label": "Brands", "href": "/brands", "hasDropdown": false },
-    { "label": "About", "href": "/about", "hasDropdown": false },
-    { "label": "Blog", "href": "/blog", "hasDropdown": false },
-    { "label": "Contact", "href": "/contact", "hasDropdown": false }
+    { "label": "Products", "href": "/products", "hasDropdown": true },
+    { "label": "Contact Us", "href": "/contact", "hasDropdown": false },
+    { "label": "Blog", "href": "/blog", "hasDropdown": false }
   ],
   "footer": {
     "products": [
@@ -23,7 +23,7 @@
       { "label": "About Us", "href": "/about" },
       { "label": "Our Team", "href": "/about#team" },
       { "label": "Blog", "href": "/blog" },
-      { "label": "Contact", "href": "/contact" }
+      { "label": "Contact Us", "href": "/contact" }
     ]
   }
 }
