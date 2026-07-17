@@ -13,9 +13,10 @@
     "hours": "Mon–Sat, 9 AM – 6 PM"
   },
   "social": {
-    "facebook": "#",
-    "youtube": "#",
-    "instagram": "#"
+    "facebook": "https://www.facebook.com/Pakistandetectors",
+    "youtube": "https://www.youtube.com/@PakistanDetector",
+    "instagram": "https://www.instagram.com/pak_detectors/",
+    "linkedin": "https://www.linkedin.com/company/pakistan-detectors-trading-pvt.ltd/"
   },
   "authorizedBrands": ["Nokta", "Minelab", "GoldXtra"]
 }

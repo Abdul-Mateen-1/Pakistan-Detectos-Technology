@@ -6,6 +6,7 @@
  */
 import Container from "../ui/Container.astro";
 import Button from "../ui/Button.astro";
+import AnnouncementBar from "./AnnouncementBar.astro";
 import logoIcon from "../../assets/logo-icon.png";
 
 import navigation from "../../data/navigation.json";
@@ -44,9 +45,11 @@ const searchIndex = {
 };
 ---
 
+<AnnouncementBar />
+
 <header
   id="navbar"
-  class="theme-dark fixed top-0 left-0 right-0 z-[var(--z-navbar)] transition-all duration-300 backdrop-blur-xl border-b border-white/5 bg-[rgba(26,26,24,0.88)] shadow-[0_1px_0_rgba(255,255,255,0.04)_inset,0_8px_30px_rgba(0,0,0,0.18)]"
+  class="theme-dark fixed top-10 left-0 right-0 z-[var(--z-navbar)] transition-all duration-300 backdrop-blur-xl border-b border-white/5 bg-[rgba(26,26,24,0.88)] shadow-[0_1px_0_rgba(255,255,255,0.04)_inset,0_8px_30px_rgba(0,0,0,0.18)]"
   role="banner"
 >
   <Container>

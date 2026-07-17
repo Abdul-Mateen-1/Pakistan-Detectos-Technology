@@ -74,6 +74,7 @@ const absoluteOgImage = new URL(ogImage, siteUrl).toString();
       "telephone": site.contact.phone,
       "email": site.contact.email,
       "hasMap": site.contact.mapsUrl,
+      "sameAs": Object.values(site.social).filter((url) => url && url !== "#"),
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Gulberg Trade Center",
