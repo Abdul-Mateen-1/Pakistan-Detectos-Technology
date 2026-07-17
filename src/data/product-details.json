@@ -55,6 +55,10 @@
       ],
       "technicalSpecs": [
         {
+          "label": "Depth",
+          "value": "10-14 feet"
+        },
+        {
           "label": "Mode 1 Operating Principle",
           "value": "VLF"
         },
@@ -280,6 +284,10 @@
         {
           "label": "System Type",
           "value": "3D Imaging + LED Detection System"
+        },
+        {
+          "label": "Depth",
+          "value": "9-10 feet"
         },
         {
           "label": "Search Coils",
@@ -799,6 +807,10 @@
           "value": "4 kHz / 10 kHz / 20 kHz / Multi (SMF)"
         },
         {
+          "label": "Depth",
+          "value": "4 feet"
+        },
+        {
           "label": "Search Modes",
           "value": "5 modes (Park / Field / Beach / Relic / Gold)"
         },
@@ -1077,6 +1089,10 @@
         {
           "label": "Operating Frequency",
           "value": "15 kHz"
+        },
+        {
+          "label": "Depth",
+          "value": "2 feet"
         },
         {
           "label": "Search Modes",
@@ -1542,6 +1558,10 @@
           "value": "15 kHz"
         },
         {
+          "label": "Depth",
+          "value": "3 feet"
+        },
+        {
           "label": "Bluetooth",
           "value": "Yes"
         },
@@ -1751,6 +1771,10 @@
         {
           "label": "Operating Frequency",
           "value": "15 kHz"
+        },
+        {
+          "label": "Depth",
+          "value": "2 feet"
         },
         {
           "label": "Search Modes",
@@ -1972,6 +1996,10 @@
         {
           "label": "Operating Frequency",
           "value": "15 kHz"
+        },
+        {
+          "label": "Depth",
+          "value": "2 feet"
         },
         {
           "label": "Search Modes",
@@ -2396,6 +2424,10 @@
         {
           "label": "Model",
           "value": "SCORE"
+        },
+        {
+          "label": "Depth",
+          "value": "3 feet"
         },
         {
           "label": "Search Modes",
@@ -2840,6 +2872,10 @@
         {
           "label": "Operating Frequency",
           "value": "04 kHz, 15 kHz, 20 kHz, Multi"
+        },
+        {
+          "label": "Depth",
+          "value": "3-4 feet"
         },
         {
           "label": "Audio Frequencies",
@@ -4013,6 +4049,10 @@
           "value": "Multi-IQ, 4, 5, 10, 15, 20, 40 kHz"
         },
         {
+          "label": "Depth",
+          "value": "4 feet"
+        },
+        {
           "label": "Sensitivity",
           "value": "1-28"
         },
@@ -4247,6 +4287,10 @@
         {
           "label": "Operating Frequency",
           "value": "5, 10, 15, 20, 40 kHz, Multi-IQ+®"
+        },
+        {
+          "label": "Depth",
+          "value": "4 feet"
         },
         {
           "label": "Sensitivity",
@@ -10026,7 +10070,7 @@
         },
         {
           "label": "Depth",
-          "value": "3 meters"
+          "value": "7-8 feet"
         },
         {
           "label": "Country of Manufacture",
@@ -10161,7 +10205,7 @@
         },
         {
           "label": "Depth",
-          "value": "3 meters"
+          "value": "8-9 feet"
         },
         {
           "label": "Forward Scan Range",
@@ -10328,7 +10372,7 @@
         },
         {
           "label": "Depth",
-          "value": "3 meters"
+          "value": "10-12 feet"
         },
         {
           "label": "Country of Manufacture",
@@ -10596,11 +10640,11 @@
       "tagline": "The GoldXtra Revealer Plus pairs wireless Bluetooth connectivity with customizable settings and 8 detection modes, making it a reliable choice for finding coins, gold nuggets, artifacts, and treasure in demanding terrain.",
       "overviewParagraphs": [
         "The GoldXtra Revealer Plus is a professional-grade gold and metal detector built for serious researchers in Pakistan who need real depth and dependable performance across varied terrain — from vast deserts to rugged mountains and the river valleys of the north.",
-        "The Revealer Plus reaches a detection depth of up to 40 meters through advanced VLF technology, backed by automatic ground balance that copes efficiently with Pakistan's highly mineralized soil, cutting down false signals and improving detection accuracy in every condition."
+        "The Revealer Plus reaches a detection depth of up to 4 feet through advanced VLF technology, backed by automatic ground balance that copes efficiently with Pakistan's highly mineralized soil, cutting down false signals and improving detection accuracy in every condition."
       ],
       "keyFeatures": [
         {
-          "title": "40-meter depth",
+          "title": "4-foot depth",
           "description": "exceptional detection capability that outperforms most devices in its price class."
         },
         {
@@ -10651,7 +10695,7 @@
         },
         {
           "label": "Detection Depth",
-          "value": "Up to 40 meters"
+          "value": "4 feet"
         },
         {
           "label": "Pinpointing",
@@ -10750,7 +10794,7 @@
       "relatedProducts": [],
       "seo": {
         "title": "GoldXtra Revealer Plus | GoldXtra Metal Detector",
-        "metaDescription": "GoldXtra Revealer Plus: VLF gold & metal detector with 40m depth, 8 detection modes, auto ground balance, Bluetooth, and a waterproof build for tough terrain.",
+        "metaDescription": "GoldXtra Revealer Plus: VLF gold & metal detector with 4 ft depth, 8 detection modes, auto ground balance, Bluetooth, and a waterproof build for tough terrain.",
         "imageAltText": {
           "main": "GoldXtra Revealer Plus - gold detector in Pakistan",
           "gallery": []
@@ -10970,6 +11014,10 @@
           "value": "Unveiler Plus"
         },
         {
+          "label": "Depth",
+          "value": "4 feet"
+        },
+        {
           "label": "Technology",
           "value": "VLF (Very Low Frequency)"
         },
@@ -11117,6 +11165,10 @@
           "value": "6.5 kHz (fixed)"
         },
         {
+          "label": "Depth",
+          "value": "2 feet"
+        },
+        {
           "label": "Search Coil",
           "value": "6.5\" x 9\" PROformance concentric (submersible)"
         },
@@ -11258,6 +11310,10 @@
         {
           "label": "Operating Frequency",
           "value": "8 kHz (adjustable)"
+        },
+        {
+          "label": "Depth",
+          "value": "2-3 feet"
         },
         {
           "label": "Search Coil",
@@ -11404,6 +11460,10 @@
           "value": "10 kHz (adjustable)"
         },
         {
+          "label": "Depth",
+          "value": "3-4 feet"
+        },
+        {
           "label": "Search Coil",
           "value": "8.5\" x 11\" DD PROformance (submersible)"
         },
@@ -11546,6 +11606,10 @@
         {
           "label": "Operating Frequency",
           "value": "5, 10, 15, 20 kHz, Multi-Frequency, Multi-Salt (selectable)"
+        },
+        {
+          "label": "Depth",
+          "value": "4 feet"
         },
         {
           "label": "Search Coil",
@@ -11700,6 +11764,10 @@
           "value": "7.2 kHz (adjustable)"
         },
         {
+          "label": "Depth",
+          "value": "2-3 feet"
+        },
+        {
           "label": "Search Coil",
           "value": "9.5\" PROformance Imaging searchcoil (submersible)"
         },
@@ -11842,6 +11910,10 @@
         {
           "label": "Operating Frequency",
           "value": "Multi (SMF) plus 4 / 10 / 15 / 20 / 40 kHz single frequencies"
+        },
+        {
+          "label": "Depth",
+          "value": "4 feet"
         },
         {
           "label": "Discrimination Modes",
@@ -12029,6 +12101,10 @@
           "value": "5 kHz / 14 kHz / 20 kHz"
         },
         {
+          "label": "Depth",
+          "value": "4 feet"
+        },
+        {
           "label": "Audio Frequency",
           "value": "150Hz - 700Hz, adjustable"
         },
@@ -12198,6 +12274,10 @@
           "value": "5 kHz / 14 kHz / 20 kHz"
         },
         {
+          "label": "Depth",
+          "value": "4-5 feet"
+        },
+        {
           "label": "Audio Frequency",
           "value": "150Hz - 700Hz, adjustable"
         },
@@ -12329,7 +12409,7 @@
       "tagline": "The GoldXtra Revealer Plus (With 2 Coils) pairs wireless Bluetooth connectivity, 8 detection modes, and a bundled second search coil, giving serious researchers both long-range coverage and fine target precision in one package.",
       "overviewParagraphs": [
         "The GoldXtra Revealer Plus (With 2 Coils) is the same professional-grade gold and metal detector built for serious researchers in Pakistan, now bundled with a second interchangeable search coil so you're equipped for both wide-area scanning and tighter, more precise searches straight out of the box.",
-        "It reaches a detection depth of up to 40 meters through advanced VLF technology, backed by automatic ground balance that copes efficiently with Pakistan's highly mineralized soil, cutting down false signals and improving detection accuracy in every condition — and swapping coils takes seconds when the terrain or target size changes."
+        "It reaches a detection depth of up to 4-5 feet through advanced VLF technology, backed by automatic ground balance that copes efficiently with Pakistan's highly mineralized soil, cutting down false signals and improving detection accuracy in every condition — and swapping coils takes seconds when the terrain or target size changes."
       ],
       "keyFeatures": [
         {
@@ -12337,7 +12417,7 @@
           "description": "swap between the primary and secondary coil to match ground conditions and target size without buying accessories separately."
         },
         {
-          "title": "40-meter depth",
+          "title": "4-5 foot depth",
           "description": "exceptional detection capability that outperforms most devices in its price class."
         },
         {
@@ -12380,7 +12460,7 @@
         },
         {
           "label": "Detection Depth",
-          "value": "Up to 40 meters"
+          "value": "4-5 feet"
         },
         {
           "label": "Pinpointing",
@@ -12464,7 +12544,7 @@
       },
       "seo": {
         "title": "GoldXtra Revealer Plus (With 2 Coils) | GoldXtra Metal Detector",
-        "metaDescription": "GoldXtra Revealer Plus with 2 coils: VLF gold & metal detector, 40m depth, 8 detection modes, auto ground balance, Bluetooth, and a bundled second search coil.",
+        "metaDescription": "GoldXtra Revealer Plus with 2 coils: VLF gold & metal detector, 4-5 ft depth, 8 detection modes, auto ground balance, Bluetooth, and a bundled second search coil.",
         "imageAltText": {
           "main": "GoldXtra Revealer Plus with 2 coils - gold and metal detector",
           "gallery": []
@@ -12516,6 +12596,10 @@
         {
           "label": "Model",
           "value": "Unveiler Plus (2 Coils)"
+        },
+        {
+          "label": "Depth",
+          "value": "4-5 feet"
         },
         {
           "label": "Detection Mode",
@@ -12685,7 +12769,7 @@
         },
         {
           "label": "Depth",
-          "value": "3 meters"
+          "value": "9 feet"
         },
         {
           "label": "Country of Manufacture",
@@ -12800,7 +12884,7 @@
         },
         {
           "label": "Detection Depth",
-          "value": "Up to 65cm on a 25mm coin (10\" DD/7kHz coil); maximum depth 1.2m on large targets"
+          "value": "5-6 feet"
         },
         {
           "label": "Display",
@@ -12908,7 +12992,7 @@
       },
       "seo": {
         "title": "AKA Signum | Long-Range Locator",
-        "metaDescription": "AKA Signum MFD multi-frequency deep-search detector in Pakistan. Space-harmonic filtering, hodograph target ID, 1.2m max depth. 655,000 PKR.",
+        "metaDescription": "AKA Signum MFD multi-frequency deep-search detector in Pakistan. Space-harmonic filtering, hodograph target ID, 5-6 ft max depth. 655,000 PKR.",
         "imageAltText": {
           "main": "AKA Signum MFD metal detector with DD search coil and armrest on white background",
           "gallery": [
@@ -12968,7 +13052,7 @@
         },
         {
           "label": "Detection Depth",
-          "value": "Up to 3-4 meters in Discrimination mode (ground- and mode-dependent)"
+          "value": "4 feet"
         },
         {
           "label": "Detection Modes",
