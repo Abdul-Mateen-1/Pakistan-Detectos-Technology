@@ -1,0 +1,90 @@
+---
+/**
+ * FAQ Hub — /faq
+ * General educational + legal FAQ content — distinct from product-details.json's
+ * shared.faq (warranty/purchase policy, used on product detail pages).
+ */
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import Footer from "../components/layout/Footer.astro";
+import Container from "../components/ui/Container.astro";
+import Breadcrumbs from "../components/layout/Breadcrumbs.astro";
+import HelpCTA from "../components/shared/HelpCTA/HelpCTA.astro";
+import FaqAccordion from "../components/shared/FaqAccordion/FaqAccordion.astro";
+
+import faqs from "../data/faqs.json";
+import site from "../data/site.json";
+
+const canonicalUrl = "https://metaldetectors.pk/faq";
+const metaDescription =
+  "Answers to common questions about gold and metal detectors — how they work, detection depth, and detector legality in Pakistan.";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+};
+---
+
+<Layout title="FAQ" description={metaDescription} canonicalUrl={canonicalUrl}>
+  <Navbar />
+  <main>
+    <section class="bg-dark pt-[calc(112px+2.5rem)] pb-14 lg:pb-16">
+      <Container>
+        <Breadcrumbs items={[{ label: "FAQ", href: "/faq" }]} />
+
+        <div class="max-w-2xl mt-2">
+          <div class="flex items-center gap-4" data-reveal="up">
+            <span class="w-10 h-[2px] bg-primary eyebrow-line" aria-hidden="true"></span>
+            <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">Common Questions</span>
+          </div>
+          <h1 class="mt-4 font-display text-[32px] sm:text-4xl lg:text-[44px] leading-[1.1] tracking-tight text-text-primary" data-reveal="heading">
+            Frequently Asked Questions
+          </h1>
+          <p class="mt-4 text-sm sm:text-[15px] text-text-secondary leading-relaxed" data-reveal="up">
+            Straight answers about how detectors work, what they can and can't find, and what's legal to search for in Pakistan.
+          </p>
+        </div>
+      </Container>
+    </section>
+
+    <section class="bg-dark pb-16 lg:pb-20 border-t border-dark-border pt-14 lg:pt-16">
+      <Container>
+        <div class="max-w-3xl mx-auto" data-reveal="up">
+          <FaqAccordion items={faqs} defaultOpenFirst={true} />
+        </div>
+      </Container>
+    </section>
+
+    <Container>
+      <HelpCTA
+        eyebrow="Still Have Questions?"
+        heading="Talk to a Specialist"
+        description="Our team can answer questions specific to your equipment, your search location, or your budget."
+        whatsappUrl={site.contact.whatsapp}
+      />
+    </Container>
+  </main>
+  <Footer />
+
+  {faqs.length > 0 && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+
+  <script>
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => obs.observe(el));
+  </script>
+</Layout>

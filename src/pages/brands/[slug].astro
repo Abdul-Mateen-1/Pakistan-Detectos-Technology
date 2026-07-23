@@ -45,7 +45,7 @@ const canonicalUrl = `https://metaldetectors.pk/brands/${slug}`;
 const ogImage = brandInfo?.showcase?.image ?? brandInfo?.logo;
 ---
 
-<Layout title={title} description={meta.metaDescription} canonicalUrl={canonicalUrl} ogImage={ogImage} noindex={true}>
+<Layout title={title} description={meta.metaDescription} canonicalUrl={canonicalUrl} ogImage={ogImage}>
   <Navbar />
   <main>
     <CatalogHeader

@@ -1,0 +1,61 @@
+[
+  {
+    "slug": "islamabad",
+    "name": "Islamabad",
+    "type": "city",
+    "province": "Islamabad Capital Territory",
+    "tagline": "Our home base — fastest delivery and in-person support",
+    "metaDescription": "Gold and metal detectors in Islamabad — visit our showroom by appointment, or get same-city delivery from Pakistan Detectors Technology's home base.",
+    "testimonialLocation": "Islamabad"
+  },
+  {
+    "slug": "lahore",
+    "name": "Lahore",
+    "type": "city",
+    "province": "Punjab",
+    "tagline": "Detectors and support for Punjab's largest city",
+    "metaDescription": "Gold and metal detectors in Lahore — genuine Nokta, Minelab, and GoldXtra equipment with warranty, delivered across Punjab."
+  },
+  {
+    "slug": "karachi",
+    "name": "Karachi",
+    "type": "city",
+    "province": "Sindh",
+    "tagline": "Detectors for Pakistan's coastline and southern deserts",
+    "metaDescription": "Gold and metal detectors in Karachi — beach detecting, coastal, and desert-ready equipment with authorized warranty and local support."
+  },
+  {
+    "slug": "peshawar",
+    "name": "Peshawar",
+    "type": "city",
+    "province": "Khyber Pakhtunkhwa",
+    "tagline": "Your gateway to KP's river valleys and gold country",
+    "metaDescription": "Gold and metal detectors in Peshawar — equipment suited to KP's river valleys, with authorized warranty and local support.",
+    "testimonialLocation": "Peshawar"
+  },
+  {
+    "slug": "gilgit-baltistan",
+    "name": "Gilgit-Baltistan",
+    "type": "region",
+    "province": "Gilgit-Baltistan",
+    "tagline": "Pakistan's placer gold country",
+    "metaDescription": "Gold detectors for Gilgit-Baltistan's river valleys — equipment suited to the Indus, Gilgit, and Hunza gravel beds, with authorized warranty."
+  },
+  {
+    "slug": "chitral",
+    "name": "Chitral",
+    "type": "region",
+    "province": "Khyber Pakhtunkhwa",
+    "tagline": "Fine-gold VLF detectors for the Chitral river system",
+    "metaDescription": "Gold detectors for Chitral — equipment tuned for fine placer gold in the Chitral river's glacier-fed gravels, trusted by local prospectors.",
+    "testimonialLocation": "Chitral"
+  },
+  {
+    "slug": "swat",
+    "name": "Swat",
+    "type": "region",
+    "province": "Khyber Pakhtunkhwa",
+    "tagline": "Detectors for the Swat valley — responsibly",
+    "metaDescription": "Gold and metal detectors for Swat — equipment for the Swat river system, with guidance on the valley's protected archaeological sites."
+  }
+]

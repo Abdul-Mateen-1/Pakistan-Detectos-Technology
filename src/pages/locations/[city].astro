@@ -1,0 +1,237 @@
+---
+/**
+ * Location Route — /locations/[slug]
+ * Statically generated per city/region from locations.json. Each entry has
+ * genuinely differentiated intro copy (not templated) — see locationIntros
+ * below, same pattern as categories/[slug].astro's categoryIntros.
+ */
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/layout/Navbar.astro";
+import Footer from "../../components/layout/Footer.astro";
+import Container from "../../components/ui/Container.astro";
+import Breadcrumbs from "../../components/layout/Breadcrumbs.astro";
+import HelpCTA from "../../components/shared/HelpCTA/HelpCTA.astro";
+import CatalogProductCard from "../../features/products/ProductGrid/CatalogProductCard.astro";
+
+import locations from "../../data/locations.json";
+import products from "../../data/products.json";
+import testimonials from "../../data/testimonials.json";
+import site from "../../data/site.json";
+
+const WHY_BUY_HERE = [
+  { label: "Authorized warranty on every unit", text: "genuine manufacturer warranty, not just a store guarantee." },
+  { label: "Nationwide insured delivery", text: "shipped across Pakistan via insured courier, including remote locations on request." },
+  { label: "Free training included", text: "every purchase includes a training session, in person or over video call." },
+];
+
+// Unique, SEO-oriented intro copy per location — NOT templated
+const locationIntros: Record<string, { paragraphs: string[]; relatedLink?: { text: string; href: string } }> = {
+  islamabad: {
+    paragraphs: [
+      "Islamabad isn't just another delivery address for us — it's where Pakistan Detectors Technology is based. If you're in the city, you can visit our office by appointment to see equipment in person before you buy, get a live demonstration, or pick up your order directly instead of waiting on courier delivery.",
+      "Islamabad is also a natural staging point for teams heading north — mining and survey crews commonly pass through the capital before continuing into Gilgit-Baltistan or Chitral for fieldwork, and we regularly coordinate bulk orders and training sessions here before equipment heads into the field.",
+    ],
+  },
+  lahore: {
+    paragraphs: [
+      "As Punjab's largest city, Lahore is home to a large and active metal-detecting hobbyist community — coin and relic hunting on private agricultural land, and the occasional riverside detecting session, are common uses for our general-purpose detectors here.",
+      "Punjab's long settlement history means plenty of legitimate detecting ground for hobbyists, provided you have landowner permission and stay well clear of any protected historical site, which the province has many of. We ship to Lahore and across Punjab on the same insured courier network as the rest of the country.",
+    ],
+  },
+  karachi: {
+    paragraphs: [
+      "Karachi's coastline makes it one of the few places in Pakistan where beach and shallow-water detecting is a realistic weekend hobby, not just a theoretical one — lost jewelry and coins along Sindh's beaches are a genuine, if modest, source of finds for waterproof general-purpose detectors.",
+      "Karachi is also the natural supply point for prospectors and survey teams working further into Sindh's interior, including the Thar Desert's soft, low-mineralization sand — a very different detecting environment from the coast, and one where a heat-tolerant unit with a large coil matters more than waterproofing.",
+    ],
+  },
+  peshawar: {
+    paragraphs: [
+      "Peshawar sits at the edge of Khyber Pakhtunkhwa's river systems — the province's stretch of the Indus and its tributaries carries the same placer gold found further north in Gilgit-Baltistan and Chitral, and Peshawar is the natural supply and support base for prospectors working those valleys.",
+      "KP is also home to significant Gandhara-era archaeological heritage, so if your interest extends to historical sites rather than just gold prospecting or modern coin hunting, it's worth understanding what's legally searchable versus protected before heading out.",
+    ],
+    relatedLink: { text: "Read: Are Metal Detectors Legal in Pakistan?", href: "/blog/are-metal-detectors-legal-in-pakistan" },
+  },
+  "gilgit-baltistan": {
+    paragraphs: [
+      "Gilgit-Baltistan is placer gold country — the Indus and its tributaries, the Gilgit and Hunza rivers, carry fine gold washed down from the Karakoram and Hindu Kush, and gold panning along these gravels is a centuries-old local tradition, not a novelty.",
+      "The detecting challenge here is wet, rounded river gravel and cold, fast water rather than heavy mineralization — small nuggets and flakes sit deep between stones, and a high-frequency VLF gold detector with a small, waterproof coil typically outperforms a general-purpose machine built for other terrain.",
+    ],
+    relatedLink: { text: "Read: Gold Prospecting in Pakistan — Soil Types and Geological Regions", href: "/blog/gold-prospecting-pakistan-soil-types" },
+  },
+  chitral: {
+    paragraphs: [
+      "Chitral's river system is part of the same northern placer-gold country as the rest of Gilgit-Baltistan, carrying fine gold from the Hindu Kush down through the valley — a tradition for residents along the riverbanks for generations.",
+      "A high-frequency VLF gold detector suits Chitral's wet gravel and fine placer gold better than a general-purpose or Pulse Induction machine built for heavier mineralization elsewhere in the country.",
+    ],
+    relatedLink: { text: "Read: Gold Prospecting in Pakistan — Soil Types and Geological Regions", href: "/blog/gold-prospecting-pakistan-soil-types" },
+  },
+  swat: {
+    paragraphs: [
+      "The Swat valley's river system carries some placer gold alongside its better-known tourism and agriculture, but Swat is also home to significant Buddhist-era Gandhara archaeological sites — Udegram and Barikot among them — which are protected under Pakistan's antiquities law and firmly off-limits to any kind of digging or detecting.",
+      "If general prospecting or hobby detecting away from any historical site is your goal, ordinary rules apply: landowner permission on private land, and caution around any visibly old structure or ruin. Read our full breakdown of what's legal before you head out if you're at all unsure.",
+    ],
+    relatedLink: { text: "Read: Are Metal Detectors Legal in Pakistan?", href: "/blog/are-metal-detectors-legal-in-pakistan" },
+  },
+};
+
+export async function getStaticPaths() {
+  return locations.map((loc) => ({
+    params: { city: loc.slug },
+    props: { loc },
+  }));
+}
+
+const { loc } = Astro.props as { loc: (typeof locations)[number] };
+const intro = locationIntros[loc.slug];
+
+const testimonial = loc.testimonialLocation
+  ? testimonials.find((t) => t.location.startsWith(loc.testimonialLocation as string))
+  : undefined;
+
+const featuredProducts = products
+  .filter((p) => p.category === "gold-detectors")
+  .sort((a, b) => (a.featured === b.featured ? 0 : a.featured ? -1 : 1))
+  .slice(0, 6);
+
+const canonicalUrl = `https://metaldetectors.pk/locations/${loc.slug}`;
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Gold & Metal Detector Sales and Support",
+  provider: {
+    "@type": "Organization",
+    name: "Pakistan Detectors Technology",
+    url: "https://metaldetectors.pk",
+  },
+  areaServed: {
+    "@type": loc.type === "city" ? "City" : "AdministrativeArea",
+    name: loc.name,
+    containedInPlace: { "@type": "Country", name: "Pakistan" },
+  },
+  url: canonicalUrl,
+};
+---
+
+<Layout title={`Gold Detectors in ${loc.name}`} description={loc.metaDescription} canonicalUrl={canonicalUrl}>
+  <Navbar />
+  <main>
+    <section class="bg-dark pt-[calc(112px+2.5rem)] pb-14 lg:pb-16">
+      <Container>
+        <Breadcrumbs
+          items={[
+            { label: "Locations", href: "/locations" },
+            { label: loc.name, href: `/locations/${loc.slug}` },
+          ]}
+        />
+
+        <div class="max-w-2xl mt-2">
+          <div class="flex items-center gap-4" data-reveal="up">
+            <span class="w-10 h-[2px] bg-primary eyebrow-line" aria-hidden="true"></span>
+            <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-primary">{loc.province}</span>
+          </div>
+          <h1 class="mt-4 font-display text-[32px] sm:text-4xl lg:text-[44px] leading-[1.1] tracking-tight text-text-primary" data-reveal="heading">
+            Gold Detectors in {loc.name}
+          </h1>
+          <p class="mt-4 text-sm sm:text-[15px] text-text-secondary leading-relaxed" data-reveal="up">
+            {loc.tagline}
+          </p>
+        </div>
+      </Container>
+    </section>
+
+    <section class="bg-dark pb-14 lg:pb-16 border-t border-dark-border pt-14 lg:pt-16">
+      <Container>
+        <div class="max-w-3xl flex flex-col gap-4" data-reveal="up">
+          {intro?.paragraphs.map((p) => (
+            <p class="text-sm sm:text-[15px] text-text-secondary leading-relaxed">{p}</p>
+          ))}
+          {intro?.relatedLink && (
+            <a
+              href={intro.relatedLink.href}
+              class="inline-flex items-center gap-1 text-xs font-medium text-primary hover:text-primary-hover transition-colors duration-200 w-fit"
+            >
+              {intro.relatedLink.text} →
+            </a>
+          )}
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl" data-reveal="up">
+          {WHY_BUY_HERE.map((item) => (
+            <div class="p-5 rounded-xl bg-dark-card border border-dark-border">
+              <p class="text-sm font-semibold text-text-primary">{item.label}</p>
+              <p class="mt-1.5 text-xs text-text-secondary leading-relaxed">{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        {testimonial && (
+          <div class="mt-10 max-w-3xl p-6 rounded-xl bg-dark-card border border-dark-border" data-reveal="up">
+            <p class="text-sm sm:text-[15px] text-text-secondary leading-relaxed italic">"{testimonial.quote}"</p>
+            <p class="mt-3 text-sm font-semibold text-text-primary">{testimonial.name}</p>
+            <p class="text-xs text-text-muted">{testimonial.title} · {testimonial.location}</p>
+          </div>
+        )}
+      </Container>
+    </section>
+
+    <section class="bg-dark pb-16 lg:pb-20 border-t border-dark-border pt-14 lg:pt-16">
+      <Container>
+        <div class="flex items-center justify-between gap-6 mb-10">
+          <h2 class="font-display text-2xl sm:text-3xl leading-tight text-text-primary">Gold Detectors We Recommend</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredProducts.map((product) => (
+            <CatalogProductCard
+              name={product.name}
+              brand={product.brand}
+              price={product.price}
+              description={product.description}
+              image={product.image}
+              slug={product.slug}
+              badge={product.badge}
+              specs={product.specs}
+            />
+          ))}
+        </div>
+
+        <div class="mt-8 flex justify-center">
+          <a
+            href="/categories/gold-detectors"
+            class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary-hover transition-colors duration-200"
+          >
+            View All Gold Detectors →
+          </a>
+        </div>
+      </Container>
+    </section>
+
+    <Container>
+      <HelpCTA
+        eyebrow={`Searching Near ${loc.name}?`}
+        heading="Let Us Help You Choose"
+        description="Tell us your terrain and budget, and our team will recommend the right detector and coil combination."
+        whatsappUrl={site.contact.whatsapp}
+      />
+    </Container>
+  </main>
+  <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <script>
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => obs.observe(el));
+  </script>
+</Layout>

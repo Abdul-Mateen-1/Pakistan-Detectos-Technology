@@ -10,18 +10,21 @@
   "secondary": [
     {
       "name": "Metal Detectors",
+      "description": "General-purpose detectors for coin hunting, relic recovery, and beach detection — entry-level VLF to flagship multi-frequency.",
       "count": 45,
       "slug": "metal-detectors",
       "image": "/images/categories/metal-detectors.png"
     },
     {
       "name": "Underground Imaging",
+      "description": "Professional 3D ground scanners for archaeologists and survey teams who need to see below the surface before excavating.",
       "count": 5,
       "slug": "underground-imaging",
       "image": "/images/categories/underground-imaging.png"
     },
     {
       "name": "Long Range Locators",
+      "description": "Directional, frequency-adjustable systems for locating buried targets from a distance over large search areas.",
       "count": 7,
       "slug": "long-range-locators",
       "image": "/images/categories/long-range-locators.png"

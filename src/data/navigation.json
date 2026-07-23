@@ -23,6 +23,8 @@
       { "label": "About Us", "href": "/about" },
       { "label": "Our Team", "href": "/about#team" },
       { "label": "Blog", "href": "/blog" },
+      { "label": "FAQ", "href": "/faq" },
+      { "label": "Locations", "href": "/locations" },
       { "label": "Contact Us", "href": "/contact" }
     ]
   }

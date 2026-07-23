@@ -1,27 +1,37 @@
 {
   "gold-detector-buying-guide": {
     "content": [
-      { "type": "paragraph", "text": "Shopping for a gold detector but not sure what separates one model from another? Prices swing widely, and a higher price tag doesn't automatically mean better performance in mineralized soil. This guide breaks devices down by price and real-world performance so you can make the right call." },
-      { "type": "heading", "level": 2, "text": "1. Gold Detector Price Tiers" },
-      { "type": "heading", "level": 3, "text": "Entry-Level — Under $270" },
-      { "type": "paragraph", "text": "Good for hobbyists and beginners who want to try the hobby without a big financial commitment. These devices run on basic VLF technology and lack advanced ground balancing, which makes them less effective in mineral-rich soil." },
-      { "type": "heading", "level": 3, "text": "Mid-Range — $270 to $1,350" },
-      { "type": "paragraph", "text": "The sweet spot for serious hobbyists after a reliable metal detector. These units feature manual or automatic ground balance, a clear display, and swappable coils suited to different search environments." },
-      { "type": "heading", "level": 3, "text": "Professional — Over $1,350" },
-      { "type": "paragraph", "text": "Built for serious prospectors chasing real depth with underground gold detectors. This tier includes Pulse Induction units and 3D ground-imaging scanners capable of mapping a target's shape and depth before you dig." },
-      { "type": "heading", "level": 2, "text": "2. Core Spec Comparison Across Tiers" },
+      { "type": "paragraph", "text": "Shopping for a gold detector in Pakistan but not sure what separates one model from another? Prices range from around PKR 170,000 for a straightforward VLF machine to quote-only pricing on professional Pulse Induction flagships, and a higher price tag doesn't automatically mean better performance in mineralized soil. This guide breaks down what you actually get at each price point, with real models and current pricing, so you can make the right call for your budget and your ground. If you just want the full per-model price list without the buying advice, see our Gold Detector Price Guide instead." },
+      { "type": "heading", "level": 2, "text": "Gold Detector Price Tiers in Pakistan" },
+      { "type": "heading", "level": 3, "text": "Entry VLF — PKR 170,000–200,000" },
+      { "type": "paragraph", "text": "Nokta's dedicated VLF gold detectors sit at this tier — the Gold Finder 2000 (PKR 169,580) and Gold Kruzer (PKR 180,422). Both are fully automatic, turn-on-and-go machines built for fine gold and micro-jewelry rather than maximum depth, with the Gold Kruzer's higher 61 kHz frequency and E.U.D. extra-depth technology giving it the edge for very fine nuggets." },
+      { "type": "heading", "level": 3, "text": "Mid-to-High Multi-System — PKR 495,000–995,000" },
+      { "type": "paragraph", "text": "GoldXtra's TGX series covers this whole range across four models — TGX Lite (PKR 495,000, 7–8 ft depth), TGX Pro (PKR 618,000, 8–9 ft), TGX Special Edition (PKR 750,000, 9 ft, bundled with two coils and a Bluetooth pinpointer), and TGX Pro Plus (PKR 995,000, 10–12 ft). Each combines multiple detection systems — gold, general metal, and underground voids — in one unit, so depth and detection modes scale with price as you move up the line." },
+      { "type": "heading", "level": 3, "text": "Professional Pulse Induction & Imaging — Quote-Only" },
+      { "type": "paragraph", "text": "Minelab's flagship PI and imaging line — Gold Monster 1000 and 2000, GPX 6000, GPZ 7000 and the newest GPZ 8000, and the waterproof SDC 2300 — is priced on request rather than listed, which is standard for this tier across the industry. These are built for maximum depth and sensitivity in heavily mineralized ground where VLF technology struggles, at a corresponding jump in cost. Contact us for current pricing on any of these." },
+      { "type": "heading", "level": 2, "text": "Our Top Picks by Budget" },
       {
-        "type": "table",
-        "headers": ["Spec", "Entry-Level", "Mid-Range", "Professional"],
-        "rows": [
-          ["Detection depth (small gold)", "Up to 30cm", "Up to 80cm", "Over 1.5m"],
-          ["Ground balance", "Fixed", "Manual / Automatic", "Advanced automatic"],
-          ["Discrimination", "Basic", "Mid-level", "Advanced"],
-          ["Technology", "VLF", "Advanced VLF", "PI / GPR / 3D"],
-          ["Approximate weight", "1.2–1.8 kg", "1.5–2.5 kg", "2–6 kg"]
+        "type": "list",
+        "items": [
+          { "label": "Best overall value", "text": "GoldXtra TGX Pro (PKR 618,000) — the middle of the TGX line, with 8–9 ft depth and five detection systems for gold, precious metals, and voids without paying flagship pricing." },
+          { "label": "Best for beginners", "text": "Nokta Gold Finder 2000 (PKR 169,580) — fully automatic with no ground balance or settings to manage, built to get a first-time user finding gold from day one." },
+          { "label": "Best for fine gold and micro-jewelry", "text": "Nokta Gold Kruzer (PKR 180,422) — a 61 kHz VLF machine with E.U.D. extra-depth technology tuned specifically for small nuggets and fine jewelry." },
+          { "label": "Best flagship", "text": "Minelab GPZ 8000 — Minelab's newest 2026 flagship, pairing GeoZVT ground technology with a three-coil range for maximum depth in the toughest mineralized ground. Quote-only; contact us for current pricing." }
         ]
       },
-      { "type": "heading", "level": 2, "text": "3. What Actually Drives a Gold Detector's Price?" },
+      { "type": "heading", "level": 2, "text": "Core Spec Comparison Across Tiers" },
+      {
+        "type": "table",
+        "headers": ["Spec", "Entry VLF", "Mid-to-High Multi-System", "Professional PI/Imaging"],
+        "rows": [
+          ["Typical price (PKR)", "170,000–200,000", "495,000–995,000", "Quote-only"],
+          ["Detection depth", "Tuned for sensitivity over depth", "7–12 ft", "Greatest depth in mineralized ground"],
+          ["Ground balance", "Fully automatic", "Automatic, multi-system", "Advanced automatic"],
+          ["Technology", "VLF", "Multi-system (gold + metal + voids)", "Pulse Induction / 3D imaging"],
+          ["Example models", "Gold Finder 2000, Gold Kruzer", "TGX Lite / Pro / Special Edition / Pro Plus", "Gold Monster, GPX 6000, GPZ 7000/8000, SDC 2300"]
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "What Actually Drives a Gold Detector's Price?" },
       {
         "type": "list",
         "items": [
@@ -31,11 +41,11 @@
           { "label": "Display and ease of use", "text": "Color screens and clear VDI systems help you identify a target before digging, saving time and effort in the field." }
         ]
       },
-      { "type": "heading", "level": 2, "text": "4. Our Recommendation by Budget and Goal" },
-      { "type": "paragraph", "text": "Tight budget (hobbyist): Go with a basic VLF unit that has manual ground balance, and steer clear of ultra-cheap devices that skip this feature entirely." },
-      { "type": "paragraph", "text": "Mid-range budget (regular user): An advanced VLF detector with automatic ground balance and a DD (Double D) coil gives you the best performance in mineralized soil." },
-      { "type": "paragraph", "text": "Bigger budget (serious prospecting): A Pulse Induction detector for real depth in noisy soil, or a 3D ground scanner for hunting buried treasure and relics." },
-      { "type": "heading", "level": 2, "text": "5. Questions to Ask Before You Buy" },
+      { "type": "heading", "level": 2, "text": "Our Recommendation by Budget and Goal" },
+      { "type": "paragraph", "text": "Tight budget, first gold detector: the Nokta Gold Finder 2000 or Gold Kruzer — fully automatic VLF machines with no settings to learn, at roughly PKR 170,000–180,000." },
+      { "type": "paragraph", "text": "Mid-range, regular use: the GoldXtra TGX Lite or TGX Pro — multi-system detection with real depth (7–9 ft) without professional-tier pricing." },
+      { "type": "paragraph", "text": "Bigger budget, serious prospecting in difficult ground: the GoldXtra TGX Pro Plus, or Minelab's Pulse Induction and GPZ imaging line for the deepest, most mineralization-resistant performance available." },
+      { "type": "heading", "level": 2, "text": "Questions to Ask Before You Buy" },
       {
         "type": "list",
         "items": [
@@ -47,10 +57,10 @@
       }
     ],
     "cta": {
-      "heading": "Want to compare devices that fit your budget?",
-      "description": "Browse our full range of gold and metal detectors with detailed specs and up-to-date pricing.",
-      "buttonLabel": "Browse Devices & Compare Prices",
-      "buttonHref": "/products"
+      "heading": "Ready to compare real models and pricing?",
+      "description": "Browse our full gold detector range with up-to-date PKR pricing, or message us for a quote on our professional Pulse Induction line.",
+      "buttonLabel": "Browse Gold Detectors",
+      "buttonHref": "/categories/gold-detectors"
     }
   },
   "how-to-use-a-gold-detector": {
@@ -185,7 +195,7 @@
         ]
       },
       { "type": "heading", "level": 2, "text": "5. Rules and Regulations for Prospecting in Pakistan" },
-      { "type": "paragraph", "text": "Before starting any prospecting activity, make sure you understand the rules that apply — mining and exploration are regulated at the provincial level in Pakistan:" },
+      { "type": "paragraph", "text": "Before starting any prospecting activity, make sure you understand the rules that apply — mining and exploration are regulated at the provincial level in Pakistan. See our full breakdown in \"Are Metal Detectors Legal in Pakistan?\" for the complete picture, including how the Antiquities Act 1975 applies:" },
       {
         "type": "list",
         "items": [
@@ -201,6 +211,334 @@
       "description": "Browse our range of gold detectors built to handle different soil and terrain types.",
       "buttonLabel": "Find the Right Device",
       "buttonHref": "/products"
+    }
+  },
+  "best-gold-detectors-pakistan": {
+    "content": [
+      { "type": "paragraph", "text": "Looking for the single best gold detector rather than a full price breakdown? This is a ranked list, not a price guide — for a full walk-through of tiers and what drives pricing, see our Gold Detector Buying Guide 2026. Here, we're naming specific picks for specific situations, based on the equipment we distribute and support across Pakistan." },
+      { "type": "heading", "level": 2, "text": "How We Picked These" },
+      { "type": "paragraph", "text": "Every pick below is a product we currently distribute with full manufacturer warranty and local support — we're not ranking equipment we don't stand behind. Picks are based on published specifications, hands-on familiarity from our own team, and the terrain conditions we see most often across Pakistani prospecting regions: river gravel in the north, mineralized hard rock in the west, and desert sand in the south and east." },
+      { "type": "heading", "level": 2, "text": "Best Overall: GoldXtra TGX Pro" },
+      { "type": "paragraph", "text": "At PKR 618,000, the TGX Pro sits in the middle of GoldXtra's TGX line and gives you the most balanced spread of capability for the money — five detection systems covering gold, precious metals, treasures, voids, and underground cavities, with 8–9 feet of detection depth. It's the model most of our professional customers land on when they want serious capability without paying flagship pricing." },
+      { "type": "heading", "level": 2, "text": "Best for Beginners: Nokta Gold Finder 2000" },
+      { "type": "paragraph", "text": "At PKR 169,580, the Gold Finder 2000 removes the two things that intimidate new users most: ground balancing and menu settings. It's fully automatic turn-on-and-go, so a first-time user can be searching within minutes rather than learning a control panel first. It won't out-depth the professional tier, but for a first gold detector it's hard to beat." },
+      { "type": "heading", "level": 2, "text": "Best for Fine Gold and Micro-Jewelry: Nokta Gold Kruzer" },
+      { "type": "paragraph", "text": "The Gold Kruzer (PKR 180,422) runs at a high 61 kHz frequency with E.U.D. extra-depth technology, purpose-built for the fine nuggets and micro-jewelry that lower-frequency machines miss entirely. If your ground is mostly fine placer gold rather than larger pieces, this is the more specialized choice over the Gold Finder 2000." },
+      { "type": "heading", "level": 2, "text": "Best for Difficult, Heavily Mineralized Ground: GoldXtra TGX Pro Plus" },
+      { "type": "paragraph", "text": "The most capable model in the TGX line (PKR 995,000) reaches 10–12 feet and adds enhanced sensitivity for the toughest ground — the volcanic, iron-rich soil found in parts of western Pakistan, for example, where entry-level VLF machines struggle with constant false signals." },
+      { "type": "heading", "level": 2, "text": "Best Flagship: Minelab GPZ 8000" },
+      { "type": "paragraph", "text": "Minelab's newest flagship for 2026, the GPZ 8000 pairs next-generation GeoZVT ground technology with a three-size Z-Set coil range and Minelab's Echo Sonic Pro sound system, built for maximum depth in the toughest mineralized ground. It's quote-only rather than listed — contact us for current pricing — which is standard for equipment at this level." },
+      { "type": "heading", "level": 2, "text": "Quick Comparison" },
+      {
+        "type": "table",
+        "headers": ["Model", "Best For", "Price", "Depth"],
+        "rows": [
+          ["GoldXtra TGX Pro", "Best overall", "PKR 618,000", "8–9 ft"],
+          ["Nokta Gold Finder 2000", "Beginners", "PKR 169,580", "Tuned for sensitivity"],
+          ["Nokta Gold Kruzer", "Fine gold / jewelry", "PKR 180,422", "Tuned for sensitivity"],
+          ["GoldXtra TGX Pro Plus", "Difficult ground", "PKR 995,000", "10–12 ft"],
+          ["Minelab GPZ 8000", "Flagship depth", "Quote-only", "Maximum, mineralized ground"]
+        ]
+      }
+    ],
+    "cta": {
+      "heading": "Want help matching a detector to your ground?",
+      "description": "Tell us where you're searching and what you're after, and our team will recommend the right model from this list or elsewhere in our range.",
+      "buttonLabel": "Browse Gold Detectors",
+      "buttonHref": "/categories/gold-detectors"
+    }
+  },
+  "best-metal-detector-for-beginners": {
+    "content": [
+      { "type": "paragraph", "text": "This guide covers general-purpose metal detectors for coin hunting, relic recovery, and casual beach or park detecting — not gold prospecting specifically. If gold is your goal, ground-balance needs and frequency are different from general detecting; see our Best Gold Detectors in Pakistan guide instead." },
+      { "type": "heading", "level": 2, "text": "What to Look for as a First-Time Buyer" },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Automatic operation", "text": "A machine that ground-balances and adjusts sensitivity on its own removes the steepest part of the learning curve." },
+          { "label": "Weight", "text": "Under 1.5 kg matters more than it sounds like it should — you'll be holding it out in front of you for hours." },
+          { "label": "Waterproof coil (at minimum)", "text": "Lets you search wet grass, shallow water, and after rain without hesitation." },
+          { "label": "Digital target ID", "text": "A numeric or visual readout that tells you roughly what kind of metal you've found before you dig, saving time on trash targets." },
+          { "label": "Included training", "text": "Every detector we sell includes a free training session, in person or by video call — worth confirming wherever you buy." }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "Our Top Beginner Picks" },
+      { "type": "heading", "level": 3, "text": "Minelab Go Find 11 — PKR 27,800" },
+      { "type": "paragraph", "text": "The simplest and least expensive entry point in our range — a lightweight, folding design with single-tone audio and a clear display, built for a first try at the hobby rather than serious relic hunting. A good choice for a park-and-beach starter unit or for a child trying the hobby alongside an adult." },
+      { "type": "heading", "level": 3, "text": "Minelab X-Terra Intrepid — PKR 27,800" },
+      { "type": "paragraph", "text": "At the same price as the Go Find 11, the X-Terra Intrepid adds a larger target-ID display and adjustable sensitivity with a waterproof 10-inch coil — a slightly more capable machine for a similar budget if display detail matters more to you than ultimate simplicity." },
+      { "type": "heading", "level": 3, "text": "Minelab X-Terra Voyager — PKR 41,700" },
+      { "type": "paragraph", "text": "A step up that ships as a complete kit — headphones, backpack, and digging tool included — with 4 search modes (including a dedicated Jewelry mode) and a proper pinpoint mode. A strong choice if you'd rather buy everything you need in one purchase." },
+      { "type": "heading", "level": 3, "text": "Nokta FindX Pro — PKR 108,000" },
+      { "type": "paragraph", "text": "Nokta's own description calls this \"the ultimate beginner-friendly metal detector,\" and the spec sheet backs it up — fully automatic search modes, IP68 waterproofing to 5 meters, and a complete accessory package included. It costs more than the entry Minelab units, but you're paying for waterproofing depth and a more complete out-of-box package." },
+      { "type": "heading", "level": 3, "text": "Garrett ACE 200i — PKR 195,000" },
+      { "type": "paragraph", "text": "Garrett's own positioning is direct: built for first-time detectorists. A fixed 6.5 kHz frequency, submersible search coil, and simple one-touch operation make it a straightforward, no-configuration option from a brand with a long reputation in the hobby." },
+      { "type": "heading", "level": 2, "text": "Quick Comparison" },
+      {
+        "type": "table",
+        "headers": ["Model", "Price", "Best For"],
+        "rows": [
+          ["Minelab Go Find 11", "PKR 27,800", "Absolute simplest start"],
+          ["Minelab X-Terra Intrepid", "PKR 27,800", "Same budget, bigger display"],
+          ["Minelab X-Terra Voyager", "PKR 41,700", "Complete kit in one purchase"],
+          ["Nokta FindX Pro", "PKR 108,000", "Deeper waterproofing, full accessory kit"],
+          ["Garrett ACE 200i", "PKR 195,000", "Established brand, simple operation"]
+        ]
+      }
+    ],
+    "cta": {
+      "heading": "Not sure which beginner model fits you?",
+      "description": "Tell us your budget and where you plan to search, and we'll point you to the right starter detector from our range.",
+      "buttonLabel": "Browse Metal Detectors",
+      "buttonHref": "/categories/metal-detectors"
+    }
+  },
+  "nokta-vs-minelab": {
+    "content": [
+      { "type": "paragraph", "text": "We're an authorized distributor for both Nokta and Minelab, so this isn't a case for picking a side — it's a straight comparison to help you match the right brand to your budget and your ground. Both make genuinely excellent equipment; where they differ is philosophy, price positioning, and which niches each one dominates." },
+      { "type": "heading", "level": 2, "text": "Company Background" },
+      {
+        "type": "table",
+        "headers": ["", "Nokta", "Minelab"],
+        "rows": [
+          ["Headquarters", "Istanbul, Turkey", "Adelaide, Australia"],
+          ["Founded", "2003", "1985"],
+          ["Models in our range", "16", "33"]
+        ]
+      },
+      { "type": "paragraph", "text": "Minelab has roughly two decades of extra history and pioneered multi-frequency detecting technology that reshaped the gold-prospecting side of the industry — its systems are used by professional prospectors, military demining programs, and humanitarian organizations worldwide. Nokta is younger but has moved fast, building a broad catalog that spans VLF gold detectors through 3D underground-imaging systems, and has become known for aggressive feature-for-price positioning." },
+      { "type": "heading", "level": 2, "text": "Technology Philosophy" },
+      { "type": "paragraph", "text": "Minelab's specialty is multi-frequency and Pulse Induction technology — Multi-IQ and Multi-IQ+ across its general-purpose line, dedicated PI systems (GPX 6000, SDC 2300), and the GPZ series' ground-scanning technology for its professional gold line. This is depth-and-mineralization-first engineering. Nokta covers VLF gold detectors, Simultaneous Multi-Frequency (SMF) general detectors, and — through its Jeohunter, Deephunter, and Invenio lines — 3D underground imaging systems that visualize a target before you dig. Nokta's range leans toward giving you more detection modes and imaging options per rupee spent." },
+      { "type": "heading", "level": 2, "text": "Price Comparison by Tier" },
+      {
+        "type": "table",
+        "headers": ["Tier", "Nokta", "Minelab"],
+        "rows": [
+          ["Entry gold VLF", "Gold Finder 2000 — PKR 169,580", "Gold Monster 1000/2000 — Quote-only"],
+          ["Gold-specific mid-tier", "Gold Kruzer — PKR 180,422", "—"],
+          ["Flagship general-purpose", "The Legend — PKR 295,000", "Manticore — PKR 980,000"],
+          ["Professional gold/PI", "—", "GPX 6000 / GPZ 7000 / GPZ 8000 — Quote-only"]
+        ]
+      },
+      { "type": "paragraph", "text": "One genuine structural difference worth naming: Minelab's Excalibur II is a dedicated dive/underwater detector with no direct Nokta equivalent in our catalog — if serious underwater detecting is your goal, that pushes the decision toward Minelab regardless of the rest of this comparison." },
+      { "type": "heading", "level": 2, "text": "Which Should You Choose?" },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Tight budget, first gold detector", "text": "Nokta — the Gold Finder 2000 and Gold Kruzer undercut Minelab's gold-specific entry pricing (Minelab's Gold Monster line is quote-only, typically pricier)." },
+          { "label": "Maximum depth in brutal mineralized ground", "text": "Minelab — the GPX/GPZ Pulse Induction and ground-scanning line is purpose-built for this and has the longer professional track record." },
+          { "label": "3D underground imaging / cavity detection", "text": "Nokta — the Deephunter, Jeohunter, and Invenio Pro lines specialize here; Minelab doesn't compete directly in this niche within our range." },
+          { "label": "Underwater / dive detecting", "text": "Minelab — the Excalibur II has no Nokta equivalent we carry." },
+          { "label": "General coin/relic detecting, mid-budget", "text": "Both — Nokta's Legend/Impact Pro and Minelab's Vanquish/Equinox lines compete closely here; the decision comes down to specific features rather than brand." }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "Warranty and Local Support" },
+      { "type": "paragraph", "text": "This part isn't a differentiator — every unit from either brand that we sell is genuine, authorized stock backed by full manufacturer warranty, with free training and local service coordination. The brand decision should come down to the equipment itself, not after-sales concerns." }
+    ],
+    "cta": {
+      "heading": "Still torn between the two?",
+      "description": "Message us on WhatsApp with your budget and where you'll be searching — our team sells and supports both brands and can give you a straight answer, not a sales pitch for one over the other.",
+      "buttonLabel": "Compare Both Brands",
+      "buttonHref": "/brands"
+    }
+  },
+  "how-metal-detectors-work": {
+    "content": [
+      { "type": "paragraph", "text": "Every metal detector — whether it's a PKR 27,800 beginner unit or a quote-only professional gold machine — works on the same basic physics: electromagnetic induction. Understanding the basics helps explain why some detectors reach deeper than others, why ground conditions matter so much, and why a bigger price tag usually buys depth and stability rather than a completely different kind of technology." },
+      { "type": "heading", "level": 2, "text": "The Basic Principle: Electromagnetic Induction" },
+      { "type": "paragraph", "text": "A detector's search coil has a transmitter winding that sends an alternating electromagnetic field into the ground. When that field passes through a conductive object — a coin, a gold nugget, a piece of iron — it induces a small electrical current inside the object, which in turn generates its own faint magnetic field. A separate receiver winding in the coil picks up this returning field, and the detector's electronics convert it into the tone or display reading you see and hear. No conductive or ferromagnetic material means no returning field, which is why detectors can't sense materials like diamonds, plastic, or wood." },
+      { "type": "heading", "level": 2, "text": "VLF: Very Low Frequency" },
+      { "type": "paragraph", "text": "VLF is the most common detector technology, transmitting a continuous single frequency (or several frequencies at once, in multi-frequency machines) typically between about 3 kHz and 71 kHz. Lower frequencies handle larger, deeper targets and cope better with mineralized ground; higher frequencies are more sensitive to small, low-conductivity targets like fine gold and jewelry — which is why a dedicated gold detector like the Nokta Gold Kruzer runs at a high 61 kHz rather than a lower general-purpose frequency. VLF's main weakness is ground mineralization: iron-rich or salty soil generates its own false signals that the detector has to filter out." },
+      { "type": "heading", "level": 2, "text": "Pulse Induction (PI)" },
+      { "type": "paragraph", "text": "Pulse Induction detectors transmit short, powerful bursts of current rather than a continuous frequency, then measure how long it takes the resulting magnetic field to decay. Highly conductive targets (like most metals) hold that field slightly longer than the surrounding ground does, and PI's electronics are built to isolate that difference. The practical result: PI technology is largely unaffected by ground mineralization, which is why heavily mineralized regions and beach/saltwater detecting favor PI units — Minelab's GPX 6000 and SDC 2300 in our range are built on this technology. The trade-off is that PI generally can't discriminate between target types as precisely as VLF, and is more oriented toward pure depth than pinpoint identification." },
+      { "type": "heading", "level": 2, "text": "Ground Balance: Why It Matters So Much" },
+      { "type": "paragraph", "text": "Soil itself contains trace iron minerals, and a detector's coil responds to those minerals just as it responds to a real target — this is what causes the constant chatter beginners hear in mineral-rich ground. Ground balancing tunes the detector to ignore the soil's own mineral signal while still responding to real targets. Fully automatic ground balance (standard on most modern detectors, including every Nokta gold detector we carry) handles this continuously as you search; older or entry-level designs require manual adjustment at each new search location." },
+      { "type": "heading", "level": 2, "text": "Target Discrimination and VDI" },
+      { "type": "paragraph", "text": "Once a detector confirms something is there, discrimination circuitry estimates what it might be based on how the target's conductivity compares to known references — most detectors display this as a Visual Discrimination Index (VDI) number or a segmented scale. Low numbers typically indicate iron and low-conductivity trash, mid-range numbers indicate aluminum and similar metals, and high numbers indicate copper, silver, and larger gold pieces. It's an estimate, not a certainty — small, raw (unrefined) gold in particular can sometimes read lower than expected, which is why experienced prospectors avoid dismissing every low signal in a known gold-bearing area." },
+      { "type": "heading", "level": 2, "text": "Multi-Frequency: Getting Both at Once" },
+      { "type": "paragraph", "text": "Multi-frequency technology (Minelab's Multi-IQ and Multi-IQ+, and Nokta's SMF systems) transmits several frequencies simultaneously rather than forcing a choice between depth-friendly low frequencies and sensitivity-friendly high ones. The detector's software processes all of them together, which is part of why multi-frequency units across both brands' ranges tend to sit at higher price points — you're paying for more sophisticated real-time signal processing, not just a bigger coil." }
+    ],
+    "cta": {
+      "heading": "Ready to see this technology in a real detector?",
+      "description": "Browse our full range to compare VLF, Pulse Induction, and multi-frequency models side by side.",
+      "buttonLabel": "Browse All Detectors",
+      "buttonHref": "/products"
+    }
+  },
+  "are-metal-detectors-legal-in-pakistan": {
+    "content": [
+      { "type": "paragraph", "text": "This is one of the most common questions we get, and the honest answer has two parts: owning and using a metal or gold detector is not illegal in Pakistan, but what you're searching for and where determines whether a specific search is legal. This article explains the actual legal framework — it's general information, not legal advice, and if you're planning to search near any historical site or aren't sure about a specific location, we'd genuinely recommend checking with your provincial archaeology department first." },
+      { "type": "heading", "level": 2, "text": "The Core Law: The Antiquities Act 1975" },
+      { "type": "paragraph", "text": "Pakistan's primary law in this area is the Antiquities Act 1975, which effectively nationalizes the country's archaeological and cultural heritage. It prohibits dealing in antiquities without a license from the Director of Archaeology, restricts the movement of antiquities found in the ground, and — through later amendment — extends government ownership to antiquities recovered from underground, closing off any assumption that something dug up privately belongs to the finder. Violating these provisions can carry a fine (up to roughly PKR 200,000 under the rules made pursuant to the Act) or, for more serious offenses like unauthorized movement of antiquities, imprisonment of up to three years." },
+      { "type": "heading", "level": 2, "text": "It's About Antiquities Specifically, Not Detecting Itself" },
+      { "type": "paragraph", "text": "The Act targets antiquities and archaeological objects — items of historical, cultural, or archaeological significance — not metal detecting as an activity or gold prospecting as a hobby. Searching for and recovering modern coins, jewelry, or alluvial gold on land you have permission to search is a fundamentally different activity from digging at a protected archaeological site. The risk is concentrated specifically around heritage sites and unauthorized excavation for antiquities, not around owning or using a detector in general." },
+      { "type": "heading", "level": 2, "text": "Provincial Variation Since the 18th Amendment" },
+      { "type": "paragraph", "text": "Heritage law was devolved from the federal government to the provinces by the 18th Constitutional Amendment, and each province has since built its own rules on top of (or instead of) the original federal Act. Punjab adapted the federal law with its own 2012 amendment. Khyber Pakhtunkhwa passed its own antiquities legislation in 2016, which now supersedes the federal Act within the province except for export matters. Balochistan currently has no separate provincial law and remains under the federal Antiquities Act. This matters practically: the specific rules, permitting authority, and licensing process can differ depending on which province you're searching in, so what applies in Punjab isn't necessarily identical to what applies in KP or Gilgit-Baltistan." },
+      { "type": "heading", "level": 2, "text": "Practical Guidelines for Staying on the Right Side of This" },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Stay off protected sites", "text": "Never search at a designated archaeological or heritage site, or anywhere with visible ruins, old graves, or historical structures, without explicit written permission from the relevant archaeology department." },
+          { "label": "Get landowner permission", "text": "Searching private land always requires the owner's consent — this is a property-law issue as much as an antiquities one." },
+          { "label": "Avoid restricted zones", "text": "Military installations, border areas, and other restricted zones are off-limits to detection equipment entirely, independent of antiquities law." },
+          { "label": "License commercial or exploration-scale activity", "text": "Any organized prospecting or mining beyond casual hobby searching requires a license from the relevant provincial Mines & Minerals department." },
+          { "label": "When in doubt, ask first", "text": "If you're unsure whether an area has archaeological significance, contact the provincial Department of Archaeology before you dig, not after." }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "No Finder's Reward System" },
+      { "type": "paragraph", "text": "Unlike the UK's Treasure Act, which offers a formal reporting and reward process for significant finds, Pakistan doesn't currently operate an equivalent finder's-reward scheme for antiquities — recovered items of archaeological significance belong to the state, not the finder. This is a further reason to stay well clear of anything that looks historically significant: there's no legal upside to keeping it, and real downside to the attempt." },
+      { "type": "heading", "level": 2, "text": "The Bottom Line" },
+      { "type": "paragraph", "text": "For the overwhelming majority of our customers — hobbyists detecting for lost modern items, and prospectors panning and detecting for alluvial gold on permitted ground — this legal framework simply doesn't come into play. It becomes relevant specifically around historical sites and antiquities, which is a narrow, well-defined category most detecting activity never touches. Know where the line is, stay well clear of it, and the equipment itself is entirely legal to own, import, and use." }
+    ],
+    "cta": {
+      "heading": "Have a specific location in mind?",
+      "description": "If you're unsure whether an area is appropriate to search, talk to us — we've worked with prospectors and survey teams across Pakistan and can point you toward the right local guidance.",
+      "buttonLabel": "Contact Our Team",
+      "buttonHref": "/contact"
+    }
+  },
+  "common-metal-detector-mistakes": {
+    "content": [
+      { "type": "paragraph", "text": "Most detecting frustration comes down to a handful of repeated, avoidable mistakes rather than bad equipment. Here are the seven we see most often — fix these and almost any detector performs noticeably better." },
+      { "type": "heading", "level": 2, "text": "1. Maxing Out Sensitivity" },
+      { "type": "paragraph", "text": "The single most common beginner mistake. Higher sensitivity sounds like it should mean better performance, but past a certain point in mineralized ground it just floods the detector with false signals and chatter, making real targets harder to pick out, not easier. Start around 70–80% of maximum and raise it gradually only until instability appears, then back off one level." },
+      { "type": "heading", "level": 2, "text": "2. Skipping Ground Balance, or Setting It Once and Forgetting It" },
+      { "type": "paragraph", "text": "Ground balance needs to be set at your actual search location, not at home, and reset whenever soil conditions change — moving from dry ground to a damp riverbank, for instance. A detector left ground-balanced for the wrong soil behaves like a cheaper, less capable machine than it actually is." },
+      { "type": "heading", "level": 2, "text": "3. Sweeping Too Fast" },
+      { "type": "paragraph", "text": "Fast, sweeping motions feel efficient but they don't give the coil enough time over a target to generate a clear signal, especially for small or deep items. A slow, steady sweep with 10–15 cm of overlap between passes covers ground more thoroughly than a fast one, even though it feels slower." },
+      { "type": "heading", "level": 2, "text": "4. Keeping the Coil Too High Off the Ground" },
+      { "type": "paragraph", "text": "Every centimeter of extra height between the coil and the ground costs real detection depth. Keep the coil close — 2–5 cm above the surface — without letting it actually strike the ground, which introduces its own interference." },
+      { "type": "heading", "level": 2, "text": "5. Dismissing Weak or Unusual Signals" },
+      { "type": "paragraph", "text": "Deep targets and small, raw (unrefined) gold both tend to give faint or unusual-sounding signals compared to a clean coin at shallow depth. New users often dig only the strong, obvious hits and walk past exactly the kind of faint signal a genuine deep target produces." },
+      { "type": "heading", "level": 2, "text": "6. Digging Carelessly" },
+      { "type": "paragraph", "text": "Randomly stabbing at the ground damages both the target and the site, and often loses the target in loose soil entirely. Pinpoint the signal's center first by narrowing your sweep, then lift a single soil plug in one piece rather than digging a wide hole." },
+      { "type": "heading", "level": 2, "text": "7. Neglecting Basic Maintenance" },
+      { "type": "paragraph", "text": "Coils and connections that aren't cleaned after use in wet or muddy ground develop corrosion and loose contacts over time, which shows up later as unreliable, seemingly random performance that has nothing to do with settings at all. A quick wipe-down after every session prevents most of this." },
+      { "type": "heading", "level": 2, "text": "The Pattern Behind All Seven" },
+      { "type": "paragraph", "text": "Every mistake on this list has the same root cause: rushing. Slower sweeps, patient ground balancing, and careful digging all cost a little time in the moment and save far more time in missed targets and lost finds over a full session." }
+    ],
+    "cta": {
+      "heading": "Want personalized guidance for your equipment?",
+      "description": "Every detector we sell includes a free training session, in person or over video call, covering setup and technique for your specific model.",
+      "buttonLabel": "Contact Us for Training",
+      "buttonHref": "/contact"
+    }
+  },
+  "gold-detector-price-guide": {
+    "content": [
+      { "type": "paragraph", "text": "Looking for buying advice and top picks? See our Gold Detector Buying Guide 2026. This page is different — it's a straight, comprehensive price reference: every gold detector we currently distribute, its real PKR price, and what that price actually buys, plus quick context on what the rest of our catalog costs." },
+      { "type": "heading", "level": 2, "text": "Every Gold Detector's Price, In Full" },
+      {
+        "type": "table",
+        "headers": ["Model", "Price (PKR)", "Technology"],
+        "rows": [
+          ["Nokta Gold Finder 2000", "169,580", "VLF"],
+          ["Nokta Gold Kruzer", "180,422", "VLF"],
+          ["GoldXtra TGX Lite", "495,000", "Multi-system"],
+          ["GoldXtra TGX Pro", "618,000", "Multi-system"],
+          ["GoldXtra TGX Special Edition", "750,000", "Multi-system"],
+          ["GoldXtra TGX Pro Plus", "995,000", "Multi-system"],
+          ["Minelab Gold Monster 1000", "Quote-only", "VLF"],
+          ["Minelab Gold Monster 2000", "Quote-only", "VLF / PI"],
+          ["Minelab SDC 2300", "Quote-only", "Pulse Induction"],
+          ["Minelab GPX 6000", "Quote-only", "Pulse Induction"],
+          ["Minelab GPZ 7000", "Quote-only", "GPZ ground-scanning"],
+          ["Minelab GPZ 8000", "Quote-only", "GPZ ground-scanning"]
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "Why Some Prices Say \"Quote-Only\"" },
+      { "type": "paragraph", "text": "Minelab's professional Pulse Induction and GPZ ground-scanning models are priced on request rather than listed — standard practice across the industry for equipment at this level, since final pricing can depend on current availability and configuration. Contact us directly for current pricing on any of these six models." },
+      { "type": "heading", "level": 2, "text": "What Actually Separates a PKR 170,000 Detector From a PKR 995,000 One?" },
+      { "type": "paragraph", "text": "It isn't just brand markup. Entry VLF detectors like the Gold Finder 2000 are single-system machines tuned for ease of use and sensitivity to fine gold. GoldXtra's TGX series adds multiple detection systems in one unit — gold, general metal, and underground voids — plus real depth gains (7 to 12 feet depending on model) as you move up the range. Minelab's quote-only tier adds Pulse Induction or GPZ ground-scanning technology, built specifically for maximum depth in heavily mineralized ground where every VLF machine, regardless of price, starts to struggle." },
+      { "type": "heading", "level": 2, "text": "What Does the Rest of Our Catalog Cost?" },
+      { "type": "paragraph", "text": "If you're weighing a gold detector against other equipment types, here's the honest range across our other three categories, based on our current catalog:" },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Metal detectors", "text": "From PKR 27,800 (Minelab Go Find 11) up to around PKR 980,000 for flagship multi-frequency models like the Minelab Manticore." },
+          { "label": "Underground imaging systems", "text": "From roughly PKR 1,345,000 (Nokta Jeohunter 3D Dual System) up to PKR 9,860,000 for the OKM EXP 6000 PRO+." },
+          { "label": "Long range locators", "text": "From PKR 278,000 (GoldXtra Revealer) up to PKR 655,000 (AKA Signum)." }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "The Bottom Line" },
+      { "type": "paragraph", "text": "For gold specifically, budget PKR 170,000–200,000 for a capable entry VLF machine, PKR 495,000–995,000 for GoldXtra's multi-system TGX line, or contact us for a quote if you need Minelab's professional Pulse Induction or GPZ technology for the toughest ground. For buying advice rather than just numbers, our Gold Detector Buying Guide 2026 walks through which tier actually fits your goals." }
+    ],
+    "cta": {
+      "heading": "Want a live quote on our professional line?",
+      "description": "Message us for current pricing on Minelab's Pulse Induction and GPZ models, or to confirm stock on any listed price.",
+      "buttonLabel": "Get a Quote",
+      "buttonHref": "/contact"
+    }
+  },
+  "can-gold-detectors-detect-diamonds": {
+    "content": [
+      { "type": "paragraph", "text": "It's one of the most common questions we hear from new customers, and the honest answer is no — gold detectors and metal detectors cannot detect diamonds directly. This isn't a limitation of any specific brand or model; it comes down to basic physics, and understanding why makes it much easier to understand what these machines actually can find." },
+      { "type": "heading", "level": 2, "text": "Why Metal Detectors Can't Sense Diamonds" },
+      { "type": "paragraph", "text": "Every metal detector, whether it's a basic VLF machine or a professional Pulse Induction gold detector, works through electromagnetic induction: the coil sends out an electromagnetic field, and conductive or ferromagnetic materials — gold, silver, copper, iron — generate a return signal the detector picks up. A diamond is a non-conductive carbon crystal. It doesn't interact with an electromagnetic field the way metal does, so no matter how sensitive or expensive the detector, there's simply no signal to detect." },
+      { "type": "heading", "level": 2, "text": "What a Detector CAN Find Instead" },
+      { "type": "paragraph", "text": "Where people get confused is that detectorists do find diamonds in the field — but always because of the metal around them, not the stone itself. A detector responds to a diamond ring's gold or platinum band, a diamond-set pendant's metal setting, or a piece of jewelry's clasp. If you're specifically hoping to recover a lost diamond ring, a detector is genuinely useful — you're just relying on the metal, not the gem, to give you the signal." },
+      { "type": "heading", "level": 2, "text": "What About Other Gemstones?" },
+      { "type": "paragraph", "text": "The same rule applies to essentially all natural gemstones — rubies, sapphires, emeralds, and quartz-family stones are all non-conductive and invisible to a metal detector on their own. The one partial exception some detectorists mention is certain gold-bearing quartz or mineral specimens, where a detector may respond to trace metal content within the rock rather than the gemstone material itself." },
+      { "type": "heading", "level": 2, "text": "So What Should You Actually Look For?" },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Lost jewelry", "text": "Rings, bracelets, and necklaces are detector-friendly because of their metal content, gemstones and all." },
+          { "label": "Coins and relics", "text": "Straightforward conductive targets that most detectors handle well." },
+          { "label": "Raw gold", "text": "Nuggets and flakes are metal, and are exactly what dedicated gold detectors like the Nokta Gold Kruzer are built to find." },
+          { "label": "Not loose gemstones", "text": "A diamond, sapphire, or other stone lost on its own, without a metal setting, won't trigger any detector." }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "The Bottom Line" },
+      { "type": "paragraph", "text": "If your goal is genuinely finding diamonds as standalone stones, a metal detector is the wrong tool — no detector on the market, at any price, can do this. If your goal is recovering lost jewelry that happens to include diamonds, a good general-purpose or gold detector is exactly the right tool, because it's the metal setting doing the work." }
+    ],
+    "cta": {
+      "heading": "Looking for the right detector for jewelry and gold?",
+      "description": "Browse our range of gold and general-purpose detectors, each suited to different targets and terrain.",
+      "buttonLabel": "Browse Detectors",
+      "buttonHref": "/products"
+    }
+  },
+  "how-deep-can-gold-detectors-detect": {
+    "content": [
+      { "type": "paragraph", "text": "\"How deep can this thing actually detect?\" is one of the first questions every buyer asks, and it's also one of the most misleading specs on any detector's box. Depth depends on the detector's technology, the target's size and material, and your soil's mineralization — not just a single published number. Here's what real depth looks like across our current gold detector range, and why the number on the spec sheet is a starting point, not a guarantee." },
+      { "type": "heading", "level": 2, "text": "Real Depth Figures From Our Gold Detector Range" },
+      {
+        "type": "table",
+        "headers": ["Model", "Technology", "Published Depth"],
+        "rows": [
+          ["GoldXtra TGX Lite", "Multi-system VLF", "7–8 ft"],
+          ["GoldXtra TGX Pro", "Multi-system VLF", "8–9 ft"],
+          ["GoldXtra TGX Special Edition", "Multi-system VLF", "9 ft"],
+          ["GoldXtra TGX Pro Plus", "Multi-system VLF", "10–12 ft"],
+          ["Nokta Gold Finder 2000 / Gold Kruzer", "VLF", "Tuned for sensitivity over maximum depth"],
+          ["Minelab GPX 6000 / GPZ 7000 / GPZ 8000 / SDC 2300", "Pulse Induction / GPZ ground-scanning", "Greatest depth in mineralized ground (quote-only)"]
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "Why Target Size Matters More Than the Spec Sheet" },
+      { "type": "paragraph", "text": "A published depth figure is almost always measured against a specific, reasonably large test target — often a coin-sized piece of metal in average soil. A small gold nugget or fine flake behaves completely differently: it might only be detectable a few inches to a foot down on the same machine that claims 8 or 9 feet of depth. As a rough rule, detection depth roughly scales with target size — small gold needs to be shallow to register, while a larger buried object can be found considerably deeper." },
+      { "type": "heading", "level": 2, "text": "Why Soil Mineralization Changes Everything" },
+      { "type": "paragraph", "text": "Ground mineralization is the single biggest real-world factor separating a detector's advertised depth from what you'll actually get in the field. Highly mineralized soil — the volcanic, iron-rich ground found in parts of western Pakistan, for example — generates its own background signal that a detector has to filter out, which reduces effective depth regardless of the technology. This is exactly why Pulse Induction detectors, which are largely unaffected by ground mineralization, are favored for the toughest ground even though they can't always discriminate targets as precisely as VLF machines." },
+      { "type": "heading", "level": 2, "text": "VLF vs Pulse Induction: The Depth Trade-off" },
+      { "type": "paragraph", "text": "VLF technology (used across Nokta's gold detectors and GoldXtra's TGX series) is generally more sensitive to small, fine gold, while Pulse Induction (Minelab's GPX and SDC lines) trades some of that fine-target sensitivity for greater raw depth and near-total immunity to ground mineralization. Neither is strictly \"deeper\" in every situation — it depends on your target size and your ground." },
+      { "type": "heading", "level": 2, "text": "Getting the Most Depth Out of Any Detector" },
+      {
+        "type": "list",
+        "items": [
+          { "label": "Ground balance correctly", "text": "An improperly balanced detector loses real depth to mineral interference, regardless of its rated maximum." },
+          { "label": "Keep the coil low", "text": "Every centimeter of extra height between the coil and the ground costs detection depth." },
+          { "label": "Match the coil to the job", "text": "Larger coils generally reach deeper on bigger targets; smaller coils give better separation and sensitivity to small, shallow gold." },
+          { "label": "Don't max out sensitivity", "text": "Sensitivity set too high in mineralized ground causes false signals, not more real depth." }
+        ]
+      },
+      { "type": "heading", "level": 2, "text": "The Bottom Line" },
+      { "type": "paragraph", "text": "Treat any published depth figure as a best-case number under favorable conditions for a specific target size, not a guarantee for your ground and your gold. If you're searching in heavily mineralized soil or chasing very fine gold, talk to us about which technology — VLF or Pulse Induction — actually fits your situation, rather than picking the detector with the biggest number on the box." }
+    ],
+    "cta": {
+      "heading": "Not sure which technology fits your ground?",
+      "description": "Tell us your soil type and target size, and we'll recommend VLF or Pulse Induction accordingly.",
+      "buttonLabel": "Browse Gold Detectors",
+      "buttonHref": "/categories/gold-detectors"
     }
   }
 }

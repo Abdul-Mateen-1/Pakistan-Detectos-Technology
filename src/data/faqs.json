@@ -1,0 +1,30 @@
+[
+  {
+    "question": "How deep can gold detectors detect?",
+    "answer": "It depends on the detector's technology, the target's size, and your soil's mineralization — there's no single number that applies to every machine or every piece of gold.",
+    "category": "Performance",
+    "readMoreHref": "/blog/how-deep-can-gold-detectors-detect",
+    "readMoreLabel": "See real depth figures by model"
+  },
+  {
+    "question": "Can gold detectors detect diamonds?",
+    "answer": "No — diamonds are non-conductive and produce no signal on any metal detector. What a detector can find is a diamond ring's metal setting, not the stone itself.",
+    "category": "Technology",
+    "readMoreHref": "/blog/can-gold-detectors-detect-diamonds",
+    "readMoreLabel": "Read the full explanation"
+  },
+  {
+    "question": "How do metal detectors work?",
+    "answer": "In short: a detector's coil sends an electromagnetic field into the ground, and conductive or ferromagnetic targets generate a faint return signal the detector picks up and translates into a tone or reading. The details — VLF vs Pulse Induction, ground balance, multi-frequency — explain why different detectors perform so differently in different ground.",
+    "category": "Technology",
+    "readMoreHref": "/blog/how-metal-detectors-work",
+    "readMoreLabel": "Read the full explainer"
+  },
+  {
+    "question": "Are metal detectors legal in Pakistan?",
+    "answer": "Yes, owning and using a metal or gold detector is legal in Pakistan. What's restricted is using one to search for or remove antiquities and archaeological artifacts without authorization, under the Antiquities Act 1975 — a narrow category that most hobby detecting and gold prospecting never touches. This is general information, not legal advice.",
+    "category": "Legal & Safety",
+    "readMoreHref": "/blog/are-metal-detectors-legal-in-pakistan",
+    "readMoreLabel": "Read the full legal breakdown"
+  }
+]
